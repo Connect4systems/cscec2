@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-05-17 19:25:02.711984",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "language",
+  "speaking",
+  "writing",
+  "understanding"
+ ],
+ "fields": [
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "speaking",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Speaking",
+   "options": "Poor\nFair\nGood\nV Good\nExcellent\nFluent"
+  },
+  {
+   "fieldname": "writing",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Writing",
+   "options": "Poor\nFair\nGood\nV Good\nExcellent\nFluent"
+  },
+  {
+   "fieldname": "understanding",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Understanding",
+   "options": "Poor\nFair\nGood\nV Good\nExcellent\nFluent"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-17 19:32:10.152727",
+ "modified_by": "Administrator",
+ "module": "Contractor App",
+ "name": "E-Language",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

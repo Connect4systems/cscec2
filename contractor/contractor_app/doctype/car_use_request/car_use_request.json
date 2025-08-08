@@ -1,0 +1,310 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-07-02 11:26:49.620427",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_ufuj",
+  "section_break_vwmz",
+  "employee",
+  "emplyee_name",
+  "mobile",
+  "column_break_xzyq",
+  "department",
+  "job_tiltle",
+  "branch",
+  "section_break_xexc",
+  "period",
+  "start_date",
+  "end_date",
+  "duration",
+  "column_break_dfar",
+  "passengers",
+  "time",
+  "end_time",
+  "reason",
+  "section_break_fo7c",
+  "amended_from",
+  "admin_tab",
+  "car_type",
+  "vehicle",
+  "column_break_dcyp",
+  "type",
+  "other",
+  "section_break_wxrm",
+  "text_editor_ptki",
+  "section_break_hvjz",
+  "naming_series",
+  "column_break_wluj",
+  "line_manager"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_fo7c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Car Use Request",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xzyq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "job_tiltle",
+   "fieldtype": "Link",
+   "label": "Job Tiltle",
+   "options": "Designation"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "emplyee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Emplyee name"
+  },
+  {
+   "fetch_from": "employee.cell_number",
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "section_break_xexc",
+   "fieldtype": "Section Break",
+   "label": "Car Request Details"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "passengers",
+   "fieldtype": "Float",
+   "label": "No of Passengers ",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "car_type",
+   "fieldtype": "Select",
+   "label": "Car Type",
+   "options": "\nSUV\nSedan\nMicrobus\nPickup\nOther"
+  },
+  {
+   "fieldname": "column_break_dfar",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason For Request",
+   "placeholder": "Write Reson For Request",
+   "reqd": 1
+  },
+  {
+   "default": "09:00:00",
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "default": "16:00:00",
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Company Car\nRent Car"
+  },
+  {
+   "default": "Short Term (One Day)",
+   "fieldname": "period",
+   "fieldtype": "Select",
+   "label": "Period",
+   "options": "Short Term (One Day)\nLong Term (More than One Day)",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_vwmz",
+   "fieldtype": "Section Break",
+   "label": "Requester Information"
+  },
+  {
+   "fieldname": "column_break_ufuj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.branch",
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Company Car\"",
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "Vehicle ",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "text_editor_ptki",
+   "fieldtype": "Text Editor"
+  },
+  {
+   "depends_on": "eval:has_common(frappe.user_roles, [\"Fleet Manager\", \"Administration Manager\"])",
+   "fieldname": "admin_tab",
+   "fieldtype": "Tab Break",
+   "label": "Admin"
+  },
+  {
+   "fieldname": "column_break_dcyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "section_break_wxrm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Float",
+   "label": "Duration",
+   "precision": "0"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CAR-.YY.-.MM.-"
+  },
+  {
+   "fieldname": "section_break_hvjz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wluj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.leave_approver",
+   "fieldname": "line_manager",
+   "fieldtype": "Link",
+   "label": "Line Manager",
+   "options": "User"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2025-07-21 19:32:35.048716",
+ "modified_by": "Administrator",
+ "module": "Contractor App",
+ "name": "Car Use Request",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administration Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "reason",
+ "track_changes": 1
+}

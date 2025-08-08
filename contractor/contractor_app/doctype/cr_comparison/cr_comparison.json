@@ -1,0 +1,270 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-07-23 19:26:20.650145",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "accepted_supplier",
+  "subcontractor_name",
+  "contract_type",
+  "division",
+  "column_break_rxko",
+  "comparison_date",
+  "cr_date",
+  "end_date",
+  "amount",
+  "section_break_plcb",
+  "attach_comparison",
+  "column_break_hwmp",
+  "approved_comparison",
+  "section_break_pmxg",
+  "table_nyet",
+  "remark_section",
+  "notes_and_conditions",
+  "section_break_9yya",
+  "cr",
+  "amended_from",
+  "project_abbriviation",
+  "column_break_uorm",
+  "attach_cr"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_9yya",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CR Comparison",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rxko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "comparison_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Comparison Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cr_date",
+   "fieldtype": "Date",
+   "label": "CR Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uorm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accepted_supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Accepted Subcontractor",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "accepted_supplier.supplier_name",
+   "fieldname": "subcontractor_name",
+   "fieldtype": "Data",
+   "label": "Subcontractor Name"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Contract Type",
+   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Contract Type\"]]",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "division",
+   "fieldtype": "Link",
+   "label": "Division",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attach_comparison",
+   "fieldtype": "Attach",
+   "label": "Attach Comparison"
+  },
+  {
+   "fieldname": "cr",
+   "fieldtype": "Link",
+   "label": "CR",
+   "options": "CR"
+  },
+  {
+   "fieldname": "remark_section",
+   "fieldtype": "Section Break",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "notes_and_conditions",
+   "fieldtype": "Text Editor",
+   "label": "Notes and conditions"
+  },
+  {
+   "fetch_from": "project.custom_abbreviation",
+   "fieldname": "project_abbriviation",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Project Abbriviation"
+  },
+  {
+   "fieldname": "attach_cr",
+   "fieldtype": "Attach",
+   "label": "Attach CR"
+  },
+  {
+   "fieldname": "section_break_plcb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hwmp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_comparison",
+   "fieldtype": "Attach",
+   "label": "Approved Comparison"
+  },
+  {
+   "fieldname": "section_break_pmxg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_nyet",
+   "fieldtype": "Table",
+   "options": "Supplier Comparison"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-07-30 11:58:12.962828",
+ "modified_by": "Administrator",
+ "module": "Contractor App",
+ "name": "CR Comparison",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Contract User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cost Control Engineer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cost Control Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Procurment Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supply Chain Director",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

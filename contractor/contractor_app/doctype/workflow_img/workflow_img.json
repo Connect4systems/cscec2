@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-06-26 16:36:25.592466",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "purchase_request",
+  "column_break_zujn",
+  "pwf"
+ ],
+ "fields": [
+  {
+   "fieldname": "purchase_request",
+   "fieldtype": "Data",
+   "label": "Purchase Request"
+  },
+  {
+   "fieldname": "column_break_zujn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pwf",
+   "fieldtype": "Attach Image",
+   "label": "PWF"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-06-26 16:37:33.167017",
+ "modified_by": "Administrator",
+ "module": "Contractor App",
+ "name": "Workflow img",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

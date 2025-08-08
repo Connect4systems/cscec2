@@ -1,0 +1,249 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-03-03 12:31:37.954890",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_upqk",
+  "project",
+  "attach_zysj",
+  "column_break_zcxk",
+  "date",
+  "supplier",
+  "supplier_name",
+  "amount",
+  "section_break_bvdm",
+  "comparison_table",
+  "comparison_table_data_json",
+  "section_break_ros0",
+  "supplier_comparison",
+  "notes",
+  "section_break_wqnf",
+  "purchase_order",
+  "naming_series",
+  "amended_from",
+  "column_break_wrzi",
+  "material_request"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ros0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Comparison",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_upqk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_zcxk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "attach_zysj",
+   "fieldtype": "Attach",
+   "label": "Comparison Sheet"
+  },
+  {
+   "fieldname": "section_break_wqnf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming series",
+   "options": "SC-.YY.-.####."
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Accepted Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_wrzi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "material_request",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Material Request",
+   "mandatory_depends_on": "eval:doc.material_request_type == 'Purchase'",
+   "options": "Material Request"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "section_break_bvdm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comparison_table",
+   "fieldtype": "HTML",
+   "label": "Comparison Table"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "comparison_table_data_json",
+   "fieldtype": "Long Text",
+   "hidden": 1,
+   "label": "comparison_table_data_json"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "supplier_comparison",
+   "fieldtype": "Table",
+   "label": "Supplier Comparison",
+   "options": "Supplier Comparison"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Purchase Order",
+   "link_fieldname": "custom_comparison"
+  },
+  {
+   "link_doctype": "Material Request",
+   "link_fieldname": "custom_comparison"
+  }
+ ],
+ "make_attachments_public": 1,
+ "modified": "2025-07-29 22:09:06.614348",
+ "modified_by": "Administrator",
+ "module": "Contractor App",
+ "name": "Comparison",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cost Control Engineer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supply Chain Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Project Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

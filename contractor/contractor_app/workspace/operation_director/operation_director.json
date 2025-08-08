@@ -1,0 +1,121 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"935rVF1nVP\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Purchase</b></span>\",\"col\":12}},{\"id\":\"6VUQwq6ERV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"PR Purchase request\",\"col\":4}},{\"id\":\"p85TZ0s1xm\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Comparison\",\"col\":4}},{\"id\":\"Av8o1A8buT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":4}},{\"id\":\"OzgYSswtav\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"09tCzKkEfz\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Subcotractor</b></span>\",\"col\":12}},{\"id\":\"rN_H3mG1fO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Contract Request\",\"col\":4}},{\"id\":\"TwUvBL4_18\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Subcontractor Order\",\"col\":4}},{\"id\":\"Xggdpd5p-c\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Contract Order\",\"col\":4}},{\"id\":\"hTcgAGfVud\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"7ojHDJme13\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>HR</b></span>\",\"col\":12}},{\"id\":\"-qhKof9p3F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Requisition\",\"col\":4}},{\"id\":\"QE9axDRBgy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Car Use Request\",\"col\":4}},{\"id\":\"ZbQu93eG3v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Application\",\"col\":4}},{\"id\":\"j3FwN8DIsH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"kDtqGR1Kzv\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Warehouse</b></span>\",\"col\":12}},{\"id\":\"53lGK5Icvd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Materia Transfer Request\",\"col\":6}}]",
+ "creation": "2025-02-26 20:00:33.825247",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "color-review-points",
+ "idx": 1,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Operation Director",
+ "links": [],
+ "modified": "2025-08-03 22:04:04.585679",
+ "modified_by": "Administrator",
+ "module": "Contractor App",
+ "name": "Operation Director",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Projects Manager"
+  }
+ ],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Job Requisition",
+   "link_to": "Job Requisition",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "Report Builder",
+   "format": "{} Open",
+   "label": "Materia Transfer Request",
+   "link_to": "Material Request",
+   "stats_filter": "[[\"Material Request\",\"workflow_state\",\"=\",\"Pending Operation Director\",false],[\"Material Request\",\"material_request_type\",\"=\",\"Material Transfer\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": " {} Open",
+   "label": "Car Use Request",
+   "link_to": "Car Use Request",
+   "stats_filter": "[[\"Car Use Request\",\"workflow_state\",\"=\",\"Pending\",false],[\"Car Use Request\",\"line_manager\",\"=\",\"202\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Leave Application",
+   "link_to": "Leave Application",
+   "stats_filter": "[[\"Leave Application\",\"leave_approver\",\"=\",\"sherif_moussa@chinaconstruction.com\",false],[\"Leave Application\",\"workflow_state\",\"=\",\"Pending\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "PR Purchase request",
+   "link_to": "Material Request",
+   "stats_filter": "[[\"Material Request\",\"workflow_state\",\"=\",\"Pending Operation Director\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Contract Request",
+   "link_to": "CR",
+   "stats_filter": "[[\"CR\",\"workflow_state\",\"=\",\"Pending Operation Director\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Comparison",
+   "link_to": "Comparison",
+   "stats_filter": "[[\"Comparison\",\"workflow_state\",\"=\",\"Pending Operation Director\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "format": " {} Open",
+   "label": "Subcontractor Order",
+   "link_to": "Purchase Order",
+   "stats_filter": "[[\"Purchase Order\",\"workflow_state\",\"=\",\"Pending Operation Director\",false],[\"Purchase Order\",\"custom_type\",\"=\",\"Contract\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Purchase Order",
+   "link_to": "Purchase Order",
+   "stats_filter": "[[\"Purchase Order\",\"workflow_state\",\"=\",\"Pending Operation Director\",false],[\"Purchase Order\",\"custom_type\",\"=\",\"Purchase\",false]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Contract Order",
+   "link_to": "Subcontractor Contract",
+   "stats_filter": "[[\"Subcontractor Contract\",\"workflow_state\",\"=\",\"Pending Operation Director\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Operation Director"
+}
