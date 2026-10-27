@@ -1,0 +1,471 @@
+{
+ "doctype": "DocType",
+ "name": "Project Offer",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "default": "__user"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1,
+   "fetch_from": "customer.customer_name"
+  },
+  {
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "label": "Transaction Date",
+   "default": "Today",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "order_type",
+   "fieldtype": "Select",
+   "label": "Order Type",
+   "options": "Sales\nMaintenance\nShopping Cart",
+   "default": "Sales",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contractor_order",
+   "fieldtype": "Check",
+   "label": "Contractor Order",
+   "default": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "po_no",
+   "fieldtype": "Data",
+   "label": "Customer Purchase Order"
+  },
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "Po Date"
+  },
+  {
+   "fieldname": "tender_analysis",
+   "fieldtype": "Link",
+   "label": "Tender Analysis",
+   "options": "Tender Analysis",
+   "read_only": 1,
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "tender_number",
+   "fieldtype": "Data",
+   "label": "Tender Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Conversion Rate",
+   "default": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "selling_price_list",
+   "fieldtype": "Link",
+   "label": "Selling Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "clauses_tab",
+   "fieldtype": "Tab Break",
+   "label": "Clauses"
+  },
+  {
+   "fieldname": "clauses",
+   "fieldtype": "Table",
+   "label": "Clauses",
+   "options": "Project Offer Clause",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "taxes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Taxes and Totals"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "options": "currency",
+   "default": "0"
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes",
+   "options": "Sales Taxes and Charges"
+  },
+  {
+   "fieldname": "total_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Total Taxes And Charges",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_total",
+   "fieldtype": "Currency",
+   "label": "Base Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_grand_total",
+   "fieldtype": "Currency",
+   "label": "Base Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contracting_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contracting"
+  },
+  {
+   "fieldname": "selling_deductions_template",
+   "fieldtype": "Link",
+   "label": "Selling Deductions Template",
+   "options": "Selling Deductions Template"
+  },
+  {
+   "fieldname": "deductions",
+   "fieldtype": "Table",
+   "label": "Deductions",
+   "options": "Deduction"
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "label": "Total Deductions",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_total_deductions",
+   "fieldtype": "Currency",
+   "label": "Base Total Deductions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_payable",
+   "fieldtype": "Currency",
+   "label": "Net Payable",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "address_tab",
+   "fieldtype": "Tab Break",
+   "label": "Addresses and Contact"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "shipping_address_name",
+   "fieldtype": "Link",
+   "label": "Shipping Address Name",
+   "options": "Address"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "terms_tab",
+   "fieldtype": "Tab Break",
+   "label": "Terms"
+  },
+  {
+   "fieldname": "payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Text Editor",
+   "label": "Payment Terms"
+  },
+  {
+   "fieldname": "tc_name",
+   "fieldtype": "Link",
+   "label": "Tc Name",
+   "options": "Terms and Conditions"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "Text Editor",
+   "label": "Terms"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Project Offer",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "taxes_and_charges",
+   "fieldtype": "Link",
+   "options": "Sales Taxes and Charges Template",
+   "label": "Sales Taxes and Charges Template"
+  },
+  {
+   "fieldname": "tax_category",
+   "fieldtype": "Link",
+   "options": "Tax Category",
+   "label": "Tax Category"
+  },
+  {
+   "fieldname": "apply_discount_on",
+   "fieldtype": "Select",
+   "options": "Net Total\nGrand Total",
+   "default": "Net Total",
+   "label": "Apply Additional Discount On"
+  },
+  {
+   "fieldname": "additional_discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Additional Discount Percentage"
+  },
+  {
+   "fieldname": "disable_rounded_total",
+   "fieldtype": "Check",
+   "label": "Disable Rounded Total"
+  },
+  {
+   "fieldname": "base_net_total",
+   "fieldtype": "Currency",
+   "label": "Base Net Total",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "base_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Base Discount Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "base_total_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Base Total Taxes And Charges",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "rounded_total",
+   "fieldtype": "Currency",
+   "label": "Rounded Total",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_rounded_total",
+   "fieldtype": "Currency",
+   "label": "Base Rounded Total",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "rounding_adjustment",
+   "fieldtype": "Currency",
+   "label": "Rounding Adjustment",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_rounding_adjustment",
+   "fieldtype": "Currency",
+   "label": "Base Rounding Adjustment",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  }
+ ],
+ "field_order": [
+  "title",
+  "company",
+  "customer",
+  "customer_name",
+  "transaction_date",
+  "delivery_date",
+  "order_type",
+  "contractor_order",
+  "status",
+  "po_no",
+  "po_date",
+  "tender_analysis",
+  "tender_number",
+  "project",
+  "currency",
+  "conversion_rate",
+  "selling_price_list",
+  "clauses_tab",
+  "clauses",
+  "total_qty",
+  "total",
+  "taxes_tab",
+  "taxes_and_charges",
+  "tax_category",
+  "apply_discount_on",
+  "additional_discount_percentage",
+  "disable_rounded_total",
+  "discount_amount",
+  "net_total",
+  "taxes",
+  "total_taxes_and_charges",
+  "grand_total",
+  "base_total",
+  "base_grand_total",
+  "base_net_total",
+  "base_discount_amount",
+  "base_total_taxes_and_charges",
+  "rounded_total",
+  "base_rounded_total",
+  "rounding_adjustment",
+  "base_rounding_adjustment",
+  "contracting_tab",
+  "selling_deductions_template",
+  "deductions",
+  "total_deductions",
+  "base_total_deductions",
+  "net_payable",
+  "address_tab",
+  "customer_address",
+  "shipping_address_name",
+  "contact_person",
+  "terms_tab",
+  "payment_terms_template",
+  "payment_terms",
+  "tc_name",
+  "terms",
+  "connections_tab",
+  "amended_from"
+ ],
+ "istable": 0,
+ "editable_grid": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "share": 1
+  }
+ ],
+ "autoname": "format:POF-{YYYY}-{#####}",
+ "title_field": "title",
+ "is_submittable": 1,
+ "track_changes": 1,
+ "links": [
+  {
+   "link_doctype": "Project Contract",
+   "link_fieldname": "project_offer",
+   "group": "Contracts"
+  }
+ ]
+}

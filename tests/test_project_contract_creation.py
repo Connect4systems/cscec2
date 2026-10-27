@@ -68,3 +68,17 @@ class ProjectContractCreationTest(unittest.TestCase):
             doc = self.service.create_project_contract('TA-1')['doc']
         self.assertIsNone(doc.customer)
         self.assertEqual(doc.conversion_rate, 0)
+
+    def test_tender_offer_uses_same_mapping_as_contract(self):
+        with patch.dict(sys.modules, self.modules):
+            doc = self.service.create_commercial_document('TA-1', 'Project Offer')['doc']
+        self.assertEqual(doc.doctype, 'Project Offer')
+        self.assertEqual(doc.clauses[1].source_row, 'source-2')
+        self.assertEqual(doc.clauses[1].rate, 50)
+        self.assertEqual(doc.clauses[1].costing_note, 'CN-1')
+
+    def test_draft_costing_blocks_offer_creation_too(self):
+        self.fake.get_all.return_value = [Doc(name='CN-1', docstatus=0)]
+        with self.assertRaisesRegex(ValueError, 'Submit all'):
+            self.service.create_commercial_document('TA-1', 'Project Offer')
+        self.fake.new_doc.assert_not_called()

@@ -16,9 +16,13 @@ def require_ready(tender):
 
 @frappe.whitelist()
 def creation_status(tender_analysis):
+    return commercial_creation_status(tender_analysis, "Project Contract")
+
+
+def commercial_creation_status(tender_analysis, doctype):
     tender = frappe.get_doc("Tender Analysis", tender_analysis)
     tender.check_permission("read")
-    if not frappe.has_permission("Project Contract", "create"):
+    if not frappe.has_permission(doctype, "create"):
         return {"ready": False}
     notes = frappe.get_all("Costing Note", filters={"tender_analysis": tender.name, "docstatus": ["<", 2]},
         fields=["name", "docstatus"])
@@ -26,20 +30,24 @@ def creation_status(tender_analysis):
         require_submitted_costing(tender.clauses, notes)
     except ValueError as exc:
         return {"ready": False, "reason": str(exc)}
-    existing = frappe.db.get_value("Project Contract", {"tender_analysis": tender.name, "docstatus": ["<", 2]}, "name")
+    existing = frappe.db.get_value(doctype, {"tender_analysis": tender.name, "docstatus": ["<", 2]}, "name")
     return {"ready": not bool(existing)}
 
 
 @frappe.whitelist()
 def create_project_contract(tender_analysis):
+    return create_commercial_document(tender_analysis, "Project Contract")
+
+
+def create_commercial_document(tender_analysis, doctype):
     tender = frappe.get_doc("Tender Analysis", tender_analysis)
     tender.check_permission("read")
     require_ready(tender)
-    existing = frappe.db.get_value("Project Contract", {"tender_analysis": tender.name, "docstatus": ["<", 2]}, "name")
+    existing = frappe.db.get_value(doctype, {"tender_analysis": tender.name, "docstatus": ["<", 2]}, "name")
     if existing:
-        frappe.get_doc("Project Contract", existing).check_permission("read")
+        frappe.get_doc(doctype, existing).check_permission("read")
         return {"existing": existing}
-    doc = frappe.new_doc("Project Contract")
+    doc = frappe.new_doc(doctype)
     doc.check_permission("create")
     from contractor.tender_pricing import submitted_boq_links
     boqs = submitted_boq_links(tender)

@@ -132,3 +132,29 @@ on a test site after migration:
 ```bash
 bench --site test-site-name run-tests --doctype "Project Contract"
 ```
+
+## Project Offers
+
+**Create > Project Offer** on Tender Analysis uses the same completed-costing checks
+as Project Contract: all active Costing Notes must be submitted and every detail
+clause must have applied pricing. One active offer per tender is allowed. Offers
+use `POF-YYYY-00001` numbering and the same tabs, clause fields, taxes, deductions,
+terms, totals, and permissions as Project Contract. Their forms and calculation
+handlers share one implementation.
+
+After saving and submitting an offer, use **Create > Project Contract**. This copies
+the submitted offer's commercial values, including negotiated quantities and rates,
+tax settings, deduction titles, addresses, and terms into a new draft contract.
+The contract stores a read-only **Project Offer** link and retains stable tender row,
+Contractual Clause, Costing Note, and BOQ references. Child rows receive new database
+identities. The offer's submitted status is checked again on the server.
+
+Repeated conversion opens the existing contract for that offer. An active contract
+from another source blocks conversion, maintaining one active contract per tender.
+Cancel or delete any active linked contract before cancelling its source offer.
+Offers are also available through Tender Analysis Connections and the Tender
+workspace. The existing direct Create Project Contract action remains available.
+
+Deploy with the usual site migration, asset build, and restart. Verify both forms'
+shared tabs and tax calculations, offer save/submit/cancel/amend, submitted-only
+conversion, and the offer-to-contract references on a test site.

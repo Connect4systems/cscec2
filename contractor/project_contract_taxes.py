@@ -101,11 +101,11 @@ def calculate_contract_taxes(doc):
 @frappe.whitelist()
 def preview_totals(doc):
     data = frappe.parse_json(doc)
-    if data.get("doctype") != "Project Contract":
-        frappe.throw("Expected a Project Contract")
+    if data.get("doctype") not in ("Project Contract", "Project Offer"):
+        frappe.throw("Expected a Project Contract or Project Offer")
     candidate = frappe.get_doc(data)
     if not candidate.is_new():
-        frappe.get_doc("Project Contract", candidate.name).check_permission("write")
+        frappe.get_doc(candidate.doctype, candidate.name).check_permission("write")
     else:
         candidate.check_permission("create")
     if candidate.docstatus != 0:

@@ -375,6 +375,13 @@
    "label": "Base Rounding Adjustment",
    "read_only": 1,
    "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "project_offer",
+   "fieldtype": "Link",
+   "options": "Project Offer",
+   "label": "Project Offer",
+   "read_only": 1
   }
  ],
  "field_order": [
@@ -390,6 +397,7 @@
   "po_no",
   "po_date",
   "tender_analysis",
+  "project_offer",
   "tender_number",
   "project",
   "currency",
