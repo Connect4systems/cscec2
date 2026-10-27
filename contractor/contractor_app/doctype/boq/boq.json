@@ -17,6 +17,7 @@
   "column_break_puvaq",
   "item",
   "contractual_clause",
+  "clause_title",
   "tender_analysis",
   "project_qty",
   "project",
@@ -230,15 +231,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "BOQ",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "material_tab",
    "fieldtype": "Tab Break",
    "label": "Material"
@@ -271,6 +263,13 @@
    "label": "Tender Analysis",
    "options": "Tender Analysis",
    "read_only": 1
+  },
+  {
+   "fieldname": "clause_title",
+   "fieldtype": "Small Text",
+   "label": "Clause Title",
+   "read_only": 1,
+   "fetch_from": "contractual_clause.title"
   }
  ],
  "index_web_pages_for_search": 1,

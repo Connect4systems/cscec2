@@ -6,6 +6,8 @@ from frappe.model.document import Document
 
 class BOQ(Document):
 	def validate(self):
+		if self.get("contractual_clause"):
+			self.clause_title = frappe.db.get_value("Contractual Clause", self.contractual_clause, "title")
 		tables = ["material_costs", "labor_costs", "contractors_table", "expenses_table", "custom_equipment"]
 
 		for table in tables:
@@ -31,10 +33,17 @@ class BOQ(Document):
 
 		self.total_cost = self.get("total_material_costs", 0) + self.get("total_labor_costs", 0) + self.get("total_contractors", 0) + self.get("total_expenses", 0) + self.get("custom_total_equipment_costs", 0)
 
+	def on_update(self):
+		if self.get("tender_analysis"):
+			from contractor.tender_pricing import sync_boq_reference
+			sync_boq_reference(self)
+
 	def on_submit(self):
 		if self.tender_analysis:
-			from contractor.tender_pricing import update_from_boq
-			return update_from_boq(self)
+			from contractor.tender_pricing import update_from_boq, sync_tender_boq_links
+			update_from_boq(self)
+			sync_tender_boq_links(self.tender_analysis)
+			return
 
 		if not self.costing_note or not self.line_id:
 			frappe.throw("The BOQ has no Costing Note as a Reference")
@@ -51,8 +60,11 @@ class BOQ(Document):
 
 	def on_cancel(self):
 		if self.tender_analysis:
-			from contractor.tender_pricing import update_from_boq
-			return update_from_boq(self, cancel=True)
+			from contractor.tender_pricing import update_from_boq, sync_boq_reference, sync_tender_boq_links
+			update_from_boq(self, cancel=True)
+			sync_boq_reference(self, remove=True)
+			sync_tender_boq_links(self.tender_analysis)
+			return
 
 		doc = frappe.get_doc("Costing Note", self.costing_note)
 		for row in doc.costing_note_items:

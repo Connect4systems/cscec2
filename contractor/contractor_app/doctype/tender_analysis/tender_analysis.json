@@ -17,7 +17,8 @@
   "contractual_clauses_tab",
   "numbering_mode",
   "clauses",
-  "total_amount"
+  "total_amount",
+  "connections_tab"
  ],
  "fields": [
   {
@@ -100,9 +101,26 @@
    "fieldname": "contractual_clauses_tab",
    "fieldtype": "Tab Break",
    "label": "Contractual Clauses"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
   }
  ],
- "links": [],
+ "links": [
+  {
+   "link_doctype": "Costing Note",
+   "link_fieldname": "tender_analysis",
+   "group": "Pricing"
+  },
+  {
+   "link_doctype": "BOQ",
+   "link_fieldname": "tender_analysis",
+   "group": "Pricing"
+  }
+ ],
  "modified": "2026-10-27 14:35:06.317410",
  "modified_by": "Administrator",
  "module": "Contractor App",

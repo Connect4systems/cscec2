@@ -19,6 +19,7 @@
   "default_profit_margin",
   "target_selling_price",
   "boq",
+  "boq_reference",
   "contractual_clause",
   "source_row",
   "parent_series",
@@ -159,6 +160,15 @@
    "hidden": 1,
    "label": "Applied Rate",
    "read_only": 1
+  },
+  {
+   "fieldname": "boq_reference",
+   "fieldtype": "Link",
+   "label": "Created BOQ",
+   "options": "BOQ",
+   "read_only": 1,
+   "in_list_view": 1,
+   "no_copy": 1
   }
  ],
  "index_web_pages_for_search": 1,

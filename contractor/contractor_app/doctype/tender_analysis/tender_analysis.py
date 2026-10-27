@@ -10,6 +10,10 @@ from contractor.tender_logic import number_rows
 
 class TenderAnalysis(Document):
     def validate(self):
+        from contractor.tender_pricing import submitted_boq_links
+        linked = submitted_boq_links(self) if not self.is_new() else {}
+        for row in self.clauses:
+            row.submitted_boq = linked.get(row.name)
         try:
             number_rows(self.clauses, self.numbering_mode)
         except ValueError as exc:

@@ -81,6 +81,47 @@ class PricingLifecycleTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Cancel or amend'):
             self.service.update_from_boq(boq)
 
+    def test_boq_save_writes_link_to_its_costing_note_row(self):
+        self.fake.db.get_value.return_value = Row(parent='CN-1', parenttype='Costing Note', boq_reference=None)
+        boq = Row(name='BOQ-1', costing_note='CN-1', line_id='row-1')
+        self.service.sync_boq_reference(boq)
+        self.fake.db.set_value.assert_called_once_with('Costing Note Items', 'row-1', 'boq_reference', 'BOQ-1', update_modified=False)
+
+    def test_boq_link_cannot_point_at_another_notes_row(self):
+        self.fake.db.get_value.return_value = Row(parent='CN-OTHER', parenttype='Costing Note')
+        with self.assertRaisesRegex(ValueError, 'valid Costing Note row'):
+            self.service.sync_boq_reference(Row(name='BOQ-1', costing_note='CN-1', line_id='row-1'))
+        self.fake.db.set_value.assert_not_called()
+
+    def test_cancellation_only_clears_its_own_boq_link(self):
+        row = Row(parent='CN-1', parenttype='Costing Note', boq_reference='BOQ-NEW')
+        self.fake.db.get_value.return_value = row
+        boq = Row(name='BOQ-OLD', costing_note='CN-1', line_id='row-1')
+        self.service.sync_boq_reference(boq, remove=True)
+        self.fake.db.set_value.assert_not_called()
+        row.boq_reference = 'BOQ-OLD'
+        self.service.sync_boq_reference(boq, remove=True)
+        self.fake.db.set_value.assert_called_once_with('Costing Note Items', 'row-1', 'boq_reference', None, update_modified=False)
+
+    def test_tender_boq_link_matches_clause_and_applied_costing_note(self):
+        self.tender.name = 'TA-1'
+        self.fake.get_all = MagicMock(return_value=[
+            Row(name='BOQ-OTHER', contractual_clause='CC-OTHER', costing_note='CN-1'),
+            Row(name='BOQ-NEW', contractual_clause='CC-1', costing_note='CN-NEW'),
+            Row(name='BOQ-APPLIED', contractual_clause='CC-1', costing_note='CN-1')])
+        self.assertEqual(self.service.submitted_boq_links(self.tender), {'source-1': 'BOQ-NEW'})
+        self.target.applied_costing_note = 'CN-1'
+        self.assertEqual(self.service.submitted_boq_links(self.tender), {'source-1': 'BOQ-APPLIED'})
+        self.assertEqual(self.fake.get_all.call_args.kwargs['filters']['docstatus'], 1)
+
+    def test_tender_group_or_cancelled_boq_has_no_link(self):
+        self.tender.name = 'TA-1'
+        self.fake.get_all = MagicMock(return_value=[])
+        self.assertEqual(self.service.submitted_boq_links(self.tender), {})
+        self.target.is_group = 1
+        self.fake.get_all.return_value = [Row(name='BOQ-1', contractual_clause='CC-1')]
+        self.assertEqual(self.service.submitted_boq_links(self.tender), {})
+
 
 if __name__ == '__main__':
     unittest.main()

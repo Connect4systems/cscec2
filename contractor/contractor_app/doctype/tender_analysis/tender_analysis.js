@@ -7,6 +7,14 @@ frappe.ui.form.on("Tender Analysis", {
             window.open("/api/method/" + tender_api + "download_template");
         });
         if (frm.is_new()) return;
+        frappe.call({method: 'contractor.tender_pricing.get_submitted_boq_links',
+            args: {tender_analysis: frm.doc.name},
+            callback(r) {
+                for (const row of frm.doc.clauses || []) {
+                    row.submitted_boq = (r.message || {})[row.name] || null;
+                }
+                frm.refresh_field('clauses');
+            }});
         const saved = () => {
             if (frm.is_dirty()) {
                 frappe.msgprint(__("Save the Tender Analysis first"));

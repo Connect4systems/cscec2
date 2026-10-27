@@ -35,6 +35,79 @@ def validate_note(note):
     note.total_profit = selling - cost
     note.profit_margin = (selling-cost) / cost * 100 if cost else 0
     note.set("group_items", [])
+    sync_boq_links(note)
+
+
+def sync_boq_links(note):
+    """Rebuild references on save so an old browser cannot erase created BOQ links."""
+    linked = {}
+    if not note.is_new():
+        for boq in frappe.get_all("BOQ", filters={"costing_note": note.name, "docstatus": ["<", 2]},
+                fields=["name", "line_id"], order_by="docstatus desc, modified desc"):
+            linked.setdefault(boq.line_id, boq.name)
+    for row in note.costing_note_items:
+        row.boq_reference = linked.get(row.name)
+
+
+def sync_boq_reference(boq, remove=False):
+    """Write the reverse link after a BOQ is saved, or remove it on cancellation."""
+    if not boq.get("costing_note") or not boq.get("line_id"):
+        return
+    row = frappe.db.get_value("Costing Note Items", boq.line_id,
+        ["parent", "parenttype", "boq_reference"], as_dict=True)
+    if not row or row.parent != boq.costing_note or row.parenttype != "Costing Note":
+        frappe.throw("BOQ does not reference a valid Costing Note row")
+    if remove:
+        if row.boq_reference == boq.name:
+            frappe.db.set_value("Costing Note Items", boq.line_id, "boq_reference", None, update_modified=False)
+    else:
+        frappe.db.set_value("Costing Note Items", boq.line_id, "boq_reference", boq.name, update_modified=False)
+
+
+@frappe.whitelist()
+def get_created_boq_links(costing_note):
+    note = frappe.get_doc("Costing Note", costing_note)
+    note.check_permission("read")
+    linked = {}
+    for boq in frappe.get_list("BOQ", filters={"costing_note": note.name, "docstatus": ["<", 2]},
+            fields=["name", "line_id"], order_by="docstatus desc, modified desc", limit_page_length=0):
+        linked.setdefault(boq.line_id, boq.name)
+    return linked
+
+
+def submitted_boq_links(tender, permitted=False):
+    """Prefer the BOQ behind applied pricing; otherwise use the latest submitted BOQ."""
+    query = frappe.get_list if permitted else frappe.get_all
+    boqs = query("BOQ", filters={"tender_analysis": tender.name, "docstatus": 1},
+        fields=["name", "contractual_clause", "costing_note"],
+        order_by="modified desc, name desc", limit_page_length=0)
+    linked = {}
+    for row in tender.clauses:
+        if row.is_group or not row.contractual_clause:
+            continue
+        for boq in boqs:
+            if boq.contractual_clause != row.contractual_clause:
+                continue
+            if row.applied_costing_note and boq.costing_note != row.applied_costing_note:
+                continue
+            linked[row.name] = boq.name
+            break
+    return linked
+
+
+def sync_tender_boq_links(tender_analysis):
+    tender = frappe.get_doc("Tender Analysis", tender_analysis)
+    linked = submitted_boq_links(tender)
+    for row in tender.clauses:
+        frappe.db.set_value("Tender Analysis Clause", row.name, "submitted_boq",
+            linked.get(row.name), update_modified=False)
+
+
+@frappe.whitelist()
+def get_submitted_boq_links(tender_analysis):
+    tender = frappe.get_doc("Tender Analysis", tender_analysis)
+    tender.check_permission("read")
+    return submitted_boq_links(tender, permitted=True)
 
 
 def apply_note(note, cancel=False):
@@ -84,7 +157,7 @@ def create_clause_boq(costing_note, row_name):
     boq = frappe.new_doc("BOQ")
     boq.check_permission("create")
     boq.update(dict(naming_series="BOQ-.YYYY.-", tender_analysis=note.tender_analysis,
-        contractual_clause=row.contractual_clause, unit=row.uom, project_qty=row.qty,
+        contractual_clause=row.contractual_clause, clause_title=row.clause_title, unit=row.uom, project_qty=row.qty,
         party_type=note.party_type, party_name=note.party_name, start_date=today(),
         costing_note=note.name, line_id=row.name))
     return {"doc": boq}

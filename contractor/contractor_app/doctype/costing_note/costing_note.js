@@ -4,6 +4,16 @@
 frappe.ui.form.on('Costing Note', {
     refresh(frm) {
         const tender = !!frm.doc.tender_analysis;
+        if (tender && !frm.is_new()) {
+            frappe.call({method: 'contractor.tender_pricing.get_created_boq_links',
+                args: {costing_note: frm.doc.name},
+                callback(r) {
+                    for (const row of frm.doc.costing_note_items || []) {
+                        row.boq_reference = (r.message || {})[row.name] || null;
+                    }
+                    frm.refresh_field('costing_note_items');
+                }});
+        }
         for (const field of ['item', 'item_group', 'group_item', 'parent_group']) {
             frm.fields_dict.costing_note_items.grid.update_docfield_property(field, 'hidden', tender);
         }
