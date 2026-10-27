@@ -16,6 +16,8 @@
   "expected_time_period",
   "column_break_puvaq",
   "item",
+  "contractual_clause",
+  "tender_analysis",
   "project_qty",
   "project",
   "boq_template",
@@ -42,9 +44,7 @@
   "section_break_ykrqk",
   "expenses_table",
   "total_expenses",
-  "amended_from",
-  "contractual_clause",
-  "tender_analysis"
+  "amended_from"
  ],
  "fields": [
   {
@@ -261,7 +261,7 @@
   {
    "fieldname": "contractual_clause",
    "fieldtype": "Link",
-   "label": "Contractual Clause",
+   "label": "Contractual Clauses",
    "options": "Contractual Clause",
    "read_only": 1
   },
