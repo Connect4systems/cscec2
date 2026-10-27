@@ -9,11 +9,9 @@
  "field_order": [
   "is_group",
   "series_number",
-  "group_item",
   "parent_group",
-  "item",
-  "item_description",
   "item_group",
+  "clause_title",
   "uom",
   "qty",
   "cost",
@@ -22,7 +20,6 @@
   "target_selling_price",
   "boq",
   "contractual_clause",
-  "clause_title",
   "source_row",
   "parent_series",
   "previous_rate",
@@ -48,45 +45,20 @@
   },
   {
    "columns": 1,
+   "depends_on": "eval:!parent.tender_analysis",
    "fieldname": "item_group",
    "fieldtype": "Link",
    "label": "Item Group",
-   "options": "Item Group",
-   "reqd": 0,
    "mandatory_depends_on": "eval:!parent.tender_analysis",
-   "depends_on": "eval:!parent.tender_analysis"
+   "options": "Item Group"
   },
   {
-   "fieldname": "group_item",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Group Item",
-   "columns": 1,
-   "depends_on": "eval:!parent.tender_analysis"
-  },
-  {
+   "depends_on": "eval:!parent.tender_analysis",
    "fieldname": "parent_group",
    "fieldtype": "Link",
-   "read_only": 1,
    "label": "Parent Group",
    "options": "Item",
-   "depends_on": "eval:!parent.tender_analysis"
-  },
-  {
-   "columns": 1,
-   "fieldname": "item",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Item",
-   "options": "Item",
-   "depends_on": "eval:!parent.tender_analysis"
-  },
-  {
-   "columns": 1,
-   "fieldname": "item_description",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Item Description"
+   "read_only": 1
   },
   {
    "fieldname": "uom",
@@ -139,63 +111,66 @@
   {
    "fieldname": "contractual_clause",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Contractual Clause",
    "options": "Contractual Clause",
-   "read_only": 1,
-   "in_list_view": 1
+   "read_only": 1
   },
   {
    "fieldname": "clause_title",
    "fieldtype": "Small Text",
+   "in_list_view": 1,
    "label": "Clause Title",
-   "read_only": 1
+   "read_only": 1,
+   "translatable": 1
   },
   {
    "fieldname": "source_row",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Source Row",
-   "read_only": 1,
-   "hidden": 1
+   "read_only": 1
   },
   {
    "fieldname": "parent_series",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Parent Series",
-   "read_only": 1,
-   "hidden": 1
+   "read_only": 1
   },
   {
    "fieldname": "previous_rate",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Previous Rate",
-   "read_only": 1,
-   "hidden": 1
+   "read_only": 1
   },
   {
    "fieldname": "previous_costing_note",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Previous Costing Note",
    "options": "Costing Note",
-   "read_only": 1,
-   "hidden": 1
+   "read_only": 1
   },
   {
    "fieldname": "applied_rate",
    "fieldtype": "Currency",
+   "hidden": 1,
    "label": "Applied Rate",
-   "read_only": 1,
-   "hidden": 1
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-05 04:33:34.568787",
+ "modified": "2026-10-27 14:28:59.664605",
  "modified_by": "Administrator",
  "module": "Contractor App",
  "name": "Costing Note Items",
  "owner": "Administrator",
  "permissions": [],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
