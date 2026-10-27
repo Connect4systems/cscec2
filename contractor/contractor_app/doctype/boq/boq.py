@@ -6,6 +6,8 @@ from frappe.model.document import Document
 
 class BOQ(Document):
 	def validate(self):
+		from contractor.project_names import fill_project_name
+		fill_project_name(self)
 		if self.get("contractual_clause"):
 			self.clause_title = frappe.db.get_value("Contractual Clause", self.contractual_clause, "title")
 		tables = ["material_costs", "labor_costs", "contractors_table", "expenses_table", "custom_equipment"]

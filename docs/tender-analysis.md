@@ -217,3 +217,42 @@ The migration preserves existing Project relationships on legacy Costing Notes i
 a separate hidden **Source Project** link and converts old link IDs in visible
 Project fields to their display names. Operational Project records and historical
 contract clauses are preserved.
+
+### Repairing missing Project fields or names
+
+The repair migration force-reloads the relevant DocTypes even if site-edited
+metadata has newer timestamps. It clears conflicting Project field Property Setters,
+retains customized field ordering, inserts missing Project fields into that order,
+and updates metadata cache versions. Blank existing document values are filled
+from their source without overwriting manual names or repricing submitted documents.
+
+Opening or saving an existing Costing Note, BOQ, Offer, or Contract with a blank
+Project also fetches the source name. Save the fetched value when prompted. For an
+older submitted contract without a generated Project, use **Create > Project**;
+this resolves the source name if necessary and stores both the name and Project
+reference. Existing contracts are not bulk-submitted again or bulk-created during
+migration. New contract submissions create the Project in the same transaction,
+or return a permission/validation error.
+
+## Connection dashboards
+
+Costing Note Connections includes Tender Analysis under Sources and BOQ under
+Pricing. Its explicit `costing_note` dashboard key enables native badge counts and
+filters the BOQ list by the actual BOQ parent reference, including documents whose
+row link was previously missing.
+
+Project Offer Connections shows Tender Analysis and the distinct Costing Notes
+referenced by its clauses, plus downstream Project Contracts. Project Contract
+Connections shows Tender Analysis, its source Project Offer, distinct Costing Notes,
+and the generated Project. Upstream references use native internal links, so their
+badges open the referenced records rather than filtering on unrelated field names.
+
+The connection repair migration refreshes affected metadata and repairs BOQ parent
+and row links only where the stored source row or clause gives an unambiguous
+match. It rebuilds row navigation references without saving or repricing documents.
+After deployment, migrate, build assets, clear the site cache, restart, and refresh
+the browser. The native connection check can be run on a test site with:
+
+```bash
+bench --site test-site-name run-tests --module contractor.contractor_app.doctype.costing_note.test_connections_native
+```

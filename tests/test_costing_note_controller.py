@@ -20,11 +20,13 @@ class CostingNoteControllerTest(unittest.TestCase):
         pricing = types.ModuleType('contractor.tender_pricing')
         pricing.validate_note = MagicMock()
         pricing.apply_note = MagicMock()
+        names = types.ModuleType('contractor.project_names')
+        names.fill_project_name = MagicMock()
         spec = importlib.util.spec_from_file_location('costing_controller_under_test',
             Path(__file__).parents[1] / 'contractor/contractor_app/doctype/costing_note/costing_note.py')
         controller = importlib.util.module_from_spec(spec)
         with patch.dict(sys.modules, {'frappe': frappe, 'frappe.model.document': document,
-                                     'contractor.tender_pricing': pricing}):
+                                     'contractor.tender_pricing': pricing, 'contractor.project_names': names}):
             spec.loader.exec_module(controller)
             note = controller.CostingNote()
             note.tender_analysis = 'TA-1'

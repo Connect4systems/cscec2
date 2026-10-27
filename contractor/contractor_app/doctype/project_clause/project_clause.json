@@ -161,5 +161,6 @@
  "editable_grid": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "permissions": []
+ "permissions": [],
+ "modified": "2026-10-27 18:54:02.880778"
 }

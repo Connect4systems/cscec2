@@ -1,8 +1,10 @@
+{% include 'contractor/public/js/doctype/project_name.js' %}
 frappe.provide("contractor");
 if (!contractor.project_commercial_loaded) {
     contractor.project_commercial_loaded = true;
 const commercial_handlers = {
     refresh(frm) {
+        contractor.fetch_project_name(frm);
         frm.fields_dict.clauses.grid.cannot_add_rows = true;
         frm.fields_dict.clauses.grid.cannot_delete_rows = true;
         if (frm.doctype === 'Project Contract' && frm.doc.docstatus === 1) {

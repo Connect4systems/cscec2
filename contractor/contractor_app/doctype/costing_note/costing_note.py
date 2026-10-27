@@ -11,6 +11,8 @@ class CostingNote(Document):
 			self.ignore_linked_doctypes = ["BOQ"]
 
 	def validate(self):
+		from contractor.project_names import fill_project_name
+		fill_project_name(self)
 		if self.get("sales_order"):
 			if self.is_new():
 				frappe.throw("Create a Project Contract from Tender Analysis instead")

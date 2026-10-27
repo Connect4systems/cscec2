@@ -2,6 +2,7 @@
 import frappe
 
 from contractor.document_mapping import copy_child_values
+from contractor.project_names import fill_project_name
 
 
 @frappe.whitelist()
@@ -11,13 +12,17 @@ def create_project(project_contract):
     contract.check_permission("read")
     if contract.docstatus != 1:
         frappe.throw("Submit the Project Contract before creating a Project")
+    fill_project_name(contract)
     existing = contract.get("created_project") or frappe.db.get_value("Project", {"project_contract": contract.name}, "name")
     if existing:
         project = frappe.get_doc("Project", existing)
         project.check_permission("read")
         if project.get("project_contract") != contract.name:
             frappe.throw("The created Project does not belong to this Project Contract")
-        frappe.db.set_value("Project Contract", contract.name, "created_project", project.name, update_modified=False)
+        values = {"created_project": project.name}
+        if contract.get("project"):
+            values["project"] = contract.project
+        frappe.db.set_value("Project Contract", contract.name, values, update_modified=False)
         return {"project": project.name}
     project_name = str(contract.get("project") or "").strip()
     if not project_name:
@@ -36,5 +41,6 @@ def create_project(project_contract):
     for row in contract.clauses:
         project.append("project_clauses", copy_child_values(row))
     project.insert()
-    frappe.db.set_value("Project Contract", contract.name, "created_project", project.name, update_modified=False)
+    frappe.db.set_value("Project Contract", contract.name,
+        {"created_project": project.name, "project": project_name}, update_modified=False)
     return {"project": project.name}

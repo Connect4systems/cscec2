@@ -1,8 +1,10 @@
+{% include 'contractor/public/js/doctype/project_name.js' %}
 // Copyright (c) 2024, Jenan Alfahham and contributors
 // For license information, please see license.txt
 
 frappe.ui.form.on('Costing Note', {
     refresh(frm) {
+        contractor.fetch_project_name(frm);
         const tender = !!frm.doc.tender_analysis;
         if (tender && !frm.is_new()) {
             frappe.call({method: 'contractor.tender_pricing.get_created_boq_links',

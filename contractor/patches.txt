@@ -8,4 +8,6 @@ contractor.patches.retire_sales_order_contracting
 contractor.patches.standard_project_contract_taxes
 contractor.patches.initialize_tender_deductions
 contractor.patches.retire_quotation_contracting
+contractor.patches.repair_project_name_flow
 contractor.patches.project_name_data_fields
+contractor.patches.repair_document_connections

@@ -49,15 +49,20 @@ class ContractProjectCreationTest(unittest.TestCase):
         fake.get_doc = MagicMock(side_effect=lambda doctype, name:
             self.contract if doctype == 'Project Contract' else self.project)
         fake.new_doc = MagicMock(return_value=self.project)
-        def set_value(doctype, name, field, value, **kwargs):
+        def set_value(doctype, name, field, value=None, **kwargs):
             if doctype == 'Project Contract':
-                setattr(self.contract, field, value)
+                if isinstance(field, dict):
+                    self.contract.update(field)
+                else:
+                    setattr(self.contract, field, value)
         fake.db.set_value.side_effect = set_value
         self.fake = fake
         spec = importlib.util.spec_from_file_location('contract_projects_under_test',
             Path(__file__).parents[1] / 'contractor/contract_projects.py')
         self.service = importlib.util.module_from_spec(spec)
-        with patch.dict(sys.modules, {'frappe': fake}):
+        names = types.ModuleType('contractor.project_names')
+        names.fill_project_name = MagicMock()
+        with patch.dict(sys.modules, {'frappe': fake, 'contractor.project_names': names}):
             spec.loader.exec_module(self.service)
 
     def test_submission_project_name_and_full_clause_snapshot(self):

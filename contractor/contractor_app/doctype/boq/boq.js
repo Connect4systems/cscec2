@@ -1,8 +1,10 @@
+{% include 'contractor/public/js/doctype/project_name.js' %}
 // Copyright (c) 2024, Jenan Alfahham and contributors
 // For license information, please see license.txt
 
 frappe.ui.form.on('BOQ', {
     refresh(frm) {
+        contractor.fetch_project_name(frm);
         frm.toggle_display('item', !frm.doc.tender_analysis);
         frm.toggle_display('contractual_clause', !!frm.doc.tender_analysis);
         frm.set_df_property('project_qty', 'read_only', !!frm.doc.tender_analysis);

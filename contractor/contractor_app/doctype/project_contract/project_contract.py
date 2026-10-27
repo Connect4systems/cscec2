@@ -9,6 +9,8 @@ from contractor.tender_logic import number_rows
 
 class ProjectContract(Document):
     def validate(self):
+        from contractor.project_names import fill_project_name
+        fill_project_name(self)
         if self.doctype == "Project Contract" and self.docstatus == 1 and not str(self.get("project") or "").strip():
             frappe.throw("Enter Project before submitting the Project Contract")
         # A tender has at most one active document of each commercial type.
