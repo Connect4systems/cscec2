@@ -16,6 +16,18 @@ class ClearanceMigrationTest(unittest.TestCase):
     def module(self, existing):
         fake = types.ModuleType('frappe')
         fake.db = MagicMock()
+        # Match Frappe's transaction guard, rather than accepting arbitrary SQL.
+        fake.db.transaction_writes = 1
+        def sql(query):
+            if query.lstrip().lower().startswith('alter') and fake.db.transaction_writes:
+                raise RuntimeError('This statement can cause implicit commit')
+            if query.lstrip().lower().startswith('update'):
+                fake.db.transaction_writes += 1
+        def sql_ddl(query):
+            fake.db.transaction_writes = 0  # sql_ddl commits before issuing DDL.
+            fake.db.sql(query)
+        fake.db.sql.side_effect = sql
+        fake.db.sql_ddl.side_effect = sql_ddl
         fake.db.exists.side_effect = lambda doctype, name: name in existing
         fake.db.has_column.return_value = False
         fake.throw = lambda text: (_ for _ in ()).throw(ValueError(text))
@@ -35,11 +47,22 @@ class ClearanceMigrationTest(unittest.TestCase):
         self.assertTrue(all(call.kwargs['force'] for call in fake.rename_doc.call_args_list))
         self.assertTrue(any('legacy_record=1' in call.args[0] for call in fake.db.sql.call_args_list))
 
+    def test_schema_changes_use_explicit_ddl_boundary_with_pending_writes(self):
+        module, fake = self.module({'Clearence', 'Purchase Clearence'})
+        # Include pending writes after the first rename, before the second DDL.
+        fake.rename_doc.side_effect = lambda *args, **kwargs: setattr(fake.db, 'transaction_writes', 5)
+        module.execute()
+        self.assertEqual(fake.db.sql_ddl.call_count, 2)
+        self.assertEqual(fake.db.sql_ddl.call_args_list[0].args,
+            ('alter table `tabClearence` add column `legacy_record` int not null default 0',))
+        self.assertEqual(fake.rename_doc.call_count, 2)
+
     def test_retry_after_unsupported_keyword_reuses_existing_legacy_column(self):
         module, fake = self.module({'Clearence', 'Purchase Clearence'})
         fake.db.has_column.return_value = True
         module.execute()
         self.assertEqual(fake.rename_doc.call_count, 2)
+        fake.db.sql_ddl.assert_not_called()
         self.assertFalse(any('alter table' in call.args[0] for call in fake.db.sql.call_args_list))
 
     def test_retry_after_first_rename_only_processes_remaining_parent(self):
@@ -54,6 +77,7 @@ class ClearanceMigrationTest(unittest.TestCase):
             module.execute()
         fake.rename_doc.assert_not_called()
         fake.db.sql.assert_not_called()
+        fake.db.sql_ddl.assert_not_called()
 
     def test_purchasing_hooks_and_project_price_fields_are_retired(self):
         root = Path(__file__).parents[1]

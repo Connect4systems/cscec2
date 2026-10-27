@@ -12,7 +12,9 @@ def execute():
         if not frappe.db.exists("DocType", old):
             continue
         if not frappe.db.has_column(old, "legacy_record"):
-            frappe.db.sql(f"alter table `tab{old}` add column `legacy_record` int not null default 0")
+            # DDL must use Frappe's explicit commit boundary. migrate (or the
+            # preceding rename) may already have pending metadata writes.
+            frappe.db.sql_ddl(f"alter table `tab{old}` add column `legacy_record` int not null default 0")
         frappe.db.sql(f"update `tab{old}` set legacy_record=1")
         # migrate runs as Administrator. Frappe v15's public rename_doc wrapper
         # does not accept the model-level ignore_permissions argument.
