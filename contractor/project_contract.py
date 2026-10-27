@@ -55,4 +55,10 @@ def create_project_contract(tender_analysis):
             contractual_clause=row.contractual_clause, qty=row.qty, uom=row.uom,
             rate=row.rate, amount=row.amount, costing_note=row.applied_costing_note,
             submitted_boq=boqs.get(row.name), delivery_date=doc.delivery_date))
+    template = frappe.db.get_value("Sales Taxes and Charges Template",
+        {"company": tender.company, "is_default": 1, "disabled": 0}, "name")
+    if template:
+        from contractor.project_contract_taxes import get_sales_tax_template
+        doc.taxes_and_charges = template
+        doc.set("taxes", get_sales_tax_template(template, tender.company))
     return {"doc": doc}

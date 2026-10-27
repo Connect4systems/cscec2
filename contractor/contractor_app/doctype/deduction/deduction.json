@@ -6,11 +6,21 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "title",
   "account",
   "percent",
   "value"
  ],
  "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "in_list_view": 1,
+   "columns": 3,
+   "fetch_from": "account.account_name",
+   "fetch_if_empty": 1
+  },
   {
    "fieldname": "account",
    "fieldtype": "Link",

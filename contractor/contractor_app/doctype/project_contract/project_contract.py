@@ -3,7 +3,7 @@ from frappe.model.document import Document
 from frappe.utils import getdate, flt
 
 from contractor.project_contract import require_ready
-from contractor.project_contract_rules import contract_totals
+from contractor.project_contract_taxes import calculate_contract_taxes, get_sales_tax_template, validate_template
 from contractor.tender_logic import number_rows
 
 
@@ -50,15 +50,16 @@ class ProjectContract(Document):
             account = row.get("account_head") or row.get("account")
             if account and frappe.get_cached_value("Account", account, "company") != self.company:
                 frappe.throw("Tax and deduction accounts must belong to the contract company")
-        for name in ("advance_payment_discount", "business_guarantee_insurance_deduction_rate"):
-            if not 0 <= flt(self.get(name)) <= 100:
-                frappe.throw("Contracting percentages must be between zero and 100")
+        if self.get("taxes_and_charges"):
+            validate_template(self.taxes_and_charges, self.company)
+            old = self.get_doc_before_save()
+            if (self.is_new() or not old or old.get("taxes_and_charges") != self.taxes_and_charges) and not self.taxes:
+                self.set("taxes", get_sales_tax_template(self.taxes_and_charges, self.company))
         try:
             number_rows(self.clauses, "From Excel")
-            self.update(contract_totals(self.clauses, self.taxes, self.deductions,
-                self.discount_amount, self.conversion_rate))
         except ValueError as exc:
             frappe.throw(str(exc))
+        calculate_contract_taxes(self)
         self.contractor_order = 1
         self.tender_number = tender.tender_number
         self.status = "Submitted" if self.docstatus == 1 else "Draft"

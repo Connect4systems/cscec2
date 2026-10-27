@@ -91,9 +91,27 @@ conditions. For a foreign-currency contract enter its conversion rate. Clause
 quantities and rates can be adjusted for the commercial agreement; source clause
 identities and series remain tied to the tender. Group rows are summaries.
 
-Project Contract totals calculate clause amounts, a fixed discount, taxes entered
-as Actual or On Net Total, deduction percentages, base-currency amounts, and net
-payable. It is a standalone commercial contract: stock fulfillment and invoicing
+Select **Sales Taxes and Charges Template** in Taxes and Totals. The company default
+template is loaded when creating a contract. Templates are filtered by company and
+disabled status. The standard ERPNext **Sales Taxes and Charges** table supports
+Actual, On Net Total, On Previous Row Amount, On Previous Row Total, On Item Quantity,
+and included-in-rate taxes. The installed ERPNext Sales Order tax engine calculates
+these values in an unsaved context, with only detail clauses as calculation rows;
+no stock Items or Sales Orders are created. Totals recalculate in draft forms and
+are calculated again by the server on save/submit. Standard discount basis,
+percentage/amount discounts, currency precision, and rounded totals are supported.
+
+Contracting uses the Selling Deductions Template and shared Deductions table,
+including an editable **Title** on each deduction row. Titles are copied from the
+template; account name is a default when the title is empty. Deductions apply to
+the calculated grand total and determine net payable. The Advance Payment Discount
+and Business Guarantee Insurance Deduction Rate fields and their Project Contract
+validation have been removed. Company no longer displays this app's contractor
+account settings, and this app no longer exports Company fields owned by HRMS or
+other apps. Stored historical Company settings and contract percentage values are
+preserved; HR/payroll and loan fields remain under their owning apps.
+
+It is a standalone commercial contract: stock fulfillment and invoicing
 continue through standard ERPNext documents. It does not post accounting entries.
 
 Sales Order now uses its standard ERPNext client controller and item table. The
@@ -106,3 +124,11 @@ Before production use, verify the contract action is absent with a draft Costing
 Note, visible after submission, copies the correct prices, blocks duplicate active
 contracts, and supports save/submit/cancel/amend. Also create a standard Sales Order
 after migration and check its Item selector, quantities, rates, and standard actions.
+
+The tax migration copies legacy Project Contract Tax rows to Sales Taxes and Charges
+without recalculating historical or submitted totals. Run the native engine checks
+on a test site after migration:
+
+```bash
+bench --site test-site-name run-tests --doctype "Project Contract"
+```

@@ -1,6 +1,6 @@
 import unittest
 
-from contractor.project_contract_rules import require_submitted_costing, contract_totals
+from contractor.project_contract_rules import require_submitted_costing, apply_deductions
 
 
 class Row:
@@ -37,25 +37,17 @@ class ProjectContractRulesTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'detail clause'):
             require_submitted_costing([Row(is_group=1)], [dict(name='CN-1', docstatus=1)])
 
-    def test_totals_tax_discount_deductions_and_base_currency(self):
-        rows = self.details()
-        tax = Row(charge_type='On Net Total', rate=10)
-        actual = Row(charge_type='Actual', tax_amount=5)
+    def test_deductions_use_native_grand_total_and_base_currency(self):
         deduction = Row(percent=5)
-        totals = contract_totals(rows, [tax, actual], [deduction], discount=10, conversion_rate=2)
-        self.assertEqual(totals['total'], 130)
-        self.assertEqual(totals['net_total'], 120)
-        self.assertEqual(totals['grand_total'], 137)
-        self.assertEqual(totals['base_grand_total'], 274)
+        totals = apply_deductions([deduction], grand_total=137, conversion_rate=2)
+        self.assertAlmostEqual(totals['total_deductions'], 6.85)
+        self.assertAlmostEqual(totals['base_total_deductions'], 13.70)
         self.assertAlmostEqual(totals['net_payable'], 130.15)
-        self.assertEqual(rows[0].get('amount'), 130)
-        self.assertEqual(contract_totals(rows, [tax, actual], [deduction], 10, 2), totals)
+        self.assertEqual(apply_deductions([deduction], 137, 2), totals)
 
-    def test_invalid_quantity_discount_or_conversion_rejected(self):
-        rows = self.details()
-        for discount, conversion in [(131, 1), (0, 0), (0, float('nan'))]:
+    def test_invalid_deduction_or_conversion_rejected(self):
+        for percent, conversion in [(101, 1), (-1, 1), (0, 0), (0, float('nan'))]:
             with self.assertRaises(ValueError):
-                contract_totals(rows, [], [], discount, conversion)
-        rows[1].set('qty', 0)
-        with self.assertRaisesRegex(ValueError, 'quantity'):
-            contract_totals(rows, [], [])
+                apply_deductions([Row(percent=percent)], 100, conversion)
+        with self.assertRaisesRegex(ValueError, 'Total deductions'):
+            apply_deductions([Row(percent=60), Row(percent=60)], 100)

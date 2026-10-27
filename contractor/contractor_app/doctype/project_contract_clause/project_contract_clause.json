@@ -96,6 +96,41 @@
    "fieldname": "delivery_date",
    "fieldtype": "Date",
    "label": "Delivery Date"
+  },
+  {
+   "fieldname": "net_rate",
+   "fieldtype": "Currency",
+   "label": "Net Rate",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Base Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "base_net_rate",
+   "fieldtype": "Currency",
+   "label": "Base Net Rate",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "base_net_amount",
+   "fieldtype": "Currency",
+   "label": "Base Net Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
   }
  ],
  "field_order": [
@@ -111,7 +146,12 @@
   "source_row",
   "costing_note",
   "submitted_boq",
-  "delivery_date"
+  "delivery_date",
+  "net_rate",
+  "net_amount",
+  "base_amount",
+  "base_net_rate",
+  "base_net_amount"
  ],
  "istable": 1,
  "editable_grid": 1,
