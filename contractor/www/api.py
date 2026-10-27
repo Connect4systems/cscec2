@@ -6,6 +6,8 @@ from contractor.contractor_app.doctype.boq.boq import set_boq_template
 
 # Custom Validation for Opportunity, Quotation, Sales Order & Project
 def validate(doc, method=None):
+    if doc.doctype == "Opportunity":
+        return
     if doc.doctype in ["Purchase Order", "Purchase Invoice", "Sales Invoice"]:
          calculate_project_discount_rates(doc)
     else:
@@ -156,10 +158,10 @@ def make_project(source_name, target_doc=None):
 def create_costing_note(source_name, target_doc=None):
     doctype = frappe.flags.args.doctype
 
-    if doctype == "Opportunity":
-        field_map = {"name": "opportunity", "opportunity_from": "party_type"}
+    if doctype not in ("Project", "Sales Order", "Purchase Order"):
+        frappe.throw("Create tender pricing from Tender Analysis")
 
-    elif doctype == "Project":
+    if doctype == "Project":
         field_map = {"name": "project", "customer": "party_name"}
 
     elif doctype == "Sales Order":

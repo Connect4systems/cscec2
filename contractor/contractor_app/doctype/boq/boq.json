@@ -42,7 +42,9 @@
   "section_break_ykrqk",
   "expenses_table",
   "total_expenses",
-  "amended_from"
+  "amended_from",
+  "contractual_clause",
+  "tender_analysis"
  ],
  "fields": [
   {
@@ -255,6 +257,20 @@
    "fieldname": "expenses_tab",
    "fieldtype": "Tab Break",
    "label": "Expenses"
+  },
+  {
+   "fieldname": "contractual_clause",
+   "fieldtype": "Link",
+   "label": "Contractual Clause",
+   "options": "Contractual Clause",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tender_analysis",
+   "fieldtype": "Link",
+   "label": "Tender Analysis",
+   "options": "Tender Analysis",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,

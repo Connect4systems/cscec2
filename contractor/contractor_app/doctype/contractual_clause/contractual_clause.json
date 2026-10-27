@@ -1,0 +1,65 @@
+{
+ "doctype": "DocType",
+ "name": "Contractual Clause",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "tender_analysis",
+  "is_group",
+  "source_row"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Small Text",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "tender_analysis",
+   "fieldtype": "Link",
+   "label": "Tender Analysis",
+   "options": "Tender Analysis",
+   "reqd": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_row",
+   "fieldtype": "Data",
+   "label": "Source Row",
+   "read_only": 1,
+   "hidden": 1,
+   "unique": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1
+  }
+ ],
+ "istable": 0,
+ "editable_grid": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "autoname": "format:CC-{#####}",
+ "title_field": "title",
+ "search_fields": "title,tender_analysis"
+}

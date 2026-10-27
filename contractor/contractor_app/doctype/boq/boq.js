@@ -2,6 +2,11 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('BOQ', {
+    refresh(frm) {
+        frm.toggle_display('item', !frm.doc.tender_analysis);
+        frm.toggle_display('contractual_clause', !!frm.doc.tender_analysis);
+        frm.set_df_property('project_qty', 'read_only', !!frm.doc.tender_analysis);
+    },
 	setup: function(frm){
 		frm.set_query("party_type", function() {
 			return{
@@ -13,7 +18,7 @@ frappe.ui.form.on('BOQ', {
 		frm.set_query("boq_template", function() {
 			return{
 				"filters": {
-					"item_code": frm.doc.item,
+					...(frm.doc.tender_analysis ? {} : {item_code: frm.doc.item}),
 				}
 			}
 		});
@@ -22,7 +27,7 @@ frappe.ui.form.on('BOQ', {
 		frm.trigger('setup_queries');
 	},
 	boq_template: function(frm){
-		if (frm.doc.item && frm.doc.boq_template){
+		if ((frm.doc.item || frm.doc.contractual_clause) && frm.doc.boq_template){
 			frappe.call({
 				"method": "contractor.contractor_app.doctype.boq.boq.set_boq_template",
 				"args": {
@@ -83,7 +88,7 @@ frappe.ui.form.on('BOQ', {
 			frm.set_query('party_name', function() {
 				return {
 					filters: {
-						"company": me.frm.doc.company
+						"company": frm.doc.company
 					}
 				};
 			});

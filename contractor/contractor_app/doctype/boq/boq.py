@@ -32,6 +32,10 @@ class BOQ(Document):
 		self.total_cost = self.get("total_material_costs", 0) + self.get("total_labor_costs", 0) + self.get("total_contractors", 0) + self.get("total_expenses", 0) + self.get("custom_total_equipment_costs", 0)
 
 	def on_submit(self):
+		if self.tender_analysis:
+			from contractor.tender_pricing import update_from_boq
+			return update_from_boq(self)
+
 		if not self.costing_note or not self.line_id:
 			frappe.throw("The BOQ has no Costing Note as a Reference")
 
@@ -46,6 +50,10 @@ class BOQ(Document):
 		doc.save(ignore_permissions = True)
 
 	def on_cancel(self):
+		if self.tender_analysis:
+			from contractor.tender_pricing import update_from_boq
+			return update_from_boq(self, cancel=True)
+
 		doc = frappe.get_doc("Costing Note", self.costing_note)
 		for row in doc.costing_note_items:
 			if row.name == self.line_id:

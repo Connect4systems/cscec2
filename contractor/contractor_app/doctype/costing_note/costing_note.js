@@ -2,6 +2,22 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Costing Note', {
+    refresh(frm) {
+        const tender = !!frm.doc.tender_analysis;
+        for (const field of ['item', 'item_group', 'group_item', 'parent_group']) {
+            frm.fields_dict.costing_note_items.grid.update_docfield_property(field, 'hidden', tender);
+        }
+        for (const field of ['contractual_clause', 'clause_title']) {
+            frm.fields_dict.costing_note_items.grid.update_docfield_property(field, 'hidden', !tender);
+        }
+        if (tender) {
+            for (const field of ['is_group', 'qty', 'uom', 'series_number']) {
+                frm.fields_dict.costing_note_items.grid.update_docfield_property(field, 'read_only', 1);
+            }
+            frm.fields_dict.costing_note_items.grid.cannot_add_rows = true;
+            frm.fields_dict.costing_note_items.grid.cannot_delete_rows = true;
+        }
+    },
 	setup: function(frm){
 		frm.set_query("party_type", function() {
 			return{
@@ -48,7 +64,7 @@ frappe.ui.form.on('Costing Note', {
 			frm.set_query('party_name', function() {
 				return {
 					filters: {
-						"company": me.frm.doc.company
+						"company": frm.doc.company
 					}
 				};
 			});
@@ -100,8 +116,22 @@ frappe.ui.form.on('Costing Note', {
 
 frappe.ui.form.on('Costing Note Items', {
 	boq: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.open_mapped_doc({
+        let row = locals[cdt][cdn];
+        if (frm.doc.tender_analysis) {
+            if (frm.is_dirty() || frm.is_new()) return frappe.msgprint(__('Save the Costing Note first'));
+            if (row.is_group) return frappe.msgprint(__('Group headings cannot be priced'));
+            frappe.call({method: 'contractor.tender_pricing.create_clause_boq',
+                args: {costing_note: frm.doc.name, row_name: row.name},
+                callback(r) {
+                    if (r.message.existing) frappe.set_route('Form', 'BOQ', r.message.existing);
+                    else {
+                        const docs = frappe.model.sync(r.message.doc);
+                        frappe.set_route('Form', 'BOQ', docs[0].name);
+                    }
+                }});
+            return;
+        }
+        frappe.model.open_mapped_doc({
 			method: "contractor.www.api.create_boq",
 			frm: frm,
 			args: {
@@ -124,6 +154,7 @@ frappe.ui.form.on('Costing Note Items', {
 		frappe.model.set_value(cdt, cdn, "target_selling_price", total);
 	},
 	is_group: function(frm ,cdt, cdn){
+        if (frm.doc.tender_analysis) return;
         let row = locals[cdt][cdn];
         if (row.is_group && row.item){
 			row.group_item = row.group_item;
@@ -137,6 +168,7 @@ frappe.ui.form.on('Costing Note Items', {
         frm.events.set_series_number(frm, row)
     },
     item: function(frm, cdt, cdn){
+        if (frm.doc.tender_analysis) return;
         let row = locals[cdt][cdn];
         if (row.is_group){
 			row.group_item = row.group_item;
@@ -166,7 +198,7 @@ frappe.ui.form.on('Costing Note Items', {
     },
 	qty: function(frm, cdt, cdn){
         let row = locals[cdt][cdn];
-        if (row.rate){
+        if (row.cost || frm.doc.tender_analysis){
             frappe.model.set_value(cdt, cdn, "total_cost", row.cost * row.qty);
         }
     },

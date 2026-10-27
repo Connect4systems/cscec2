@@ -54,7 +54,6 @@ fixtures = [
 
 # include js in doctype views
 doctype_js = {
-    "Opportunity": "public/js/doctype/opportunity.js",
     "Sales Order": "public/js/doctype/sales_order.js",
     "Quotation": "public/js/doctype/quotation.js",
     "Project": "public/js/doctype/project.js",
@@ -155,9 +154,6 @@ override_doctype_class = {
 # Hook on document methods and events
 
 doc_events = {
-	"Opportunity": {
-		"validate": "contractor.www.api.validate",
-	},
 	"Quotation": {
 		"validate": "contractor.www.api.validate",
 	},
