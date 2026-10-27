@@ -28,6 +28,7 @@ class ProjectContractCreationTest(unittest.TestCase):
         self.fake.get_cached_value = MagicMock(return_value='EGP')
         self.fake.new_doc = MagicMock(side_effect=lambda name: Doc(doctype=name))
         self.tender = Doc(name='TA-1', title='Contract', company='Company', currency='EGP',
+            project='Hospital project',
             tender_number='123', party_type='Customer', party_name='Customer', clauses=[
                 Doc(name='source-1', is_group=1, series_number='1', clause_title='Civil', contractual_clause='CC-1'),
                 Doc(name='source-2', is_group=0, series_number='1_1', clause_title='Concrete', contractual_clause='CC-2',
@@ -55,6 +56,7 @@ class ProjectContractCreationTest(unittest.TestCase):
             doc = self.service.create_project_contract('TA-1')['doc']
         self.assertEqual(doc.contractor_order, 1)
         self.assertEqual(doc.customer, 'Customer')
+        self.assertEqual(doc.project, 'Hospital project')
         self.assertEqual(doc.conversion_rate, 1)
         self.assertEqual(doc.clauses[1].source_row, 'source-2')
         self.assertEqual(doc.clauses[1].rate, 50)
@@ -73,6 +75,7 @@ class ProjectContractCreationTest(unittest.TestCase):
         with patch.dict(sys.modules, self.modules):
             doc = self.service.create_commercial_document('TA-1', 'Project Offer')['doc']
         self.assertEqual(doc.doctype, 'Project Offer')
+        self.assertEqual(doc.project, 'Hospital project')
         self.assertEqual(doc.clauses[1].source_row, 'source-2')
         self.assertEqual(doc.clauses[1].rate, 50)
         self.assertEqual(doc.clauses[1].costing_note, 'CN-1')

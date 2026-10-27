@@ -9,6 +9,7 @@
   "company",
   "title",
   "tender_number",
+  "project",
   "column_break_bein",
   "date",
   "party_type",
@@ -143,6 +144,11 @@
    "options": "currency",
    "label": "Net Payable",
    "read_only": 1
+  },
+  {
+   "fieldname": "project",
+   "label": "Project",
+   "fieldtype": "Data"
   }
  ],
  "links": [

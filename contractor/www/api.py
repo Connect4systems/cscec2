@@ -4,9 +4,9 @@ from frappe.model.mapper import get_mapped_doc
 
 from contractor.contractor_app.doctype.boq.boq import set_boq_template
 
-# Custom Validation for Opportunity, Quotation, Sales Order & Project
+# Validation for the remaining contracting documents
 def validate(doc, method=None):
-    if doc.doctype in ("Opportunity", "Sales Order"):
+    if doc.doctype in ("Opportunity", "Quotation", "Sales Order"):
         return
     if doc.doctype in ["Purchase Order", "Purchase Invoice", "Sales Invoice"]:
          calculate_project_discount_rates(doc)
@@ -162,7 +162,7 @@ def create_costing_note(source_name, target_doc=None):
         frappe.throw("Create tender pricing from Tender Analysis")
 
     if doctype == "Project":
-        field_map = {"name": "project", "customer": "party_name"}
+        field_map = {"name": "source_project", "project_name": "project", "customer": "party_name"}
 
     elif doctype == "Sales Order":
         field_map = {"name": "sales_order", "customer": "party_name"}

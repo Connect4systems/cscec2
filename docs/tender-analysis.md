@@ -177,3 +177,43 @@ Normal submit/cancel/amend rules apply to submitted offers and contracts.
 
 The migration initializes Net Payable for existing tenders without deduction rows
 without resaving them or changing pricing.
+
+## Standard Quotations
+
+Quotation now uses its standard ERPNext form and Items table. The app's item-group
+filters, parent inheritance, series numbering, and custom validation are removed.
+The migration hides this app's four legacy Quotation Item grouping fields and
+removes its three exported column Property Setters. Historical field values remain
+stored, and customizations belonging to other apps are preserved. After migrating,
+building assets, and restarting, refresh the browser and verify the standard Item
+selector, row order, quantities, pricing, taxes, and standard Quotation actions.
+
+## Project names and operational Projects
+
+**Project** is a plain Data field on Tender Analysis, Costing Note, BOQ, Project
+Offer, and Project Contract. Tender-to-note, note-to-BOQ, tender-to-offer/contract,
+and offer-to-contract mappings copy this text. Editing a later document does not
+rename a Project or update its source documents.
+
+Enter the desired name before submitting a Project Contract. Submission creates
+an ERPNext Project with that **Project Name**, the standard Project naming series,
+company, customer, and expected start/end dates. Project creation permissions are
+required. A read-only **Created Project** link on the contract opens the result.
+Repeated requests reuse that contract's Project; an unrelated Project with the
+same name blocks creation rather than being overwritten.
+
+The Project's **Project Clauses** tab contains a read-only snapshot of every
+contract clause row, including headings, series, quantities, rates, amounts,
+delivery dates, and tender/Costing Note/BOQ references. The Project also stores
+its source contract, offer, tender, currency, and contract total. Legacy item-based
+pricing buttons are not shown on these clause-based Projects.
+
+Older submitted contracts are not bulk-created during migration. Fill and save
+their Project text to create the Project, or use **Create > Project** if the name
+was already entered. Once a Project exists, the contract's Project text is locked.
+To cancel a contract, first set its linked Project status to Cancelled.
+
+The migration preserves existing Project relationships on legacy Costing Notes in
+a separate hidden **Source Project** link and converts old link IDs in visible
+Project fields to their display names. Operational Project records and historical
+contract clauses are preserved.

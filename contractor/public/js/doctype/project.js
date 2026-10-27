@@ -1,5 +1,10 @@
 frappe.ui.form.on("Project", {
     refresh: function(frm){
+        if (frm.doc.project_contract) {
+            frm.set_df_property('custom_contract_items', 'hidden', 1);
+            frm.add_custom_button(__('Project Contract'), () => frappe.set_route('Form', 'Project Contract', frm.doc.project_contract));
+            return;
+        }
         frm.set_query("item_code", "items", function(doc, cdt, cdn) {
 			let row = locals[cdt][cdn];
             return {

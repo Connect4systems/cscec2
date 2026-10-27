@@ -41,6 +41,7 @@ class ProjectOfferConversionTest(unittest.TestCase):
         self.services = services
         self.offer = Record(name='POF-1', doctype='Project Offer', docstatus=1,
             title='Negotiated offer', tender_analysis='TA-1', company='Company', currency='EGP',
+            project='Hospital project',
             customer='Customer', status='Submitted', transaction_date='2026-10-27', delivery_date='2026-11-01',
             conversion_rate=1, terms='Offer terms', discount_amount=10,
             selling_deductions_template='Offer retention',
@@ -73,6 +74,7 @@ class ProjectOfferConversionTest(unittest.TestCase):
     def test_conversion_preserves_negotiated_values_and_copies_new_child_rows(self):
         doc = self.service.create_project_contract('POF-1')['doc']
         self.assertEqual(doc.project_offer, 'POF-1')
+        self.assertEqual(doc.project, 'Hospital project')
         self.assertEqual(doc.docstatus, 0)
         self.assertEqual(doc.status, 'Draft')
         self.assertEqual(doc.clauses[0].qty, 3)

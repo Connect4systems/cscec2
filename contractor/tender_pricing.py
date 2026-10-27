@@ -6,7 +6,7 @@ from contractor.tender_logic import number_rows, price_rows
 
 
 def validate_note(note):
-    if any(note.get(key) for key in ("opportunity", "sales_order", "purchase_order", "project")):
+    if any(note.get(key) for key in ("opportunity", "sales_order", "purchase_order", "source_project")):
         frappe.throw("A tender Costing Note cannot also price another document")
     tender = frappe.get_doc("Tender Analysis", note.tender_analysis)
     tender.check_permission("read")
@@ -158,6 +158,7 @@ def create_clause_boq(costing_note, row_name):
     boq.check_permission("create")
     boq.update(dict(naming_series="BOQ-.YYYY.-", tender_analysis=note.tender_analysis,
         contractual_clause=row.contractual_clause, clause_title=row.clause_title, unit=row.uom, project_qty=row.qty,
+        project=note.get("project"),
         party_type=note.party_type, party_name=note.party_name, start_date=today(),
         costing_note=note.name, line_id=row.name))
     return {"doc": boq}

@@ -54,7 +54,7 @@ def create_commercial_document(tender_analysis, doctype):
     boqs = submitted_boq_links(tender)
     base_currency = frappe.get_cached_value("Company", tender.company, "default_currency")
     doc.update(dict(title=tender.title, tender_analysis=tender.name, tender_number=tender.tender_number,
-        company=tender.company, currency=tender.currency, contractor_order=1,
+        company=tender.company, currency=tender.currency, contractor_order=1, project=tender.get("project"),
         customer=tender.party_name if tender.party_type == "Customer" else None,
         transaction_date=today(), delivery_date=today(),
         conversion_rate=1 if base_currency == tender.currency else 0))

@@ -122,6 +122,28 @@ class PricingLifecycleTest(unittest.TestCase):
         self.fake.get_all.return_value = [Row(name='BOQ-1', contractual_clause='CC-1')]
         self.assertEqual(self.service.submitted_boq_links(self.tender), {})
 
+    def test_boq_copies_project_text_from_costing_note(self):
+        row = Row(name='note-row', contractual_clause='CC-1', is_group=0, qty=2, uom='Nos', clause_title='Concrete')
+        note = Row(name='CN-1', tender_analysis='TA-1', docstatus=0, project='Hospital project',
+            party_type='Customer', party_name='Customer', costing_note_items=[row], check_permission=MagicMock())
+        self.fake.get_doc.return_value = note
+        self.fake.db.get_value.return_value = None
+        self.fake.new_doc = MagicMock(return_value=Row(check_permission=MagicMock()))
+        result = self.service.create_clause_boq('CN-1', 'note-row')
+        self.assertEqual(result['doc'].project, 'Hospital project')
+
+    def test_tender_costing_accepts_project_text_without_legacy_project_link(self):
+        group = Row(name='source-group', contractual_clause='CC-G', is_group=1, qty=0, clause_title='Civil', series_number='1')
+        detail = Row(name='source-detail', contractual_clause='CC-1', is_group=0, qty=3, uom='Nos', clause_title='Concrete', series_number='1_1')
+        self.fake.get_doc.return_value = Row(clauses=[group, detail], numbering_mode='Automatic', check_permission=MagicMock())
+        rows = [Row(name='note-group', source_row='source-group', contractual_clause='CC-G', is_group=1, qty=0),
+                Row(name='note-detail', source_row='source-detail', contractual_clause='CC-1', is_group=0, qty=3, uom='Nos')]
+        note = Row(project='Hospital project', tender_analysis='TA-1', costing_note_items=rows, is_new=lambda: True)
+        note.set = lambda field, value: note.__setitem__(field, value)
+        self.service.validate_note(note)
+        self.assertEqual(note.project, 'Hospital project')
+        self.assertEqual(rows[1].series_number, '1_1')
+
 
 if __name__ == '__main__':
     unittest.main()

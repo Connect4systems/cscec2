@@ -9,6 +9,8 @@ from contractor.tender_logic import number_rows
 
 class ProjectContract(Document):
     def validate(self):
+        if self.doctype == "Project Contract" and self.docstatus == 1 and not str(self.get("project") or "").strip():
+            frappe.throw("Enter Project before submitting the Project Contract")
         # A tender has at most one active document of each commercial type.
         frappe.db.sql("select name from `tabTender Analysis` where name=%s for update", self.tender_analysis)
         tender = frappe.get_doc("Tender Analysis", self.tender_analysis)
@@ -70,6 +72,29 @@ class ProjectContract(Document):
         self.contractor_order = 1
         self.tender_number = tender.tender_number
         self.status = "Submitted" if self.docstatus == 1 else "Draft"
+
+    def on_submit(self):
+        if self.doctype == "Project Contract":
+            from contractor.contract_projects import create_project
+            self.created_project = create_project(self.name)["project"]
+
+    def before_update_after_submit(self):
+        if self.doctype != "Project Contract":
+            return
+        old = self.get_doc_before_save()
+        if old and old.get("created_project") and self.project != old.get("project"):
+            frappe.throw("Project name cannot change after its Project has been created")
+
+    def on_update_after_submit(self):
+        if self.doctype == "Project Contract" and not self.get("created_project") and str(self.get("project") or "").strip():
+            from contractor.contract_projects import create_project
+            self.created_project = create_project(self.name)["project"]
+
+    def before_cancel(self):
+        if self.get("created_project"):
+            status = frappe.db.get_value("Project", self.created_project, "status")
+            if status and status != "Cancelled":
+                frappe.throw("Set the linked Project status to Cancelled before cancelling this Project Contract")
 
     def on_cancel(self):
         self.db_set("status", "Cancelled", update_modified=False)

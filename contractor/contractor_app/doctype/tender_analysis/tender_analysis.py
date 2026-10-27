@@ -89,7 +89,7 @@ def create_costing_note(tender_analysis):
         frappe.throw("Create all Contractual Clauses first")
     note = frappe.new_doc("Costing Note")
     note.check_permission("create")
-    for key in ("tender_number", "party_type", "party_name", "currency", "numbering_mode"):
+    for key in ("tender_number", "party_type", "party_name", "currency", "numbering_mode", "project"):
         note.set(key, tender.get(key))
     note.tender_analysis = tender.name
     for row in tender.clauses:

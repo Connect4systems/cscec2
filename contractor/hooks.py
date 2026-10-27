@@ -39,7 +39,6 @@ fixtures = [
 
 	{"dt": "Property Setter", "or_filters": [
 		["doc_type", "=", "Opportunity Item"],
-		["doc_type", "=", "Quotation Item"],
 		["doc_type", "=", "Sales Order Item"],
 	]},
 	{"dt": "DocType Link", "or_filters": [
@@ -53,7 +52,6 @@ fixtures = [
 
 # include js in doctype views
 doctype_js = {
-    "Quotation": "public/js/doctype/quotation.js",
     "Project": "public/js/doctype/project.js",
     "Item": "public/js/doctype/item.js",
     "Material Request": "public/js/doctype/material_request_comparison.js",
@@ -152,9 +150,6 @@ override_doctype_class = {
 # Hook on document methods and events
 
 doc_events = {
-	"Quotation": {
-		"validate": "contractor.www.api.validate",
-	},
 	"Purchase Order": {
 		"validate": "contractor.www.api.validate",
 	},

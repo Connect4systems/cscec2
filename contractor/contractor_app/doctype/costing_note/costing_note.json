@@ -27,7 +27,8 @@
   "amended_from",
   "tender_analysis",
   "numbering_mode",
-  "currency"
+  "currency",
+  "source_project"
  ],
  "fields": [
   {
@@ -58,12 +59,10 @@
    "reqd": 1
   },
   {
-   "depends_on": "eval:!doc.tender_analysis",
    "fieldname": "project",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Project",
-   "options": "Project"
+   "label": "Project"
   },
   {
    "fieldname": "column_break_u5cmu",
@@ -161,6 +160,14 @@
    "fieldtype": "Link",
    "label": "Currency",
    "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_project",
+   "fieldtype": "Link",
+   "options": "Project",
+   "label": "Source Project",
+   "hidden": 1,
    "read_only": 1
   }
  ],

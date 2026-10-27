@@ -17,6 +17,7 @@
   "delivery_date",
   "company",
   "project",
+  "created_project",
   "tender_number",
   "tender_analysis",
   "project_offer",
@@ -147,9 +148,10 @@
   },
   {
    "fieldname": "project",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Project",
-   "options": "Project"
+   "allow_on_submit": 1,
+   "read_only_depends_on": "eval:!!doc.created_project"
   },
   {
    "fieldname": "currency",
@@ -464,10 +466,24 @@
    "options": "Company:company:default_currency",
    "hidden": 1,
    "in_list_view": 0
+  },
+  {
+   "fieldname": "created_project",
+   "fieldtype": "Link",
+   "options": "Project",
+   "label": "Created Project",
+   "read_only": 1,
+   "no_copy": 1
   }
  ],
  "is_submittable": 1,
- "links": [],
+ "links": [
+  {
+   "link_doctype": "Project",
+   "link_fieldname": "project_contract",
+   "group": "Execution"
+  }
+ ],
  "modified": "2026-10-27 17:33:59.640795",
  "modified_by": "Administrator",
  "module": "Contractor App",

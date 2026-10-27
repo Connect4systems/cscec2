@@ -48,8 +48,8 @@ class CostingNote(Document):
 						break
 			doc.save(ignore_permissions=True)
 
-		elif self.get("project"):
-			doc = frappe.get_doc("Project", self.project)
+		elif self.get("source_project"):
+			doc = frappe.get_doc("Project", self.source_project)
 			for row in self.costing_note_items:
 				for item in doc.items:
 					if item.item_code == row.item and (item.group_item == row.group_item or (not row.group_item and not item.group_item)):
@@ -108,8 +108,8 @@ class CostingNote(Document):
 			
 			po.save(ignore_permissions=True)
 
-		elif self.get("project"):
-			po = frappe.get_doc("Project", self.project)
+		elif self.get("source_project"):
+			po = frappe.get_doc("Project", self.source_project)
 
 			for row in self.costing_note_items:
 				if row.item == "Unknown" or row.item == "Unknown Group":
