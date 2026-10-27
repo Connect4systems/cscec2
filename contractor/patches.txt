@@ -4,3 +4,4 @@
 contractor.patches.retire_opportunity_pricing
 contractor.patches.backfill_boq_references
 contractor.patches.backfill_tender_submitted_boq
+contractor.patches.retire_sales_order_contracting

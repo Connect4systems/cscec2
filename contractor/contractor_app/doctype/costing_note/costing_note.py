@@ -11,6 +11,10 @@ class CostingNote(Document):
 			self.ignore_linked_doctypes = ["BOQ"]
 
 	def validate(self):
+		if self.get("sales_order"):
+			if self.is_new():
+				frappe.throw("Create a Project Contract from Tender Analysis instead")
+			return
 		if self.get("opportunity") and not self.is_new():
 			return
 		if self.get("opportunity"):
@@ -32,17 +36,6 @@ class CostingNote(Document):
 		if self.get("tender_analysis"):
 			from contractor.tender_pricing import apply_note
 			apply_note(self, cancel=True)
-
-		elif self.get("sales_order"):
-			doc = frappe.get_doc("Sales Order", self.sales_order)
-			for row in self.costing_note_items:
-				for item in doc.items:
-					if item.item_code == row.item and (item.group_item == row.group_item or (not row.group_item and not item.group_item)):
-						if item.rate <= row.target_selling_price:
-							item.rate -= row.target_selling_price
-						else: item.rate = 0
-						break
-			doc.save(ignore_permissions=True)
 
 		elif self.get("purchase_order"):
 			doc = frappe.get_doc("Purchase Order", self.purchase_order)
@@ -100,31 +93,7 @@ class CostingNote(Document):
 
 	def update_linked_doc(self):
 
-		if self.get("sales_order"):
-			so = frappe.get_doc("Sales Order", self.sales_order)
-
-			for row in self.costing_note_items:
-				if row.item == "Unknown" or row.item == "Unknown Group":
-					frappe.throw("Row {}: No Correct Item Code is Set".format(row.idx))
-
-				for item in so.items:
-					# if (item.item_description == row.item_description and\
-					#  item.series_number == row.series_number) or\
-					#  item.item_code == row.item_code and item.group_item == row.group_item:
-					if item.item_code == row.item and item.group_item == row.group_item or (not row.group_item and not item.group_item):
-						# item.item_code = row.item
-						# item.group_item = row.group_item
-						# item.item_group = row.item_group
-						# item.uom = row.uom
-						# item.item_name = frappe.db.get_value("Item", row.item, "item_name")
-						# item.description = frappe.db.get_value("Item", row.item, "description")
-						item.rate = row.target_selling_price / row.qty
-						item.amount = row.target_selling_price
-						break
-			
-			so.save(ignore_permissions=True)
-
-		elif self.get("purchase_order"):
+		if self.get("purchase_order"):
 			po = frappe.get_doc("Purchase Order", self.purchase_order)
 
 			for row in self.costing_note_items:

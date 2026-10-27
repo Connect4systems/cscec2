@@ -7,6 +7,19 @@ frappe.ui.form.on("Tender Analysis", {
             window.open("/api/method/" + tender_api + "download_template");
         });
         if (frm.is_new()) return;
+        frappe.call({method: 'contractor.project_contract.creation_status',
+            args: {tender_analysis: frm.doc.name},
+            callback(r) {
+                if (!r.message || !r.message.ready) return;
+                frm.add_custom_button(__('Project Contract'), async () => {
+                    if (frm.is_dirty()) return frappe.msgprint(__('Save the Tender Analysis first'));
+                    const result = await frappe.call({method: 'contractor.project_contract.create_project_contract',
+                        args: {tender_analysis: frm.doc.name}, freeze: true});
+                    if (result.message.existing) return frappe.set_route('Form', 'Project Contract', result.message.existing);
+                    const docs = frappe.model.sync(result.message.doc);
+                    frappe.set_route('Form', 'Project Contract', docs[0].name);
+                }, __('Create'));
+            }});
         frappe.call({method: 'contractor.tender_pricing.get_submitted_boq_links',
             args: {tender_analysis: frm.doc.name},
             callback(r) {

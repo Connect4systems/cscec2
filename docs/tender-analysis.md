@@ -71,3 +71,38 @@ python -m unittest discover -s tests -v
 Live validation on a Frappe site must cover Excel upload, clause generation twice,
 BOQ submission/cancellation, Costing Note submission/cancellation, permissions,
 and standard Opportunity creation after migration.
+
+## Project Contracts
+
+After every active Costing Note is submitted and each detail clause has applied
+pricing, **Create > Project Contract** appears on the Tender Analysis. Cancelled
+Costing Notes do not block creation; a draft Costing Note does. The server checks
+these conditions again when creating, saving, and submitting the contract.
+
+The new document copies the tender company, currency, clauses, numbering,
+quantities, UOM, selling rates, Costing Note references, and submitted BOQ links.
+**Contractor Order** is always checked. Tender Analysis's Connections tab and the
+Tender workspace include Project Contracts. One active contract is allowed per
+tender; cancelled contracts can be replaced or amended.
+
+Complete Customer (required when the tender party is a Lead or Prospect), delivery
+date, addresses, contact, customer purchase order, payment terms, and terms and
+conditions. For a foreign-currency contract enter its conversion rate. Clause
+quantities and rates can be adjusted for the commercial agreement; source clause
+identities and series remain tied to the tender. Group rows are summaries.
+
+Project Contract totals calculate clause amounts, a fixed discount, taxes entered
+as Actual or On Net Total, deduction percentages, base-currency amounts, and net
+payable. It is a standalone commercial contract: stock fulfillment and invoicing
+continue through standard ERPNext documents. It does not post accounting entries.
+
+Sales Order now uses its standard ERPNext client controller and item table. The
+app's custom group filters, numbering, Project/Costing Note/Clearence buttons,
+contracting custom fields, and exported table Property Setters are retired.
+Historical values remain in the database; third-party customizations are retained.
+Old Costing Notes no longer change Sales Order prices on submit or cancel.
+
+Before production use, verify the contract action is absent with a draft Costing
+Note, visible after submission, copies the correct prices, blocks duplicate active
+contracts, and supports save/submit/cancel/amend. Also create a standard Sales Order
+after migration and check its Item selector, quantities, rates, and standard actions.

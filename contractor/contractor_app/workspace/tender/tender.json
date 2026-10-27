@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"tV3oNlSKqs\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Tender</span>\", \"col\": 12}}, {\"id\": \"aibCZONzzW\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer\", \"col\": 3}}, {\"id\": \"yOdsy-LUKj\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Prospect\", \"col\": 3}}, {\"id\": \"QjBrh4uFRn\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tender\", \"col\": 3}}, {\"id\": \"SfUV9gren_\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplier Quotation\", \"col\": 3}}, {\"id\": \"4inA4_JG_I\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"GYr6bLoFkX\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Crm\", \"col\": 3}}, {\"id\": \"O2Sxxmf9cH\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item\", \"col\": 3}}, {\"id\": \"Iu5SYEsDtV\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Group\", \"col\": 3}}, {\"id\": \"ho7ZwA20i9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplier\", \"col\": 3}}, {\"id\": \"clauses\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Contractual Clause\", \"col\": 3}}]",
+ "content": "[{\"id\": \"tV3oNlSKqs\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Tender</span>\", \"col\": 12}}, {\"id\": \"aibCZONzzW\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer\", \"col\": 3}}, {\"id\": \"yOdsy-LUKj\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Prospect\", \"col\": 3}}, {\"id\": \"QjBrh4uFRn\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tender\", \"col\": 3}}, {\"id\": \"SfUV9gren_\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplier Quotation\", \"col\": 3}}, {\"id\": \"4inA4_JG_I\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"GYr6bLoFkX\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Crm\", \"col\": 3}}, {\"id\": \"O2Sxxmf9cH\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item\", \"col\": 3}}, {\"id\": \"Iu5SYEsDtV\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Group\", \"col\": 3}}, {\"id\": \"ho7ZwA20i9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplier\", \"col\": 3}}, {\"id\": \"clauses\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Contractual Clause\", \"col\": 3}}, {\"id\": \"project-contract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Contract\", \"col\": 3}}]",
  "creation": "2024-09-26 14:10:50.367320",
  "custom_blocks": [],
  "docstatus": 0,
@@ -94,6 +94,12 @@
   {
    "label": "Contractual Clause",
    "link_to": "Contractual Clause",
+   "type": "DocType",
+   "doc_view": "List"
+  },
+  {
+   "label": "Project Contract",
+   "link_to": "Project Contract",
    "type": "DocType",
    "doc_view": "List"
   }

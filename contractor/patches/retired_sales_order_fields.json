@@ -1,0 +1,109 @@
+{
+ "fields": [
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "is_group"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "series_number"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "parent_group"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "group_item"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "custom_boq_description"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "custom_cost_code"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "custom_boq_no"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "contracting_section"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "advance_payment_discount"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "column_break_vxgcb"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "business_guarantee_insurance_deduction_rate"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "section_break_7gqac"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "selling_deductions_template"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "total_deductions"
+  }
+ ],
+ "setters": [
+  "Sales Order Item-main-field_order",
+  "Sales Order Item-item_code-columns",
+  "Sales Order Item-item_group-columns"
+ ],
+ "links": [
+  "9d06b7d302",
+  "13135db3ba"
+ ]
+}

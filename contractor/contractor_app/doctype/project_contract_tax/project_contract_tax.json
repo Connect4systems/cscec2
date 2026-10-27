@@ -1,0 +1,62 @@
+{
+ "doctype": "DocType",
+ "name": "Project Contract Tax",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "charge_type",
+   "fieldtype": "Select",
+   "label": "Charge Type",
+   "options": "On Net Total\nActual",
+   "default": "On Net Total",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "account_head",
+   "fieldtype": "Link",
+   "label": "Account Head",
+   "options": "Account",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Percent",
+   "label": "Rate",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "tax_amount",
+   "fieldtype": "Currency",
+   "label": "Tax Amount",
+   "in_list_view": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_tax_amount",
+   "fieldtype": "Currency",
+   "label": "Base Tax Amount",
+   "read_only": 1
+  }
+ ],
+ "field_order": [
+  "charge_type",
+  "account_head",
+  "description",
+  "rate",
+  "tax_amount",
+  "base_tax_amount"
+ ],
+ "istable": 1,
+ "editable_grid": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": []
+}

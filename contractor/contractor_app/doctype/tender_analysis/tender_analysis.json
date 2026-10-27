@@ -119,6 +119,11 @@
    "link_doctype": "BOQ",
    "link_fieldname": "tender_analysis",
    "group": "Pricing"
+  },
+  {
+   "link_doctype": "Project Contract",
+   "link_fieldname": "tender_analysis",
+   "group": "Contracts"
   }
  ],
  "modified": "2026-10-27 14:35:06.317410",
