@@ -3,6 +3,18 @@ import unittest
 from contractor.tender_logic import number_rows, price_rows
 
 
+class DocumentRow:
+    """Model Frappe's get/set interface without dictionary subscripting."""
+    def __init__(self, values):
+        self.values = dict(values)
+
+    def get(self, key, default=None):
+        return self.values.get(key, default)
+
+    def set(self, key, value):
+        self.values[key] = value
+
+
 class TenderRulesTest(unittest.TestCase):
     def rows(self):
         return [dict(clause_title='Civil', is_group=1),
@@ -54,6 +66,22 @@ class TenderRulesTest(unittest.TestCase):
         rows[1]['cost'] = 20
         self.assertEqual(price_rows(rows), (61, 69))
         self.assertEqual(price_rows(rows), (61, 69))
+
+    def test_document_rows_number_and_price_without_item_assignment(self):
+        rows = [DocumentRow(row) for row in self.rows()]
+        number_rows(rows)
+        self.assertEqual([r.get('series_number') for r in rows], ['1', '1_1', '1_2', '2', '2_1'])
+        self.assertEqual(rows[1].get('parent_series'), '1')
+        self.assertEqual(price_rows(rows), (41, 45))
+        self.assertEqual(rows[0].get('target_selling_price'), 39)
+        self.assertEqual(price_rows(rows), (41, 45))
+
+    def test_excel_series_preserved_for_document_rows_on_save(self):
+        rows = [DocumentRow(dict(clause_title='Group', is_group=1, series_number='7')),
+                DocumentRow(dict(clause_title='Detail', qty=2, series_number='7_5'))]
+        number_rows(rows, 'From Excel')
+        self.assertEqual(rows[1].get('series_number'), '7_5')
+        self.assertEqual(rows[1].get('parent_series'), '7')
 
 
 if __name__ == '__main__':

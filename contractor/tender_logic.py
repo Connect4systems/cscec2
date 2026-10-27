@@ -3,6 +3,14 @@ import math
 import re
 
 
+def _set_value(row, field, value):
+    """Excel rows are dictionaries; Frappe child documents expose set()."""
+    if isinstance(row, dict):
+        row[field] = value
+    else:
+        row.set(field, value)
+
+
 def number_rows(rows, mode="Automatic"):
     group = sub = 0
     parent = None
@@ -25,8 +33,8 @@ def number_rows(rows, mode="Automatic"):
             raise ValueError(f"Row {index}: invalid or duplicate series {series!r}")
         if not row.get("is_group") and series.split("_")[0] != parent:
             raise ValueError(f"Row {index}: series must belong to preceding group {parent}")
-        row["series_number"] = series
-        row["parent_series"] = "" if row.get("is_group") else parent
+        _set_value(row, "series_number", series)
+        _set_value(row, "parent_series", "" if row.get("is_group") else parent)
         seen.add(series)
         if row.get("is_group"):
             parent = series
@@ -43,8 +51,9 @@ def price_rows(rows):
     for row in rows:
         if row.get("is_group"):
             group = row
-            row["total_cost"] = row["target_selling_price"] = 0
-            row["cost"] = 0
+            _set_value(row, "total_cost", 0)
+            _set_value(row, "target_selling_price", 0)
+            _set_value(row, "cost", 0)
             continue
         qty = float(row.get("qty") or 0)
         if not math.isfinite(qty) or qty <= 0:
@@ -55,10 +64,11 @@ def price_rows(rows):
             raise ValueError("Unit cost and profit margin must be finite, nonnegative numbers")
         cost = unit_cost * qty
         selling = cost * (1 + margin / 100)
-        row["total_cost"], row["target_selling_price"] = cost, selling
+        _set_value(row, "total_cost", cost)
+        _set_value(row, "target_selling_price", selling)
         total_cost += cost
         total_selling += selling
         if group is not None:
-            group["total_cost"] += cost
-            group["target_selling_price"] += selling
+            _set_value(group, "total_cost", group.get("total_cost") + cost)
+            _set_value(group, "target_selling_price", group.get("target_selling_price") + selling)
     return total_cost, total_selling
