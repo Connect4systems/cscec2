@@ -4,7 +4,12 @@ from pathlib import Path
 import sys
 import types
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, create_autospec, patch
+
+
+def frappe_v15_rename_doc(doctype, old, new, force=False, merge=False, *,
+        ignore_if_exists=False, show_alert=True, rebuild_search=True):
+    """Public Frappe 15.110.0 signature, including keyword validation."""
 
 
 class ClearanceMigrationTest(unittest.TestCase):
@@ -14,7 +19,7 @@ class ClearanceMigrationTest(unittest.TestCase):
         fake.db.exists.side_effect = lambda doctype, name: name in existing
         fake.db.has_column.return_value = False
         fake.throw = lambda text: (_ for _ in ()).throw(ValueError(text))
-        fake.rename_doc = MagicMock()
+        fake.rename_doc = create_autospec(frappe_v15_rename_doc)
         path = Path(__file__).parents[1]/'contractor/patches/rename_clearnce_doctypes.py'
         spec = importlib.util.spec_from_file_location('rename_under_test', path)
         module = importlib.util.module_from_spec(spec)
@@ -29,6 +34,19 @@ class ClearanceMigrationTest(unittest.TestCase):
         self.assertEqual(fake.rename_doc.call_args_list[0].args, ('DocType', 'Clearence', 'Project Clearnce'))
         self.assertTrue(all(call.kwargs['force'] for call in fake.rename_doc.call_args_list))
         self.assertTrue(any('legacy_record=1' in call.args[0] for call in fake.db.sql.call_args_list))
+
+    def test_retry_after_unsupported_keyword_reuses_existing_legacy_column(self):
+        module, fake = self.module({'Clearence', 'Purchase Clearence'})
+        fake.db.has_column.return_value = True
+        module.execute()
+        self.assertEqual(fake.rename_doc.call_count, 2)
+        self.assertFalse(any('alter table' in call.args[0] for call in fake.db.sql.call_args_list))
+
+    def test_retry_after_first_rename_only_processes_remaining_parent(self):
+        module, fake = self.module({'Project Clearnce', 'Purchase Clearence'})
+        module.execute()
+        fake.rename_doc.assert_called_once_with('DocType', 'Purchase Clearence', 'Subcontract Clearnce',
+            force=True, show_alert=False)
 
     def test_conflict_in_second_target_blocks_all_renames(self):
         module, fake = self.module({'Clearence', 'Purchase Clearence', 'Subcontract Clearnce'})

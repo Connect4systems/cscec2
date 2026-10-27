@@ -14,4 +14,6 @@ def execute():
         if not frappe.db.has_column(old, "legacy_record"):
             frappe.db.sql(f"alter table `tab{old}` add column `legacy_record` int not null default 0")
         frappe.db.sql(f"update `tab{old}` set legacy_record=1")
-        frappe.rename_doc("DocType", old, new, force=True, ignore_permissions=True, show_alert=False)
+        # migrate runs as Administrator. Frappe v15's public rename_doc wrapper
+        # does not accept the model-level ignore_permissions argument.
+        frappe.rename_doc("DocType", old, new, force=True, show_alert=False)
