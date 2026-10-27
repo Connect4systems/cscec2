@@ -158,3 +158,22 @@ workspace. The existing direct Create Project Contract action remains available.
 Deploy with the usual site migration, asset build, and restart. Verify both forms'
 shared tabs and tax calculations, offer save/submit/cancel/amend, submitted-only
 conversion, and the offer-to-contract references on a test site.
+
+## Tender contracting details
+
+Tender Analysis includes a **Contracting** tab with **Selling Deductions Template**,
+an editable Deductions table (Title, Account, Percent), Total Deductions, and Net
+Payable. Selecting a template populates its rows; users can then edit or add rows.
+Tender deduction values are calculated against its Total Amount. Saving also
+checks account company, percentage limits, and total deductions.
+
+Creating either Project Offer or Project Contract from the tender copies the
+selected template and the current deduction rows, including manual changes. A
+contract created from an offer copies the offer's current deduction details.
+Each stage is an independent document: editing deductions on a later draft does
+not update its source or its template. Calculated values use each document's own
+total (Tender Analysis Total Amount; Offer/Contract Grand Total including taxes).
+Normal submit/cancel/amend rules apply to submitted offers and contracts.
+
+The migration initializes Net Payable for existing tenders without deduction rows
+without resaving them or changing pricing.

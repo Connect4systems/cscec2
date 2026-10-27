@@ -43,6 +43,7 @@ class ProjectOfferConversionTest(unittest.TestCase):
             title='Negotiated offer', tender_analysis='TA-1', company='Company', currency='EGP',
             customer='Customer', status='Submitted', transaction_date='2026-10-27', delivery_date='2026-11-01',
             conversion_rate=1, terms='Offer terms', discount_amount=10,
+            selling_deductions_template='Offer retention',
             clauses=[Record(name='offer-row', parent='POF-1', doctype='Project Offer Clause', docstatus=1,
                 source_row='tender-row', contractual_clause='CC-1', qty=3, rate=77, costing_note='CN-1')],
             taxes=[Record(name='offer-tax', parent='POF-1', docstatus=1,
@@ -82,6 +83,9 @@ class ProjectOfferConversionTest(unittest.TestCase):
         self.assertEqual(doc.taxes[0].charge_type, 'On Previous Row Total')
         self.assertEqual(doc.taxes[0].row_id, '1')
         self.assertEqual(doc.deductions[0].title, 'Retention')
+        self.assertEqual(doc.selling_deductions_template, 'Offer retention')
+        doc.deductions[0].percent = 8
+        self.assertEqual(self.offer.deductions[0].percent, 5)
         self.assertEqual(doc.terms, 'Offer terms')
         self.services.require_ready.assert_called_once_with(self.tender)
 

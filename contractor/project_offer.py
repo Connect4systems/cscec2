@@ -2,6 +2,7 @@
 import frappe
 
 from contractor.project_contract import commercial_creation_status, create_commercial_document, require_ready
+from contractor.document_mapping import copy_child_values
 
 
 @frappe.whitelist()
@@ -28,13 +29,6 @@ def validate_offer_source(contract):
             or offer.customer != contract.customer or offer.currency != contract.currency):
         frappe.throw("Project Contract must match its submitted Project Offer's tender, company, customer, and currency")
     return offer
-
-
-def copy_child_values(row):
-    excluded = {"name", "doctype", "parent", "parentfield", "parenttype", "idx", "docstatus",
-        "owner", "creation", "modified", "modified_by"}
-    return {key: value for key, value in row.as_dict().items()
-        if key not in excluded and not key.startswith("_")}
 
 
 @frappe.whitelist()

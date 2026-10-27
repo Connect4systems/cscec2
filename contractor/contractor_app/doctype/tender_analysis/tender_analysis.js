@@ -1,7 +1,34 @@
 const tender_api = "contractor.contractor_app.doctype.tender_analysis.tender_analysis.";
 
 frappe.ui.form.on("Tender Analysis", {
+    setup(frm) {
+        frm.set_query('account', 'deductions', () => ({filters: {company: frm.doc.company, is_group: 0}}));
+    },
+    async selling_deductions_template(frm) {
+        const template = frm.doc.selling_deductions_template;
+        const company = frm.doc.company;
+        if (!template) return;
+        const r = await frappe.call({method: 'contractor.deductions.get_selling_deductions',
+            args: {template, company}});
+        if (frm.doc.selling_deductions_template !== template || frm.doc.company !== company) return;
+        frm.clear_table('deductions');
+        for (const row of r.message || []) frm.add_child('deductions', row);
+        frm.refresh_field('deductions');
+        frm.dirty();
+        frm.trigger('calculate_tender_deductions');
+    },
+    calculate_tender_deductions(frm) {
+        let total = 0;
+        for (const row of frm.doc.deductions || []) {
+            row.value = flt(frm.doc.total_amount) * flt(row.percent) / 100;
+            total += row.value;
+        }
+        frm.doc.total_deductions = total;
+        frm.doc.net_payable = flt(frm.doc.total_amount) - total;
+        for (const field of ['deductions', 'total_deductions', 'net_payable']) frm.refresh_field(field);
+    },
     refresh(frm) {
+        frm.trigger('calculate_tender_deductions');
         frm.fields_dict.clauses.grid.update_docfield_property("series_number", "read_only", frm.doc.numbering_mode !== "From Excel");
         frm.add_custom_button(__("Excel Template"), () => {
             window.open("/api/method/" + tender_api + "download_template");
@@ -87,4 +114,16 @@ frappe.ui.form.on("Tender Analysis", {
         }
     },
     numbering_mode(frm) { frm.trigger("refresh"); }
+});
+
+frappe.ui.form.on('Deduction', {
+    percent(frm) {
+        if (frm.doctype === 'Tender Analysis') frm.trigger('calculate_tender_deductions');
+    },
+    deductions_add(frm) {
+        if (frm.doctype === 'Tender Analysis') frm.trigger('calculate_tender_deductions');
+    },
+    deductions_remove(frm) {
+        if (frm.doctype === 'Tender Analysis') frm.trigger('calculate_tender_deductions');
+    }
 });

@@ -3,6 +3,7 @@ import frappe
 from frappe.utils import today
 
 from contractor.project_contract_rules import require_submitted_costing
+from contractor.document_mapping import copy_child_values
 
 
 def require_ready(tender):
@@ -57,6 +58,9 @@ def create_commercial_document(tender_analysis, doctype):
         customer=tender.party_name if tender.party_type == "Customer" else None,
         transaction_date=today(), delivery_date=today(),
         conversion_rate=1 if base_currency == tender.currency else 0))
+    doc.selling_deductions_template = tender.get("selling_deductions_template")
+    for row in tender.get("deductions") or []:
+        doc.append("deductions", copy_child_values(row))
     for row in tender.clauses:
         doc.append("clauses", dict(is_group=row.is_group, series_number=row.series_number,
             parent_series=row.parent_series, clause_title=row.clause_title, source_row=row.name,

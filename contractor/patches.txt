@@ -6,3 +6,4 @@ contractor.patches.backfill_boq_references
 contractor.patches.backfill_tender_submitted_boq
 contractor.patches.retire_sales_order_contracting
 contractor.patches.standard_project_contract_taxes
+contractor.patches.initialize_tender_deductions

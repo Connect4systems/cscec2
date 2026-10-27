@@ -18,6 +18,11 @@
   "numbering_mode",
   "clauses",
   "total_amount",
+  "contracting_tab",
+  "selling_deductions_template",
+  "deductions",
+  "total_deductions",
+  "net_payable",
   "connections_tab"
  ],
  "fields": [
@@ -107,6 +112,37 @@
    "fieldtype": "Tab Break",
    "label": "Connections",
    "show_dashboard": 1
+  },
+  {
+   "fieldname": "contracting_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contracting"
+  },
+  {
+   "fieldname": "selling_deductions_template",
+   "fieldtype": "Link",
+   "options": "Selling Deductions Template",
+   "label": "Selling Deductions Template"
+  },
+  {
+   "fieldname": "deductions",
+   "fieldtype": "Table",
+   "options": "Deduction",
+   "label": "Deductions"
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "label": "Total Deductions",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_payable",
+   "fieldtype": "Currency",
+   "options": "currency",
+   "label": "Net Payable",
+   "read_only": 1
   }
  ],
  "links": [

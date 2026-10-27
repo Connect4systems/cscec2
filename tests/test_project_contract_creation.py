@@ -82,3 +82,18 @@ class ProjectContractCreationTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Submit all'):
             self.service.create_commercial_document('TA-1', 'Project Offer')
         self.fake.new_doc.assert_not_called()
+
+    def test_tender_deductions_are_copied_independently_to_offer_and_contract(self):
+        self.tender.selling_deductions_template = 'Tender retention'
+        self.tender.deductions = [Doc(name='tender-deduction', parent='TA-1',
+            title='Retention', account='Retention Account', percent=5, value=5)]
+        with patch.dict(sys.modules, self.modules):
+            for doctype in ('Project Offer', 'Project Contract'):
+                doc = self.service.create_commercial_document('TA-1', doctype)['doc']
+                self.assertEqual(doc.selling_deductions_template, 'Tender retention')
+                self.assertEqual(doc.deductions[0].title, 'Retention')
+                self.assertEqual(doc.deductions[0].account, 'Retention Account')
+                self.assertNotIn('name', doc.deductions[0])
+                self.assertNotIn('parent', doc.deductions[0])
+                doc.deductions[0].percent = 7
+                self.assertEqual(self.tender.deductions[0].percent, 5)

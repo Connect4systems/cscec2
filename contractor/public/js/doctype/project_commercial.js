@@ -73,8 +73,11 @@ const commercial_handlers = {
     },
     async selling_deductions_template(frm) {
         if (!frm.doc.selling_deductions_template) return;
-        const r = await frappe.call({method: 'contractor.www.api.get_deductions',
-            args: {master_doctype: 'Selling Deductions Template', master_name: frm.doc.selling_deductions_template}});
+        const template = frm.doc.selling_deductions_template;
+        const company = frm.doc.company;
+        const r = await frappe.call({method: 'contractor.deductions.get_selling_deductions',
+            args: {template, company}});
+        if (frm.doc.selling_deductions_template !== template || frm.doc.company !== company) return;
         frm.clear_table('deductions');
         for (const row of r.message || []) frm.add_child('deductions', row);
         frm.refresh_field('deductions');

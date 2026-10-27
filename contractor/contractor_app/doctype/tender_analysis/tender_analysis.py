@@ -37,6 +37,8 @@ class TenderAnalysis(Document):
                 row.amount = flt(row.qty) * flt(row.rate)
                 group.amount += row.amount
                 self.total_amount += row.amount
+        from contractor.deductions import update_tender_deductions
+        update_tender_deductions(self)
         old = self.get_doc_before_save()
         if old:
             old_rows = {r.name: r for r in old.clauses}
