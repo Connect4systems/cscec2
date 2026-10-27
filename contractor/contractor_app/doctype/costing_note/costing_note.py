@@ -6,34 +6,34 @@ from frappe.model.document import Document
 
 class CostingNote(Document):
 	def before_cancel(self):
-		if self.tender_analysis:
+		if self.get("tender_analysis"):
 			# Submitted BOQs remain an audit trail; cancel them after the note.
 			self.ignore_linked_doctypes = ["BOQ"]
 
 	def validate(self):
-		if self.opportunity and not self.is_new():
+		if self.get("opportunity") and not self.is_new():
 			return
-		if self.opportunity:
+		if self.get("opportunity"):
 			frappe.throw("Create tender pricing from Tender Analysis")
-		if self.tender_analysis:
+		if self.get("tender_analysis"):
 			from contractor.tender_pricing import validate_note
 			validate_note(self)
 		else:
 			self.update_prices_and_costs()
 
 	def on_submit(self):
-		if self.tender_analysis:
+		if self.get("tender_analysis"):
 			from contractor.tender_pricing import apply_note
 			apply_note(self)
 		else:
 			self.update_linked_doc()
 
 	def on_cancel(self):
-		if self.tender_analysis:
+		if self.get("tender_analysis"):
 			from contractor.tender_pricing import apply_note
 			apply_note(self, cancel=True)
 
-		elif self.sales_order:
+		elif self.get("sales_order"):
 			doc = frappe.get_doc("Sales Order", self.sales_order)
 			for row in self.costing_note_items:
 				for item in doc.items:
@@ -44,7 +44,7 @@ class CostingNote(Document):
 						break
 			doc.save(ignore_permissions=True)
 
-		elif self.purchase_order:
+		elif self.get("purchase_order"):
 			doc = frappe.get_doc("Purchase Order", self.purchase_order)
 			for row in self.costing_note_items:
 				for item in doc.items:
@@ -55,7 +55,7 @@ class CostingNote(Document):
 						break
 			doc.save(ignore_permissions=True)
 
-		elif self.project:
+		elif self.get("project"):
 			doc = frappe.get_doc("Project", self.project)
 			for row in self.costing_note_items:
 				for item in doc.items:
@@ -100,7 +100,7 @@ class CostingNote(Document):
 
 	def update_linked_doc(self):
 
-		if self.sales_order:
+		if self.get("sales_order"):
 			so = frappe.get_doc("Sales Order", self.sales_order)
 
 			for row in self.costing_note_items:
@@ -124,7 +124,7 @@ class CostingNote(Document):
 			
 			so.save(ignore_permissions=True)
 
-		elif self.purchase_order:
+		elif self.get("purchase_order"):
 			po = frappe.get_doc("Purchase Order", self.purchase_order)
 
 			for row in self.costing_note_items:
@@ -139,7 +139,7 @@ class CostingNote(Document):
 			
 			po.save(ignore_permissions=True)
 
-		elif self.project:
+		elif self.get("project"):
 			po = frappe.get_doc("Project", self.project)
 
 			for row in self.costing_note_items:
