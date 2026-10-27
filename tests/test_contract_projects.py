@@ -75,7 +75,8 @@ class ContractProjectCreationTest(unittest.TestCase):
         row = self.project.project_clauses[1]
         self.assertEqual(row.series_number, '1_1')
         self.assertEqual(row.source_row, 'tender-row')
-        self.assertEqual(row.rate, 50)
+        self.assertFalse(hasattr(row, 'rate'))
+        self.assertFalse(hasattr(row, 'amount'))
         self.assertEqual(row.submitted_boq, 'BOQ-1')
         self.assertFalse(hasattr(row, 'name'))
         self.assertFalse(hasattr(row, 'parent'))

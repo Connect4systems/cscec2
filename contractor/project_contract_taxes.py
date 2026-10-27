@@ -26,11 +26,11 @@ def tax_values(row):
         if key not in IDENTITY_FIELDS and not key.startswith("_")}
 
 
-def validate_template(name, company):
-    template = frappe.get_doc("Sales Taxes and Charges Template", name)
+def validate_template(name, company, template_doctype="Sales Taxes and Charges Template"):
+    template = frappe.get_doc(template_doctype, name)
     template.check_permission("read")
     if template.company != company or template.disabled:
-        frappe.throw("Select an enabled Sales Taxes and Charges Template for the contract company")
+        frappe.throw("Select an enabled tax template for the document company")
     return template
 
 
@@ -41,13 +41,24 @@ def get_sales_tax_template(template, company):
     return get_taxes_and_charges("Sales Taxes and Charges Template", template)
 
 
+@frappe.whitelist()
+def get_tax_template(template, company, buying=0):
+    doctype = "Purchase Taxes and Charges Template" if str(buying) in ("1", "True", "true") else "Sales Taxes and Charges Template"
+    validate_template(template, company, doctype)
+    from erpnext.controllers.accounts_controller import get_taxes_and_charges
+    return get_taxes_and_charges(doctype, template)
+
+
 def calculate_contract_taxes(doc):
     from erpnext.controllers.taxes_and_totals import calculate_taxes_and_totals
 
+    clearance = doc.get("doctype") in ("Project Clearnce", "Subcontract Clearnce")
+    buying = doc.get("doctype") == "Subcontract Clearnce"
     if doc.get("taxes_and_charges"):
-        validate_template(doc.taxes_and_charges, doc.company)
-    proxy = frappe.new_doc("Sales Order")
-    for field in ("company", "currency", "conversion_rate", "customer", "transaction_date",
+        validate_template(doc.taxes_and_charges, doc.company,
+            "Purchase Taxes and Charges Template" if buying else "Sales Taxes and Charges Template")
+    proxy = frappe.new_doc("Purchase Order" if buying else "Sales Order")
+    for field in ("company", "currency", "conversion_rate", "customer", "supplier", "transaction_date",
             "tax_category", "taxes_and_charges", "discount_amount", "additional_discount_percentage",
             "disable_rounded_total"):
         proxy.set(field, doc.get(field))
@@ -60,8 +71,12 @@ def calculate_contract_taxes(doc):
         if row.is_group:
             continue
         qty, rate = flt(row.qty), flt(row.rate)
-        if not math.isfinite(qty) or qty <= 0 or not math.isfinite(rate) or rate < 0:
+        if not math.isfinite(qty) or qty < 0 or (qty == 0 and not clearance) or not math.isfinite(rate) or rate < 0:
             frappe.throw("Clause quantities must be positive and rates must be nonnegative finite numbers")
+        if clearance and qty == 0:
+            for field in CLAUSE_AMOUNT_FIELDS:
+                row.set(field, 0)
+            continue
         details.append(row)
         proxy.append("items", dict(item_code=None, item_name=row.contractual_clause or row.source_row,
             description=row.clause_title, qty=qty, rate=rate, uom=row.uom,
@@ -73,7 +88,16 @@ def calculate_contract_taxes(doc):
         proxy.append("taxes", tax_values(row))
     # All native charge types, included taxes, discounts, precision, and rounding
     # are handled by the installed ERPNext version, without saving the proxy.
-    calculate_taxes_and_totals(proxy)
+    if details:
+        calculate_taxes_and_totals(proxy)
+    else:
+        for field in TOTAL_FIELDS:
+            proxy.set(field, 0)
+        for tax in proxy.taxes:
+            for field in ("base_tax_amount", "tax_amount_after_discount_amount", "base_tax_amount_after_discount_amount", "total", "base_total"):
+                tax.set(field, 0)
+            if tax.charge_type != "Actual":
+                tax.tax_amount = 0
     for field in TOTAL_FIELDS:
         doc.set(field, proxy.get(field) or 0)
     doc.conversion_rate = proxy.conversion_rate

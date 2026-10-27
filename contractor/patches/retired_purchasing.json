@@ -1,0 +1,269 @@
+{
+ "fields": [
+  {
+   "dt": "Purchase Order",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_approval_status"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_civil__finishing"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_80i7s"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_lbpxa"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_mofjz"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_mpz20"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_ttkoa"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_zaov0"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_zg2em"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_comparison"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_cr"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_delivery_location"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_discipline"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_electrical"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_expiry_date"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_material_request"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_mechanical"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_note"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_payments"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_project_abbriviation"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_project_name"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_section_break_3aywh"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_section_break_zwp1b"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_tax_advance_payment"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_term_of_payments"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_type"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "purchasing_deductions_template"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "section_break_7gqac"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "total_deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "workflow_state"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "group_item"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "is_group"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "parent_group"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "series_number"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "purchasing_deductions_template"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "total_deductions"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "contracting_section"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "clearence"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Purchase Taxes and Charges",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Purchase Taxes and Charges",
+   "fieldname": "cost_code"
+  }
+ ],
+ "setters": [
+  "Purchase Order-base_rounded_total-hidden",
+  "Purchase Order-supplier_section-hidden",
+  "Purchase Order-company-hidden",
+  "Purchase Order-disable_rounded_total-default",
+  "Purchase Order-main-default_print_format",
+  "Purchase Order-taxes_section-collapsible",
+  "Purchase Order-totals_section-collapsible",
+  "Purchase Order-main-allow_auto_repeat",
+  "Purchase Order-taxes_section-hidden",
+  "Purchase Order-naming_series-options",
+  "Purchase Order-company-default",
+  "Purchase Order-terms_section_break-collapsible",
+  "Purchase Order-main-links_order",
+  "Purchase Order-in_words-hidden",
+  "Purchase Order-in_words-print_hide",
+  "Purchase Order-scan_barcode-hidden",
+  "Purchase Order-totals-collapsible",
+  "Purchase Order-payment_schedule_section-collapsible",
+  "Purchase Order-payment_schedule_section-hidden",
+  "Purchase Order-project-fetch_from",
+  "Purchase Order Item-main-field_order",
+  "Purchase Order-payment_schedule-print_hide",
+  "Purchase Order-main-field_order",
+  "Purchase Order-set_warehouse-fetch_from",
+  "Purchase Order-conversion_rate-precision",
+  "Purchase Order-section_break_52-collapsible",
+  "Purchase Order-due_date-print_hide",
+  "Purchase Order-get_items_from_open_material_requests-hidden",
+  "Purchase Order-tc_name-default",
+  "Purchase Order-base_rounded_total-print_hide",
+  "Purchase Order Item-schedule_date-allow_on_submit",
+  "Purchase Order-supplier_section-collapsible",
+  "Purchase Order-rounded_total-hidden",
+  "Purchase Order-accounting_dimensions_section-hidden",
+  "Purchase Order-rounded_total-print_hide",
+  "Purchase Order-project-in_standard_filter"
+ ],
+ "links": [
+  "rsj534qtqd"
+ ]
+}

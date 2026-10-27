@@ -104,7 +104,7 @@ class Clearence(Document):
 						delivered_qty = frappe.db.sql(f"""
 							select sum(qty)
 							from `tabClearence Item` as ci
-							inner join `tabClearence` as c on c.name = ci.parent
+							inner join `tabProject Clearnce` as c on c.name = ci.parent
 							where c.docstatus = 1 and c.sales_order = '{self.sales_order}'
 							and ci.item_code = '{item.item_code}' and ci.group_item = '{item.group_item}'
 							group by ci.item_code, ci.group_item
@@ -129,7 +129,7 @@ class Clearence(Document):
 						delivered_qty = frappe.db.sql(f"""
 							select sum(qty)
 							from `tabClearence Item` as ci
-							inner join `tabClearence` as c on c.name = ci.parent
+							inner join `tabProject Clearnce` as c on c.name = ci.parent
 							where c.docstatus = 1 and c.project = '{self.project}'
 							and ci.item_code = '{item.item_code}' and ci.group_item = '{item.group_item}'
 							group by ci.item_code, ci.group_item
@@ -143,7 +143,7 @@ class Clearence(Document):
 	def calculate_amounts(self):
 		total_amount = frappe.db.sql(f"""
 			select sum(current_amount)
-			from `tabClearence` where sales_order = '{self.sales_order}'
+			from `tabProject Clearnce` where sales_order = '{self.sales_order}'
 			and docstatus = 1
 		""", as_list = 1)
 		if total_amount and total_amount[0]:
@@ -615,7 +615,7 @@ def make_sales_invoice(clearence, target_doc=None, ignore_permissions=False):
 			if cost_center:
 				target.cost_center = cost_center
 
-	clearence = frappe.get_doc("Clearence", clearence)
+	clearence = frappe.get_doc("Project Clearnce", clearence)
 	source_name = clearence.sales_order
 	doclist = get_mapped_doc(
 		"Sales Order",
@@ -729,7 +729,14 @@ def make_delivery_note(clearence, sales_invoice):
 @frappe.whitelist()	
 def create_a_payment(source_name, target_doc = None):
 	sales_invoice = frappe.get_doc("Sales Invoice", source_name)
-	total_after_deductions = frappe.db.get_value("Clearence", sales_invoice.clearence, "total_after_deductions")
+	sales_invoice.check_permission("read")
+	if not sales_invoice.get("clearence"):
+		frappe.throw("Deduction entries for clause certificates are managed by certificate submission")
+	certificate = frappe.get_doc("Project Clearnce", sales_invoice.clearence)
+	certificate.check_permission("read")
+	if not certificate.get("legacy_record"):
+		frappe.throw("Use the deduction entry linked to the Project Clearnce")
+	total_after_deductions = frappe.db.get_value("Project Clearnce", sales_invoice.clearence, "total_after_deductions")
 
 	je = frappe.new_doc("Journal Entry")
 	je.posting_date = nowdate()

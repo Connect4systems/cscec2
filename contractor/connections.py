@@ -28,6 +28,7 @@ def dashboard_data(doctype):
             "transactions": [
                 {"label": "Sources", "items": ["Tender Analysis", "Project Offer", "Costing Note"]},
                 {"label": "Execution", "items": ["Project"]},
+                {"label": "Certificates", "items": ["Project Clearnce", "Subcontract Clearnce"]},
             ],
         }
     raise ValueError(f"Unsupported connection dashboard: {doctype}")

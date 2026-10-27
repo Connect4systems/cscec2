@@ -44,6 +44,7 @@ fixtures = [
 	{"dt": "DocType Link", "or_filters": [
 		["parent", "=", "Opportunity"],
 		["parent", "=", "Sales Order"],
+		["parent", "=", "Project"],
 	]}
 ]
 
@@ -55,9 +56,7 @@ doctype_js = {
     "Project": "public/js/doctype/project.js",
     "Item": "public/js/doctype/item.js",
     "Material Request": "public/js/doctype/material_request_comparison.js",
-    "Purchase Order": "public/js/doctype/purchase_order.js",
     "Sales Invoice": "public/js/doctype/sales_invoice.js",
-    "Purchase Invoice": "public/js/doctype/purchase_invoice.js",
     "Comparison": "public/js/doctype/comparison_table.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -66,7 +65,6 @@ doctype_js = {
 # custom_app/hooks.py
 override_doctype_class = {
     "Material Request": "contractor.overrides.material_request.CustomMaterialRequest",
-    "Purchase Order": "contractor.overrides.purchase_order.CustomPurchaseOrder",
     "Stock Entry": "contractor.overrides.stock_entry.CustomStockEntry",
     "Subcontractor Custody": "contractor.overrides.subcontractor_custody.CustomSubcontractorCustody",
     "Purchase Receipt": "contractor.overrides.purchase_receipt.CustomPurchaseReceipt",
@@ -150,22 +148,8 @@ override_doctype_class = {
 # Hook on document methods and events
 
 doc_events = {
-	"Purchase Order": {
-		"validate": "contractor.www.api.validate",
-	},
-	"Sales Invoice": {
-		"validate": "contractor.www.api.validate",
-	},
-	"Purchase Invoice": {
-		"validate": "contractor.www.api.validate",
-	},
-	"Project": {
-		"validate": "contractor.www.api.validate",
-	},
-}
-
-doc_events = {
     "Project": {
+        "validate": "contractor.project_progress.validate_project",
         "after_insert": "contractor.api.share_project_users",
         "on_update": "contractor.api.share_project_users"
     }

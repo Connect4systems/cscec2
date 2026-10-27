@@ -2,7 +2,15 @@ frappe.ui.form.on("Project", {
     refresh: function(frm){
         if (frm.doc.project_contract) {
             frm.set_df_property('custom_contract_items', 'hidden', 1);
+            for (const field of frm.meta.fields) {
+                if (field.fieldtype === 'Currency') frm.set_df_property(field.fieldname, 'hidden', 1);
+            }
             frm.add_custom_button(__('Project Contract'), () => frappe.set_route('Form', 'Project Contract', frm.doc.project_contract));
+            frm.add_custom_button(__('Project Clearnce'), () => frm.events.create_clause_clearance(frm, 'Project Clearnce'), __('Create'));
+            frm.add_custom_button(__('Subcontract Clearnce'), () => {
+                frappe.prompt([{fieldname: 'supplier', fieldtype: 'Link', options: 'Supplier', label: __('Supplier'), reqd: 1}],
+                    values => frm.events.create_clause_clearance(frm, 'Subcontract Clearnce', values.supplier), __('Select Supplier'));
+            }, __('Create'));
             return;
         }
         frm.set_query("item_code", "items", function(doc, cdt, cdn) {
@@ -13,13 +21,20 @@ frappe.ui.form.on("Project", {
 				}
 			}
 		});
-        frm.add_custom_button(__("Clearence"), 
+        frm.add_custom_button(__("Project Clearnce"),
             () => {frm.events.create_clearence(frm)}, 
             "Create")
 
         frm.add_custom_button(__("Costing Note"), 
             () => {frm.events.create_costing_note(frm)}, 
             "Create")
+    },
+    async create_clause_clearance(frm, doctype, supplier) {
+        if (frm.is_dirty() || frm.is_new()) return frappe.msgprint(__('Save the Project first'));
+        const r = await frappe.call({method: 'contractor.project_clearances.create_clearance',
+            args: {project: frm.doc.name, doctype, supplier: supplier || null}});
+        const docs = frappe.model.sync(r.message);
+        frappe.set_route('Form', doctype, docs[0].name);
     },
     create_costing_note(frm){
         frappe.model.open_mapped_doc({

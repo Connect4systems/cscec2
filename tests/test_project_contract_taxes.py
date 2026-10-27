@@ -94,3 +94,21 @@ class NativeTaxAdapterTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'quantities must be positive'):
                 self.service.calculate_contract_taxes(self.doc)
         self.engine.assert_not_called()
+
+    def test_subcontract_certificate_uses_purchase_tax_engine_context(self):
+        self.doc.doctype = 'Subcontract Clearnce'
+        self.doc.supplier = 'Supplier'
+        # The factory chooses the native buying document rather than a sales proxy.
+        with patch.dict(sys.modules, self.modules):
+            self.service.calculate_contract_taxes(self.doc)
+        self.modules['frappe'].new_doc.assert_called_once_with('Purchase Order')
+        self.assertEqual(self.proxy.supplier, 'Supplier')
+
+    def test_zero_current_quantity_is_allowed_for_draft_certificate(self):
+        self.doc.doctype = 'Project Clearnce'
+        self.doc.clauses[1].qty = 0
+        with patch.dict(sys.modules, self.modules):
+            self.service.calculate_contract_taxes(self.doc)
+        self.engine.assert_not_called()
+        self.assertEqual(self.doc.grand_total, 0)
+        self.assertEqual(self.doc.clauses[1].amount, 0)

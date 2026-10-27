@@ -6,7 +6,7 @@ from contractor.contractor_app.doctype.boq.boq import set_boq_template
 
 # Validation for the remaining contracting documents
 def validate(doc, method=None):
-    if doc.doctype in ("Opportunity", "Quotation", "Sales Order"):
+    if doc.doctype in ("Opportunity", "Quotation", "Sales Order", "Purchase Order", "Purchase Invoice"):
         return
     if doc.doctype in ["Purchase Order", "Purchase Invoice", "Sales Invoice"]:
          calculate_project_discount_rates(doc)
@@ -33,7 +33,7 @@ def set_series_number(doc):
     latest_sub = 0
     group_item = None
     series = "series_number"
-    if doc.doctype == "Clearence": series = "series"
+    if doc.doctype == "Project Clearnce": series = "series"
     for item in doc.items:
         if item.is_group:
             latest_group += 1 
@@ -58,7 +58,7 @@ def set_rate_of_group_items(doc):
     """
     rates = {}
     series = "series_number"
-    if doc.doctype == "Clearence": series = "series"
+    if doc.doctype == "Project Clearnce": series = "series"
     for item in doc.items:
         if not item.is_group and item.get(series):
             group = int(item.get(series).split('_')[0])
@@ -95,13 +95,13 @@ def calculate_project_discount_rates(doc):
 
 def set_qtys(doc):
     if doc.doctype == "Project":
-        cleas = frappe.db.get_all("Clearence", {"project": doc.name, "docstatus": 1}, "name")
+        cleas = frappe.db.get_all("Project Clearnce", {"project": doc.name, "docstatus": 1}, "name")
     elif doc.doctype == "Sales Order":
-        cleas = frappe.db.get_all("Clearence", {"sales_order": doc.name, "docstatus": 1}, "name")
+        cleas = frappe.db.get_all("Project Clearnce", {"sales_order": doc.name, "docstatus": 1}, "name")
 
     groups = {}
     for clea in cleas:
-        d = frappe.get_doc("Clearence", clea.name)
+        d = frappe.get_doc("Project Clearnce", clea.name)
         for item in d.items:
             if item.is_group: continue
 
@@ -233,6 +233,7 @@ def create_clearence(source_name, target_doc=None):
     doctype = frappe.flags.args.doctype
 
     def set_missing_values(source, target):
+        target.legacy_record = 1
         
         if doctype == "Sales Order" and source.project:
             project = frappe.get_doc("Project", source.project)
@@ -254,7 +255,7 @@ def create_clearence(source_name, target_doc=None):
             source_name,
             {
                 "Sales Order": {
-                    "doctype": "Clearence", 
+                    "doctype": "Project Clearnce",
                     "validation": {"docstatus": ["=", 1]},
                     "field_map": {
                         "transaction_date": "posting_date",
@@ -285,7 +286,7 @@ def create_clearence(source_name, target_doc=None):
             source_name,
             {
                 "Project": {
-                    "doctype": "Clearence", 
+                    "doctype": "Project Clearnce",
                     "field_map": {
                         "date": "contract_date",
                         "name": "project",
@@ -310,7 +311,7 @@ def create_clearence(source_name, target_doc=None):
 
         c_items = frappe.db.sql(f"""
             select ci.item_code, sum(ci.qty) as qty
-            from `tabClearence` as c
+            from `tabProject Clearnce` as c
             inner join `tabClearence Item` as ci on ci.parent = c.name
             where c.docstatus = 1 and c.sales_order = '{source_name}' and ci.is_group = 0
             group by ci.item_code, ci.parent_group
@@ -319,7 +320,7 @@ def create_clearence(source_name, target_doc=None):
     elif doctype == "Project":
         c_items = frappe.db.sql(f"""
             select ci.item_code, sum(ci.qty) as qty
-            from `tabClearence` as c
+            from `tabProject Clearnce` as c
             inner join `tabClearence Item` as ci on ci.parent = c.name
             where c.docstatus = 1 and c.project = '{source_name}' and ci.is_group = 0
             group by ci.item_code, ci.parent_group
@@ -364,6 +365,7 @@ def create_clearence(source_name, target_doc=None):
 def create_purchase_clearence(source_name, target_doc=None):
 
     def set_missing_values(source, target):
+        target.legacy_record = 1
         
         if source.project:
             project = frappe.get_doc("Project", source.project)
@@ -374,7 +376,7 @@ def create_purchase_clearence(source_name, target_doc=None):
         source_name,
         {
             "Purchase Order": {
-                "doctype": "Purchase Clearence", 
+                "doctype": "Subcontract Clearnce",
                 "validation": {"docstatus": ["=", 1]},
                 "field_map": {
                     "transaction_date": "posting_date",
@@ -404,7 +406,7 @@ def create_purchase_clearence(source_name, target_doc=None):
 
     c_items = frappe.db.sql(f"""
         select ci.item_code, sum(ci.qty) as qty
-        from `tabPurchase Clearence` as c
+        from `tabSubcontract Clearnce` as c
         inner join `tabPurchase Clearence Item` as ci on ci.parent = c.name
         where c.docstatus = 1 and c.purchase_order = '{source_name}'
         group by ci.item_code

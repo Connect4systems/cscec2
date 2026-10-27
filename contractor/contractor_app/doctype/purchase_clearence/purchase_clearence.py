@@ -97,7 +97,7 @@ class PurchaseClearence(Document):
 						delivered_qty = frappe.db.sql(f"""
 							select sum(qty)
 							from `tabPurchase Clearence Item` as ci
-							inner join `tabPurchase Clearence` as c on c.name = ci.parent
+							inner join `tabSubcontract Clearnce` as c on c.name = ci.parent
 							where c.docstatus = 1 and c.purchase_order = '{self.purchase_order}'
 							and ci.item_code = '{item.item_code}'
 							group by ci.item_code
@@ -122,7 +122,7 @@ class PurchaseClearence(Document):
 						delivered_qty = frappe.db.sql(f"""
 							select sum(qty)
 							from `tabPurchase Clearence Item` as ci
-							inner join `tabPurchase Clearence` as c on c.name = ci.parent
+							inner join `tabSubcontract Clearnce` as c on c.name = ci.parent
 							where c.docstatus = 1 and c.project = '{self.project}'
 							and ci.item_code = '{item.item_code}'
 							group by ci.item_code
@@ -135,7 +135,7 @@ class PurchaseClearence(Document):
 	def calculate_amounts(self):
 		total_amount = frappe.db.sql(f"""
 			select sum(current_amount)
-			from `tabPurchase Clearence` where purchase_order = '{self.purchase_order}'
+			from `tabSubcontract Clearnce` where purchase_order = '{self.purchase_order}'
 			and docstatus = 1
 		""", as_list = 1)
 		if total_amount and total_amount[0]:
@@ -632,7 +632,7 @@ def make_purchase_invoice(clearence, target_doc=None, ignore_permissions=False):
 			or item_group.get("buying_cost_center")
 		)
 
-	clearence = frappe.get_doc("Purchase Clearence", clearence)
+	clearence = frappe.get_doc("Subcontract Clearnce", clearence)
 	source_name = clearence.purchase_order
 	doclist = get_mapped_doc(
 		"Purchase Order",
@@ -740,7 +740,14 @@ def make_purchase_receipt(clearence, purchase_invoice):
 @frappe.whitelist()	
 def create_a_payment(source_name, target_doc = None):
 	purchase_invoice = frappe.get_doc("Purchase Invoice", source_name)
-	total_after_deductions = frappe.db.get_value("Purchase Clearence", purchase_invoice.clearence, "total_after_deductions")
+	purchase_invoice.check_permission("read")
+	if not purchase_invoice.get("clearence"):
+		frappe.throw("Deduction entries for clause certificates are managed by certificate submission")
+	certificate = frappe.get_doc("Subcontract Clearnce", purchase_invoice.clearence)
+	certificate.check_permission("read")
+	if not certificate.get("legacy_record"):
+		frappe.throw("Use the deduction entry linked to the Subcontract Clearnce")
+	total_after_deductions = frappe.db.get_value("Subcontract Clearnce", purchase_invoice.clearence, "total_after_deductions")
 
 	je = frappe.new_doc("Journal Entry")
 	je.posting_date = nowdate()

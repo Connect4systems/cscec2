@@ -26,19 +26,20 @@
    "label": "Clause Title",
    "read_only": 1,
    "in_list_view": 1,
-   "columns": 3
+   "columns": 2
   },
   {
    "fieldname": "contractual_clause",
    "fieldtype": "Link",
    "label": "Contractual Clause",
    "options": "Contractual Clause",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 0
   },
   {
    "fieldname": "qty",
    "fieldtype": "Float",
-   "label": "Qty",
+   "label": "Contract Qty",
    "in_list_view": 1,
    "columns": 1,
    "read_only": 1
@@ -48,93 +49,101 @@
    "fieldtype": "Link",
    "label": "Uom",
    "options": "UOM",
-   "read_only": 1
-  },
-  {
-   "fieldname": "rate",
-   "fieldtype": "Currency",
-   "label": "Rate",
-   "in_list_view": 1,
-   "columns": 2,
-   "options": "project_contract_currency",
-   "read_only": 1
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Currency",
-   "label": "Amount",
    "read_only": 1,
    "in_list_view": 1,
-   "columns": 2,
-   "options": "project_contract_currency"
+   "columns": 1
   },
   {
    "fieldname": "parent_series",
    "fieldtype": "Data",
    "label": "Parent Series",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 0
   },
   {
    "fieldname": "source_row",
    "fieldtype": "Data",
    "label": "Source Row",
    "read_only": 1,
-   "hidden": 1
+   "hidden": 1,
+   "in_list_view": 0
   },
   {
    "fieldname": "costing_note",
    "fieldtype": "Link",
    "label": "Costing Note",
    "options": "Costing Note",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 0
   },
   {
    "fieldname": "submitted_boq",
    "fieldtype": "Link",
    "label": "Submitted Boq",
    "options": "BOQ",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 0
   },
   {
    "fieldname": "delivery_date",
    "fieldtype": "Date",
    "label": "Delivery Date",
-   "read_only": 1
+   "read_only": 1,
+   "in_list_view": 0
   },
   {
-   "fieldname": "net_rate",
-   "fieldtype": "Currency",
-   "label": "Net Rate",
+   "fieldname": "completed_qty",
+   "fieldtype": "Float",
+   "label": "Customer Executed Qty",
    "read_only": 1,
-   "options": "project_contract_currency"
+   "in_list_view": 1,
+   "columns": 1
   },
   {
-   "fieldname": "net_amount",
-   "fieldtype": "Currency",
-   "label": "Net Amount",
+   "fieldname": "remaining_qty",
+   "fieldtype": "Float",
+   "label": "Customer Remaining Qty",
    "read_only": 1,
-   "options": "project_contract_currency"
+   "in_list_view": 1,
+   "columns": 1
   },
   {
-   "fieldname": "base_amount",
-   "fieldtype": "Currency",
-   "label": "Base Amount",
+   "fieldname": "subcontract_completed_qty",
+   "fieldtype": "Float",
+   "label": "Subcontract Executed Qty",
    "read_only": 1,
-   "options": "Company:company:default_currency"
+   "in_list_view": 1,
+   "columns": 1
   },
   {
-   "fieldname": "base_net_rate",
-   "fieldtype": "Currency",
-   "label": "Base Net Rate",
+   "fieldname": "subcontract_remaining_qty",
+   "fieldtype": "Float",
+   "label": "Subcontract Remaining Qty",
    "read_only": 1,
-   "options": "Company:company:default_currency"
+   "in_list_view": 1,
+   "columns": 1
   },
   {
-   "fieldname": "base_net_amount",
-   "fieldtype": "Currency",
-   "label": "Base Net Amount",
+   "fieldname": "completion_percentage",
+   "fieldtype": "Percent",
+   "label": "Customer Completion %",
    "read_only": 1,
-   "options": "Company:company:default_currency"
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "subcontract_completion_percentage",
+   "fieldtype": "Percent",
+   "label": "Subcontract Completion %",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "contract_clause_row",
+   "fieldtype": "Data",
+   "label": "Contract Clause Row",
+   "read_only": 1,
+   "hidden": 1,
+   "in_list_view": 0
   }
  ],
  "field_order": [
@@ -144,23 +153,23 @@
   "contractual_clause",
   "qty",
   "uom",
-  "rate",
-  "amount",
   "parent_series",
   "source_row",
   "costing_note",
   "submitted_boq",
   "delivery_date",
-  "net_rate",
-  "net_amount",
-  "base_amount",
-  "base_net_rate",
-  "base_net_amount"
+  "completed_qty",
+  "remaining_qty",
+  "subcontract_completed_qty",
+  "subcontract_remaining_qty",
+  "completion_percentage",
+  "subcontract_completion_percentage",
+  "contract_clause_row"
  ],
  "istable": 1,
  "editable_grid": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "permissions": [],
- "modified": "2026-10-27 18:54:02.880778"
+ "modified": "2026-10-27 21:25:48.564438"
 }

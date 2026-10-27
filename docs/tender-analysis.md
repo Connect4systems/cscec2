@@ -202,11 +202,14 @@ required. A read-only **Created Project** link on the contract opens the result.
 Repeated requests reuse that contract's Project; an unrelated Project with the
 same name blocks creation rather than being overwritten.
 
-The Project's **Project Clauses** tab contains a read-only snapshot of every
-contract clause row, including headings, series, quantities, rates, amounts,
-delivery dates, and tender/Costing Note/BOQ references. The Project also stores
-its source contract, offer, tender, currency, and contract total. Legacy item-based
-pricing buttons are not shown on these clause-based Projects.
+The Project's **Project Clauses** tab contains two read-only quantity tables:
+clause details and a summary by group and unit of measure. Details retain headings,
+series, contractual quantities, delivery dates, and tender/Costing Note/BOQ references.
+Each table shows customer and subcontractor executed quantities, remaining quantities,
+and completion percentages separately. No rate or amount fields are exposed in the
+Project clause tables. New snapshots do not copy prices. Historical database columns
+are retained for preservation. Prices remain on commercial documents and certificates.
+Legacy item-based pricing buttons are not shown on these clause-based Projects.
 
 Older submitted contracts are not bulk-created during migration. Fill and save
 their Project text to create the Project, or use **Create > Project** if the name

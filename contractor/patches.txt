@@ -1,4 +1,5 @@
 [pre_model_sync]
+contractor.patches.rename_clearnce_doctypes
 
 [post_model_sync]
 contractor.patches.retire_opportunity_pricing
@@ -11,3 +12,4 @@ contractor.patches.retire_quotation_contracting
 contractor.patches.repair_project_name_flow
 contractor.patches.project_name_data_fields
 contractor.patches.repair_document_connections
+contractor.patches.clause_progress_and_standard_purchasing

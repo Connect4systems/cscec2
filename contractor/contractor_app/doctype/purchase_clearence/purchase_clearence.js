@@ -9,7 +9,7 @@ cur_frm.cscript.tax_table = "Purchase Taxes and Charges";
 erpnext.accounts.taxes.setup_tax_filters("Purchase Taxes and Charges");
 erpnext.buying.setup_buying_controller();
 
-frappe.ui.form.on('Purchase Clearence', {
+frappe.ui.form.on('Subcontract Clearnce', {
 	setup: function(frm){
 		frm.set_query("taxes_and_charges", function() {
 			return {

@@ -4965,7 +4965,7 @@
   "fieldname": "project_clauses_tab",
   "fieldtype": "Tab Break",
   "label": "Project Clauses",
-  "insert_after": "custom_section_break_hk0ef"
+  "insert_after": "items"
  },
  {
   "doctype": "Custom Field",
@@ -5009,18 +5009,8 @@
   "options": "Currency",
   "label": "Contract Currency",
   "read_only": 1,
-  "insert_after": "project_offer"
- },
- {
-  "doctype": "Custom Field",
-  "dt": "Project",
-  "name": "Project-project_contract_total",
-  "fieldname": "project_contract_total",
-  "fieldtype": "Currency",
-  "options": "project_contract_currency",
-  "label": "Contract Total",
-  "read_only": 1,
-  "insert_after": "project_contract_currency"
+  "insert_after": "project_offer",
+  "hidden": 1
  },
  {
   "doctype": "Custom Field",
@@ -5031,6 +5021,17 @@
   "options": "Project Clause",
   "label": "Project Clauses",
   "read_only": 1,
-  "insert_after": "project_contract_total"
+  "insert_after": "project_clause_groups"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Project",
+  "name": "Project-project_clause_groups",
+  "fieldname": "project_clause_groups",
+  "fieldtype": "Table",
+  "label": "Clause Groups and Progress",
+  "options": "Project Clause Summary",
+  "read_only": 1,
+  "insert_after": "project_contract_currency"
  }
 ]

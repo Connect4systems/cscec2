@@ -112,7 +112,7 @@ cur_frm.cscript.expense_account = function(doc, cdt, cdn) {
 cur_frm.cscript.cost_center = function(doc, cdt, cdn) {
 	erpnext.utils.copy_value_in_all_rows(doc, cdt, cdn, "items", "cost_center");
 }
-frappe.ui.form.on('Clearence', {
+frappe.ui.form.on('Project Clearnce', {
 	setup: function(frm){
 		frm.add_fetch('customer', 'tax_id', 'tax_id');
 

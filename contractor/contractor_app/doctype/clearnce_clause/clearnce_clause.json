@@ -1,0 +1,231 @@
+{
+ "doctype": "DocType",
+ "name": "Clearnce Clause",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "istable": 1,
+ "editable_grid": 1,
+ "fields": [
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "series_number",
+   "fieldtype": "Data",
+   "label": "Series Number",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "clause_title",
+   "fieldtype": "Small Text",
+   "label": "Clause Title",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "contractual_clause",
+   "fieldtype": "Link",
+   "label": "Contractual Clause",
+   "options": "Contractual Clause",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Current Qty",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Uom",
+   "options": "UOM",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "in_list_view": 1,
+   "columns": 1,
+   "options": "currency",
+   "read_only": 0
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "parent_series",
+   "fieldtype": "Data",
+   "label": "Parent Series",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "source_row",
+   "fieldtype": "Data",
+   "label": "Source Row",
+   "read_only": 1,
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "costing_note",
+   "fieldtype": "Link",
+   "label": "Costing Note",
+   "options": "Costing Note",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "submitted_boq",
+   "fieldtype": "Link",
+   "label": "Submitted Boq",
+   "options": "BOQ",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "net_rate",
+   "fieldtype": "Currency",
+   "label": "Net Rate",
+   "read_only": 1,
+   "options": "currency",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount",
+   "read_only": 1,
+   "options": "currency",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Base Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_net_rate",
+   "fieldtype": "Currency",
+   "label": "Base Net Rate",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_net_amount",
+   "fieldtype": "Currency",
+   "label": "Base Net Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "project_clause_ref",
+   "fieldtype": "Data",
+   "label": "Project Clause Ref",
+   "read_only": 1,
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "total_required_qty",
+   "fieldtype": "Float",
+   "label": "Total Required Qty",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "previous_qty",
+   "fieldtype": "Float",
+   "label": "Previous Qty",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "project_previous_qty",
+   "fieldtype": "Float",
+   "label": "Project Previous Qty",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "remaining_qty",
+   "fieldtype": "Float",
+   "label": "Remaining Qty",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "total_executed_qty",
+   "fieldtype": "Float",
+   "label": "Total Executed Qty",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "qty_percentage",
+   "fieldtype": "Percent",
+   "label": "Current % of Remaining"
+  }
+ ],
+ "field_order": [
+  "is_group",
+  "series_number",
+  "clause_title",
+  "contractual_clause",
+  "qty",
+  "qty_percentage",
+  "uom",
+  "rate",
+  "amount",
+  "parent_series",
+  "source_row",
+  "costing_note",
+  "submitted_boq",
+  "delivery_date",
+  "net_rate",
+  "net_amount",
+  "base_amount",
+  "base_net_rate",
+  "base_net_amount",
+  "project_clause_ref",
+  "total_required_qty",
+  "previous_qty",
+  "project_previous_qty",
+  "remaining_qty",
+  "total_executed_qty"
+ ],
+ "permissions": [],
+ "modified": "2026-10-27 21:25:48.564438"
+}

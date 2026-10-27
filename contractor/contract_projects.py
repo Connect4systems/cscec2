@@ -1,8 +1,8 @@
 """Create the operational Project and clause snapshot from a submitted contract."""
 import frappe
 
-from contractor.document_mapping import copy_child_values
 from contractor.project_names import fill_project_name
+from contractor.progress_rules import project_clause_values
 
 
 @frappe.whitelist()
@@ -35,11 +35,13 @@ def create_project(project_contract):
         expected_start_date=contract.transaction_date, expected_end_date=contract.delivery_date,
         status="Open", is_active="Yes", project_contract=contract.name,
         project_offer=contract.get("project_offer"), tender_analysis=contract.tender_analysis,
-        project_contract_currency=contract.currency, project_contract_total=contract.grand_total))
+        project_contract_currency=contract.currency))
     if not project.get("naming_series"):
         project.naming_series = "PROJ-.####"
     for row in contract.clauses:
-        project.append("project_clauses", copy_child_values(row))
+        values = project_clause_values(row)
+        values["contract_clause_row"] = row.name
+        project.append("project_clauses", values)
     project.insert()
     frappe.db.set_value("Project Contract", contract.name,
         {"created_project": project.name, "project": project_name}, update_modified=False)

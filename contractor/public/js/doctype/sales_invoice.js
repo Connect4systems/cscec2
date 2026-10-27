@@ -1,7 +1,7 @@
 
 frappe.ui.form.on("Sales Invoice", {
     refresh: function(frm){
-        if (frm.doc.docstatus == 1 && frm.doc.contractor_order && frm.doc.deductions){
+        if (frm.doc.docstatus == 1 && frm.doc.contractor_order && frm.doc.clearence && (frm.doc.deductions || []).length){
             frm.add_custom_button(__("Deduction Entry"), () => {
                 frm.events.create_deduction_entry(frm);
             }, __('Create'))
@@ -13,7 +13,7 @@ frappe.ui.form.on("Sales Invoice", {
 			frm: frm
 		})
     },
-    selling_deductions_template() {
+    selling_deductions_template(frm) {
 		if(frm.doc.selling_deductions_template) {
 			return frm.call({
 				method: "contractor.www.api.get_deductions",
@@ -41,6 +41,7 @@ frappe.ui.form.on("Sales Invoice", {
 })
 frappe.ui.form.on("Deduction", {
     percent: function(frm, cdt, cdn){
+        if (frm.doctype !== 'Sales Invoice') return;
         let row = locals[cdt][cdn];
         frappe.model.set_value(cdt, cdn, "value", row.percent * frm.doc.rounded_total / 100);
     }

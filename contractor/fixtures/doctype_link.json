@@ -6,7 +6,7 @@
   "group": null,
   "hidden": 0,
   "is_child_table": 0,
-  "link_doctype": "Clearence",
+  "link_doctype": "Project Clearnce",
   "link_fieldname": "opportunity",
   "modified": "2024-09-02 00:07:33.486992",
   "name": "c50ad53f59",
@@ -15,5 +15,27 @@
   "parentfield": "links",
   "parenttype": "Customize Form",
   "table_fieldname": null
+ },
+ {
+  "doctype": "DocType Link",
+  "custom": 1,
+  "name": "project-project-clearnce",
+  "parent": "Project",
+  "parenttype": "Customize Form",
+  "parentfield": "links",
+  "link_doctype": "Project Clearnce",
+  "link_fieldname": "project",
+  "group": "Certificates"
+ },
+ {
+  "doctype": "DocType Link",
+  "custom": 1,
+  "name": "project-subcontract-clearnce",
+  "parent": "Project",
+  "parenttype": "Customize Form",
+  "parentfield": "links",
+  "link_doctype": "Subcontract Clearnce",
+  "link_fieldname": "project",
+  "group": "Certificates"
  }
 ]
