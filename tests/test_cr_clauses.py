@@ -77,7 +77,9 @@ class CRClausesTest(unittest.TestCase):
             Record(name='b', is_group=0, series_number='4_7', parent_series='4', clause_title='B', qty=5)],
             check_permission=MagicMock())
         self.frappe.get_doc.side_effect = [doc, project]
-        self.service.fetch_project_clauses('CR-1', fetch_all=0, selected_rows=['b'], project='PROJ-1')
+        self.service.fetch_project_clauses('CR-1', fetch_all=0, selected_rows=['b'], project='PROJ-1', quantities={'b': '2.5'})
         self.assertEqual([row.project_clause for row in doc.clauses], ['group', 'b'])
         self.assertEqual(doc.clauses[1].series_number, '4_7')
+        self.assertEqual(doc.clauses[1].qty, 2.5)
+        self.assertEqual(project.project_clauses[2].qty, 5)
         self.assertEqual(doc.numbering_mode, 'From Excel')

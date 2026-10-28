@@ -57,3 +57,10 @@ switching groups. **Insert Clauses** replaces the current CR clause table, inclu
 the selected details' headings once, and preserves source ordering and series.
 The server checks draft/write permissions, Project read access, selection membership,
 and that the CR's Project has not changed while the picker was open.
+
+In the CR Project picker, **All Clauses** hides the Group Clause and group-selection
+controls. Uncheck it to show both controls. Selecting a group and leaving **Select
+All Clauses in This Group** unchecked shows its details with checkboxes and editable
+quantities. Checking it selects the whole group and hides the detail table. Quantity
+changes are validated as finite positive numbers and apply to CR only; Project
+quantities remain unchanged.

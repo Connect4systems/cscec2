@@ -70,7 +70,7 @@ def apply_excel(cr, file_url):
 
 
 @frappe.whitelist()
-def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None):
+def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None, quantities=None):
     doc = editable_cr(cr)
     if project and project != doc.project:
         frappe.throw("The CR Project changed. Reopen Fetch from Project.")
@@ -79,17 +79,22 @@ def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None):
     rows = project.get("project_clauses") or []
     if not rows:
         frappe.throw("The selected Project has no contract clauses")
-    from contractor.cr_clause_selection import select_project_rows
+    from contractor.cr_clause_selection import select_project_rows, selected_quantities
     if isinstance(selected_rows, str):
         selected_rows = frappe.parse_json(selected_rows)
+    if isinstance(quantities, str):
+        quantities = frappe.parse_json(quantities)
     try:
         rows = select_project_rows(rows, str(fetch_all).lower() in ('1', 'true'), selected_rows)
+        overrides = selected_quantities(rows, quantities) if str(fetch_all).lower() not in ('1', 'true') else {}
     except ValueError as exc:
         frappe.throw(str(exc))
     doc.set("clauses", [])
     for row in rows:
         values = {key: row.get(key) for key in (
             "is_group", "series_number", "parent_series", "clause_title", "qty", "uom", "contractual_clause")}
+        if row.name in overrides:
+            values["qty"] = overrides[row.name]
         values["project_clause"] = row.name
         doc.append("clauses", values)
     doc.numbering_mode = "From Excel"
