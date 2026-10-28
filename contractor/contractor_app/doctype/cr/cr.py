@@ -1,9 +1,89 @@
-# Copyright (c) 2025, Jenan Alfahham and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
+
+from contractor.tender_logic import number_rows
+from contractor.contractor_app.doctype.tender_analysis.tender_analysis import read_clause_excel
 
 
 class CR(Document):
-	pass
+    def validate(self):
+        try:
+            number_rows(self.get("clauses") or [], self.get("numbering_mode") or "Automatic")
+        except ValueError as exc:
+            frappe.throw(str(exc))
+        # Existing attachment-only requests can still be saved. New clause requests need a supplier.
+        if self.get("clauses") and not self.get("supplier"):
+            frappe.throw("Select a Supplier for the contract clauses")
+        sources = None
+        for row in self.get("clauses") or []:
+            if not row.get("project_clause"):
+                if row.get("contractual_clause"):
+                    frappe.throw("Contractual Clause references must come from the selected Project")
+                continue
+            if sources is None:
+                project = frappe.get_doc("Project", self.project)
+                project.check_permission("read")
+                sources = {r.name: r for r in project.get("project_clauses") or []}
+            source = sources.get(row.project_clause)
+            if not source or source.get("contractual_clause") != row.get("contractual_clause") or bool(source.is_group) != bool(row.is_group):
+                frappe.throw("A fetched clause does not belong to the selected Project or its group type changed")
+
+
+def editable_cr(cr):
+    doc = frappe.get_doc("CR", cr)
+    doc.check_permission("write")
+    if doc.docstatus != 0:
+        frappe.throw("Only draft CRs can replace contract clauses")
+    return doc
+
+
+@frappe.whitelist()
+def download_template():
+    frappe.has_permission("CR", "read", throw=True)
+    # Same format as Tender Analysis, with CR permissions.
+    import io
+    from openpyxl import Workbook
+    from contractor.contractor_app.doctype.tender_analysis.tender_analysis import HEADERS
+    workbook = Workbook()
+    workbook.active.append(HEADERS)
+    workbook.active.append(["1", "Civil Works", 1, None, None])
+    workbook.active.append(["1_1", "Excavation", 0, 100, None])
+    output = io.BytesIO()
+    workbook.save(output)
+    frappe.local.response.filename = "cr_clauses.xlsx"
+    frappe.local.response.filecontent = output.getvalue()
+    frappe.local.response.type = "binary"
+
+
+@frappe.whitelist()
+def preview_excel(cr, file_url):
+    editable_cr(cr)
+    return read_clause_excel(file_url)
+
+
+@frappe.whitelist()
+def apply_excel(cr, file_url):
+    doc = editable_cr(cr)
+    doc.set("clauses", read_clause_excel(file_url))
+    doc.numbering_mode = "From Excel"
+    doc.save()
+    return doc.name
+
+
+@frappe.whitelist()
+def fetch_project_clauses(cr):
+    doc = editable_cr(cr)
+    project = frappe.get_doc("Project", doc.project)
+    project.check_permission("read")
+    rows = project.get("project_clauses") or []
+    if not rows:
+        frappe.throw("The selected Project has no contract clauses")
+    doc.set("clauses", [])
+    for row in rows:
+        values = {key: row.get(key) for key in (
+            "is_group", "series_number", "parent_series", "clause_title", "qty", "uom", "contractual_clause")}
+        values["project_clause"] = row.name
+        doc.append("clauses", values)
+    doc.numbering_mode = "From Excel"
+    doc.save()
+    return doc.name

@@ -259,3 +259,22 @@ the browser. The native connection check can be run on a test site with:
 ```bash
 bench --site test-site-name run-tests --module contractor.contractor_app.doctype.costing_note.test_connections_native
 ```
+
+## Subcontractor contract requests (CR)
+
+CR supports Supplier selection and a Contract Clauses table. Add group headings
+and detail rows manually; Automatic numbering uses the same `1`, `1_1`, `1_2`
+series as Tender Analysis. Detail quantities must be positive, and clause-based
+requests require a Supplier. Existing attachment-only requests remain supported.
+
+Save a draft CR, then use **Excel Template** and **Upload Excel** to preview and
+replace its clauses using the Tender Analysis spreadsheet format. **From Excel**
+preserves valid series and gaps; Automatic renumbers on save.
+**Fetch from Project** replaces the table with the selected Project's clauses,
+including quantities, UOM, original series, and source references. Select the
+Supplier before applying rows. Replacement actions are restricted to drafts.
+Fetched references are checked against the selected Project on save.
+
+Deploy with `bench --site actual-site-name migrate`, `bench build --app contractor`,
+and `bench restart`. Verify CR manual entry, Excel preview/apply, Project fetch,
+and submission on a test site.

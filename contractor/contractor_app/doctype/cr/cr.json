@@ -8,6 +8,8 @@
  "engine": "InnoDB",
  "field_order": [
   "project",
+  "supplier",
+  "supplier_name",
   "contract_type",
   "division",
   "column_break_wiss",
@@ -15,6 +17,9 @@
   "end_date",
   "attach_cr",
   "project_abbriviation",
+  "clauses_section",
+  "numbering_mode",
+  "clauses",
   "section_break_mswi",
   "note",
   "section_break_lla0",
@@ -120,6 +125,37 @@
    "fieldtype": "Link",
    "label": "CR Comparison",
    "options": "CR Comparison"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "fetch_from": "supplier.supplier_name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "clauses_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Clauses"
+  },
+  {
+   "fieldname": "numbering_mode",
+   "fieldtype": "Select",
+   "label": "Numbering Mode",
+   "options": "Automatic\nFrom Excel",
+   "default": "Automatic"
+  },
+  {
+   "fieldname": "clauses",
+   "fieldtype": "Table",
+   "label": "Contract Clauses",
+   "options": "CR Clause"
   }
  ],
  "grid_page_length": 50,
@@ -132,7 +168,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2025-07-24 10:41:03.869730",
+ "modified": "2026-10-28 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "Contractor App",
  "name": "CR",

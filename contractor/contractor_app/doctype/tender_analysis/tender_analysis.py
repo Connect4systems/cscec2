@@ -125,6 +125,10 @@ def preview_excel(tender_analysis, file_url):
     from openpyxl import load_workbook
     doc = frappe.get_doc("Tender Analysis", tender_analysis)
     doc.check_permission("write")
+    return read_clause_excel(file_url)
+
+
+def read_clause_excel(file_url):
     file = frappe.get_doc("File", {"file_url": file_url})
     file.check_permission("read")
     content = file.get_content()
