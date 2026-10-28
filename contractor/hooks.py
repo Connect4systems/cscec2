@@ -244,3 +244,5 @@ doc_events = {
 # auth_hooks = [
 #	"contractor.auth.validate"
 # ]
+# Reapply after fixture/customization sync so Project Abbreviation stays visible.
+after_migrate = ["contractor.patches.project_abbreviation.execute"]
