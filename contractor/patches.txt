@@ -14,3 +14,5 @@ contractor.patches.project_name_data_fields
 contractor.patches.repair_document_connections
 contractor.patches.clause_progress_and_standard_purchasing
 contractor.patches.cleanup_unused_legacy_definitions
+contractor.patches.seed_divisions
+contractor.patches.seed_cost_codes

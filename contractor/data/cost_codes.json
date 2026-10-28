@@ -1,0 +1,5814 @@
+[
+ {
+  "cost_code": "Indirect",
+  "des": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.005.000",
+  "des": "Site indirect Staff Expenses",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.005.001",
+  "des": "Salaries and Benefits for all staff",
+  "parent_cost_code": "100.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.005.002",
+  "des": "Staff Incentive",
+  "parent_cost_code": "100.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.005.010",
+  "des": "Indirect wages",
+  "parent_cost_code": "100.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.000",
+  "des": "Site indirect Staff housing and Transportation",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.010.001",
+  "des": "Housing Rental",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.002",
+  "des": "Housing maintenance & Expenses",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.010",
+  "des": "Transportation",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.011",
+  "des": "Private Car",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.012",
+  "des": "Fuel Expenses",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.013",
+  "des": "Owned Vehicles' Depreciation",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.014",
+  "des": "Maintenance Cost for Project Owned Vehicles",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.015",
+  "des": "Registration & Insurance of Project Owned Vehicles",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.010.020",
+  "des": "Inland Transport, and Fuel",
+  "parent_cost_code": "100.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.015.000",
+  "des": "Provision of Utilities for Employers/Consultant",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.015.001",
+  "des": "Employers/Consultant Site Facilities",
+  "parent_cost_code": "100.015.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.015.002",
+  "des": "Employers/Consultant Hospitality",
+  "parent_cost_code": "100.015.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.015.003",
+  "des": "Employers/Consultant Overtime& Meals",
+  "parent_cost_code": "100.015.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.015.010",
+  "des": "Consultant Vehicles Expenses",
+  "parent_cost_code": "100.015.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.015.011",
+  "des": "Consultant Vehicles' Fuel and Maintenance",
+  "parent_cost_code": "100.015.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.018.000",
+  "des": "Engineering Consultancy Services",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.018.001",
+  "des": "Engineering Services",
+  "parent_cost_code": "100.018.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.018.002",
+  "des": "Consultancy Services",
+  "parent_cost_code": "100.018.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.020.000",
+  "des": "Site Preparation & Access",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.020.001",
+  "des": "Chain link fence",
+  "parent_cost_code": "100.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.020.002",
+  "des": "Site Preparation",
+  "parent_cost_code": "100.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.020.003",
+  "des": "Road preparation",
+  "parent_cost_code": "100.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.020.010",
+  "des": "landscape",
+  "parent_cost_code": "100.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.020.015",
+  "des": "Signage",
+  "parent_cost_code": "100.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.020.016",
+  "des": "Shade",
+  "parent_cost_code": "100.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.000",
+  "des": "Offices & Site Facilities/Furniture",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.030.001",
+  "des": "Site Offices",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.002",
+  "des": "Site Furniture",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.003",
+  "des": "Offices' Running Cost",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.004",
+  "des": "Offices' Stationary & Supplies",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.005",
+  "des": "Offices' A/C",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.006",
+  "des": "Warehouse & Workshops",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.007",
+  "des": "Other buildings",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.008",
+  "des": "Civil work for mobilization",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.009",
+  "des": "Office Service Equipment",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.015",
+  "des": "Water for staff",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.030.016",
+  "des": "Catering and cleaning Material",
+  "parent_cost_code": "100.030.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.035.000",
+  "des": "Offices & Site Utilities",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.035.010",
+  "des": "Site Plumbing & Mechanical work",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.035.011",
+  "des": "Site Sewage",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.035.012",
+  "des": "Site Electricity",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.035.013",
+  "des": "Transportation and Disposal of Hazardous Materials",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.035.030",
+  "des": "Photographing",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.035.050",
+  "des": "Gratuities and Donation",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.000",
+  "des": "Site Equipment ",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.040.001",
+  "des": "Generator",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.002",
+  "des": "Tower Cranes",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.003",
+  "des": "Mobile crane",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.004",
+  "des": "Forklift Clark",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.005",
+  "des": "Loader for site server purpose",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.006",
+  "des": "Water tank truck",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.007",
+  "des": "Compactors site server purpose",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.008",
+  "des": "bobcat",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.009",
+  "des": "Tractor",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.010",
+  "des": "Flatbed long",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.015",
+  "des": "Miscellaneous equipment",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.020",
+  "des": "Equipment Fuel/Oil",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.040.025",
+  "des": "Equipment Maintenance",
+  "parent_cost_code": "100.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.045.001",
+  "des": "Site Small Tools and Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "100.035.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.050.000",
+  "des": "Surveying Equipment ",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.050.001",
+  "des": "Surveying Equipment",
+  "parent_cost_code": "100.050.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.050.002",
+  "des": "Surveying Supplies",
+  "parent_cost_code": "100.050.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.060.000",
+  "des": "HSE",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.060.001",
+  "des": "HSE Material Expenses",
+  "parent_cost_code": "100.060.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.060.003",
+  "des": "Access Scaffolding",
+  "parent_cost_code": "100.060.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.070.000",
+  "des": "Computer Hardware & Software",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.070.001",
+  "des": "Laptop and PC",
+  "parent_cost_code": "100.070.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.070.002",
+  "des": "Printers, Photocopier and Plotters",
+  "parent_cost_code": "100.070.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.070.003",
+  "des": "Software Licenses",
+  "parent_cost_code": "100.070.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.080.000",
+  "des": "Communication Expenses",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.080.001",
+  "des": "Internet Expenses and network",
+  "parent_cost_code": "100.080.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.080.002",
+  "des": "Mobile expenses",
+  "parent_cost_code": "100.080.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.080.003",
+  "des": "Server and Networks",
+  "parent_cost_code": "100.080.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.090.000",
+  "des": "Site Security",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.090.001",
+  "des": "Arabian Fees",
+  "parent_cost_code": "100.090.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.090.002",
+  "des": "Security Agency",
+  "parent_cost_code": "100.090.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.090.010",
+  "des": "Security Camera",
+  "parent_cost_code": "100.090.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.090.015",
+  "des": "Security moblization",
+  "parent_cost_code": "100.090.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.100.000",
+  "des": "Demobilization Cost",
+  "parent_cost_code": "Indirect",
+  "is_group": 1
+ },
+ {
+  "cost_code": "100.100.001",
+  "des": "Demobilization Equipment",
+  "parent_cost_code": "100.100.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.100.002",
+  "des": "Demobilization Manship",
+  "parent_cost_code": "100.100.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "100.100.003",
+  "des": "Demobilization Expenses",
+  "parent_cost_code": "100.100.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "110.000.000",
+  "des": "Division 110 – Markup and Overhead",
+  "is_group": 1
+ },
+ {
+  "cost_code": "01.00.000.000",
+  "des": "Division 01 - General Requirements",
+  "is_group": 1
+ },
+ {
+  "cost_code": "01.01.001.000",
+  "des": "General Direct Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "01.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "01.05.001.000",
+  "des": "General Direct Equipment",
+  "parent_cost_code": "01.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "02.00.000.000",
+  "des": "Division 02 - Site Work",
+  "is_group": 1
+ },
+ {
+  "cost_code": "02.20.001.000",
+  "des": "Excavation - Manual",
+  "parent_cost_code": "02.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "02.20.002.000",
+  "des": "Excavation - Mechanical",
+  "parent_cost_code": "02.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "02.30.001.000",
+  "des": "Replacement",
+  "parent_cost_code": "02.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "02.30.002.000",
+  "des": "Backfill",
+  "parent_cost_code": "02.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "02.40.001.000",
+  "des": "Demolishing Work",
+  "parent_cost_code": "02.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.00.000.000",
+  "des": "Division 03 - Concrete",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.01.000.000",
+  "des": "General Concrete Work",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.05.016.000",
+  "des": "Concrete Car Bumpers",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.11.001.000",
+  "des": "Foam Concrete",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.20.001.000",
+  "des": "PC Footing",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.30.001.000",
+  "des": "RC Footing",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.30.003.000",
+  "des": "RC Colum",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.30.004.000",
+  "des": "RC Slab",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.30.008.000",
+  "des": "RC Ramp",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.30.010.000",
+  "des": "Slab On Grade",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.30.220.000",
+  "des": "Steel Reinforcement",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.49.001.000",
+  "des": "GRC",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "03.52.016.000",
+  "des": "Light weight Concrete",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "04.20.000.000",
+  "des": "Division 04 - Masonry",
+  "is_group": 1
+ },
+ {
+  "cost_code": "04.20.001.000",
+  "des": "Solid Blockwork",
+  "parent_cost_code": "04.20.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "04.20.005.000",
+  "des": "Hollow Blockwork",
+  "parent_cost_code": "04.20.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "04.20.010.000",
+  "des": "Light weight Blockwork",
+  "parent_cost_code": "04.20.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "04.40.001.000",
+  "des": "Stone Cladding",
+  "parent_cost_code": "04.20.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.00.000.000",
+  "des": "Division 05 - Metals",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.31.001.000",
+  "des": "Metal Access Doors",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.51.001.000",
+  "des": "Metal Fabrication - Steel Stairs",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.51.002.000",
+  "des": "Metal Fabrication - Steel Catwalks",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.51.003.000",
+  "des": "Metal Fabrication - Steel Ladders",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.51.004.000",
+  "des": "Metal Fabrication - Steel Fire Escapes",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.52.001.000",
+  "des": "Metal Railings",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.53.001.000",
+  "des": "Metal Gratings",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.55.001.000",
+  "des": "Metal Stair Treads and Nosing",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.75.001.000",
+  "des": "Decorative Formed Metal",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "05.93.000.000",
+  "des": "Interior Public Space Furnishings",
+  "parent_cost_code": "05.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "06.00.000.000",
+  "des": "Division 06 - Wood, Plastics, Composites",
+  "is_group": 1
+ },
+ {
+  "cost_code": "06.40.023.000",
+  "des": "Interior Architectural Woodwork",
+  "parent_cost_code": "06.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "06.42.001.000",
+  "des": "Wood Paneling",
+  "parent_cost_code": "06.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.00.000.000",
+  "des": "Division 07 - Thermal and Moisture Protection",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.00.000.000",
+  "des": "Division 08 - Doors and Windows",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.11.013.000",
+  "des": "Metal Doors and Frames",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.11.016.000",
+  "des": "Aluminum Doors and Frames",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.14.005.000",
+  "des": "Wood Doors",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.32.013.000",
+  "des": "Sliding Glass Doors",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.51.013.000",
+  "des": "Aluminum Windows",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.71.001.000",
+  "des": "Metal Doors' Hardware",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.71.005.000",
+  "des": "Wooden Doors' Hardware",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.83.001.000",
+  "des": "Mirrors",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "08.91.001.000",
+  "des": "Aluminum louvers",
+  "parent_cost_code": "08.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.00.000.000",
+  "des": "Division 09 - Finishes",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.24.001.000",
+  "des": "Plastering - Internal Walls",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.24.002.000",
+  "des": "Plastering - Ceilings",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.24.003.000",
+  "des": "Plastering - External Walls",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.29.001.000",
+  "des": "Gypsum Board",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.30.001.000",
+  "des": "Ceramic/Porcelain Tiling",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.30.13.0010",
+  "des": "Portland Cement Terrazzo Flooring",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.63.040.000",
+  "des": "Stone Flooring",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.64.019.000",
+  "des": "Wood Flooring",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.64.033.000",
+  "des": "Laminated Wood Flooring",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.66.016.000",
+  "des": "Terrazzo Floor Tile",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.75.013.000",
+  "des": "External Stone work",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.90.001.000",
+  "des": "Painting - Internal Walls",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.90.002.000",
+  "des": "Painting - Ceilings",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.90.003.000",
+  "des": "Painting - External Walls",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.91.013.000",
+  "des": "Internal Painting",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.91.023.000",
+  "des": "External Painting",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.96.056.000",
+  "des": "Epoxy Coatings",
+  "parent_cost_code": "09.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.00.000.000",
+  "des": "Division 010 - Specialties",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.14.000.000",
+  "des": "Signage",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.22.000.000",
+  "des": "Partitions",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.26.000.000",
+  "des": "Wall and Door Protection",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.28.000.000",
+  "des": "Toilet, Bath, and Laundry Accessories",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.44.013.000",
+  "des": "Fire Protection Specialties",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.71.013.000",
+  "des": "Fixed Sun Screen",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "10.71.015.000",
+  "des": "Fixed Sun Screen",
+  "parent_cost_code": "10.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "12.00.000.000",
+  "des": "Division 012 - Furnishings",
+  "is_group": 1
+ },
+ {
+  "cost_code": "12.93.000.000",
+  "des": "Interior Public Space Furnishings",
+  "parent_cost_code": "12.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "14.00.000.000",
+  "des": "Division 014 - CONVEYING EQUIPMENT",
+  "is_group": 1
+ },
+ {
+  "cost_code": "14.91.000.000",
+  "des": "Facility Chutes",
+  "parent_cost_code": "14.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.00.000.000",
+  "des": "Division 21 - Fire Suppression",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.05.023.000",
+  "des": "Duty Valves for Fire Piping",
+  "parent_cost_code": "21.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.11.005.000",
+  "des": "Fire-Suppression Piping",
+  "parent_cost_code": "21.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.11.019.000",
+  "des": "Fire-Department Connections",
+  "parent_cost_code": "21.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.13.005.000",
+  "des": "Sprinkler Systems",
+  "parent_cost_code": "21.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.13.039.000",
+  "des": "Foam-Water Fire Suppression Systems",
+  "parent_cost_code": "21.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "21.20.001.000",
+  "des": "Fire-Extinguishing Systems ",
+  "parent_cost_code": "21.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.00.000.000",
+  "des": "Division 22 - Plumbing Work",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.01.010.061",
+  "des": "Plumbing Piping Repairs",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.05.023.000",
+  "des": "Duty Valves for Plumbing Piping",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.11.016.000",
+  "des": "Domestic Water Piping",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.11.019.000",
+  "des": "Domestic Water Piping Specialties",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.14.013.000",
+  "des": "Facility Storm Drainage",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.14.023.000",
+  "des": "Storm Drainage Piping Specialties",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.14.026.000",
+  "des": "Facility Storm Drains",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.14.029.000",
+  "des": "Sump Pumps",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.33.000.000",
+  "des": "Electric Domestic Water Heaters",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "22.40.000.000",
+  "des": "Plumbing Fixtures",
+  "parent_cost_code": "22.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.00.000.000",
+  "des": "Division 23 - HVAC System",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.05.005.000",
+  "des": "Common Work Results for HVAC",
+  "parent_cost_code": "23.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.23.005.000",
+  "des": "Refrigerant Piping",
+  "parent_cost_code": "23.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.31.013.000",
+  "des": "Metal Ducts",
+  "parent_cost_code": "23.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.34.013.000",
+  "des": "Axial HVAC Fans",
+  "parent_cost_code": "23.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.37.013.000",
+  "des": "Diffusers, Registers, and Grilles",
+  "parent_cost_code": "23.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "23.81.026.000",
+  "des": "Split-System Air-Conditioners",
+  "parent_cost_code": "23.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.00.000.000",
+  "des": "Division 26 - Electrical Package",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.05.019.000",
+  "des": "LV - Power Conductors and Cables",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.05.026.000",
+  "des": "Grounding and Bonding",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.05.033.000",
+  "des": "Raceway and Boxes",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.05.036.000",
+  "des": "Cable Trays",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.22.013.000",
+  "des": "LV Distribution Transformers",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.27.026.000",
+  "des": "Wiring Devices",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.28.016.000",
+  "des": "Enclosed Switches and Circuit Breakers",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.33.053.000",
+  "des": "Static UPS",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "26.51.003.000",
+  "des": "Interior Lighting",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "27.00.000.000",
+  "des": "Division 27 - Communications Package",
+  "is_group": 1
+ },
+ {
+  "cost_code": "27.10.000.000",
+  "des": "Structured Cabling",
+  "parent_cost_code": "27.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "27.11.016.000",
+  "des": "Communications Cabinets, Racks, Frames, and Enclosures",
+  "parent_cost_code": "27.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "27.21.016.000",
+  "des": "Data Communications Network Equipment",
+  "parent_cost_code": "27.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "28.00.000.000",
+  "des": "Division 28 - Electronic Safety \nand Security Package",
+  "is_group": 1
+ },
+ {
+  "cost_code": "28.13.000.000",
+  "des": "Access Control Software and Database Management",
+  "parent_cost_code": "28.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "28.15.023.000",
+  "des": "Intercom Entry Systems",
+  "parent_cost_code": "28.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.00.000.000",
+  "des": "Division 30 - Infrastructure Package",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.005.026",
+  "des": "Earthing System",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.005.119",
+  "des": "LV - Cables",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.005.435",
+  "des": "General Civil Works For Air Blown Fiber (ABF)",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.005.436",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF)",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.012.000",
+  "des": "Distribution transformers kiosk",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.033.053",
+  "des": "UPS",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.26.056.000",
+  "des": "Outdoor lighting system",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.31.020.000",
+  "des": "Earth moving",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.32.011.023",
+  "des": "Crushed aggregate base course",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.32.014.000",
+  "des": "Unit Pavers",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.33.005.033",
+  "des": "HDPE Drainage Pipe",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.33.014.000",
+  "des": "Sitework for irrigation water distribution networks",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.33.014.019",
+  "des": "Infrastructure’s Valves",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.33.031.000",
+  "des": "Sitework for drain networks",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "30.40.060.010",
+  "des": "SCADA System Management",
+  "parent_cost_code": "30.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.009.050.000",
+  "des": "Modified Bituminous Membrane Roofing",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.013.040.000",
+  "des": "Polyethylene Sheet Vapor Retarder",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.014.016.000",
+  "des": "Cold Fluid-Applied Waterproofing",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.016.013.000",
+  "des": "Cementitious and Reactive Waterproofing",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.018.000.000",
+  "des": "Traffic Coatings",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.021.010.000",
+  "des": "Thermal Insulation",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.032.013.000",
+  "des": "Clay Roof Tiles",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "07.052.013.000",
+  "des": "APP Modified Bituminous Sheet Waterproofing",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "09.30.13.001.M",
+  "des": "Portland Cement Terrazzo Flooring - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.30.13.0010",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.30.13.001.S",
+  "des": "Portland Cement Terrazzo Flooring - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.30.13.0010",
+  "is_group": 0
+ },
+ {
+  "cost_code": "14.20.001.010M",
+  "des": "Elevator / Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "14.20.001.000.M",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.24.026.000M",
+  "des": "packages unite substations / material",
+  "cost_type": "Material - C",
+  "is_group": 0
+ },
+ {
+  "cost_code": "01.01.001.015.M",
+  "des": "Miscellaneous Tools/Supplies",
+  "parent_cost_code": "01.01.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "01.05.001.005.E",
+  "des": "Compressors",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "01.05.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "01.05.001.015.E",
+  "des": "Miscellaneous equipment",
+  "parent_cost_code": "01.05.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "01.05.001.020.E",
+  "des": "Equipment Fuel/Oil",
+  "parent_cost_code": "01.05.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "01.05.001.050.E",
+  "des": "Direct Material Transport",
+  "parent_cost_code": "01.05.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.001.001.E",
+  "des": "Excavation - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "02.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.001.001.L",
+  "des": "Excavation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "02.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.001.001.S",
+  "des": "Excavation - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "02.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.001.009.M",
+  "des": "Excavation - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "02.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.002.001.E",
+  "des": "Excavation - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "02.20.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.002.001.L",
+  "des": "Excavation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "02.20.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.002.001.S",
+  "des": "Excavation - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "02.20.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.20.002.009.M",
+  "des": "Excavation - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "02.20.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.001.001.E",
+  "des": "Replacement - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "02.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.001.001.L",
+  "des": "Replacement - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "02.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.001.001.S",
+  "des": "Replacement - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "02.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.001.008.M",
+  "des": "Replacement - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "02.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.002.001.E",
+  "des": "Backfill - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "02.30.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.002.001.L",
+  "des": "Backfill - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "02.30.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.002.001.S",
+  "des": "Backfill - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "02.30.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.30.002.008.M",
+  "des": "Backfill - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "02.30.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.40.001.001.E",
+  "des": "Demolishing - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "02.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.40.001.001.L",
+  "des": "Demolishing - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "02.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.40.001.001.S",
+  "des": "Demolishing - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "02.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "02.40.001.010.M",
+  "des": "Demolishing - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "02.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.00.001.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.00.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.05.016.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.05.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.05.016.001.M",
+  "des": "Concrete Car Bumpers - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.05.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.05.016.001.S",
+  "des": "Concrete Car Bumpers - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.05.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.11.001.001.E",
+  "des": "Foam Concrete - Subcontractor",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.11.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.11.001.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.11.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.11.001.001.S",
+  "des": "Foam Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.11.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.11.001.004.M",
+  "des": "Foam Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.11.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.001.M",
+  "des": "Formwork - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.001.S",
+  "des": "Formwork - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.002.L",
+  "des": "Concrete Lab Testing",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.004.M",
+  "des": "Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.004.S",
+  "des": "Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.009.M",
+  "des": "Concrete work - Water",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.010.M",
+  "des": "Formwork - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.014.M",
+  "des": "Concrete work - Curing Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.015.M",
+  "des": "Concrete work - Small Tools",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.20.001.016.M",
+  "des": "Concrete work - Small Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.000.002.M",
+  "des": "Rebar - Material",
+  "parent_cost_code": "03.01.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.000.004.M",
+  "des": "Concrete - Material",
+  "parent_cost_code": "03.01.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.001.M",
+  "des": "Formwork - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.001.S",
+  "des": "Formwork - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.002.E",
+  "des": "Rebar - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.002.L",
+  "des": "Concrete Lab Testing",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.002.M",
+  "des": "Rebar - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.002.S",
+  "des": "Rebar - Subcontractor Installation",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.003.S",
+  "des": "Rebar - Subcontractor Fabrication",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.004.E",
+  "des": "Pouring - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.004.M",
+  "des": "Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.004.S",
+  "des": "Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.009.M",
+  "des": "Concrete work - Water",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.010.M",
+  "des": "Formwork - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.012.M",
+  "des": "Rebar - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.014.M",
+  "des": "Concrete work - Curing Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.015.M",
+  "des": "Concrete work - Small Tools",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.001.016.M",
+  "des": "Concrete work - Small Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.002.001.E",
+  "des": "Rebar - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.002.002.E",
+  "des": "Rebar - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.001.M",
+  "des": "Formwork - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.001.S",
+  "des": "Formwork - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.002.L",
+  "des": "Concrete Lab Testing",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.002.M",
+  "des": "Rebar - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.002.S",
+  "des": "Rebar - Subcontractor Installation",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.003.M",
+  "des": "Scaffolding - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.003.S",
+  "des": "Rebar - Subcontractor Fabrication",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.004.E",
+  "des": "Pouring - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.004.M",
+  "des": "Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.004.S",
+  "des": "Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.005.S",
+  "des": "Scaffolding - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.009.M",
+  "des": "Concrete work - Water",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.010.M",
+  "des": "Formwork - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.012.M",
+  "des": "Rebar - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.014.M",
+  "des": "Concrete work - Curing Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.015.M",
+  "des": "Concrete work - Small Tools",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.003.016.M",
+  "des": "Concrete work - Small Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.001.M",
+  "des": "Formwork - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.001.S",
+  "des": "Formwork - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.002.E",
+  "des": "Rebar - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.002.L",
+  "des": "Concrete Lab Testing",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.002.M",
+  "des": "Rebar - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.002.S",
+  "des": "Rebar - Subcontractor Installation",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.003.M",
+  "des": "Scaffolding - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.003.S",
+  "des": "Rebar - Subcontractor Fabrication",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.004.E",
+  "des": "Pouring - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.004.M",
+  "des": "Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.004.S",
+  "des": "Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.005.S",
+  "des": "Scaffolding - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.009.M",
+  "des": "Concrete work - Water",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.010.M",
+  "des": "Formwork - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.012.M",
+  "des": "Rebar - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.014.M",
+  "des": "Concrete work - Curing Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.015.M",
+  "des": "Concrete work - Small Tools",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.004.016.M",
+  "des": "Concrete work - Small Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.001.M",
+  "des": "Formwork - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.001.S",
+  "des": "Formwork - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.002.E",
+  "des": "Rebar - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.002.L",
+  "des": "Concrete Lab Testing",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.002.M",
+  "des": "Rebar - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.002.S",
+  "des": "Rebar - Subcontractor Installation",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.003.M",
+  "des": "Scaffolding - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.003.S",
+  "des": "Rebar - Subcontractor Fabrication",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.004.E",
+  "des": "Pouring - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.004.M",
+  "des": "Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.004.S",
+  "des": "Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.005.S",
+  "des": "Scaffolding - Subcontractors",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.009.M",
+  "des": "Concrete work - Water",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.010.M",
+  "des": "Formwork - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.012.M",
+  "des": "Rebar - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.014.M",
+  "des": "Concrete work - Curing Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.015.M",
+  "des": "Concrete work - Small Tools",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.008.016.M",
+  "des": "Concrete work - Small Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.008.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.001.M",
+  "des": "Formwork - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.001.S",
+  "des": "Formwork - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.002.E",
+  "des": "Rebar - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.002.L",
+  "des": "Concrete Lab Testing",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.002.M",
+  "des": "Rebar - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.002.S",
+  "des": "Rebar - Subcontractor Installation",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.003.S",
+  "des": "Rebar - Subcontractor Fabrication",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.004.E",
+  "des": "Pouring - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.004.M",
+  "des": "Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.004.S",
+  "des": "Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.009.M",
+  "des": "Concrete work - Water",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.011.M",
+  "des": "Concrete work - Expansion Joint",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.012.M",
+  "des": "Rebar - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.014.M",
+  "des": "Concrete work - Curing Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.015.M",
+  "des": "Concrete work - Small Tools",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.016.M",
+  "des": "Concrete work - Small Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.220.002.E",
+  "des": "Rebar - Equipment",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.220.002.M",
+  "des": "Steel Reinforcement - Material",
+  "parent_cost_code": "03.30.220.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.220.012.M",
+  "des": "Rebar - Material Accessories",
+  "parent_cost_code": "03.30.220.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.49.001.001.S",
+  "des": "GRC - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.49.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.49.001.004.M",
+  "des": "GRC - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.49.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.52.016.001.E",
+  "des": "Concrete - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "03.52.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.52.016.001.L",
+  "des": "Cleaning/Repair labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "03.52.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.52.016.001.S",
+  "des": "Light weight Concrete - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "03.52.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.52.016.004.M",
+  "des": "Light weight Concrete - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.52.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.001.L",
+  "des": "Block Laying - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.001.S",
+  "des": "Solid Block - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.002.E",
+  "des": "Solid Block Work Tools/Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.002.L",
+  "des": "Mortar Mixing - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.003.E",
+  "des": "Solid Block Work Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.003.L",
+  "des": "Reinforcement Installation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.004.L",
+  "des": "Scaffolding labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.005.L",
+  "des": "Lintel Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.012.M",
+  "des": "Vertical and Horizontal Reinforcement",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.015.M",
+  "des": "Plaster Stop Beads / Joint Mesh/Control Joint",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.101.M",
+  "des": "Solid Block - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.105.M",
+  "des": "Mortar Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.110.M",
+  "des": "Bonding Agent",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.111.M",
+  "des": "Lintel Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.112.M",
+  "des": "Mason works' Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.001.115.M",
+  "des": "Wall restrain for fire rating walls",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.001.L",
+  "des": "Hollow Block Laying - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.002.E",
+  "des": "Hollow Block Work Tools/Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.002.L",
+  "des": "Mortar Mixing - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.002.S",
+  "des": "Hollow Block - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.003.E",
+  "des": "Hollow Block Work Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.003.L",
+  "des": "Reinforcement Installation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.004.L",
+  "des": "Scaffolding labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.005.L",
+  "des": "Lintel Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.012.M",
+  "des": "Vertical and Horizontal Reinforcement",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.015.M",
+  "des": "Plaster Stop Beads / Joint Mesh/Control Joint",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.102.M",
+  "des": "Hollow Block - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.105.M",
+  "des": "Mortar Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.110.M",
+  "des": "Bonding Agent",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.111.M",
+  "des": "Lintel Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.112.M",
+  "des": "Mason works' Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.005.115.M",
+  "des": "Wall restrain for fire rating walls",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.001.L",
+  "des": "Block Laying - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.002.E",
+  "des": "Lightweight Block Work Tools/Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.002.L",
+  "des": "Mortar Mixing - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.003.E",
+  "des": "Lightweight Block Work Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.003.L",
+  "des": "Reinforcement Installation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.003.S",
+  "des": "Lightweight Block - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.004.L",
+  "des": "Scaffolding labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.005.L",
+  "des": "Lintel Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.012.M",
+  "des": "Vertical and Horizontal Reinforcement",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.015.M",
+  "des": "Plaster Stop Beads / Joint Mesh/Control Joint",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.103.M",
+  "des": "Lightweight Block - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.105.M",
+  "des": "Mortar Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.110.M",
+  "des": "Bonding Agent",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.111.M",
+  "des": "Lintel Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.112.M",
+  "des": "Mason works' Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.20.010.115.M",
+  "des": "Wall restrain for fire rating walls",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.20.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.001.E",
+  "des": "Stone Cutting/Polishing Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.001.L",
+  "des": "Stone Wall Cladding - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.001.S",
+  "des": "Stone Cladding Full Subcontract",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.002.E",
+  "des": "Lifting Equipment for Heavy Stone",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.002.L",
+  "des": "Floor Stone Installation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.003.L",
+  "des": "Anchoring Installation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.004.L",
+  "des": "Grouting - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.016.M",
+  "des": "Anchoring System",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.106.M",
+  "des": "Natural Stone Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.122.M",
+  "des": "Adhesive / Mortar for Stone Fixing",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "04.40.001.123.M",
+  "des": "Grouting / Joint Fillers",
+  "cost_type": "Material - C",
+  "parent_cost_code": "04.40.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.31.001.001.S",
+  "des": "Access Hatches",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.31.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.31.001.155.M",
+  "des": "Access Hatches",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.31.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.001.001.S",
+  "des": "Metal Fabrication - Steel Stairs",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.51.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.001.130.M",
+  "des": "Metal Fabrication - Steel Stairs",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.51.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.002.001.S",
+  "des": "Metal Fabrication - Steel Catwalks",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.51.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.002.130.M",
+  "des": "Metal Fabrication - Steel Catwalks",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.51.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.003.001.S",
+  "des": "Metal Fabrication - Steel Ladders",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.003.130.M",
+  "des": "Metal Fabrication - Steel Ladders",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.004.001.S",
+  "des": "Metal Fabrication - Steel Fire Escapes",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.51.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.51.004.130.M",
+  "des": "Metal Fabrication - Steel Fire Escapes",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.51.004.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.52.001.001.S",
+  "des": "Metal Fabrication - Metal Railing",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.52.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.52.001.130.M",
+  "des": "Metal Fabrication - Metal Railing",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.52.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.53.001.001.S",
+  "des": "Metal Fabrication - Metal Grating",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.53.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.53.001.130.M",
+  "des": "Metal Fabrication - Metal Grating",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.53.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.55.001.001.S",
+  "des": "Metal Fabrication - Metal Stair Treads and Nosing",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.55.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.55.001.130.M",
+  "des": "Metal Fabrication - Metal Stair Treads and Nosing",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.55.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.75.001.001.S",
+  "des": "Metal Fabrication - Decorative Formed Metal",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "05.75.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "05.75.001.130.M",
+  "des": "Metal Fabrication - Decorative Formed Metal",
+  "cost_type": "Material - C",
+  "parent_cost_code": "05.75.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "06.40.023.001.S",
+  "des": "Interior Architectural Woodwork  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "06.40.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "06.40.023.140.M",
+  "des": "Interior Architectural Woodwork",
+  "cost_type": "Material - C",
+  "parent_cost_code": "06.40.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "06.42.001.001.M",
+  "des": "Wood Paneling / material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "06.42.001.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "06.42.001.001.S",
+  "des": "Wood Paneling  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "06.42.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "06.42.001.140.M",
+  "des": "Wood Paneling",
+  "cost_type": "Material - C",
+  "parent_cost_code": "06.42.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.11.013.001.S",
+  "des": "Metal Doors and Frames  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.11.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.11.013.135.M",
+  "des": "Metal Doors and Frames - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.11.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.11.016.001.S",
+  "des": "Aluminum Doors and Frames  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.11.016.165.M",
+  "des": "Aluminum Doors and Frames - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.14.005.001.M",
+  "des": "Wood Doors - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.14.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.14.005.001.S",
+  "des": "Wood Doors - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.14.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.32.013.001.S",
+  "des": "Sliding Glass Doors  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.32.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.32.013.150.M",
+  "des": "Sliding Glass Doors - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.32.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.51.013.001.S",
+  "des": "Aluminum Windows  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.51.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.71.001.001.M",
+  "des": "Metal Doors' Hardware  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.71.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.71.001.001.S",
+  "des": "Metal Doors' Hardware  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.71.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.71.005.001.M",
+  "des": "Wooden Doors' Hardware  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.71.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.71.005.001.S",
+  "des": "Wooden Doors' Hardware  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.71.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.83.001.001.M",
+  "des": "Mirrors  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.83.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.83.001.001.S",
+  "des": "Mirrors  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.83.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.91.001.001.M",
+  "des": "Aluminum louvers  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "08.91.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "08.91.001.001.S",
+  "des": "Aluminum louvers  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "08.91.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.001.001.L",
+  "des": "Surface Preparation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "09.24.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.001.001.S",
+  "des": "Plastering Work - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.24.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.001.015.M",
+  "des": "Plastering - Tools & Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.001.301.M",
+  "des": "Plastering - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.001.303.M",
+  "des": "Plastering - Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "09.24.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.001.311.M",
+  "des": "Plastering - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.002.001.L",
+  "des": "Surface Preparation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "09.24.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.002.001.S",
+  "des": "Plastering Work - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.24.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.002.015.M",
+  "des": "Plastering - Tools & Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.002.301.M",
+  "des": "Plastering - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.002.303.M",
+  "des": "Plastering - Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "09.24.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.002.311.M",
+  "des": "Plastering - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.003.001.L",
+  "des": "Surface Preparation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "09.24.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.003.001.S",
+  "des": "Plastering Work - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.24.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.003.015.M",
+  "des": "Plastering - Tools & Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.003.301.M",
+  "des": "Plastering - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.24.003.311.M",
+  "des": "Plastering - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.24.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.29.001.001.M",
+  "des": "Gypsum Board - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.29.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.29.001.001.S",
+  "des": "Gypsum Board - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.29.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.29.001.010.M",
+  "des": "Gypsum Board - Material Accessories",
+  "parent_cost_code": "09.29.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.30.001.001.M",
+  "des": "Ceramic/Porcelain Tiling - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.30.001.001.S",
+  "des": "Ceramic/Porcelain Tiling - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.30.001.012.M",
+  "des": "Ceramic/Porcelain Tiling's Accessories - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.30.001.122.M",
+  "des": "Ceramic/Porcelain Tiling Adhesive / Mortar - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.30.001.123.M",
+  "des": "Ceramic/Porcelain Tiling Grouting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.30.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.63.040.001.M",
+  "des": "Stone Flooring - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.63.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.63.040.001.S",
+  "des": "Stone Flooring - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.63.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.64.019.001.M",
+  "des": "Wood Flooring - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.64.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.64.019.001.S",
+  "des": "Wood Flooring - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.64.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.64.033.001.M",
+  "des": "Laminated Wood Flooring - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.64.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.64.033.001.S",
+  "des": "Laminated Wood Flooring - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.64.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.66.016.001.M",
+  "des": "Terrazzo Floor Tile - Material",
+  "parent_cost_code": "09.66.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.66.016.001.S",
+  "des": "Terrazzo Floor Tile - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.66.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.75.013.001.E",
+  "des": "External Stone work - Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "09.75.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.75.013.001.M",
+  "des": "External Stone work - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.75.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.75.013.001.S",
+  "des": "External Stone work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.75.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.001.001.L",
+  "des": "Surface Preparation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "09.90.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.001.001.S",
+  "des": "Painting Work - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.90.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.001.015.M",
+  "des": "Painting - Tools & Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.90.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.001.320.M",
+  "des": "Painting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.90.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.002.001.L",
+  "des": "Surface Preparation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "09.90.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.002.001.S",
+  "des": "Painting Work - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.90.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.002.015.M",
+  "des": "Painting - Tools & Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.90.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.002.320.M",
+  "des": "Painting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.90.002.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.003.001.L",
+  "des": "Surface Preparation - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "09.90.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.003.001.S",
+  "des": "Painting Work - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.90.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.003.015.M",
+  "des": "Painting - Tools & Supplies",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.90.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.90.003.320.M",
+  "des": "Painting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.90.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.91.013.001.E",
+  "des": "Internal Painting - Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "09.91.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.91.013.001.M",
+  "des": "Internal Painting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.91.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.91.013.001.S",
+  "des": "Internal Painting - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.91.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.91.023.001.E",
+  "des": "External Painting - Scaffolding",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "09.91.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.91.023.001.M",
+  "des": "External Painting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.91.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.91.023.001.S",
+  "des": "External Painting - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.91.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.96.056.001.M",
+  "des": "Epoxy Coatings - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "09.96.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "09.96.056.001.S",
+  "des": "Epoxy Coatings - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "09.96.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.14.010.000.S",
+  "des": "Interior Signage",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.14.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.14.020.000.S",
+  "des": "Exterior Signage",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.14.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.22.016.000.S",
+  "des": "Folding Gates",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.22.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.26.013.000.S",
+  "des": "Corner Guards",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.26.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.28.013.000.M",
+  "des": "Toilet Accessories/Material",
+  "parent_cost_code": "10.28.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.28.013.000.S",
+  "des": "Toilet Accessories",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.28.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.44.013.000.S",
+  "des": "Fire Extinguisher Cabinets",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.44.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.44.016.000.S",
+  "des": "Fire Extinguishers",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.44.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.71.013.000.S",
+  "des": "Fixed Sun Screen",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.71.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "10.71.015.000.S",
+  "des": "Aluminum Screen",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "10.71.015.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "12.93.013.001.M",
+  "des": "Steel Bicycle Racks",
+  "cost_type": "Material - C",
+  "parent_cost_code": "12.93.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "12.93.013.001.S",
+  "des": "Steel Bicycle Racks - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "12.93.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "12.93.014.001.S",
+  "des": "Bicycle Lockers  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "12.93.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "12.93.023.001.S",
+  "des": "Trash and Litter Receptacles  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "12.93.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "14.20.001.000.M",
+  "des": "Elevators Package",
+  "parent_cost_code": "14.00.000.000",
+  "is_group": 1
+ },
+ {
+  "cost_code": "14.91.082.000.S",
+  "des": "Trash Chutes",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "14.91.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.05.023.000.E",
+  "des": "Duty Valves for Fire Piping - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "21.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.05.023.000.L",
+  "des": "Duty Valves for Fire Piping - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "21.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.05.023.000.M",
+  "des": "Duty Valves for Fire Piping - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.05.023.000.S",
+  "des": "Duty Valves for Fire Piping - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "21.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.05.023.010.M",
+  "des": "Duty Valves for Fire Piping - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.005.000.E",
+  "des": "Fire-Suppression Piping - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "21.11.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.005.000.L",
+  "des": "Fire-Suppression Piping - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "21.11.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.005.000.M",
+  "des": "Fire-Suppression Piping - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.11.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.005.000.S",
+  "des": "Fire-Suppression Piping - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "21.11.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.005.010.M",
+  "des": "Fire-Suppression Piping - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.11.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.019.000.E",
+  "des": "Fire-Department Connections - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "21.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.019.000.L",
+  "des": "Fire-Department Connections - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "21.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.019.000.M",
+  "des": "Fire-Department Connections - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.019.000.S",
+  "des": "Fire-Department Connections - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "21.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.11.019.010.M",
+  "des": "Fire-Department Connections - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.005.000.E",
+  "des": "Sprinkler Systems - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "21.13.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.005.000.L",
+  "des": "Sprinkler Systems - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "21.13.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.005.000.M",
+  "des": "Sprinkler Systems - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.13.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.005.000.S",
+  "des": "Sprinkler Systems - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "21.13.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.005.010.M",
+  "des": "Sprinkler Systems - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.13.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.039.000.E",
+  "des": "Foam-Water Fire Suppression Systems - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "21.13.039.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.039.000.L",
+  "des": "Foam-Water Fire Suppression Systems - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "21.13.039.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.039.000.M",
+  "des": "Foam-Water Fire Suppression Systems - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.13.039.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.039.000.S",
+  "des": "Foam-Water Fire Suppression Systems - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "21.13.039.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.13.039.010.M",
+  "des": "Foam-Water Fire Suppression Systems - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "21.13.039.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.20.001.000.M",
+  "des": "Fire-Extinguishing Systems  - Material",
+  "parent_cost_code": "21.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "21.20.001.010.M",
+  "des": "Fire-Extinguishing Systems  - Fitting/Accessories",
+  "parent_cost_code": "21.20.001.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.01.010.061.E",
+  "des": "Plumbing Piping Repairs - Equipment/Tools",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.01.010.061",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.01.010.061.L",
+  "des": "Plumbing Piping Repairs - Subcontractor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.01.010.061",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.01.010.061.M",
+  "des": "Plumbing Piping Repairs - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.01.010.061",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.01.010.061.S",
+  "des": "Plumbing Piping Repairs - Labor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.01.010.061",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.05.023.000.E",
+  "des": "Duty Valves for Plumbing Piping - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.05.023.000.L",
+  "des": "Duty Valves for Plumbing Piping - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.05.023.000.M",
+  "des": "Duty Valves for Plumbing Piping - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.05.023.000.S",
+  "des": "Duty Valves for Plumbing Piping - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.05.023.010.M",
+  "des": "Duty Valves for Plumbing Piping - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.05.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.016.000.E",
+  "des": "Domestic Water Piping - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.016.000.L",
+  "des": "Domestic Water Piping - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.016.000.M",
+  "des": "Domestic Water Piping - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.016.000.S",
+  "des": "Domestic Water Piping - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.016.010.M",
+  "des": "Domestic Water Piping - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.019.000.E",
+  "des": "Domestic Water Piping Specialties - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.019.000.L",
+  "des": "Domestic Water Piping Specialties - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.019.000.M",
+  "des": "Domestic Water Piping Specialties - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.019.000.S",
+  "des": "Domestic Water Piping Specialties - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.019.010.M",
+  "des": "Domestic Water Piping Specialties - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.11.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.11.023.000.M",
+  "des": "Domestic Water Pumps - Material",
+  "parent_cost_code": "22.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.013.000.E",
+  "des": "Facility Storm Drainage - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.14.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.013.000.L",
+  "des": "Facility Storm Drainage - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.14.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.013.000.M",
+  "des": "Facility Storm Drainage - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.013.000.S",
+  "des": "Facility Storm Drainage - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.14.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.013.010.M",
+  "des": "Facility Storm Drainage - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.023.000.E",
+  "des": "Storm Drainage Piping Specialties - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.14.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.023.000.L",
+  "des": "Storm Drainage Piping Specialties - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.14.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.023.000.M",
+  "des": "Storm Drainage Piping Specialties - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.023.000.S",
+  "des": "Storm Drainage Piping Specialties - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.14.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.023.010.M",
+  "des": "Facility Storm Drainage - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.023.010.S",
+  "des": "Facility Storm Drainage -Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.14.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.026.000.E",
+  "des": "Facility Storm Drains - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.14.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.026.000.L",
+  "des": "Facility Storm Drains - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.14.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.026.000.M",
+  "des": "Facility Storm Drains - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.026.000.S",
+  "des": "Facility Storm Drains - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.14.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.026.010.M",
+  "des": "Facility Storm Drainage - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.029.000.E",
+  "des": "Sump Pumps - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.14.029.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.029.000.L",
+  "des": "Sump Pumps - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.14.029.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.029.000.M",
+  "des": "Sump Pumps - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.029.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.029.000.S",
+  "des": "Sump Pumps - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.14.029.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.029.010.M",
+  "des": "Sump Pumps - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.14.029.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.14.029.010.S",
+  "des": "Sump Pumps -Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.14.029.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.33.000.000.E",
+  "des": "Electric Domestic Water Heaters - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "22.33.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.33.000.000.L",
+  "des": "Electric Domestic Water Heaters - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "22.33.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.33.000.000.M",
+  "des": "Electric Domestic Water Heaters - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.33.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.33.000.000.S",
+  "des": "Electric Domestic Water Heaters - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.33.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.33.000.010.M",
+  "des": "Electric Domestic Water Heaters - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.33.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.40.005.000.M",
+  "des": "Plumbing Fixtures - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.40.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.40.005.000.S",
+  "des": "Plumbing Fixtures - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "22.40.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "22.40.005.010.M",
+  "des": "Plumbing Fixtures-Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "22.40.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.05.005.000.E",
+  "des": "Common Work Results for HVAC - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "23.05.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.05.005.000.L",
+  "des": "Common Work Results for HVAC - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "23.05.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.05.005.000.M",
+  "des": "Common Work Results for HVAC - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.05.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.05.005.000.S",
+  "des": "Common Work Results for HVAC - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "23.05.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.05.005.010.M",
+  "des": "Common Work Results for HVAC - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.05.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.23.005.000.E",
+  "des": "Refrigerant Piping - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "23.23.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.23.005.000.L",
+  "des": "Refrigerant Piping - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "23.23.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.23.005.000.M",
+  "des": "Refrigerant Piping - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.23.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.23.005.000.S",
+  "des": "Refrigerant Piping - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "23.23.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.23.005.010.M",
+  "des": "Refrigerant Piping - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.23.005.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.31.013.000.E",
+  "des": "Metal Ducts - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "23.31.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.31.013.000.L",
+  "des": "Metal Ducts - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "23.31.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.31.013.000.M",
+  "des": "Metal Ducts - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.31.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.31.013.000.S",
+  "des": "Metal Ducts - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "23.31.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.31.013.010.M",
+  "des": "Metal Ducts - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.31.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.34.013.000.E",
+  "des": "Axial HVAC Fans - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "23.34.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.34.013.000.L",
+  "des": "Axial HVAC Fans - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "23.34.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.34.013.000.M",
+  "des": "Axial HVAC Fans - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.34.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.34.013.000.S",
+  "des": "Axial HVAC Fans - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "23.34.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.34.013.010.M",
+  "des": "Axial HVAC Fans - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.34.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.37.013.000.E",
+  "des": "Diffusers, Registers, and Grilles - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "23.37.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.37.013.000.L",
+  "des": "Diffusers, Registers, and Grilles - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "23.37.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.37.013.000.M",
+  "des": "Diffusers, Registers, and Grilles - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.37.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.37.013.000.S",
+  "des": "Diffusers, Registers, and Grilles - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "23.37.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.37.013.010.M",
+  "des": "Diffusers, Registers, and Grilles - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.37.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.65.013.000.M",
+  "des": "Cooling Towers - Material",
+  "parent_cost_code": "23.37.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.81.026.000.E",
+  "des": "Split-System Air-Conditioners - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "23.81.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.81.026.000.L",
+  "des": "Split-System Air-Conditioners - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "23.81.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.81.026.000.M",
+  "des": "Split-System Air-Conditioners - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.81.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.81.026.000.S",
+  "des": "Split-System Air-Conditioners - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "23.81.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "23.81.026.010.M",
+  "des": "Split-System Air-Conditioners - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "23.81.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.019.000.E",
+  "des": "LV - Power Conductors and Cables - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.05.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.019.000.L",
+  "des": "LV - Power Conductors and Cables - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.05.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.019.000.M",
+  "des": "LV - Power Conductors and Cables - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.019.000.S",
+  "des": "LV - Power Conductors and Cables - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.05.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.019.010.M",
+  "des": "LV - Power Conductors and Cables - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.019.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.026.000.E",
+  "des": "Grounding and Bonding  - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.05.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.026.000.L",
+  "des": "Grounding and Bonding  - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.05.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.026.000.M",
+  "des": "Grounding and Bonding  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.026.000.S",
+  "des": "Grounding and Bonding  - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.05.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.026.010.M",
+  "des": "Grounding and Bonding  - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.033.000.E",
+  "des": "Raceway and Boxes - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.05.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.033.000.L",
+  "des": "Raceway and Boxes - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.05.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.033.000.M",
+  "des": "Raceway and Boxes - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.033.000.S",
+  "des": "Raceway and Boxes - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.05.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.033.010.M",
+  "des": "Raceway and Boxes - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.033.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.036.000.E",
+  "des": "Cable Trays  - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.05.036.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.036.000.L",
+  "des": "Cable Trays  - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.05.036.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.036.000.M",
+  "des": "Cable Trays  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.036.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.036.000.S",
+  "des": "Cable Trays  - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.05.036.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.05.036.010.M",
+  "des": "Cable Trays  - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.05.036.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.12.016.010.M",
+  "des": "Medium-Voltage Transformers  - Fitting/Accessories",
+  "parent_cost_code": "26.00.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.22.013.000.E",
+  "des": "LV Distribution Transformers - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.22.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.22.013.000.L",
+  "des": "LV Distribution Transformers - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.22.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.22.013.000.M",
+  "des": "LV Distribution Transformers - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.22.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.22.013.000.S",
+  "des": "LV Distribution Transformers - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.22.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.22.013.010.M",
+  "des": "LV Distribution Transformers - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.22.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.27.026.000.E",
+  "des": "Wiring Devices - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.27.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.27.026.000.L",
+  "des": "Wiring Devices - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.27.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.27.026.000.M",
+  "des": "Wiring Devices - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.27.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.27.026.000.S",
+  "des": "Wiring Devices - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.27.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.27.026.010.M",
+  "des": "Wiring Devices - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.27.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.27.026.010.S",
+  "des": "Wiring Devices -Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.27.026.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.28.016.000.E",
+  "des": "Enclosed Switches and Circuit Breakers - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.28.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.28.016.000.L",
+  "des": "Enclosed Switches and Circuit Breakers - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.28.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.28.016.000.M",
+  "des": "Enclosed Switches and Circuit Breakers - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.28.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.28.016.000.S",
+  "des": "Enclosed Switches and Circuit Breakers - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.28.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.28.016.010.M",
+  "des": "Enclosed Switches and Circuit Breakers - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.28.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.28.016.010.S",
+  "des": "Enclosed Switches and Circuit Breakers - Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.28.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.33.053.000.E",
+  "des": "Static UPS - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.33.053.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.33.053.000.L",
+  "des": "Static UPS - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.33.053.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.33.053.000.M",
+  "des": "Static UPS - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.33.053.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.33.053.000.S",
+  "des": "Static UPS - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.33.053.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.33.053.010.M",
+  "des": "Static UPS - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.33.053.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.33.053.010.S",
+  "des": "Static UPS - Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.33.053.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.51.003.000.E",
+  "des": "Interior Lighting - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "26.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.51.003.000.L",
+  "des": "Interior Lighting - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "26.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.51.003.000.M",
+  "des": "Interior Lighting - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.51.003.000.S",
+  "des": "Interior Lighting - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "26.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.51.003.001.M",
+  "des": "Interior Lighting - Material",
+  "cost_type": "Material - C",
+  "is_group": 0
+ },
+ {
+  "cost_code": "26.51.003.010.M",
+  "des": "Interior Lighting - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "26.51.003.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.10.000.000.E",
+  "des": "Structured Cabling - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "27.10.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.10.000.000.L",
+  "des": "Structured Cabling - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "27.10.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.10.000.000.M",
+  "des": "Structured Cabling - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "27.10.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.10.000.000.S",
+  "des": "Structured Cabling - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "27.10.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.10.000.010.M",
+  "des": "Structured Cabling - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "27.10.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.11.016.000.E",
+  "des": "Communications Cabinets, Racks, Frames, and Enclosures - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "27.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.11.016.000.L",
+  "des": "Communications Cabinets, Racks, Frames, and Enclosures - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "27.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.11.016.000.M",
+  "des": "Communications Cabinets, Racks, Frames, and Enclosures - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "27.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.11.016.000.S",
+  "des": "Communications Cabinets, Racks, Frames, and Enclosures - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "27.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.11.016.010.M",
+  "des": "Communications Cabinets, Racks, Frames, and Enclosures - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "27.11.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.21.016.000.E",
+  "des": "Data Communications Network Equipment - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "27.21.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.21.016.000.L",
+  "des": "Data Communications Network Equipment - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "27.21.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.21.016.000.M",
+  "des": "Data Communications Network Equipment - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "27.21.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.21.016.000.S",
+  "des": "Data Communications Network Equipment - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "27.21.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "27.21.016.010.M",
+  "des": "Data Communications Network Equipment - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "27.21.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.13.000.000.E",
+  "des": "Access Control Software and Database Management - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "28.13.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.13.000.000.L",
+  "des": "Access Control Software and Database Management - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "28.13.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.13.000.000.M",
+  "des": "Access Control Software and Database Management - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "28.13.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.13.000.000.S",
+  "des": "Access Control Software and Database Management - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "28.13.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.13.000.010.M",
+  "des": "Access Control Software and Database Management - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "28.13.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.15.023.000.E",
+  "des": "Intercom Entry Systems - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "28.15.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.15.023.000.L",
+  "des": "Intercom Entry Systems - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "28.15.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.15.023.000.M",
+  "des": "Intercom Entry Systems - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "28.15.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.15.023.000.S",
+  "des": "Intercom Entry Systems - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "28.15.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "28.15.023.010.M",
+  "des": "Intercom Entry Systems - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "28.15.023.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.013.E",
+  "des": "MV - Cables - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.013.L",
+  "des": "MV - Cables - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.013.M",
+  "des": "MV - Cables - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.013.S",
+  "des": "MV - Cables - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.026.E",
+  "des": "Earthing system - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.005.026",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.026.L",
+  "des": "Earthing system - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.005.026",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.026.M",
+  "des": "Earthing system - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.026",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.026.S",
+  "des": "Earthing system - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.026",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.027.M",
+  "des": "Earthing system - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.026",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.027.S",
+  "des": "Earthing system - Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.026",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.113.M",
+  "des": "MV - Cables - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.113.S",
+  "des": "MV - Cables - Civil Work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.119.E",
+  "des": "LV - Cables - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.005.119",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.119.L",
+  "des": "LV - Cables - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.005.119",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.119.M",
+  "des": "LV - Cables - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.119",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.119.S",
+  "des": "LV - Cables - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.119",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.120.M",
+  "des": "LV - Cables - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.119",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.435.E",
+  "des": "General Civil Works For Air Blown Fiber (ABF) - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.005.435",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.435.L",
+  "des": "General Civil Works For Air Blown Fiber (ABF) - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.005.435",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.435.M",
+  "des": "General Civil Works For Air Blown Fiber (ABF) - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.435",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.435.S",
+  "des": "General Civil Works For Air Blown Fiber (ABF) - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.435",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.436.E",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF) - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.005.436",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.436.L",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF) - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.005.436",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.436.M",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF) - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.436",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.436.S",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF) - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.436",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.437.M",
+  "des": "General Civil Works For Air Blown Fiber (ABF) - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.435",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.437.S",
+  "des": "General Civil Works For Air Blown Fiber (ABF) - Civil Work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.435",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.438.M",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF) - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.005.436",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.005.438.S",
+  "des": "Smart Civil Works For Air Blown Fiber (ABF) - Civil Work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.436",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.012.000.E",
+  "des": "Distribution transformers kiosk  - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.012.000.L",
+  "des": "Distribution transformers kiosk  - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.012.000.M",
+  "des": "Distribution transformers kiosk  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.012.000.S",
+  "des": "Distribution transformers kiosk  - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.012.010.M",
+  "des": "Distribution transformers kiosk  - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.024.010.M",
+  "des": "Distribution boxes (pillars) - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.024.016.E",
+  "des": "Distribution boxes (pillars) - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.024.016.L",
+  "des": "Distribution boxes (pillars) - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.024.016.M",
+  "des": "Distribution boxes (pillars) - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.024.016.S",
+  "des": "Distribution boxes (pillars) - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.012.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.024.120.S",
+  "des": "LV - Cables - Civil work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.005.119",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.033.010.M",
+  "des": "UPS - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.033.053",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.033.053.E",
+  "des": "UPS - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.033.053",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.033.053.L",
+  "des": "UPS - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.033.053",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.033.053.M",
+  "des": "UPS - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.033.053",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.033.053.S",
+  "des": "UPS - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.033.053",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.056.000.E",
+  "des": "Outdoor lighting system - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.26.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.056.000.L",
+  "des": "Outdoor lighting system - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.26.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.056.000.M",
+  "des": "Outdoor lighting system - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.056.000.S",
+  "des": "Outdoor lighting system - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.26.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.26.056.010.M",
+  "des": "Outdoor lighting system - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.26.056.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.31.020.000.E",
+  "des": "Earth moving  - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.31.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.31.020.000.L",
+  "des": "Earth moving  - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.31.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.31.020.000.M",
+  "des": "Earth moving  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.31.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.31.020.000.S",
+  "des": "Earth moving  - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.31.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.31.020.010.M",
+  "des": "Earth moving  - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.31.020.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.011.023.E",
+  "des": "Crushed aggregate base course - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.32.011.023",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.011.023.L",
+  "des": "Crushed aggregate base course - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.32.011.023",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.011.023.M",
+  "des": "Crushed aggregate base course - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.011.023",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.011.023.S",
+  "des": "Crushed aggregate base course - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.32.011.023",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.011.024.M",
+  "des": "Crushed aggregate base course - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.011.023",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.011.024.S",
+  "des": "Crushed aggregate base course - QC Testing",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.32.011.023",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.000.E",
+  "des": "Unit Pavers - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.000.L",
+  "des": "Unit Pavers - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.000.M",
+  "des": "Unit Pavers - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.000.S",
+  "des": "Unit Pavers - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.001.M",
+  "des": "Unit Pavers - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.405.E",
+  "des": "Concrete Curbs - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.405.L",
+  "des": "Concrete Curbs - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.405.M",
+  "des": "Concrete Curbs - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.405.S",
+  "des": "Concrete Curbs - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.406.M",
+  "des": "Concrete Curbs - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.415.E",
+  "des": "Traffic signs - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.415.L",
+  "des": "Traffic signs - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.415.M",
+  "des": "Traffic signs - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.415.S",
+  "des": "Traffic signs - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.416.M",
+  "des": "Traffic signs - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.430.E",
+  "des": "Road pavement markings - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.430.L",
+  "des": "Road pavement markings - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.430.M",
+  "des": "Road pavement markings - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.430.S",
+  "des": "Road pavement markings - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.32.014.431.M",
+  "des": "Road pavement markings - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.32.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.005.010.M",
+  "des": "HDPE Drainage Pipe - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.005.033.E",
+  "des": "HDPE Drainage Pipe - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.005.033.L",
+  "des": "HDPE Drainage Pipe - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.005.033.M",
+  "des": "HDPE Drainage Pipe - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.005.033.S",
+  "des": "HDPE Drainage Pipe - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.005.033",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.000.E",
+  "des": "Sitework for irrigation water distribution networks  - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.33.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.000.L",
+  "des": "Sitework for irrigation water distribution networks  - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.33.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.000.M",
+  "des": "Sitework for irrigation water distribution networks  - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.000.S",
+  "des": "Sitework for irrigation water distribution networks  - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.010.M",
+  "des": "Sitework for irrigation water distribution networks  - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.014.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.019.E",
+  "des": "Infrastructure's Valves - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.33.014.019",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.019.L",
+  "des": "Infrastructure's Valves - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.33.014.019",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.019.M",
+  "des": "Infrastructure's Valves - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.014.019",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.014.019.S",
+  "des": "Infrastructure's Valves - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.014.019",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.031.000.E",
+  "des": "Sitework for drain networks - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.33.031.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.031.000.L",
+  "des": "Sitework for drain networks - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.33.031.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.031.000.M",
+  "des": "Sitework for drain networks - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.031.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.031.000.S",
+  "des": "Sitework for drain networks - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.031.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.031.010.M",
+  "des": "Sitework for drain networks - Fitting/Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.33.031.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.33.031.010.S",
+  "des": "Sitework for drain networks - Civil Work",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.33.031.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.40.060.010.E",
+  "des": "SCADA System Management - Equipment",
+  "cost_type": "Equipments - C",
+  "parent_cost_code": "30.40.060.010",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.40.060.010.L",
+  "des": "SCADA System Management - Labor",
+  "cost_type": "Labour - C",
+  "parent_cost_code": "30.40.060.010",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.40.060.010.M",
+  "des": "SCADA System Management - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "30.40.060.010",
+  "is_group": 0
+ },
+ {
+  "cost_code": "30.40.060.010.S",
+  "des": "SCADA System Management - Subcontractor",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "30.40.060.010",
+  "is_group": 0
+ },
+ {
+  "cost_code": "03.30.010.010 .M",
+  "des": "Formwork - Material Accessories",
+  "cost_type": "Material - C",
+  "parent_cost_code": "03.30.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.009.050.001.S",
+  "des": "Modified Bituminous Membrane Roofing  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.009.050.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.009.050.201.M",
+  "des": "Modified Bituminous Membrane Roofing - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.009.050.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.013.040.001.S",
+  "des": "Polyethylene Sheet Vapor Retarder  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.013.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.013.040.201.M",
+  "des": "Polyethylene Sheet Vapor Retarder",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.013.040.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.014.016.001.S",
+  "des": "Cold Fluid-Applied Waterproofing  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.014.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.014.016.201.M",
+  "des": "Cold Fluid-Applied Waterproofing",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.014.016.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.016.013.001.M",
+  "des": "07.016.013.001.M missing",
+  "parent_cost_code": "07.00.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.016.013.001.S",
+  "des": "Cementitious and Reactive Waterproofing  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.016.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.016.013.201.M",
+  "des": "Cementitious and Reactive Waterproofing",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.016.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.018.001.001.S",
+  "des": "Traffic Coatings  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.018.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.018.001.210.M",
+  "des": "Traffic Coatings - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.018.000.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.021.010.001.S",
+  "des": "Thermal Insulation  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.021.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.021.010.205.M",
+  "des": "Thermal Insulation - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.021.010.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.032.013.001.M",
+  "des": "Clay Roof Tiles - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.032.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.032.013.001.S",
+  "des": "Clay Roof Tiles  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.032.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.052.013.001.S",
+  "des": "APP Modified Bituminous Sheet Waterproofing  - Install",
+  "cost_type": "Subcontractor - C",
+  "parent_cost_code": "07.052.013.000",
+  "is_group": 0
+ },
+ {
+  "cost_code": "07.052.013.201.M",
+  "des": "APP Modified Bituminous Sheet Waterproofing - Material",
+  "cost_type": "Material - C",
+  "parent_cost_code": "07.052.013.000",
+  "is_group": 0
+ }
+]

@@ -1,9 +1,5 @@
-# Copyright (c) 2025, Jenan Alfahham and contributors
-# For license information, please see license.txt
-
-# import frappe
-from frappe.model.document import Document
+from frappe.utils.nestedset import NestedSet
 
 
-class CostCode(Document):
-	pass
+class CostCode(NestedSet):
+    pass

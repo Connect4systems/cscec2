@@ -1,0 +1,130 @@
+[
+ {
+  "title": "01 - General Requirements",
+  "description": "CSI MasterFormat Division 01: General Requirements."
+ },
+ {
+  "title": "02 - Existing Conditions",
+  "description": "CSI MasterFormat Division 02: Existing Conditions."
+ },
+ {
+  "title": "03 - Concrete",
+  "description": "CSI MasterFormat Division 03: Concrete."
+ },
+ {
+  "title": "04 - Masonry",
+  "description": "CSI MasterFormat Division 04: Masonry."
+ },
+ {
+  "title": "05 - Metals",
+  "description": "CSI MasterFormat Division 05: Metals."
+ },
+ {
+  "title": "06 - Wood, Plastics, and Composites",
+  "description": "CSI MasterFormat Division 06: Wood, Plastics, and Composites."
+ },
+ {
+  "title": "07 - Thermal and Moisture Protection",
+  "description": "CSI MasterFormat Division 07: Thermal and Moisture Protection."
+ },
+ {
+  "title": "08 - Openings",
+  "description": "CSI MasterFormat Division 08: Openings."
+ },
+ {
+  "title": "09 - Finishes",
+  "description": "CSI MasterFormat Division 09: Finishes."
+ },
+ {
+  "title": "10 - Specialties",
+  "description": "CSI MasterFormat Division 10: Specialties."
+ },
+ {
+  "title": "11 - Equipment",
+  "description": "CSI MasterFormat Division 11: Equipment."
+ },
+ {
+  "title": "12 - Furnishings",
+  "description": "CSI MasterFormat Division 12: Furnishings."
+ },
+ {
+  "title": "13 - Special Construction",
+  "description": "CSI MasterFormat Division 13: Special Construction."
+ },
+ {
+  "title": "14 - Conveying Equipment",
+  "description": "CSI MasterFormat Division 14: Conveying Equipment."
+ },
+ {
+  "title": "15 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 15: Reserved for Future Expansion."
+ },
+ {
+  "title": "16 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 16: Reserved for Future Expansion."
+ },
+ {
+  "title": "17 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 17: Reserved for Future Expansion."
+ },
+ {
+  "title": "18 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 18: Reserved for Future Expansion."
+ },
+ {
+  "title": "19 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 19: Reserved for Future Expansion."
+ },
+ {
+  "title": "20 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 20: Reserved for Future Expansion."
+ },
+ {
+  "title": "21 - Fire Suppression",
+  "description": "CSI MasterFormat Division 21: Fire Suppression."
+ },
+ {
+  "title": "22 - Plumbing",
+  "description": "CSI MasterFormat Division 22: Plumbing."
+ },
+ {
+  "title": "23 - Heating, Ventilating, and Air Conditioning (HVAC)",
+  "description": "CSI MasterFormat Division 23: Heating, Ventilating, and Air Conditioning (HVAC)."
+ },
+ {
+  "title": "24 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 24: Reserved for Future Expansion."
+ },
+ {
+  "title": "25 - Integrated Automation",
+  "description": "CSI MasterFormat Division 25: Integrated Automation."
+ },
+ {
+  "title": "26 - Electrical",
+  "description": "CSI MasterFormat Division 26: Electrical."
+ },
+ {
+  "title": "27 - Communications",
+  "description": "CSI MasterFormat Division 27: Communications."
+ },
+ {
+  "title": "28 - Electronic Safety and Security",
+  "description": "CSI MasterFormat Division 28: Electronic Safety and Security."
+ },
+ {
+  "title": "29 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 29: Reserved for Future Expansion."
+ },
+ {
+  "title": "30 - Reserved for Future Expansion",
+  "description": "CSI MasterFormat Division 30: Reserved for Future Expansion."
+ },
+ {
+  "title": "31 - Earthwork",
+  "description": "CSI MasterFormat Division 31: Earthwork."
+ },
+ {
+  "title": "32 - Exterior Improvements",
+  "description": "CSI MasterFormat Division 32: Exterior Improvements."
+ }
+]
