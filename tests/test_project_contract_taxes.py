@@ -112,3 +112,17 @@ class NativeTaxAdapterTest(unittest.TestCase):
         self.engine.assert_not_called()
         self.assertEqual(self.doc.grand_total, 0)
         self.assertEqual(self.doc.clauses[1].amount, 0)
+
+    def test_cr_and_subcontract_use_purchase_engine_with_manual_clauses(self):
+        for doctype in ('CR', 'Subcontractor Contract'):
+            self.modules['frappe'].new_doc.reset_mock()
+            self.doc.doctype = doctype
+            self.doc.supplier = 'Supplier'
+            self.doc.clauses[1].contractual_clause = None
+            self.doc.clauses[1].source_row = None
+            self.doc.clauses[1].name = 'manual-row'
+            with patch.dict(sys.modules, self.modules):
+                self.service.calculate_contract_taxes(self.doc)
+            self.modules['frappe'].new_doc.assert_called_once_with('Purchase Order')
+            self.assertEqual(self.proxy.items[0].item_name, 'manual-row')
+            self.assertEqual(self.doc.net_payable, 104.5)

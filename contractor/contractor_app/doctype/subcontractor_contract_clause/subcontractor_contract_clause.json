@@ -14,7 +14,12 @@
   "project_clause",
   "rate",
   "amount",
-  "source_cr_row"
+  "source_cr_row",
+  "net_rate",
+  "net_amount",
+  "base_amount",
+  "base_net_rate",
+  "base_net_amount"
  ],
  "fields": [
   {
@@ -37,7 +42,7 @@
    "label": "Clause Title",
    "reqd": 1,
    "in_list_view": 1,
-   "columns": 4
+   "columns": 3
   },
   {
    "fieldname": "qty",
@@ -79,7 +84,8 @@
    "options": "currency",
    "in_list_view": 1,
    "columns": 1,
-   "read_only_depends_on": "eval:doc.is_group"
+   "read_only_depends_on": "eval:doc.is_group",
+   "read_only": 0
   },
   {
    "fieldname": "amount",
@@ -96,6 +102,41 @@
    "label": "CR Row",
    "read_only": 1,
    "hidden": 1
+  },
+  {
+   "fieldname": "net_rate",
+   "fieldtype": "Currency",
+   "label": "Net Rate",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount",
+   "read_only": 1,
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_amount",
+   "fieldtype": "Currency",
+   "label": "Base Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "base_net_rate",
+   "fieldtype": "Currency",
+   "label": "Base Net Rate",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "base_net_amount",
+   "fieldtype": "Currency",
+   "label": "Base Net Amount",
+   "read_only": 1,
+   "options": "Company:company:default_currency"
   }
  ],
  "permissions": [],

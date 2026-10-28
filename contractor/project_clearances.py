@@ -157,6 +157,10 @@ def validate_clearance(doc):
                 frappe.throw(f"Row {row.idx}: enter the subcontractor's unit rate")
         else:
             row.rate = contract_row(project_rows[row.project_clause_ref], contract).rate
+    for table, field in ((doc.taxes, "account_head"), (doc.deductions, "account")):
+        for row in table:
+            if row.get(field) and frappe.get_cached_value("Account", row.get(field), "company") != doc.company:
+                frappe.throw("Tax and deduction accounts must belong to the certificate company")
     from contractor.project_contract_taxes import calculate_contract_taxes
     calculate_contract_taxes(doc)
     for row in doc.deductions:

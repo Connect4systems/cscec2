@@ -80,7 +80,7 @@ submitted CR, matching Project/Supplier, and one active contract per CR.
 Subcontractor Contract can also be created directly. **Attach Contract** is required.
 Its clause entry, Excel preview/import, and Project picker share CR's implementation.
 Repeated Project fetches add clauses without resetting the table. Enter agreed unit
-rates; group amounts and Contract Amount sum the details. Detail rates must be
+rates; group amounts sum the details and Contract Amount reflects Grand Total. Detail rates must be
 positive before submission. Company follows the Project, currency defaults to the
 company currency, and foreign currencies require a positive conversion rate.
 
@@ -116,3 +116,39 @@ attachment requirements, rates and totals, sequential certificate quantities,
 Project-wide quantity limits, taxes/deductions, accounting submission/cancellation,
 and cancellation guards. Local tests use mocked Frappe services and do not replace
 these native-site checks.
+
+## Purchasing taxes and deductions
+
+CR and Subcontractor Contract share **Details**, **Clauses**, **Taxes and Totals**,
+**Contracting**, and **Connections** tabs. CR detail clauses now include editable
+Rate and calculated Amount. Group amounts summarize their details and do not count
+twice in totals. Subcontractor Contract's Contract Amount reflects Grand Total.
+
+**Taxes and Totals** uses the standard **Purchase Taxes and Charges Template** and
+**Purchase Taxes and Charges** table, filtered to the document Company. The native
+ERPNext purchase tax engine handles included taxes, previous-row tax bases, fixed
+charges, discounts, currency conversion, precision, and rounding. Draft previews
+and server saves use the same calculation service.
+
+**Contracting** contains **Purchasing Deductions Template**, editable deduction
+Titles/Accounts/Percentages, Total Deductions, and Net Payable. Deduction percentages
+apply to each document's own Grand Total. Accounts must belong to the document
+Company, and total deductions cannot exceed that total.
+
+CR-to-contract conversion copies the selected templates and current manually edited
+tax/deduction rows using new child identities. Creating a Subcontract Clearnce copies
+the contract's current purchasing tax and deduction settings. Each period calculates
+its own tax and deduction amounts from its current quantities and agreed rates.
+Fixed Actual taxes and fixed discount amounts start at zero in a new certificate;
+enter those period charges explicitly. Percentage taxes, discounts, and deductions
+carry forward. Later changes do not modify source documents or templates.
+
+Migration force-refreshes these forms and repairs customized field ordering while
+retaining site-owned fields. It does not resave or reprice historical submitted
+records. Deploy using migration, app asset build, cache clear, restart, and a browser
+hard refresh. Validate template selection, manual edits, conversion, certificate
+quantities, and invoice totals on a test site. Native buying calculation checks:
+
+```bash
+bench --site test-site-name run-tests --doctype "Subcontractor Contract"
+```

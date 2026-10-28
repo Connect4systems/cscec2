@@ -27,6 +27,8 @@ def create_contract(cr):
         delivery_date=source.end_date, cr_attach=source.attach_cr, comparison=source.get('cr_comparison'),
         text_editor_uxta=source.get('note'),
         company=frappe.db.get_value('Project', source.project, 'company')))
+    from contractor.subcontract_commercial import copy_commercial_terms
+    copy_commercial_terms(source, doc)
     for row in source.get('clauses') or []:
         values = copy_child_values(row)
         values['source_cr_row'] = row.name
@@ -79,6 +81,9 @@ def validate_contract(doc):
             group.amount += row.amount
     if doc.get('clauses'):
         doc.contract_amount = total
+    if doc.get('doctype') == 'Subcontractor Contract':
+        from contractor.subcontract_commercial import calculate_commercial
+        calculate_commercial(doc, project)
 
 
 def contract_sources(name):
@@ -106,6 +111,8 @@ def create_clearance(subcontractor_contract):
         company=contract.company, currency=contract.currency, conversion_rate=contract.conversion_rate,
         supplier=contract.supplier, posting_date=today(), transaction_date=today(),
         delivery_date=contract.delivery_date, legacy_record=0, status='Draft', apply_discount_on='Net Total'))
+    from contractor.subcontract_commercial import copy_commercial_terms
+    copy_commercial_terms(contract, doc, clearance=True)
     for row in contract.clauses:
         values = {key: row.get(key) for key in ('is_group', 'series_number', 'parent_series',
             'clause_title', 'contractual_clause', 'uom', 'rate')}

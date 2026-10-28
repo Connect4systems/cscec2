@@ -53,7 +53,7 @@ def calculate_contract_taxes(doc):
     from erpnext.controllers.taxes_and_totals import calculate_taxes_and_totals
 
     clearance = doc.get("doctype") in ("Project Clearnce", "Subcontract Clearnce")
-    buying = doc.get("doctype") == "Subcontract Clearnce"
+    buying = doc.get("doctype") in ("CR", "Subcontractor Contract", "Subcontract Clearnce")
     if doc.get("taxes_and_charges"):
         validate_template(doc.taxes_and_charges, doc.company,
             "Purchase Taxes and Charges Template" if buying else "Sales Taxes and Charges Template")
@@ -78,7 +78,7 @@ def calculate_contract_taxes(doc):
                 row.set(field, 0)
             continue
         details.append(row)
-        proxy.append("items", dict(item_code=None, item_name=row.contractual_clause or row.source_row,
+        proxy.append("items", dict(item_code=None, item_name=row.get("contractual_clause") or row.get("source_row") or row.get("name") or f"clause-{len(details)}",
             description=row.clause_title, qty=qty, rate=rate, uom=row.uom,
             stock_uom=row.uom, conversion_factor=1, stock_qty=qty,
             item_tax_template=None, item_tax_rate="{}", discount_percentage=0,

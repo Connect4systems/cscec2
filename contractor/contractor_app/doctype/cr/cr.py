@@ -32,6 +32,10 @@ class CR(Document):
             if not source or source.get("contractual_clause") != row.get("contractual_clause") or bool(source.is_group) != bool(row.is_group):
                 frappe.throw("A fetched clause does not belong to the selected Project or its group type changed")
 
+        if self.get("doctype") == "CR":
+            from contractor.subcontract_commercial import calculate_commercial
+            calculate_commercial(self)
+
     def before_cancel(self):
         frappe.db.sql("select name from `tabCR` where name=%s for update", self.name)
         if frappe.db.exists("Subcontractor Contract", {"cr": self.name, "docstatus": ["!=", 2]}):

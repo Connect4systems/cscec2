@@ -7,7 +7,11 @@
  "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
+  "details_tab",
   "project",
+  "company",
+  "currency",
+  "conversion_rate",
   "supplier",
   "supplier_name",
   "contract_type",
@@ -16,16 +20,46 @@
   "end_date",
   "attach_cr",
   "project_abbriviation",
-  "clauses_section",
-  "numbering_mode",
-  "clauses",
   "section_break_mswi",
   "note",
   "section_break_lla0",
   "amended_from",
   "naming_series",
   "column_break_iqyj",
-  "cr_comparison"
+  "cr_comparison",
+  "clauses_tab",
+  "numbering_mode",
+  "clauses",
+  "taxes_tab",
+  "taxes_and_charges",
+  "disable_rounded_total",
+  "taxes",
+  "section_break_xywk",
+  "total_qty",
+  "total",
+  "net_total",
+  "total_taxes_and_charges",
+  "grand_total",
+  "column_break_nvqc",
+  "apply_discount_on",
+  "additional_discount_percentage",
+  "discount_amount",
+  "base_discount_amount",
+  "contracting_tab",
+  "purchasing_deductions_template",
+  "deductions",
+  "total_deductions",
+  "net_payable",
+  "connections_tab",
+  "base_total",
+  "base_grand_total",
+  "base_net_total",
+  "base_total_deductions",
+  "base_total_taxes_and_charges",
+  "rounded_total",
+  "base_rounded_total",
+  "rounding_adjustment",
+  "base_rounding_adjustment"
  ],
  "fields": [
   {
@@ -132,11 +166,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "clauses_section",
-   "fieldtype": "Section Break",
-   "label": "Contract Clauses"
-  },
-  {
    "fieldname": "numbering_mode",
    "fieldtype": "Select",
    "label": "Numbering Mode",
@@ -148,6 +177,241 @@
    "fieldtype": "Table",
    "label": "Contract Clauses",
    "options": "CR Clause"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "clauses_tab",
+   "fieldtype": "Tab Break",
+   "label": "Clauses"
+  },
+  {
+   "fieldname": "taxes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Taxes and Totals"
+  },
+  {
+   "fieldname": "taxes_and_charges",
+   "fieldtype": "Link",
+   "label": "Purchase Taxes and Charges Template",
+   "options": "Purchase Taxes and Charges Template"
+  },
+  {
+   "default": "0",
+   "fieldname": "disable_rounded_total",
+   "fieldtype": "Check",
+   "label": "Disable Rounded Total"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Taxes",
+   "options": "Purchase Taxes and Charges"
+  },
+  {
+   "fieldname": "section_break_xywk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_qty",
+   "fieldtype": "Float",
+   "label": "Total Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Total Taxes And Charges",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nvqc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Net Total",
+   "fieldname": "apply_discount_on",
+   "fieldtype": "Select",
+   "label": "Apply Additional Discount On",
+   "options": "Net Total\nGrand Total"
+  },
+  {
+   "fieldname": "additional_discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Additional Discount Percentage"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "base_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Base Discount Amount",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contracting_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contracting"
+  },
+  {
+   "fieldname": "purchasing_deductions_template",
+   "fieldtype": "Link",
+   "label": "Purchasing Deductions Template",
+   "options": "Purchasing Deductions Template"
+  },
+  {
+   "fieldname": "deductions",
+   "fieldtype": "Table",
+   "label": "Deductions",
+   "options": "Deduction"
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "label": "Total Deductions",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_payable",
+   "fieldtype": "Currency",
+   "label": "Net Payable",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "base_total",
+   "fieldtype": "Currency",
+   "label": "Base Total",
+   "read_only": 1,
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_grand_total",
+   "fieldtype": "Currency",
+   "label": "Base Grand Total",
+   "read_only": 1,
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_net_total",
+   "fieldtype": "Currency",
+   "label": "Base Net Total",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_total_deductions",
+   "fieldtype": "Currency",
+   "label": "Base Total Deductions",
+   "read_only": 1,
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_total_taxes_and_charges",
+   "fieldtype": "Currency",
+   "label": "Base Total Taxes And Charges",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "rounded_total",
+   "fieldtype": "Currency",
+   "label": "Rounded Total",
+   "read_only": 1,
+   "options": "currency",
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_rounded_total",
+   "fieldtype": "Currency",
+   "label": "Base Rounded Total",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "rounding_adjustment",
+   "fieldtype": "Currency",
+   "label": "Rounding Adjustment",
+   "read_only": 1,
+   "options": "currency",
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "base_rounding_adjustment",
+   "fieldtype": "Currency",
+   "label": "Base Rounding Adjustment",
+   "read_only": 1,
+   "options": "Company:company:default_currency",
+   "hidden": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "fetch_from": "project.company"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Conversion Rate",
+   "default": "1"
   }
  ],
  "grid_page_length": 50,

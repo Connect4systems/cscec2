@@ -5,7 +5,7 @@ const cr_clause_api = 'contractor.contractor_app.doctype.cr.cr.';
 
 const subcontract_clause_handlers = {
     refresh(frm) {
-        if (frm.doctype === 'Subcontractor Contract' && !frm.doc.docstatus) calculate_subcontract_amount(frm);
+        if (!frm.doc.docstatus) calculate_subcontract_amount(frm);
         frm.fields_dict.clauses.grid.update_docfield_property('series_number', 'read_only', frm.doc.numbering_mode !== 'From Excel');
         if (frm.doc.docstatus === 1) {
             const contract = frm.doctype === 'Subcontractor Contract';
@@ -61,7 +61,7 @@ const subcontract_clause_handlers = {
 };
 for (const type of ['CR', 'Subcontractor Contract']) frappe.ui.form.on(type, subcontract_clause_handlers);
 function calculate_subcontract_amount(frm) {
-    if (frm.doctype !== 'Subcontractor Contract' || frm.doc.docstatus) return;
+    if (!['CR', 'Subcontractor Contract'].includes(frm.doctype) || frm.doc.docstatus) return;
     let group = null;
     let total = 0;
     for (const row of frm.doc.clauses || []) {
@@ -71,12 +71,17 @@ function calculate_subcontract_amount(frm) {
         if (group) group.amount += row.amount;
     }
     if ((frm.doc.clauses || []).length) {
-        frm.doc.contract_amount = total;
-        frm.refresh_field('contract_amount');
+        frm.doc.total = total;
+        if (frm.doctype === 'Subcontractor Contract') {
+            frm.doc.contract_amount = total;
+            frm.refresh_field('contract_amount');
+        }
+        frm.refresh_field('total');
     }
     frm.refresh_field('clauses');
+    frm.trigger('calculate_subcontract_totals');
 }
-frappe.ui.form.on('Subcontractor Contract Clause', {
+for (const child of ['CR Clause', 'Subcontractor Contract Clause']) frappe.ui.form.on(child, {
     rate: calculate_subcontract_amount, qty: calculate_subcontract_amount,
     is_group: calculate_subcontract_amount, clauses_remove: calculate_subcontract_amount
 });

@@ -50,7 +50,7 @@ vm.runInContext(fs.readFileSync(path.join(__dirname, '../contractor/public/js/do
             const frm = {doctype: type, doc: {docstatus: status, name: 'DOC-1', clauses: []},
                 fields_dict: {clauses: {grid: {update_docfield_property() {}}}},
                 add_custom_button(label, callback, group) { buttons.push({label, group}); },
-                is_new: () => true, refresh_field() {}};
+                is_new: () => true, refresh_field() {}, trigger() {}};
             forms[type].refresh(frm);
             const create = buttons.filter(button => button.group === 'Create');
             assert.strictEqual(create.length, status === 1 ? 1 : 0);
