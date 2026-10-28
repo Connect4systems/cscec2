@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Operation Director",
  "links": [],
- "modified": "2025-08-03 22:04:04.585679",
+ "modified": "2026-10-28 16:58:26.189093",
  "modified_by": "Administrator",
  "module": "Contractor App",
  "name": "Operation Director",
@@ -27,7 +27,7 @@
    "role": "Projects Manager"
   }
  ],
- "sequence_id": 5.0,
+ "sequence_id": 8.0,
  "shortcuts": [
   {
    "color": "Grey",

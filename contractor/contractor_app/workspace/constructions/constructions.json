@@ -5,7 +5,7 @@
    "label": "Budget Variance"
   }
  ],
- "content": "[{\"id\": \"gsrIdC5oS3\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Constructions Management</span>\", \"col\": 12}}, {\"id\": \"C5EMFyBJOu\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project\", \"col\": 3}}, {\"id\": \"5rQe0ymlcT\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Task\", \"col\": 3}}, {\"id\": \"wLotq5M1xe\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Timesheet\", \"col\": 3}}, {\"id\": \"4P-C8Qk7IB\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Activity Type\", \"col\": 3}}, {\"id\": \"VmarWogpp4\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"xXIv6rQF1v\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Order\", \"col\": 3}}, {\"id\": \"oKk49vIAiR\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"BOQ\", \"col\": 3}}, {\"id\": \"h8a59GC7u0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Cost analysis\", \"col\": 3}}, {\"id\": \"-rqrGHkiEw\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Clearnce\", \"col\": 3}}, {\"id\": \"7e-EagNBSH\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"AAWjezWre6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Budget\", \"col\": 3}}, {\"id\": \"TrEyxjWTli\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Budget Variance Report\", \"col\": 3}}, {\"id\": \"j455epsyCT\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Wise Stock Tracking\", \"col\": 3}}, {\"id\": \"XP3Pwkkpgh\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"lENavbrrRz\", \"type\": \"card\", \"data\": {\"card_name\": \"Procurement \", \"col\": 4}}, {\"id\": \"0gfj6sY3Kb\", \"type\": \"card\", \"data\": {\"card_name\": \"Inventory\", \"col\": 4}}, {\"id\": \"0ehZK67ozV\", \"type\": \"card\", \"data\": {\"card_name\": \"HR\", \"col\": 4}}, {\"id\": \"27e-xCSV8_\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Budget Variance\", \"col\": 12}}, {\"id\": \"subcontract-clearnce\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Subcontract Clearnce\", \"col\": 3}}]",
+ "content": "[{\"id\":\"gsrIdC5oS3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Constructions Management</span>\",\"col\":12}},{\"id\":\"C5EMFyBJOu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"id\":\"5rQe0ymlcT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Task\",\"col\":3}},{\"id\":\"wLotq5M1xe\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Timesheet\",\"col\":3}},{\"id\":\"4P-C8Qk7IB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Activity Type\",\"col\":3}},{\"id\":\"VmarWogpp4\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"xXIv6rQF1v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order\",\"col\":3}},{\"id\":\"oKk49vIAiR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BOQ\",\"col\":3}},{\"id\":\"h8a59GC7u0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Cost analysis\",\"col\":3}},{\"id\":\"-rqrGHkiEw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Clearence\",\"col\":3}},{\"id\":\"7e-EagNBSH\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"AAWjezWre6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Budget\",\"col\":3}},{\"id\":\"TrEyxjWTli\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Budget Variance Report\",\"col\":3}},{\"id\":\"j455epsyCT\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Wise Stock Tracking\",\"col\":3}},{\"id\":\"XP3Pwkkpgh\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"lENavbrrRz\",\"type\":\"card\",\"data\":{\"card_name\":\"Procurement \",\"col\":4}},{\"id\":\"0gfj6sY3Kb\",\"type\":\"card\",\"data\":{\"card_name\":\"Inventory\",\"col\":4}},{\"id\":\"0ehZK67ozV\",\"type\":\"card\",\"data\":{\"card_name\":\"HR\",\"col\":4}},{\"id\":\"27e-xCSV8_\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Budget Variance\",\"col\":12}}]",
  "creation": "2024-12-10 20:22:51.171795",
  "custom_blocks": [],
  "docstatus": 0,
@@ -108,7 +108,7 @@
    "type": "Link"
   }
  ],
- "modified": "2025-07-07 14:17:40.689566",
+ "modified": "2026-10-28 16:58:28.750135",
  "modified_by": "Administrator",
  "module": "Contractor App",
  "name": "Constructions",
@@ -122,7 +122,7 @@
    "role": "System Manager"
   }
  ],
- "sequence_id": 41.0,
+ "sequence_id": 34.0,
  "shortcuts": [
   {
    "color": "Grey",
@@ -175,7 +175,7 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Project Clearnce",
+   "label": "Clearence",
    "link_to": "Project Clearnce",
    "stats_filter": "[]",
    "type": "DocType"
@@ -211,12 +211,6 @@
    "link_to": "Project wise Stock Tracking",
    "report_ref_doctype": "Project",
    "type": "Report"
-  },
-  {
-   "label": "Subcontract Clearnce",
-   "link_to": "Subcontract Clearnce",
-   "type": "DocType",
-   "doc_view": "List"
   }
  ],
  "title": "Constructions"

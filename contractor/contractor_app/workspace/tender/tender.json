@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"tV3oNlSKqs\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Tender</span>\", \"col\": 12}}, {\"id\": \"aibCZONzzW\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Customer\", \"col\": 3}}, {\"id\": \"yOdsy-LUKj\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Prospect\", \"col\": 3}}, {\"id\": \"QjBrh4uFRn\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tender\", \"col\": 3}}, {\"id\": \"SfUV9gren_\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplier Quotation\", \"col\": 3}}, {\"id\": \"4inA4_JG_I\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"GYr6bLoFkX\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Crm\", \"col\": 3}}, {\"id\": \"O2Sxxmf9cH\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item\", \"col\": 3}}, {\"id\": \"Iu5SYEsDtV\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Group\", \"col\": 3}}, {\"id\": \"ho7ZwA20i9\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplier\", \"col\": 3}}, {\"id\": \"clauses\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Contractual Clause\", \"col\": 3}}, {\"id\": \"project-contract\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Contract\", \"col\": 3}}, {\"id\": \"project-offer\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Offer\", \"col\": 3}}, {\"id\": \"project-clearnce\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Project Clearnce\", \"col\": 3}}, {\"id\": \"subcontract-clearnce\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Subcontract Clearnce\", \"col\": 3}}]",
+ "content": "[{\"id\":\"tV3oNlSKqs\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Tender</span>\",\"col\":12}},{\"id\":\"aibCZONzzW\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"yOdsy-LUKj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Prospect\",\"col\":3}},{\"id\":\"qkroQf7xvD\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"QjBrh4uFRn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Tender\",\"col\":3}},{\"id\":\"fzeE_iivzn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Costing Note\",\"col\":3}},{\"id\":\"-MmqUV9ZZc\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Boq\",\"col\":3}},{\"id\":\"hMUJ7-J-c5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Contractual Clause\",\"col\":3}},{\"id\":\"4inA4_JG_I\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"GYr6bLoFkX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Crm\",\"col\":3}},{\"id\":\"O2Sxxmf9cH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"Iu5SYEsDtV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item Group\",\"col\":3}},{\"id\":\"ho7ZwA20i9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":3}}]",
  "creation": "2024-09-26 14:10:50.367320",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Tender",
  "links": [],
- "modified": "2025-07-07 14:17:38.673789",
+ "modified": "2026-10-28 17:00:19.808098",
  "modified_by": "Administrator",
  "module": "Contractor App",
  "name": "Tender",
@@ -26,13 +26,21 @@
    "role": "System Manager"
   }
  ],
- "sequence_id": 14.0,
+ "sequence_id": 1.0,
  "shortcuts": [
   {
    "color": "Grey",
    "doc_view": "List",
    "label": "Tender",
    "link_to": "Tender Analysis",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Contractual Clause",
+   "link_to": "Contractual Clause",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -47,6 +55,14 @@
   {
    "color": "Grey",
    "doc_view": "List",
+   "label": "Costing Note",
+   "link_to": "Costing Note",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
    "label": "Crm",
    "link_to": "CRM",
    "type": "Dashboard"
@@ -54,8 +70,8 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Supplier Quotation",
-   "link_to": "Supplier Quotation",
+   "label": "Boq",
+   "link_to": "BOQ",
    "stats_filter": "[]",
    "type": "DocType"
   },
@@ -90,36 +106,6 @@
    "link_to": "Supplier",
    "stats_filter": "[]",
    "type": "DocType"
-  },
-  {
-   "label": "Contractual Clause",
-   "link_to": "Contractual Clause",
-   "type": "DocType",
-   "doc_view": "List"
-  },
-  {
-   "label": "Project Contract",
-   "link_to": "Project Contract",
-   "type": "DocType",
-   "doc_view": "List"
-  },
-  {
-   "label": "Project Offer",
-   "link_to": "Project Offer",
-   "type": "DocType",
-   "doc_view": "List"
-  },
-  {
-   "label": "Project Clearnce",
-   "link_to": "Project Clearnce",
-   "type": "DocType",
-   "doc_view": "List"
-  },
-  {
-   "label": "Subcontract Clearnce",
-   "link_to": "Subcontract Clearnce",
-   "type": "DocType",
-   "doc_view": "List"
   }
  ],
  "title": "Tender"
