@@ -18,3 +18,4 @@ contractor.patches.seed_divisions
 contractor.patches.project_abbreviation
 contractor.patches.seed_cost_codes
 contractor.patches.cr_contract_types
+contractor.patches.subcontract_clause_workflow

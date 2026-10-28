@@ -1,0 +1,106 @@
+{
+ "doctype": "DocType",
+ "name": "Subcontractor Contract Clause",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "field_order": [
+  "is_group",
+  "series_number",
+  "clause_title",
+  "qty",
+  "uom",
+  "contractual_clause",
+  "parent_series",
+  "project_clause",
+  "rate",
+  "amount",
+  "source_cr_row"
+ ],
+ "fields": [
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "series_number",
+   "fieldtype": "Data",
+   "label": "Series Number",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "clause_title",
+   "fieldtype": "Small Text",
+   "label": "Clause Title",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 4
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Uom",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "contractual_clause",
+   "fieldtype": "Link",
+   "label": "Contractual Clause",
+   "options": "Contractual Clause",
+   "read_only": 1
+  },
+  {
+   "fieldname": "parent_series",
+   "fieldtype": "Data",
+   "label": "Parent Series",
+   "read_only": 1
+  },
+  {
+   "fieldname": "project_clause",
+   "fieldtype": "Data",
+   "label": "Project Clause Row",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "options": "currency",
+   "in_list_view": 1,
+   "columns": 1,
+   "read_only_depends_on": "eval:doc.is_group"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "source_cr_row",
+   "fieldtype": "Data",
+   "label": "CR Row",
+   "read_only": 1,
+   "hidden": 1
+  }
+ ],
+ "permissions": [],
+ "istable": 1,
+ "editable_grid": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

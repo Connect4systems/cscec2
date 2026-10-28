@@ -6,6 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "subcontractor_contract",
   "title",
   "status",
   "po_no",
@@ -174,7 +175,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Draft\nSubmitted\nCancelled\n\u062e\u062a\u0627\u0645\u064a\n\u062c\u0627\u0631\u064a",
+   "options": "Draft\nSubmitted\nCancelled\nختامي\nجاري",
    "read_only": 1,
    "reqd": 0
   },
@@ -1231,6 +1232,13 @@
    "fieldtype": "Section Break",
    "reqd": 0,
    "depends_on": "eval:doc.legacy_record"
+  },
+  {
+   "fieldname": "subcontractor_contract",
+   "fieldtype": "Link",
+   "label": "Subcontractor Contract",
+   "options": "Subcontractor Contract",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,

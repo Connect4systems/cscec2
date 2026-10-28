@@ -15,11 +15,15 @@ class CR(Document):
         if self.get("clauses") and not self.get("supplier"):
             frappe.throw("Select a Supplier for the contract clauses")
         sources = None
+        seen_project_rows = set()
         for row in self.get("clauses") or []:
             if not row.get("project_clause"):
                 if row.get("contractual_clause"):
                     frappe.throw("Contractual Clause references must come from the selected Project")
                 continue
+            if row.project_clause in seen_project_rows:
+                frappe.throw("A Project clause can only appear once")
+            seen_project_rows.add(row.project_clause)
             if sources is None:
                 project = frappe.get_doc("Project", self.project)
                 project.check_permission("read")
@@ -28,18 +32,27 @@ class CR(Document):
             if not source or source.get("contractual_clause") != row.get("contractual_clause") or bool(source.is_group) != bool(row.is_group):
                 frappe.throw("A fetched clause does not belong to the selected Project or its group type changed")
 
+    def before_cancel(self):
+        frappe.db.sql("select name from `tabCR` where name=%s for update", self.name)
+        if frappe.db.exists("Subcontractor Contract", {"cr": self.name, "docstatus": ["!=", 2]}):
+            frappe.throw("Cancel or delete linked Subcontractor Contracts before cancelling the CR")
 
-def editable_cr(cr):
-    doc = frappe.get_doc("CR", cr)
+
+def editable_cr(cr, document_type="CR"):
+    if document_type not in ("CR", "Subcontractor Contract"):
+        frappe.throw("Unsupported clause document")
+    doc = frappe.get_doc(document_type, cr)
     doc.check_permission("write")
     if doc.docstatus != 0:
-        frappe.throw("Only draft CRs can replace contract clauses")
+        frappe.throw("Only draft documents can edit contract clauses")
     return doc
 
 
 @frappe.whitelist()
-def download_template():
-    frappe.has_permission("CR", "read", throw=True)
+def download_template(document_type="CR"):
+    if document_type not in ("CR", "Subcontractor Contract"):
+        frappe.throw("Unsupported clause document")
+    frappe.has_permission(document_type, "read", throw=True)
     # Same format as Tender Analysis, with CR permissions.
     import io
     from openpyxl import Workbook
@@ -55,14 +68,14 @@ def download_template():
 
 
 @frappe.whitelist()
-def preview_excel(cr, file_url):
-    editable_cr(cr)
+def preview_excel(cr, file_url, document_type="CR"):
+    editable_cr(cr, document_type)
     return read_clause_excel(file_url)
 
 
 @frappe.whitelist()
-def apply_excel(cr, file_url):
-    doc = editable_cr(cr)
+def apply_excel(cr, file_url, document_type="CR"):
+    doc = editable_cr(cr, document_type)
     doc.set("clauses", read_clause_excel(file_url))
     doc.numbering_mode = "From Excel"
     doc.save()
@@ -70,8 +83,8 @@ def apply_excel(cr, file_url):
 
 
 @frappe.whitelist()
-def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None, quantities=None):
-    doc = editable_cr(cr)
+def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None, quantities=None, document_type="CR"):
+    doc = editable_cr(cr, document_type)
     if project and project != doc.project:
         frappe.throw("The CR Project changed. Reopen Fetch from Project.")
     project = frappe.get_doc("Project", doc.project)
@@ -115,8 +128,8 @@ def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None, qua
 
 
 @frappe.whitelist()
-def project_clause_options(cr):
-    doc = editable_cr(cr)
+def project_clause_options(cr, document_type="CR"):
+    doc = editable_cr(cr, document_type)
     project = frappe.get_doc("Project", doc.project)
     project.check_permission("read")
     return {"project": doc.project, "clauses": [

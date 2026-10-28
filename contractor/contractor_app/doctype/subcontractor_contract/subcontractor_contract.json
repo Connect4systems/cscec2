@@ -8,6 +8,9 @@
  "field_order": [
   "project",
   "supplier",
+  "company",
+  "currency",
+  "conversion_rate",
   "contractor_name",
   "column_break_yqub",
   "date",
@@ -18,6 +21,10 @@
   "contract_type",
   "column_break_knnh",
   "division",
+  "clauses_section",
+  "numbering_mode",
+  "clauses",
+  "note",
   "terms_and_conditions_section",
   "text_editor_uxta",
   "section_break_tpbx",
@@ -30,7 +37,11 @@
   "comparison_date",
   "section_break_numq",
   "amended_from",
-  "project_abbriviation"
+  "project_abbriviation",
+  "posting_date",
+  "end_date",
+  "attach_cr",
+  "cr_comparison"
  ],
  "fields": [
   {
@@ -89,8 +100,7 @@
    "fieldname": "contract_type",
    "fieldtype": "Link",
    "label": "Contract Type",
-   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Contract Type\"]]",
-   "options": "Item Group"
+   "options": "Contract Type"
   },
   {
    "fieldname": "column_break_knnh",
@@ -102,7 +112,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Division",
-   "options": "Item"
+   "options": "Item",
+   "hidden": 1
   },
   {
    "collapsible": 1,
@@ -145,12 +156,13 @@
    "fieldname": "contract_amount",
    "fieldtype": "Currency",
    "label": "Contract Amount",
-   "reqd": 1
+   "reqd": 0,
+   "mandatory_depends_on": "eval:!doc.clauses || !doc.clauses.length"
   },
   {
    "fieldname": "contract",
    "fieldtype": "Attach",
-   "label": "Contract",
+   "label": "Attach Contract",
    "reqd": 1
   },
   {
@@ -170,7 +182,6 @@
    "label": "CR Date"
   },
   {
-   "fetch_from": "comparison.project",
    "fieldname": "project",
    "fieldtype": "Link",
    "label": "Project",
@@ -188,12 +199,80 @@
    "fieldname": "project_abbriviation",
    "fieldtype": "Data",
    "label": "Project abbriviation"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "fetch_from": "project.company"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "conversion_rate",
+   "fieldtype": "Float",
+   "label": "Conversion Rate",
+   "default": "1"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "CR Posting Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "CR End Date"
+  },
+  {
+   "fieldname": "attach_cr",
+   "fieldtype": "Attach",
+   "label": "CR Attachment"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "label": "Note"
+  },
+  {
+   "fieldname": "cr_comparison",
+   "fieldtype": "Link",
+   "label": "CR Comparison Reference",
+   "options": "CR Comparison"
+  },
+  {
+   "fieldname": "clauses_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Clauses"
+  },
+  {
+   "fieldname": "numbering_mode",
+   "fieldtype": "Select",
+   "label": "Numbering Mode",
+   "options": "Automatic\nFrom Excel",
+   "default": "Automatic"
+  },
+  {
+   "fieldname": "clauses",
+   "fieldtype": "Table",
+   "label": "Contract Clauses",
+   "options": "Subcontractor Contract Clause"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
+ "links": [
+  {
+   "link_doctype": "Subcontract Clearnce",
+   "link_fieldname": "subcontractor_contract"
+  }
+ ],
  "modified": "2025-07-23 22:37:57.958688",
  "modified_by": "Administrator",
  "module": "Contractor App",

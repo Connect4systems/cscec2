@@ -15,7 +15,11 @@ const handlers = {
             return;
         }
         frm.fields_dict.clauses.grid.cannot_add_rows = true;
-        frm.fields_dict.clauses.grid.update_docfield_property('rate', 'read_only', frm.doctype === 'Project Clearnce');
+        frm.fields_dict.clauses.grid.update_docfield_property('rate', 'read_only', frm.doctype === 'Project Clearnce' || !!frm.doc.subcontractor_contract);
+        if (frm.doc.subcontractor_contract) {
+            frm.set_df_property('project', 'read_only', 1);
+            frm.set_df_property('supplier', 'read_only', 1);
+        }
         if (frm.doc.invoice) frm.add_custom_button(__('Open Invoice'), () => frappe.set_route('Form', frm.doc.invoice_doctype, frm.doc.invoice));
         if (frm.doc.deduction_entry) frm.add_custom_button(__('Deduction Entry'), () => frappe.set_route('Form', 'Journal Entry', frm.doc.deduction_entry));
         if (frm.doc.docstatus === 0) calculate(frm);
@@ -29,7 +33,7 @@ const handlers = {
         frm.set_query('cost_center', () => ({filters: {company: frm.doc.company, is_group: 0}}));
     },
     async project(frm) {
-        if (!frm.doc.project || frm.doc.legacy_record || frm.doc.docstatus) return;
+        if (!frm.doc.project || frm.doc.legacy_record || frm.doc.docstatus || frm.doc.subcontractor_contract) return;
         const name = frm.doc.project;
         const r = await frappe.call({method: 'contractor.project_clearances.create_clearance',
             args: {project: name, doctype: frm.doctype, supplier: frm.doc.supplier || null}});

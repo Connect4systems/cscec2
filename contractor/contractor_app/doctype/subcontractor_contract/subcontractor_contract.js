@@ -1,8 +1,1 @@
-// Copyright (c) 2025, Jenan Alfahham and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Subcontractor Contract", {
-// 	refresh(frm) {
-
-// 	},
-// });
+{% include 'contractor/public/js/doctype/subcontract_clauses.js' %}

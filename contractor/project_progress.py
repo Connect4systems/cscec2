@@ -35,6 +35,8 @@ def validate_project(doc, method=None):
 def refresh_project(project):
     frappe.db.sql("select name from `tabProject` where name=%s for update", project)
     doc = frappe.get_doc("Project", project)
+    if not doc.get("project_contract"):
+        return
     validate_project(doc)
     fields = ("completed_qty", "remaining_qty", "completion_percentage", "subcontract_completed_qty",
         "subcontract_remaining_qty", "subcontract_completion_percentage")

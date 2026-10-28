@@ -197,9 +197,17 @@
    "fieldname": "qty_percentage",
    "fieldtype": "Percent",
    "label": "Current % of Remaining"
+  },
+  {
+   "fieldname": "subcontractor_contract_clause",
+   "fieldtype": "Data",
+   "label": "Subcontractor Contract Row",
+   "read_only": 1,
+   "hidden": 1
   }
  ],
  "field_order": [
+  "subcontractor_contract_clause",
   "is_group",
   "series_number",
   "clause_title",

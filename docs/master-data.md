@@ -66,3 +66,53 @@ All Clauses in This Group** unchecked shows its details with checkboxes and edit
 quantities. Checking it selects the whole group and hides the detail table. Quantity
 changes are validated as finite positive numbers and apply to CR only; Project
 quantities remain unchanged.
+
+## CR, Subcontractor Contract, and Subcontract Clearnce
+
+On a submitted CR, use **Create > Subcontractor Contract**. Native Frappe workflow
+approval/submission permissions remain in force; no new workflow is installed.
+The new unsaved draft copies the CR's Project, Supplier, Contract Type, dates,
+attachments, notes, comparison reference, numbering, and clause values. Child rows
+get new identities and retain their source CR row reference. An existing active
+contract for that CR is opened on repeated conversion. Saving also checks the
+submitted CR, matching Project/Supplier, and one active contract per CR.
+
+Subcontractor Contract can also be created directly. **Attach Contract** is required.
+Its clause entry, Excel preview/import, and Project picker share CR's implementation.
+Repeated Project fetches add clauses without resetting the table. Enter agreed unit
+rates; group amounts and Contract Amount sum the details. Detail rates must be
+positive before submission. Company follows the Project, currency defaults to the
+company currency, and foreign currencies require a positive conversion rate.
+
+On a submitted contract, use **Create > Subcontract Clearnce**. It opens a new unsaved
+certificate with the contract's Supplier, Project, Company, currency, series, clause
+references, and agreed rates. Current-period quantities start at zero. Enter the
+period quantities and review taxes, deductions, and accounting settings before
+submitting. Contract rates are authoritative; certificates cannot substitute rows
+from another contract or change the Supplier/Project. Submitted certificates count
+toward the contract's cumulative quantities. Fetched Project clauses also retain
+the existing Project-wide subcontract quantity cap. Manual/imported contract clauses
+use their contract quantities and do not create Project progress rows.
+
+The existing certificate tax/deduction calculations, Purchase Invoice creation,
+accounting cancellation, and Project progress refresh remain in use. Cancel or
+delete active certificates before cancelling their Subcontractor Contract, and
+cancel/delete active contracts before cancelling their CR. Historical attachment-only
+contracts remain available; add clauses to a new draft/amendment before using the
+new certificate action. Existing contract type names are retained in the master.
+
+Deploy with:
+
+```bash
+bench --site en.connect4systems.com migrate
+bench build --app contractor
+bench --site en.connect4systems.com clear-cache
+bench restart
+```
+
+Hard-refresh the browser. On a test site, verify workflow approval and submission,
+CR conversion twice, direct contract creation, manual/Excel/Project clause entry,
+attachment requirements, rates and totals, sequential certificate quantities,
+Project-wide quantity limits, taxes/deductions, accounting submission/cancellation,
+and cancellation guards. Local tests use mocked Frappe services and do not replace
+these native-site checks.

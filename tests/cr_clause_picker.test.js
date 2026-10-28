@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
 let dialog;
+const forms = {};
 const rows = [
     {name: 'group', is_group: 1, series_number: '4', clause_title: 'Civil'},
     {name: 'detail', is_group: 0, series_number: '4_2', parent_series: '4', clause_title: 'Concrete', qty: 10}
@@ -36,14 +37,28 @@ class Dialog {
     }
 }
 const context = vm.createContext({
-    console, __: text => text,
-    frappe: {ui: {form: {on() {}}, Dialog},
+    console, contractor: {}, flt: value => Number(value || 0), __: text => text,
+    frappe: {provide() {}, ui: {form: {on(type, handlers) { forms[type] = handlers; }}, Dialog},
         call: async () => ({message: {project: 'PROJ-1', clauses: rows}}),
         utils: {escape_html: text => text}, msgprint() {}}
 });
-vm.runInContext(fs.readFileSync(path.join(__dirname, '../contractor/contractor_app/doctype/cr/cr.js'), 'utf8'), context);
+vm.runInContext(fs.readFileSync(path.join(__dirname, '../contractor/public/js/doctype/subcontract_clauses.js'), 'utf8'), context);
 (async () => {
-    await context.open_cr_project_clause_picker({doc: {name: 'CR-1'}}, () => true);
+    for (const type of ['CR', 'Subcontractor Contract']) {
+        for (const status of [0, 1, 2]) {
+            const buttons = [];
+            const frm = {doctype: type, doc: {docstatus: status, name: 'DOC-1', clauses: []},
+                fields_dict: {clauses: {grid: {update_docfield_property() {}}}},
+                add_custom_button(label, callback, group) { buttons.push({label, group}); },
+                is_new: () => true, refresh_field() {}};
+            forms[type].refresh(frm);
+            const create = buttons.filter(button => button.group === 'Create');
+            assert.strictEqual(create.length, status === 1 ? 1 : 0);
+            if (status === 1) assert.strictEqual(create[0].label,
+                type === 'CR' ? 'Subcontractor Contract' : 'Subcontract Clearnce');
+        }
+    }
+    await context.contractor.open_cr_project_clause_picker({doc: {name: 'CR-1'}}, () => true);
     assert.strictEqual(dialog.visible.clause_group, false);
     assert.strictEqual(dialog.visible.select_all, false);
     assert.strictEqual(dialog.visible.details, false);

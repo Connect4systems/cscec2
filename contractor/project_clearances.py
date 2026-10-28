@@ -74,6 +74,9 @@ def create_clearance(project, doctype="Project Clearnce", supplier=None):
 
 
 def set_quantities(doc, project):
+    if doc.doctype == "Subcontract Clearnce" and doc.get("subcontractor_contract"):
+        from contractor.subcontracting import set_contract_quantities
+        return set_contract_quantities(doc, project)
     done = executed_quantities(project.name, doc.doctype, exclude=doc.name)
     party_done = executed_quantities(project.name, doc.doctype, exclude=doc.name, supplier=doc.get("supplier"))
     source_rows = {row.name: row for row in project.project_clauses}
@@ -108,11 +111,21 @@ def validate_clearance(doc):
     if not doc.get("project"):
         frappe.throw("Select Project first")
     lock_project(doc.project)
-    project, contract = sources(doc.project)
     buying = doc.doctype == "Subcontract Clearnce"
-    doc.project_contract = contract.name
-    doc.tender_analysis = contract.tender_analysis
-    doc.project_offer = contract.get("project_offer")
+    subcontract = buying and doc.get("subcontractor_contract")
+    if subcontract:
+        from contractor.subcontracting import contract_sources
+        project, contract = contract_sources(doc.subcontractor_contract)
+        if project.name != doc.project or contract.supplier != doc.get("supplier"):
+            frappe.throw("Project and Supplier must match the Subcontractor Contract")
+        doc.project_contract = project.get("project_contract")
+        doc.tender_analysis = project.get("tender_analysis")
+        doc.project_offer = project.get("project_offer")
+    else:
+        project, contract = sources(doc.project)
+        doc.project_contract = contract.name
+        doc.tender_analysis = contract.tender_analysis
+        doc.project_offer = contract.get("project_offer")
     doc.title = doc.get("title") or project.project_name
     doc.company = doc.get("company") or contract.company
     doc.currency = doc.get("currency") or contract.currency
@@ -120,7 +133,7 @@ def validate_clearance(doc):
     doc.posting_date = doc.get("posting_date") or today()
     doc.transaction_date = doc.posting_date
     if doc.company != contract.company or doc.currency != contract.currency:
-        frappe.throw("Company and currency must match the Project Contract")
+        frappe.throw("Company and currency must match the source contract")
     if buying:
         if not doc.get("supplier"):
             frappe.throw("Select Supplier")

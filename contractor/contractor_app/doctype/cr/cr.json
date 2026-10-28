@@ -157,6 +157,10 @@
   {
    "link_doctype": "CR Comparison",
    "link_fieldname": "cr"
+  },
+  {
+   "link_doctype": "Subcontractor Contract",
+   "link_fieldname": "cr"
   }
  ],
  "make_attachments_public": 1,
