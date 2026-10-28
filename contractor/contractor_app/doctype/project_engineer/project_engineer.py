@@ -1,3 +1,4 @@
+"""Compatibility controller for existing site records; no new schema is installed."""
 # Copyright (c) 2024, Jenan Alfahham and contributors
 # For license information, please see license.txt
 

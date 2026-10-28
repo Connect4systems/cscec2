@@ -212,3 +212,32 @@ class SubcontractWorkflowTest(unittest.TestCase):
         self.frappe.get_all.return_value = ['SCC-existing']
         with self.assertRaises(ValueError):
             self.service.validate_contract(contract)
+
+    def test_project_picker_filters_submitted_contracts_and_supplier_permissions(self):
+        self.frappe.get_doc.return_value = self.project()
+        self.frappe.has_permission = MagicMock()
+        self.frappe.get_list = MagicMock(side_effect=[
+            [Doc(name='C1', supplier='S1'), Doc(name='C2', supplier='S1'), Doc(name='C3', supplier='S2')],
+            [Doc(name='S1', supplier_name='Supplier One')]])
+        result = self.service.project_contract_options('PROJ-1')
+        self.assertEqual([row.name for row in result['contracts']], ['C1', 'C2'])
+        self.assertEqual([row.name for row in result['suppliers']], ['S1'])
+        first = self.frappe.get_list.call_args_list[0]
+        self.assertEqual(first.args[0], 'Subcontractor Contract')
+        self.assertEqual(first.kwargs['filters']['project'], 'PROJ-1')
+        self.assertEqual(first.kwargs['filters']['docstatus'], 1)
+        self.frappe.has_permission.assert_called_once_with('Subcontract Clearnce', 'create', throw=True)
+
+    def test_empty_project_picker_does_not_offer_unrelated_suppliers(self):
+        self.frappe.get_doc.return_value = self.project()
+        self.frappe.has_permission = MagicMock()
+        self.frappe.get_list = MagicMock(return_value=[])
+        self.assertEqual(self.service.project_contract_options('PROJ-1'), {'suppliers': [], 'contracts': []})
+        self.frappe.get_list.assert_called_once()
+
+    def test_project_action_rejects_contract_from_another_project_or_supplier(self):
+        for values in ({'project': 'OTHER'}, {'project': 'PROJ-1', 'supplier': 'OTHER'}):
+            self.frappe.get_doc.side_effect = [self.contract(), self.project()]
+            with self.assertRaises(ValueError):
+                self.service.create_clearance('SCC-1', **values)
+        self.frappe.new_doc.assert_not_called()

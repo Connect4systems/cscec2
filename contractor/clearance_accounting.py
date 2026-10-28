@@ -83,7 +83,7 @@ def post_accounting(doc):
         invoice = frappe.new_doc(invoice_type)
         invoice.update(dict(company=doc.company, currency=doc.currency, conversion_rate=doc.conversion_rate,
             posting_date=doc.posting_date, due_date=doc.posting_date, update_stock=0,
-            disable_rounded_total=1, ignore_pricing_rule=1, contractor_order=0,
+            disable_rounded_total=1, ignore_pricing_rule=1,
             additional_discount_percentage=0, discount_amount=0, apply_discount_on="Net Total",
             remarks=f"{doc.doctype}: {doc.name}"))
         invoice.set("supplier" if buying else "customer", party)

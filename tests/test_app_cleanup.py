@@ -14,6 +14,8 @@ class AppCleanupTest(unittest.TestCase):
         self.frappe.db.get_value.return_value = {'module': 'Contractor App', 'custom': 0}
         self.frappe.db.table_exists.return_value = True
         self.frappe.db.count.return_value = 0
+        self.frappe.db.exists.return_value = False
+        self.frappe.get_meta = MagicMock()
         self.frappe.get_all = MagicMock(return_value=[])
         self.frappe.get_doc = MagicMock()
         self.frappe.delete_doc = MagicMock()
@@ -36,7 +38,7 @@ class AppCleanupTest(unittest.TestCase):
         results = self.cleanup()
         self.assertTrue(all(row['removed'] for row in results))
         self.assertEqual([call.args for call in self.frappe.delete_doc.call_args_list],
-            [('DocType', 'E-Language'), ('DocType', 'Edu')])
+            [('DocType', name) for name in self.service.RETIRED_DOCTYPES])
         self.assertTrue(all(not call.kwargs for call in self.frappe.delete_doc.call_args_list))
         self.frappe.db.sql.assert_not_called()
 
@@ -78,3 +80,42 @@ class AppCleanupTest(unittest.TestCase):
         schemas = {json.loads(path.read_text(encoding='utf-8'))['name'] for path in root.glob('*/*.json')}
         self.assertTrue(set(self.service.RETAINED_DEPENDENCIES).issubset(schemas))
         self.assertFalse(set(self.service.RETIRED_DOCTYPES).intersection(schemas))
+
+
+    def test_single_with_saved_values_is_preserved_without_table_count(self):
+        self.frappe.db.get_value.return_value = {'module': 'Contractor App', 'custom': 0, 'issingle': 1}
+        self.frappe.db.sql.return_value = [{'field': 'pwf', 'value': '/private/files/workflow.png'}]
+        with patch.dict(sys.modules, self.modules):
+            result = self.service.retirement_status('Workflow img')
+        self.assertFalse(result['removable'])
+        self.assertIn('Contains saved Single values', result['reasons'])
+        self.frappe.db.count.assert_not_called()
+        self.frappe.db.table_exists.assert_not_called()
+
+    def test_empty_single_can_be_retired(self):
+        self.frappe.db.get_value.return_value = {'module': 'Contractor App', 'custom': 0, 'issingle': 1}
+        self.frappe.db.sql.return_value = []
+        with patch.dict(sys.modules, self.modules):
+            result = self.service.retirement_status('Workflow img')
+        self.assertTrue(result['removable'])
+
+    def test_literal_reference_in_site_script_preserves_definition(self):
+        self.frappe.db.exists.side_effect = lambda dt, name: name == 'Client Script'
+        self.frappe.get_meta.return_value.has_field.return_value = True
+        self.frappe.get_all.side_effect = lambda source, **kwargs: (
+            [{'name': 'custom-script', 'script': "frappe.get_doc('Project Engineer', name)"}]
+            if source == 'Client Script' else [])
+        with patch.dict(sys.modules, self.modules):
+            result = self.service.retirement_status('Project Engineer')
+        self.assertFalse(result['removable'])
+        self.assertTrue(any('custom-script' in reason for reason in result['reasons']))
+
+    def test_type_is_not_confused_with_contract_type_in_text_scan(self):
+        self.frappe.db.exists.side_effect = lambda dt, name: name == 'Client Script'
+        self.frappe.get_meta.return_value.has_field.return_value = True
+        self.frappe.get_all.side_effect = lambda source, **kwargs: (
+            [{'name': 'contract-script', 'script': 'frappe.new_doc("Contract Type")'}]
+            if source == 'Client Script' else [])
+        with patch.dict(sys.modules, self.modules):
+            result = self.service.retirement_status('Type')
+        self.assertTrue(result['removable'])

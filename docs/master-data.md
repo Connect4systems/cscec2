@@ -152,3 +152,26 @@ quantities, and invoice totals on a test site. Native buying calculation checks:
 ```bash
 bench --site test-site-name run-tests --doctype "Subcontractor Contract"
 ```
+
+From Project, **Create > Subcontract Clearnce** first asks for a Supplier with a
+submitted Subcontractor Contract on that Project, then a submitted contract for the
+selected Supplier. Choices respect document/user permissions. Changing Supplier
+clears the contract selection. The server rechecks Project/Supplier membership and
+submitted status before opening the existing contract-backed clearance mapping,
+including rates, purchasing taxes, deductions, and quantity limits. The action is
+available on saved, non-cancelled Projects, including standalone Projects.
+
+
+The contractor app no longer extends Opportunity, Quotation, Sales Order, Sales
+Invoice, Purchase Order, Purchase Invoice, or Purchase Receipt. Their form scripts,
+controller overrides, fixtures, and known old property customizations are retired.
+Project contracting and certificate taxes/deductions remain on the app's own
+DocTypes; their invoices use standard ERPNext fields. See app-cleanup.md for the
+metadata restoration migration and retained site-workflow exceptions.
+
+
+Purchasing naming is the sole exception to native transaction behavior: new Purchase
+Orders use PO-<Project Abbreviation>-0001 and Purchase Receipts use
+PRE-<Project Abbreviation>-0001. Both read Project.custom_abbreviation through the
+native Project field. No Purchase/Contract type selector or CO prefix is used.
+The naming-only overrides do not restore the former custom warehouse handling.

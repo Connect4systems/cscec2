@@ -1,0 +1,199 @@
+﻿category,target,name,status,evidence
+DocType,BOQ,BOQ,Active core,contractor/contractor_app/doctype/boq/boq.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,BOQ ID,BOQ ID,Legacy dependency,"contractor/contractor_app/doctype/boq_id/boq_id.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Car Use Request,Car Use Request,Outside project cycle,contractor/contractor_app/doctype/car_use_request/car_use_request.json; HR/vehicle request; exposed in Operation Director workspace
+DocType,Clearence Item,Clearence Item,Legacy dependency,"contractor/contractor_app/doctype/clearence_item/clearence_item.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Clearence Items Summary,Clearence Items Summary,Legacy dependency,"contractor/contractor_app/doctype/clearence_items_summary/clearence_items_summary.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Clearence Type,Clearence Type,Legacy dependency,"contractor/contractor_app/doctype/clearence_type/clearence_type.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Clearnce Clause,Clearnce Clause,Active core,contractor/contractor_app/doctype/clearnce_clause/clearnce_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Comparison,Comparison,Active optional support; explicitly retained by user,contractor/contractor_app/doctype/comparison/comparison.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Contract Type,Contract Type,Active core,contractor/contractor_app/doctype/contract_type/contract_type.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Contractors table,Contractors table,Active core,contractor/contractor_app/doctype/contractors_table/contractors_table.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Contractual Clause,Contractual Clause,Active core,contractor/contractor_app/doctype/contractual_clause/contractual_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Cost Code,Cost Code,Active optional support,contractor/contractor_app/doctype/cost_code/cost_code.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Costing Note,Costing Note,Active core,contractor/contractor_app/doctype/costing_note/costing_note.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Costing Note Items,Costing Note Items,Active core,contractor/contractor_app/doctype/costing_note_items/costing_note_items.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,CR,CR,Active core,contractor/contractor_app/doctype/cr/cr.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,CR Clause,CR Clause,Active core,contractor/contractor_app/doctype/cr_clause/cr_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,CR Comparison,CR Comparison,Active optional support,contractor/contractor_app/doctype/cr_comparison/cr_comparison.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Deduction,Deduction,Active core,contractor/contractor_app/doctype/deduction/deduction.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Deduction Table,Deduction Table,Installation schema retired; live metadata retained when used,"contractor/contractor_app/doctype/deduction_table/deduction_table.json; No external shipped Link/Table, runtime, or workspace consumer found; live-site checks still needed"
+DocType,Division,Division,Seeded but not integrated,contractor/contractor_app/doctype/division/division.json; Seeded by master_data.py; no Link/Table targets Division
+DocType,Engineering consulting office,Engineering consulting office,Active optional support,contractor/contractor_app/doctype/engineering_consulting_office/engineering_consulting_office.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Expenses Table,Expenses Table,Active core,contractor/contractor_app/doctype/expenses_table/expenses_table.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Group Item,Group Item,Legacy dependency,"contractor/contractor_app/doctype/group_item/group_item.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Item Code,Item Code,Active optional support; explicitly retained by user,contractor/contractor_app/doctype/item_code/item_code.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Item Coding Request,Item Coding Request,Active optional support; explicitly retained by user,contractor/contractor_app/doctype/item_coding_request/item_coding_request.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Labor costs,Labor costs,Active core,contractor/contractor_app/doctype/labor_costs/labor_costs.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Material costs,Material costs,Active core,contractor/contractor_app/doctype/material_costs/material_costs.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Classification,Project Classification,Active optional support,contractor/contractor_app/doctype/project_classification/project_classification.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Project Clause,Project Clause,Active core,contractor/contractor_app/doctype/project_clause/project_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Clause Summary,Project Clause Summary,Active core,contractor/contractor_app/doctype/project_clause_summary/project_clause_summary.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Clearnce,Project Clearnce,Active core,contractor/contractor_app/doctype/project_clearnce/project_clearnce.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Contract,Project Contract,Active core,contractor/contractor_app/doctype/project_contract/project_contract.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Contract Clause,Project Contract Clause,Active core,contractor/contractor_app/doctype/project_contract_clause/project_contract_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Contract Tax,Project Contract Tax,Migration-only legacy,contractor/contractor_app/doctype/project_contract_tax/project_contract_tax.json; Read by standard_project_contract_taxes.py; live taxes use standard ERPNext child tables
+DocType,Project Engineer,Project Engineer,Installation schema retired; live metadata retained when used,"contractor/contractor_app/doctype/project_engineer/project_engineer.json; No external shipped Link/Table, runtime, or workspace consumer found; live-site checks still needed"
+DocType,Project Item,Project Item,Legacy dependency,"contractor/contractor_app/doctype/project_item/project_item.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Project Offer,Project Offer,Active core,contractor/contractor_app/doctype/project_offer/project_offer.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Offer Clause,Project Offer Clause,Active core,contractor/contractor_app/doctype/project_offer_clause/project_offer_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Project Processing Status,Project Processing Status,Active optional support,contractor/contractor_app/doctype/project_processing_status/project_processing_status.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Purchase Category,Purchase Category,Installation schema retired; live metadata retained when used,"contractor/contractor_app/doctype/purchase_category/purchase_category.json; No external shipped Link/Table, runtime, or workspace consumer found; live-site checks still needed"
+DocType,Purchase Clearence Item,Purchase Clearence Item,Legacy dependency,"contractor/contractor_app/doctype/purchase_clearence_item/purchase_clearence_item.json; Retained item-based schema, customization, or legacy controller reference"
+DocType,Purchasing Deductions Template,Purchasing Deductions Template,Active core,contractor/contractor_app/doctype/purchasing_deductions_template/purchasing_deductions_template.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Selling Deductions Template,Selling Deductions Template,Active core,contractor/contractor_app/doctype/selling_deductions_template/selling_deductions_template.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Site Material Request,Site Material Request,Active optional support,contractor/contractor_app/doctype/site_material_request/site_material_request.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Site Material Request Item,Site Material Request Item,Active optional support,contractor/contractor_app/doctype/site_material_request_item/site_material_request_item.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Subcontract Clearnce,Subcontract Clearnce,Active core,contractor/contractor_app/doctype/subcontract_clearnce/subcontract_clearnce.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Subcontractor Contract,Subcontractor Contract,Active core,contractor/contractor_app/doctype/subcontractor_contract/subcontractor_contract.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Subcontractor Contract Clause,Subcontractor Contract Clause,Active core,contractor/contractor_app/doctype/subcontractor_contract_clause/subcontractor_contract_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Subcontractor Custody,Subcontractor Custody,Active optional support; explicitly retained by user,contractor/contractor_app/doctype/subcontractor_custody/subcontractor_custody.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Subcontractor Custody Item,Subcontractor Custody Item,Active optional support; explicitly retained by user,contractor/contractor_app/doctype/subcontractor_custody_item/subcontractor_custody_item.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Supplier Comparison,Supplier Comparison,Active optional support; explicitly retained by user,contractor/contractor_app/doctype/supplier_comparison/supplier_comparison.json; Project field or procurement/inventory/coding workflow; not a removal candidate
+DocType,Template BOQ,Template BOQ,Active core,contractor/contractor_app/doctype/template_boq/template_boq.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Tender Analysis,Tender Analysis,Active core,contractor/contractor_app/doctype/tender_analysis/tender_analysis.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Tender Analysis Clause,Tender Analysis Clause,Active core,contractor/contractor_app/doctype/tender_analysis_clause/tender_analysis_clause.json; Referenced by the current tender/project/CR/subcontract/clearance flow
+DocType,Type,Type,Installation schema retired; live metadata retained when used,"contractor/contractor_app/doctype/type/type.json; No external shipped Link/Table, runtime, or workspace consumer found; live-site checks still needed"
+DocType,Workflow img,Workflow img,Installation schema retired; live metadata retained when used,"contractor/contractor_app/doctype/workflow_img/workflow_img.json; No external shipped Link/Table, runtime, or workspace consumer found; live-site checks still needed"
+Custom Field fixture,Opportunity,workflow_state,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,boq_id,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,boq_id,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,total_expense_claim,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,is_group,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity Item,is_group,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Quotation Item,is_group,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,cost_code,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,cost_code,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_tab_4,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,series_number,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity Item,series_number,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Quotation Item,series_number,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,parent_group,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Quotation Item,parent_group,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity Item,parent_group,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_section_break_vvc4f,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Quotation Item,group_item,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,group_item,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity Item,group_item,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity Item,item_description,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,engineering_consulting_office,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_type,Legacy item/BOQ support; retained,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_territory_,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_warehouse,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_column_break_gjdzd,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,contractor_order,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_classification,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,number,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,custom_section_break_msuvg,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,custom_boq_description,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,date,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,custom_cost_sheet,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,custom_column_break_nxofb,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,custom_technical_proposal,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_column_break_d9gqr,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,custom_column_break_dzmki,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,custom_financial_proposal,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_contract_type,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,custom_cost_code,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order Item,custom_boq_no,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,contracting_section,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,advance_payment_discount,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,column_break_vxgcb,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_dashboard,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,business_guarantee_insurance_deduction_rate,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_section_break_88zbr,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_location,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,contracting,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_processing_status,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,base_project_amount,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,advance_payment_discount,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,business_guarantee_insurance_deduction_rate,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_amount,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,column_break_vxgcb,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,final_insurance_percentage,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,section_break_7gqac,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,final_insurance_amount,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,group_items,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_item_group_abbreviation_,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_contract_items,Legacy item-based Project customization,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,group_items,Legacy item-based Project customization,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_section_break_n9xrw,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,items,Legacy item-based Project customization,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_teamwork,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_project_manager,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,section_break_7gqac,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_pm_name,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Opportunity,group_items,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_email,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_boq_id,Legacy item/BOQ support; retained,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_column_break_hlrtd,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_parent_boq,Legacy item/BOQ support; retained,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_technical_office,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_to_name,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_toemail,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_project,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_section_break_hk0ef,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,is_group,Legacy item/BOQ support; retained,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,group_item,Legacy item/BOQ support; retained,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,contracting_settings,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,selling_deductions_template,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,deductions,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,sect_totals,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,base_total_deductions,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Sales Order,total_deductions,No longer exported; restoration removes app metadata and preserves stored values,contractor/fixtures/custom_field.json
+Custom Field fixture,Item,custom_boq,Legacy item/BOQ support; retained,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_clauses_tab,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_contract,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,tender_analysis,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_offer,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_contract_currency,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_clauses,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,project_clause_groups,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+Custom Field fixture,Project,custom_abbreviation,Active/support or legacy mixed,contractor/fixtures/custom_field.json
+DocType Link fixture,Opportunity,Project Clearnce,Retired native-document connection override,contractor/fixtures/doctype_link.json
+DocType Link fixture,Project,Project Clearnce,Active Project certificate connection,contractor/fixtures/doctype_link.json
+DocType Link fixture,Project,Subcontract Clearnce,Active Project certificate connection,contractor/fixtures/doctype_link.json
+Fixture file,Property Setter,property_setter.json,Removed empty fixture file and export hook,contractor/fixtures/property_setter.json; custom/*.json still contains setters
+Public script,Browser,comparison_table.js,Active hooked/shared script,contractor/public/js/doctype/comparison_table.js
+Public script,Browser,item.js,Hooked item grouping support; outside clause headers,contractor/public/js/doctype/item.js
+Public script,Browser,material_request.js,Removed unhooked older implementation,contractor/public/js/doctype/material_request.js
+Public script,Browser,material_request_comparison.js,Active hooked/shared script,contractor/public/js/doctype/material_request_comparison.js
+Public script,Browser,project.js,Active hooked/shared script,contractor/public/js/doctype/project.js
+Public script,Browser,project_clearance.js,Active hooked/shared script,contractor/public/js/doctype/project_clearance.js
+Public script,Browser,project_commercial.js,Active hooked/shared script,contractor/public/js/doctype/project_commercial.js
+Public script,Browser,project_name.js,Active hooked/shared script,contractor/public/js/doctype/project_name.js
+Public script,Browser,sales_invoice.js,Removed; Sales Invoice uses native ERPNext form,contractor/public/js/doctype/sales_invoice.js
+Public script,Browser,subcontract_clauses.js,Active hooked/shared script,contractor/public/js/doctype/subcontract_clauses.js
+Public script,Browser,subcontract_commercial.js,Active hooked/shared script,contractor/public/js/doctype/subcontract_commercial.js
+Override script,Server,cr.py,Registered controller override,contractor/overrides/cr.py; contractor/hooks.py
+Override script,Server,cr_comparison.py,Registered controller override,contractor/overrides/cr_comparison.py; contractor/hooks.py
+Override script,Server,material_request.py,Registered controller override,contractor/overrides/material_request.py; contractor/hooks.py
+Override script,Server,purchase_order.py,Restored Project-based naming only; no other controller customization,contractor/overrides/purchase_order.py; contractor/hooks.py
+Override script,Server,purchase_receipt.py,Restored Project-based naming only; no other controller customization,contractor/overrides/purchase_receipt.py; contractor/hooks.py
+Override script,Server,stock_entry.py,Registered controller override,contractor/overrides/stock_entry.py; contractor/hooks.py
+Override script,Server,subcontractor_contract.py,Registered controller override,contractor/overrides/subcontractor_contract.py; contractor/hooks.py
+Override script,Server,subcontractor_custody.py,Registered controller override,contractor/overrides/subcontractor_custody.py; contractor/hooks.py
+Empty client script,boq_id,boq_id.js,Removed empty client script,contractor/contractor_app/doctype/boq_id/boq_id.js
+Empty client script,car_use_request,car_use_request.js,Removed empty client script,contractor/contractor_app/doctype/car_use_request/car_use_request.js
+Empty client script,clearence_type,clearence_type.js,Removed empty client script,contractor/contractor_app/doctype/clearence_type/clearence_type.js
+Empty client script,comparison,comparison.js,Retained feature skeleton by user scope,contractor/contractor_app/doctype/comparison/comparison.js
+Empty client script,cost_code,cost_code.js,Removed empty client script,contractor/contractor_app/doctype/cost_code/cost_code.js
+Empty client script,cr_comparison,cr_comparison.js,Removed empty client script,contractor/contractor_app/doctype/cr_comparison/cr_comparison.js
+Empty client script,engineering_consulting_office,engineering_consulting_office.js,Removed empty client script,contractor/contractor_app/doctype/engineering_consulting_office/engineering_consulting_office.js
+Empty client script,item_coding_request,item_coding_request.js,Retained feature skeleton by user scope,contractor/contractor_app/doctype/item_coding_request/item_coding_request.js
+Empty client script,project_classification,project_classification.js,Removed empty client script,contractor/contractor_app/doctype/project_classification/project_classification.js
+Empty client script,project_engineer,project_engineer.js,Removed empty client script,contractor/contractor_app/doctype/project_engineer/project_engineer.js
+Empty client script,project_processing_status,project_processing_status.js,Removed empty client script,contractor/contractor_app/doctype/project_processing_status/project_processing_status.js
+Empty client script,purchase_category,purchase_category.js,Removed empty client script,contractor/contractor_app/doctype/purchase_category/purchase_category.js
+Empty client script,purchasing_deductions_template,purchasing_deductions_template.js,Removed empty client script,contractor/contractor_app/doctype/purchasing_deductions_template/purchasing_deductions_template.js
+Empty client script,selling_deductions_template,selling_deductions_template.js,Removed empty client script,contractor/contractor_app/doctype/selling_deductions_template/selling_deductions_template.js
+Empty client script,site_material_request,site_material_request.js,Removed empty client script,contractor/contractor_app/doctype/site_material_request/site_material_request.js
+Empty client script,subcontractor_custody,subcontractor_custody.js,Retained feature skeleton by user scope,contractor/contractor_app/doctype/subcontractor_custody/subcontractor_custody.js
+Empty client script,type,type.js,Removed empty client script,contractor/contractor_app/doctype/type/type.js
+Empty client script,workflow_img,workflow_img.js,Removed empty client script,contractor/contractor_app/doctype/workflow_img/workflow_img.js
+Customization export,BOQ ID,boq_id.json,Removed stale export; guarded migration removes obsolete setters only,contractor/contractor_app/custom/boq_id.json
+Customization export,Deduction,deduction.json,Active Deduction percent precision; keep,contractor/contractor_app/custom/deduction.json
+Customization export,Material Request,material_request.json,Active or legacy mixed customization export,contractor/contractor_app/custom/material_request.json
+Customization export,Material Request Item,material_request_item.json,Active or legacy mixed customization export,contractor/contractor_app/custom/material_request_item.json
+Customization export,Project,project.json,Active or legacy mixed customization export,contractor/contractor_app/custom/project.json
+Report,Account,Account Balances,Retained source for explanation; unregistered and requires query repair,contractor/report/account_balances/account_balances.py; contractor/report/account_balances/account_balances.js

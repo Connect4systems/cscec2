@@ -83,7 +83,8 @@ class ClearanceMigrationTest(unittest.TestCase):
         root = Path(__file__).parents[1]
         namespace = {}
         exec((root/'contractor/hooks.py').read_text().replace('from . import __version__ as app_version','app_version="test"'), namespace)
-        self.assertNotIn('Purchase Order', namespace['override_doctype_class'])
+        self.assertEqual(namespace['override_doctype_class']['Purchase Order'],
+            'contractor.overrides.purchase_order.CustomPurchaseOrder')
         self.assertNotIn('Purchase Order', namespace['doctype_js'])
         self.assertNotIn('Purchase Invoice', namespace['doctype_js'])
         schema = json.loads((root/'contractor/contractor_app/doctype/project_clause/project_clause.json').read_text())

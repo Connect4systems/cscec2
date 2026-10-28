@@ -20,3 +20,6 @@ contractor.patches.seed_cost_codes
 contractor.patches.cr_contract_types
 contractor.patches.subcontract_clause_workflow
 contractor.patches.subcontract_commercial_tabs
+contractor.patches.cleanup_project_cycle
+contractor.patches.standard_erpnext_documents
+contractor.patches.purchasing_naming

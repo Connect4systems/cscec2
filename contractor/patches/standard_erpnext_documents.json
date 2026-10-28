@@ -1,0 +1,760 @@
+{
+ "doctypes": [
+  "Opportunity",
+  "Opportunity Item",
+  "Purchase Invoice",
+  "Purchase Invoice Item",
+  "Purchase Order",
+  "Purchase Order Item",
+  "Purchase Receipt",
+  "Purchase Receipt Item",
+  "Purchase Taxes and Charges",
+  "Quotation",
+  "Quotation Item",
+  "Sales Invoice",
+  "Sales Invoice Item",
+  "Sales Order",
+  "Sales Order Item",
+  "Sales Taxes and Charges"
+ ],
+ "fields": [
+  {
+   "dt": "Opportunity",
+   "fieldname": "custom_column_break_dzmki"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "custom_column_break_nxofb"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "custom_cost_sheet"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "custom_financial_proposal"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "custom_section_break_msuvg"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "custom_technical_proposal"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "section_break_7gqac"
+  },
+  {
+   "dt": "Opportunity",
+   "fieldname": "workflow_state"
+  },
+  {
+   "dt": "Opportunity Item",
+   "fieldname": "group_item"
+  },
+  {
+   "dt": "Opportunity Item",
+   "fieldname": "is_group"
+  },
+  {
+   "dt": "Opportunity Item",
+   "fieldname": "item_description"
+  },
+  {
+   "dt": "Opportunity Item",
+   "fieldname": "parent_group"
+  },
+  {
+   "dt": "Opportunity Item",
+   "fieldname": "series_number"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "clearence"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "contracting_section"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "purchasing_deductions_template"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Purchase Invoice",
+   "fieldname": "total_deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_approval_status"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_civil__finishing"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_80i7s"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_lbpxa"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_mofjz"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_mpz20"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_ttkoa"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_zaov0"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_column_break_zg2em"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_comparison"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_cr"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_delivery_location"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_discipline"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_electrical"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_expiry_date"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_material_request"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_mechanical"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_note"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_payments"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_project_abbriviation"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_project_name"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_section_break_3aywh"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_section_break_zwp1b"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_tax_advance_payment"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_term_of_payments"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "custom_type"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "purchasing_deductions_template"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "section_break_7gqac"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "total_deductions"
+  },
+  {
+   "dt": "Purchase Order",
+   "fieldname": "workflow_state"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "group_item"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "is_group"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "parent_group"
+  },
+  {
+   "dt": "Purchase Order Item",
+   "fieldname": "series_number"
+  },
+  {
+   "dt": "Purchase Taxes and Charges",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Purchase Taxes and Charges",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Quotation Item",
+   "fieldname": "group_item"
+  },
+  {
+   "dt": "Quotation Item",
+   "fieldname": "is_group"
+  },
+  {
+   "dt": "Quotation Item",
+   "fieldname": "parent_group"
+  },
+  {
+   "dt": "Quotation Item",
+   "fieldname": "series_number"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "clearence"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "contracting_section"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "selling_deductions_template"
+  },
+  {
+   "dt": "Sales Invoice",
+   "fieldname": "total_deductions"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "advance_payment_discount"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "base_total_deductions"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "business_guarantee_insurance_deduction_rate"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "column_break_vxgcb"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "contracting_section"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "contracting_settings"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "contractor_order"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "deductions"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "group_items"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "sect_totals"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "section_break_7gqac"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "selling_deductions_template"
+  },
+  {
+   "dt": "Sales Order",
+   "fieldname": "total_deductions"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "boq_id"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "cost_code"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "custom_boq_description"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "custom_boq_no"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "custom_cost_code"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "group_item"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "is_group"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "parent_group"
+  },
+  {
+   "dt": "Sales Order Item",
+   "fieldname": "series_number"
+  }
+ ],
+ "setters": [
+  {
+   "name": "Opportunity Item-amount-default",
+   "doc_type": "Opportunity Item",
+   "field_name": "amount",
+   "property": "default"
+  },
+  {
+   "name": "Opportunity Item-item_group-columns",
+   "doc_type": "Opportunity Item",
+   "field_name": "item_group",
+   "property": "columns"
+  },
+  {
+   "name": "Opportunity Item-item_group-hidden",
+   "doc_type": "Opportunity Item",
+   "field_name": "item_group",
+   "property": "hidden"
+  },
+  {
+   "name": "Opportunity Item-qty-columns",
+   "doc_type": "Opportunity Item",
+   "field_name": "qty",
+   "property": "columns"
+  },
+  {
+   "name": "Opportunity Item-rate-default",
+   "doc_type": "Opportunity Item",
+   "field_name": "rate",
+   "property": "default"
+  },
+  {
+   "name": "Purchase Order Item-main-field_order",
+   "doc_type": "Purchase Order Item",
+   "field_name": null,
+   "property": "field_order"
+  },
+  {
+   "name": "Purchase Order Item-schedule_date-allow_on_submit",
+   "doc_type": "Purchase Order Item",
+   "field_name": "schedule_date",
+   "property": "allow_on_submit"
+  },
+  {
+   "name": "Purchase Order-accounting_dimensions_section-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "accounting_dimensions_section",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-base_rounded_total-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "base_rounded_total",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-base_rounded_total-print_hide",
+   "doc_type": "Purchase Order",
+   "field_name": "base_rounded_total",
+   "property": "print_hide"
+  },
+  {
+   "name": "Purchase Order-company-default",
+   "doc_type": "Purchase Order",
+   "field_name": "company",
+   "property": "default"
+  },
+  {
+   "name": "Purchase Order-company-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "company",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-conversion_rate-precision",
+   "doc_type": "Purchase Order",
+   "field_name": "conversion_rate",
+   "property": "precision"
+  },
+  {
+   "name": "Purchase Order-disable_rounded_total-default",
+   "doc_type": "Purchase Order",
+   "field_name": "disable_rounded_total",
+   "property": "default"
+  },
+  {
+   "name": "Purchase Order-due_date-print_hide",
+   "doc_type": "Purchase Order",
+   "field_name": "due_date",
+   "property": "print_hide"
+  },
+  {
+   "name": "Purchase Order-get_items_from_open_material_requests-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "get_items_from_open_material_requests",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-in_words-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "in_words",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-in_words-print_hide",
+   "doc_type": "Purchase Order",
+   "field_name": "in_words",
+   "property": "print_hide"
+  },
+  {
+   "name": "Purchase Order-main-allow_auto_repeat",
+   "doc_type": "Purchase Order",
+   "field_name": null,
+   "property": "allow_auto_repeat"
+  },
+  {
+   "name": "Purchase Order-main-default_print_format",
+   "doc_type": "Purchase Order",
+   "field_name": null,
+   "property": "default_print_format"
+  },
+  {
+   "name": "Purchase Order-main-field_order",
+   "doc_type": "Purchase Order",
+   "field_name": null,
+   "property": "field_order"
+  },
+  {
+   "name": "Purchase Order-main-links_order",
+   "doc_type": "Purchase Order",
+   "field_name": null,
+   "property": "links_order"
+  },
+  {
+   "name": "Purchase Order-naming_series-options",
+   "doc_type": "Purchase Order",
+   "field_name": "naming_series",
+   "property": "options"
+  },
+  {
+   "name": "Purchase Order-payment_schedule-print_hide",
+   "doc_type": "Purchase Order",
+   "field_name": "payment_schedule",
+   "property": "print_hide"
+  },
+  {
+   "name": "Purchase Order-payment_schedule_section-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "payment_schedule_section",
+   "property": "collapsible"
+  },
+  {
+   "name": "Purchase Order-payment_schedule_section-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "payment_schedule_section",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-project-fetch_from",
+   "doc_type": "Purchase Order",
+   "field_name": "project",
+   "property": "fetch_from"
+  },
+  {
+   "name": "Purchase Order-project-in_standard_filter",
+   "doc_type": "Purchase Order",
+   "field_name": "project",
+   "property": "in_standard_filter"
+  },
+  {
+   "name": "Purchase Order-rounded_total-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "rounded_total",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-rounded_total-print_hide",
+   "doc_type": "Purchase Order",
+   "field_name": "rounded_total",
+   "property": "print_hide"
+  },
+  {
+   "name": "Purchase Order-scan_barcode-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "scan_barcode",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-section_break_52-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "section_break_52",
+   "property": "collapsible"
+  },
+  {
+   "name": "Purchase Order-set_warehouse-fetch_from",
+   "doc_type": "Purchase Order",
+   "field_name": "set_warehouse",
+   "property": "fetch_from"
+  },
+  {
+   "name": "Purchase Order-supplier_section-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "supplier_section",
+   "property": "collapsible"
+  },
+  {
+   "name": "Purchase Order-supplier_section-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "supplier_section",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-taxes_section-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "taxes_section",
+   "property": "collapsible"
+  },
+  {
+   "name": "Purchase Order-taxes_section-hidden",
+   "doc_type": "Purchase Order",
+   "field_name": "taxes_section",
+   "property": "hidden"
+  },
+  {
+   "name": "Purchase Order-tc_name-default",
+   "doc_type": "Purchase Order",
+   "field_name": "tc_name",
+   "property": "default"
+  },
+  {
+   "name": "Purchase Order-terms_section_break-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "terms_section_break",
+   "property": "collapsible"
+  },
+  {
+   "name": "Purchase Order-totals-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "totals",
+   "property": "collapsible"
+  },
+  {
+   "name": "Purchase Order-totals_section-collapsible",
+   "doc_type": "Purchase Order",
+   "field_name": "totals_section",
+   "property": "collapsible"
+  },
+  {
+   "name": "Quotation Item-item_code-columns",
+   "doc_type": "Quotation Item",
+   "field_name": "item_code",
+   "property": "columns"
+  },
+  {
+   "name": "Quotation Item-item_group-columns",
+   "doc_type": "Quotation Item",
+   "field_name": "item_group",
+   "property": "columns"
+  },
+  {
+   "name": "Quotation Item-qty-columns",
+   "doc_type": "Quotation Item",
+   "field_name": "qty",
+   "property": "columns"
+  },
+  {
+   "name": "Sales Order Item-item_code-columns",
+   "doc_type": "Sales Order Item",
+   "field_name": "item_code",
+   "property": "columns"
+  },
+  {
+   "name": "Sales Order Item-item_group-columns",
+   "doc_type": "Sales Order Item",
+   "field_name": "item_group",
+   "property": "columns"
+  },
+  {
+   "name": "Sales Order Item-main-field_order",
+   "doc_type": "Sales Order Item",
+   "field_name": null,
+   "property": "field_order"
+  }
+ ],
+ "links": [
+  {
+   "name": "c50ad53f59",
+   "parent": "Opportunity",
+   "link_doctype": "Project Clearnce"
+  },
+  {
+   "name": "9d06b7d302",
+   "parent": "Sales Order",
+   "link_doctype": "Costing Note"
+  },
+  {
+   "name": "13135db3ba",
+   "parent": "Sales Order",
+   "link_doctype": "Clearence"
+  },
+  {
+   "name": "c08739a01b",
+   "parent": "Opportunity",
+   "link_doctype": "Costing Note"
+  }
+ ]
+}

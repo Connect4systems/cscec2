@@ -1,22 +1,5 @@
 [
  {
-  "custom": 1,
-  "docstatus": 0,
-  "doctype": "DocType Link",
-  "group": null,
-  "hidden": 0,
-  "is_child_table": 0,
-  "link_doctype": "Project Clearnce",
-  "link_fieldname": "opportunity",
-  "modified": "2024-09-02 00:07:33.486992",
-  "name": "c50ad53f59",
-  "parent": "Opportunity",
-  "parent_doctype": null,
-  "parentfield": "links",
-  "parenttype": "Customize Form",
-  "table_fieldname": null
- },
- {
   "doctype": "DocType Link",
   "custom": 1,
   "name": "project-project-clearnce",

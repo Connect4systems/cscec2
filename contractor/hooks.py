@@ -1,248 +1,88 @@
 from . import __version__ as app_version
 
-app_name = "contractor"
-app_title = "Contractor App"
-app_publisher = "Jenan Alfahham"
-app_description = "Contractor App"
-app_email = "jenan_fh95@hotmail.com"
-app_license = "MIT"
+app_name = 'contractor'
+app_title = 'Contractor App'
+app_publisher = 'Jenan Alfahham'
+app_description = 'Contractor App'
+app_email = 'jenan_fh95@hotmail.com'
+app_license = 'MIT'
 
-# Includes in <head>
-# ------------------
+# Purchasing documents retain naming only; native trading forms have no app fields.
+fixtures = [{'dt': 'Custom Field',
+  'filters': [['name',
+               'in',
+               ['Project-total_expense_claim',
+                'Project-custom_tab_4',
+                'Project-custom_section_break_vvc4f',
+                'Project-engineering_consulting_office',
+                'Item-custom_type',
+                'Project-custom_territory_',
+                'Project-custom_warehouse',
+                'Project-custom_column_break_gjdzd',
+                'Project-project_classification',
+                'Project-number',
+                'Project-date',
+                'Item-custom_column_break_d9gqr',
+                'Project-custom_contract_type',
+                'Project-custom_dashboard',
+                'Project-custom_section_break_88zbr',
+                'Project-custom_location',
+                'Project-contracting',
+                'Project-project_processing_status',
+                'Project-base_project_amount',
+                'Project-advance_payment_discount',
+                'Project-business_guarantee_insurance_deduction_rate',
+                'Project-project_amount',
+                'Project-column_break_vxgcb',
+                'Project-final_insurance_percentage',
+                'Project-final_insurance_amount',
+                'Item-custom_item_group_abbreviation_',
+                'Project-custom_contract_items',
+                'Project-group_items',
+                'Project-custom_section_break_n9xrw',
+                'Project-items',
+                'Project-custom_teamwork',
+                'Project-custom_project_manager',
+                'Project-custom_pm_name',
+                'Project-custom_email',
+                'Item-custom_boq_id',
+                'Project-custom_column_break_hlrtd',
+                'Item-custom_parent_boq',
+                'Project-custom_technical_office',
+                'Project-custom_to_name',
+                'Project-custom_toemail',
+                'Item-custom_project',
+                'Project-custom_section_break_hk0ef',
+                'Item-is_group',
+                'Item-group_item',
+                'Item-custom_boq',
+                'Project-project_clauses_tab',
+                'Project-project_contract',
+                'Project-tender_analysis',
+                'Project-project_offer',
+                'Project-project_contract_currency',
+                'Project-project_clauses',
+                'Project-project_clause_groups',
+                'Project-custom_abbreviation']]]},
+ {'dt': 'DocType Link',
+  'filters': [['name', 'in', ['project-project-clearnce', 'project-subcontract-clearnce']]]}]
 
-# include js, css files in header of desk.html
-# app_include_css = "/assets/contractor/css/contractor.css"
-# app_include_js = "/assets/contractor/js/contractor.js"
+doctype_js = {'Project': 'public/js/doctype/project.js',
+ 'Item': 'public/js/doctype/item.js',
+ 'Material Request': 'public/js/doctype/material_request_comparison.js',
+ 'Comparison': 'public/js/doctype/comparison_table.js'}
 
-# include js, css files in header of web template
-# web_include_css = "/assets/contractor/css/contractor.css"
-# web_include_js = "/assets/contractor/js/contractor.js"
+override_doctype_class = {'Material Request': 'contractor.overrides.material_request.CustomMaterialRequest',
+ 'Stock Entry': 'contractor.overrides.stock_entry.CustomStockEntry',
+ 'Subcontractor Custody': 'contractor.overrides.subcontractor_custody.CustomSubcontractorCustody',
+ 'CR': 'contractor.overrides.cr.CustomCR',
+ 'Subcontractor Contract': 'contractor.overrides.subcontractor_contract.CustomSubcontractorContract',
+ 'CR Comparison': 'contractor.overrides.cr_comparison.CustomCRComparison',
+ 'Purchase Order': 'contractor.overrides.purchase_order.CustomPurchaseOrder',
+ 'Purchase Receipt': 'contractor.overrides.purchase_receipt.CustomPurchaseReceipt'}
 
-# include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "contractor/public/scss/website"
+doc_events = {'Project': {'validate': 'contractor.project_progress.validate_project',
+             'after_insert': 'contractor.api.share_project_users',
+             'on_update': 'contractor.api.share_project_users'}}
 
-# include js, css files in header of web form
-# webform_include_js = {"doctype": "public/js/doctype.js"}
-# webform_include_css = {"doctype": "public/css/doctype.css"}
-
-fixtures = [
-    # export only those records that match the filters from the Role table
-    {"dt": "Custom Field", "or_filters": [
-		["dt", "=", "Opportunity Item"],
-		["dt", "=", "Opportunity"],
-		["dt", "=", "Item"],
-		["dt", "=", "Project"],
-		["dt", "=", "Quotation Item"],
-		["dt", "=", "Sales Order Item"],
-		["dt", "=", "Sales Order"]
-	]},
-
-	{"dt": "Property Setter", "or_filters": [
-		["doc_type", "=", "Opportunity Item"],
-		["doc_type", "=", "Sales Order Item"],
-	]},
-	{"dt": "DocType Link", "or_filters": [
-		["parent", "=", "Opportunity"],
-		["parent", "=", "Sales Order"],
-		["parent", "=", "Project"],
-	]}
-]
-
-# include js in page
-# page_js = {"page" : "public/js/file.js"}
-
-# include js in doctype views
-doctype_js = {
-    "Project": "public/js/doctype/project.js",
-    "Item": "public/js/doctype/item.js",
-    "Material Request": "public/js/doctype/material_request_comparison.js",
-    "Sales Invoice": "public/js/doctype/sales_invoice.js",
-    "Comparison": "public/js/doctype/comparison_table.js"
-}
-# doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
-# doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
-# doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
-# custom_app/hooks.py
-override_doctype_class = {
-    "Material Request": "contractor.overrides.material_request.CustomMaterialRequest",
-    "Stock Entry": "contractor.overrides.stock_entry.CustomStockEntry",
-    "Subcontractor Custody": "contractor.overrides.subcontractor_custody.CustomSubcontractorCustody",
-    "Purchase Receipt": "contractor.overrides.purchase_receipt.CustomPurchaseReceipt",
-	"CR": "contractor.overrides.cr.CustomCR",
-	"Subcontractor Contract": "contractor.overrides.subcontractor_contract.CustomSubcontractorContract",
-	"CR Comparison": "contractor.overrides.cr_comparison.CustomCRComparison",
-    
-
-}
-
-
-
-
-
-# Home Pages
-# ----------
-
-# application home page (will override Website Settings)
-# home_page = "login"
-
-# website user home page (by Role)
-# role_home_page = {
-#	"Role": "home_page"
-# }
-
-# Generators
-# ----------
-
-# automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
-
-# Jinja
-# ----------
-
-# add methods and filters to jinja environment
-# jinja = {
-#	"methods": "contractor.utils.jinja_methods",
-#	"filters": "contractor.utils.jinja_filters"
-# }
-
-# Installation
-# ------------
-
-# before_install = "contractor.install.before_install"
-# after_install = "contractor.install.after_install"
-
-# Uninstallation
-# ------------
-
-# before_uninstall = "contractor.uninstall.before_uninstall"
-# after_uninstall = "contractor.uninstall.after_uninstall"
-
-# Desk Notifications
-# ------------------
-# See frappe.core.notifications.get_notification_config
-
-# notification_config = "contractor.notifications.get_notification_config"
-
-# Permissions
-# -----------
-# Permissions evaluated in scripted ways
-
-# permission_query_conditions = {
-#	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-#	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
-
-# DocType Class
-# ---------------
-# Override standard doctype classes
-
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
-
-# Document Events
-# ---------------
-# Hook on document methods and events
-
-doc_events = {
-    "Project": {
-        "validate": "contractor.project_progress.validate_project",
-        "after_insert": "contractor.api.share_project_users",
-        "on_update": "contractor.api.share_project_users"
-    }
-}
-
-# Scheduled Tasks
-# ---------------
-
-# scheduler_events = {
-#	"all": [
-#		"contractor.tasks.all"
-#	],
-#	"daily": [
-#		"contractor.tasks.daily"
-#	],
-#	"hourly": [
-#		"contractor.tasks.hourly"
-#	],
-#	"weekly": [
-#		"contractor.tasks.weekly"
-#	],
-#	"monthly": [
-#		"contractor.tasks.monthly"
-#	],
-# }
-
-# Testing
-# -------
-
-# before_tests = "contractor.install.before_tests"
-
-# Overriding Methods
-# ------------------------------
-#
-# override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "contractor.event.get_events"
-# }
-#
-# each overriding function accepts a `data` argument;
-# generated from the base implementation of the doctype dashboard,
-# along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-#	"Task": "contractor.task.get_dashboard_data"
-# }
-
-# exempt linked doctypes from being automatically cancelled
-#
-# auto_cancel_exempted_doctypes = ["Auto Repeat"]
-
-# Ignore links to specified DocTypes when deleting documents
-# -----------------------------------------------------------
-
-# ignore_links_on_delete = ["Communication", "ToDo"]
-
-# Request Events
-# ----------------
-# before_request = ["contractor.utils.before_request"]
-# after_request = ["contractor.utils.after_request"]
-
-# Job Events
-# ----------
-# before_job = ["contractor.utils.before_job"]
-# after_job = ["contractor.utils.after_job"]
-
-# User Data Protection
-# --------------------
-
-# user_data_fields = [
-#	{
-#		"doctype": "{doctype_1}",
-#		"filter_by": "{filter_by}",
-#		"redact_fields": ["{field_1}", "{field_2}"],
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_2}",
-#		"filter_by": "{filter_by}",
-#		"partial": 1,
-#	},
-#	{
-#		"doctype": "{doctype_3}",
-#		"strict": False,
-#	},
-#	{
-#		"doctype": "{doctype_4}"
-#	}
-# ]
-
-# Authentication and authorization
-# --------------------------------
-
-# auth_hooks = [
-#	"contractor.auth.validate"
-# ]
-# Reapply after fixture/customization sync so Project Abbreviation stays visible.
-after_migrate = ["contractor.patches.project_abbreviation.execute"]
+after_migrate = ['contractor.patches.project_abbreviation.execute']
