@@ -1,5 +1,9 @@
 frappe.ui.form.on("Project", {
     refresh: function(frm){
+        if (!frm.is_new() && frm.doc.status !== 'Cancelled') {
+            frm.add_custom_button(__('Subcontract Clearnce'),
+                () => frm.events.create_subcontract_clearance(frm), __('Create'));
+        }
         if (frm.doc.project_contract) {
             frm.set_df_property('custom_contract_items', 'hidden', 1);
             for (const field of frm.meta.fields) {
@@ -7,10 +11,6 @@ frappe.ui.form.on("Project", {
             }
             frm.add_custom_button(__('Project Contract'), () => frappe.set_route('Form', 'Project Contract', frm.doc.project_contract));
             frm.add_custom_button(__('Project Clearnce'), () => frm.events.create_clause_clearance(frm, 'Project Clearnce'), __('Create'));
-            frm.add_custom_button(__('Subcontract Clearnce'), () => {
-                frappe.prompt([{fieldname: 'supplier', fieldtype: 'Link', options: 'Supplier', label: __('Supplier'), reqd: 1}],
-                    values => frm.events.create_clause_clearance(frm, 'Subcontract Clearnce', values.supplier), __('Select Supplier'));
-            }, __('Create'));
             return;
         }
         frm.set_query("item_code", "items", function(doc, cdt, cdn) {
@@ -28,6 +28,45 @@ frappe.ui.form.on("Project", {
         frm.add_custom_button(__("Costing Note"), 
             () => {frm.events.create_costing_note(frm)}, 
             "Create")
+    },
+    async create_subcontract_clearance(frm) {
+        if (frm.is_dirty() || frm.is_new()) return frappe.msgprint(__('Save the Project first'));
+        const project = frm.doc.name;
+        const response = await frappe.call({method: 'contractor.subcontracting.project_contract_options', args: {project}});
+        if (frm.doc.name !== project) return;
+        const options = response.message;
+        if (!options.suppliers.length) return frappe.msgprint(__('No submitted Subcontractor Contracts are available for this Project.'));
+        let creating = false;
+        let dialog;
+        dialog = new frappe.ui.Dialog({
+            title: __('Create Subcontract Clearnce'),
+            fields: [
+                {fieldname: 'supplier', fieldtype: 'Link', options: 'Supplier', label: __('Supplier'), reqd: 1,
+                    get_query: () => ({filters: {name: ['in', options.suppliers.map(row => row.name)]}}),
+                    onchange: () => {
+                        if (dialog) dialog.set_value('subcontractor_contract', null);
+                    }},
+                {fieldname: 'subcontractor_contract', fieldtype: 'Link', options: 'Subcontractor Contract',
+                    label: __('Subcontractor Contract'), reqd: 1,
+                    depends_on: 'eval:!!doc.supplier',
+                    get_query: () => ({filters: {project, docstatus: 1, supplier: dialog.get_value('supplier'),
+                        name: ['in', options.contracts.filter(row => row.supplier === dialog.get_value('supplier')).map(row => row.name)]}})}
+            ],
+            primary_action_label: __('Create Clearance'),
+            primary_action: async values => {
+                if (creating || frm.is_dirty() || frm.doc.name !== project) return frappe.msgprint(__('Save the Project and reopen this action'));
+                if (!values.supplier || !values.subcontractor_contract) return;
+                creating = true;
+                try {
+                    const r = await frappe.call({method: 'contractor.subcontracting.create_clearance',
+                        args: {project, supplier: values.supplier, subcontractor_contract: values.subcontractor_contract}, freeze: true});
+                    dialog.hide();
+                    const docs = frappe.model.sync(r.message);
+                    frappe.set_route('Form', 'Subcontract Clearnce', docs[0].name);
+                } finally { creating = false; }
+            }
+        });
+        dialog.show();
     },
     async create_clause_clearance(frm, doctype, supplier) {
         if (frm.is_dirty() || frm.is_new()) return frappe.msgprint(__('Save the Project first'));

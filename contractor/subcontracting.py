@@ -101,8 +101,13 @@ def contract_sources(name):
 
 
 @frappe.whitelist()
-def create_clearance(subcontractor_contract):
+def create_clearance(subcontractor_contract, project=None, supplier=None):
+    expected_project = project
     project, contract = contract_sources(subcontractor_contract)
+    if expected_project and expected_project != project.name:
+        frappe.throw('The selected Subcontractor Contract does not belong to this Project')
+    if supplier and supplier != contract.supplier:
+        frappe.throw('The selected Subcontractor Contract does not belong to this Supplier')
     doc = frappe.new_doc('Subcontract Clearnce')
     doc.check_permission('create')
     doc.update(dict(subcontractor_contract=contract.name, project=project.name,
@@ -174,3 +179,23 @@ def set_contract_quantities(doc, project, contract=None):
         row.qty_percentage = current / (float(source.qty)-previous) * 100 if float(source.qty) > previous else 0
         positive = positive or current > 0
     return positive
+
+
+@frappe.whitelist()
+def project_contract_options(project):
+    project_doc = frappe.get_doc('Project', project)
+    project_doc.check_permission('read')
+    if project_doc.status == 'Cancelled':
+        frappe.throw('Cannot certify a cancelled Project')
+    frappe.has_permission('Subcontract Clearnce', 'create', throw=True)
+    # get_list applies document permissions and user permissions to both selectors.
+    contracts = frappe.get_list('Subcontractor Contract',
+        filters={'project': project, 'docstatus': 1, 'supplier': ['is', 'set']},
+        fields=['name', 'supplier'], order_by='name asc', limit_page_length=0)
+    if not contracts:
+        return {'suppliers': [], 'contracts': []}
+    suppliers = frappe.get_list('Supplier',
+        filters={'name': ['in', sorted({row.supplier for row in contracts})], 'disabled': 0},
+        fields=['name', 'supplier_name'], order_by='supplier_name asc', limit_page_length=0)
+    allowed = {row.name for row in suppliers}
+    return {'suppliers': suppliers, 'contracts': [row for row in contracts if row.supplier in allowed]}
