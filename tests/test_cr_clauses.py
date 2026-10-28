@@ -59,3 +59,25 @@ class CRClausesTest(unittest.TestCase):
         self.frappe.get_doc.return_value = Record(project_clauses=[], check_permission=MagicMock())
         with self.assertRaises(ValueError):
             self.service.CR.validate(doc)
+
+
+    def test_fetch_rejects_project_changed_since_popup(self):
+        doc = Record(docstatus=0, project='PROJ-2', check_permission=MagicMock())
+        self.frappe.get_doc.return_value = doc
+        with self.assertRaises(ValueError):
+            self.service.fetch_project_clauses('CR-1', project='PROJ-1')
+        self.frappe.get_doc.assert_called_once_with('CR', 'CR-1')
+
+    def test_partial_fetch_copies_only_selected_detail_and_heading(self):
+        doc = Record(docstatus=0, project='PROJ-1', clauses=[], name='CR-1',
+            check_permission=MagicMock(), save=MagicMock())
+        project = Record(project_clauses=[
+            Record(name='group', is_group=1, series_number='4', clause_title='Civil'),
+            Record(name='a', is_group=0, series_number='4_2', parent_series='4', clause_title='A', qty=3),
+            Record(name='b', is_group=0, series_number='4_7', parent_series='4', clause_title='B', qty=5)],
+            check_permission=MagicMock())
+        self.frappe.get_doc.side_effect = [doc, project]
+        self.service.fetch_project_clauses('CR-1', fetch_all=0, selected_rows=['b'], project='PROJ-1')
+        self.assertEqual([row.project_clause for row in doc.clauses], ['group', 'b'])
+        self.assertEqual(doc.clauses[1].series_number, '4_7')
+        self.assertEqual(doc.numbering_mode, 'From Excel')

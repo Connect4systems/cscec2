@@ -49,3 +49,11 @@ DocType's tree boundaries when codes are inserted or moved.
 Local validation: `python -m unittest discover -s tests -q`.
 Live-site validation should check migration, Cost Code tree navigation, the four
 Cost Type choices, representative imported rows, and rerunning the import.
+
+CR **Fetch from Project** opens a clause picker. Leave **All Clauses** checked to
+fetch the full Project, or uncheck it and choose a **Group Clause**. Tick individual
+details or **Select All Clauses in This Group**. Choices remain selected when
+switching groups. **Insert Clauses** replaces the current CR clause table, includes
+the selected details' headings once, and preserves source ordering and series.
+The server checks draft/write permissions, Project read access, selection membership,
+and that the CR's Project has not changed while the picker was open.

@@ -70,13 +70,22 @@ def apply_excel(cr, file_url):
 
 
 @frappe.whitelist()
-def fetch_project_clauses(cr):
+def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None):
     doc = editable_cr(cr)
+    if project and project != doc.project:
+        frappe.throw("The CR Project changed. Reopen Fetch from Project.")
     project = frappe.get_doc("Project", doc.project)
     project.check_permission("read")
     rows = project.get("project_clauses") or []
     if not rows:
         frappe.throw("The selected Project has no contract clauses")
+    from contractor.cr_clause_selection import select_project_rows
+    if isinstance(selected_rows, str):
+        selected_rows = frappe.parse_json(selected_rows)
+    try:
+        rows = select_project_rows(rows, str(fetch_all).lower() in ('1', 'true'), selected_rows)
+    except ValueError as exc:
+        frappe.throw(str(exc))
     doc.set("clauses", [])
     for row in rows:
         values = {key: row.get(key) for key in (
@@ -86,3 +95,14 @@ def fetch_project_clauses(cr):
     doc.numbering_mode = "From Excel"
     doc.save()
     return doc.name
+
+
+@frappe.whitelist()
+def project_clause_options(cr):
+    doc = editable_cr(cr)
+    project = frappe.get_doc("Project", doc.project)
+    project.check_permission("read")
+    return {"project": doc.project, "clauses": [
+        {key: row.get(key) for key in (
+            "name", "is_group", "series_number", "parent_series", "clause_title", "qty", "uom")}
+        for row in project.get("project_clauses") or []]}

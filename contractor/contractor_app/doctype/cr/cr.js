@@ -11,12 +11,9 @@ frappe.ui.form.on('CR', {
             frappe.msgprint(__('Save the CR first'));
             return false;
         };
-        frm.add_custom_button(__('Fetch from Project'), () => {
+        frm.add_custom_button(__('Fetch from Project'), async () => {
             if (!saved()) return;
-            frappe.confirm(__('Replace current clauses with clauses from the selected Project?'), async () => {
-                await frappe.call({method: cr_clause_api + 'fetch_project_clauses', args: {cr: frm.doc.name}, freeze: true});
-                await frm.reload_doc();
-            });
+            await open_cr_project_clause_picker(frm, saved);
         });
         frm.add_custom_button(__('Upload Excel'), () => {
             if (!saved()) return;
@@ -46,3 +43,89 @@ frappe.ui.form.on('CR', {
         frm.fields_dict.clauses.grid.update_docfield_property('series_number', 'read_only', frm.doc.numbering_mode !== 'From Excel');
     }
 });
+
+
+async function open_cr_project_clause_picker(frm, saved) {
+    const response = await frappe.call({method: cr_clause_api + 'project_clause_options', args: {cr: frm.doc.name}});
+    const source = response.message;
+    if (!source.clauses.length) return frappe.msgprint(__('The selected Project has no contract clauses'));
+    const groups = source.clauses.filter(row => row.is_group);
+    const selected = new Set();
+    const group_labels = groups.map(row => `${row.series_number} - ${row.clause_title}`);
+    let current_details = [];
+    let applying = false;
+    let dialog;
+    dialog = new frappe.ui.Dialog({
+        title: __('Fetch from Project'), size: 'extra-large',
+        fields: [
+            {fieldname: 'fetch_all', fieldtype: 'Check', label: __('All Clauses'), default: 1,
+                onchange: () => update_visibility()},
+            {fieldname: 'clause_group', fieldtype: 'Select', label: __('Group Clause'),
+                options: [''].concat(group_labels), onchange: () => render_details()},
+            {fieldname: 'select_all', fieldtype: 'Check', label: __('Select All Clauses in This Group'),
+                onchange: () => {
+                    if (!dialog) return;
+                    const checked = !!dialog.get_value('select_all');
+                    for (const row of current_details) {
+                        if (checked) selected.add(row.name);
+                        else selected.delete(row.name);
+                    }
+                    render_details();
+                }},
+            {fieldname: 'details', fieldtype: 'HTML'},
+            {fieldname: 'selection_count', fieldtype: 'HTML'},
+            {fieldname: 'replacement_notice', fieldtype: 'HTML',
+                options: '<p class="text-muted">' + __('Inserting replaces the current CR clause table. Group headings and source series are preserved.') + '</p>'}
+        ],
+        primary_action_label: __('Insert Clauses'),
+        primary_action: async () => {
+            if (applying || !saved()) return;
+            const fetch_all = dialog.get_value('fetch_all') ? 1 : 0;
+            if (!fetch_all && !selected.size) return frappe.msgprint(__('Select at least one detail clause'));
+            applying = true;
+            try {
+                await frappe.call({method: cr_clause_api + 'fetch_project_clauses', freeze: true,
+                    args: {cr: frm.doc.name, project: source.project, fetch_all,
+                        selected_rows: JSON.stringify(Array.from(selected))}});
+                dialog.hide();
+                await frm.reload_doc();
+            } finally {
+                applying = false;
+            }
+        }
+    });
+    function update_visibility() {
+        if (!dialog) return;
+        const partial = !dialog.get_value('fetch_all');
+        for (const field of ['clause_group', 'details', 'selection_count']) dialog.toggle_display(field, partial);
+        render_details();
+    }
+    function render_details() {
+        if (!dialog) return;
+        const group_index = group_labels.indexOf(dialog.get_value('clause_group'));
+        const group = groups[group_index];
+        current_details = group ? source.clauses.filter(row => !row.is_group && row.parent_series === group.series_number) : [];
+        const esc = value => frappe.utils.escape_html(String(value ?? ''));
+        dialog.toggle_display('select_all', !dialog.get_value('fetch_all') && current_details.length > 0);
+        const all_selected = current_details.length > 0 && current_details.every(row => selected.has(row.name));
+        // Set the checkbox directly to avoid recursively running its onchange handler.
+        dialog.fields_dict.select_all.$input.prop('checked', all_selected);
+        const html = '<div style="max-height:350px;overflow:auto"><table class="table"><thead><tr><th></th><th>' +
+            __('Series') + '</th><th>' + __('Clause') + '</th><th>' + __('Qty') + '</th><th>' + __('UOM') + '</th></tr></thead><tbody>' +
+            current_details.map((row, index) => '<tr><td><input type="checkbox" class="cr-detail-choice" data-index="' + index + '" ' +
+                (selected.has(row.name) ? 'checked' : '') + ' aria-label="' + esc(row.clause_title) + '"></td><td>' +
+                esc(row.series_number) + '</td><td>' + esc(row.clause_title) + '</td><td>' + esc(row.qty) + '</td><td>' + esc(row.uom) + '</td></tr>').join('') +
+            '</tbody></table></div>';
+        const wrapper = dialog.fields_dict.details.$wrapper;
+        wrapper.html(group ? html : '<p class="text-muted">' + __('Choose a group to see its clauses.') + '</p>');
+        wrapper.find('.cr-detail-choice').on('change', function () {
+            const row = current_details[Number(this.dataset.index)];
+            if (this.checked) selected.add(row.name);
+            else selected.delete(row.name);
+            render_details();
+        });
+        dialog.fields_dict.selection_count.$wrapper.text(__('Selected detail clauses: {0}', [selected.size]));
+    }
+    dialog.show();
+    update_visibility();
+}
