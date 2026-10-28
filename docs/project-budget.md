@@ -67,9 +67,20 @@ Costing Note clause, preventing stale or tampered header quantities.
 Template BOQ quantities remain coefficients per clause unit. The shared resource
 controls keep template Qty editable and hide the Project coefficient column there.
 Applying a template copies its coefficient and scales it to the BOQ Project Quantity.
-If a site already has a custom_equipment table on BOQ, the migration supplies its
-missing coefficient field and equipment subtotal where needed, and the same quantity
-calculation includes that table.
+BOQ now includes an **Equipment** tab with an **Equipment Costs** table and
+**Total Equipment Costs**. Template BOQ includes the same resource table. Select an
+Equipment Item and UOM, enter quantity per clause unit and the resource rate, and
+review the automatically calculated Project Quantity and Total Cost. Equipment is
+included in Costing Note, tender pricing, BOQ totals, and Project Budget costs.
+
+The standard app fields are equipment_costs and total_equipment_costs, using the
+BOQ Equipment Cost child DocType. Project Budget fetches this subtotal, normalizes
+it by BOQ Project Quantity, and scales it to final contract quantity. Existing
+custom_equipment rows and custom_total_equipment_costs values are supported as
+compatible historical sources. Existing rows are not copied into the new table,
+so they cannot be counted twice by migration. Existing data is shown in the
+Equipment tab; a blank duplicate table is hidden when existing equipment rows
+are present. Existing and newly entered resource rows contribute once each.
 
 Submitted project-basis BOQs return their normalized **unit cost** to Costing Note.
 Costing Note multiplies it by its clause quantity once, applies the margin, and

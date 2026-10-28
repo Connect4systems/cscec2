@@ -4,6 +4,7 @@ import math
 TABLE_TOTALS = {
     'material_costs': 'total_material_costs', 'labor_costs': 'total_labor_costs',
     'contractors_table': 'total_contractors', 'expenses_table': 'total_expenses',
+    'equipment_costs': 'total_equipment_costs',
     'custom_equipment': 'custom_total_equipment_costs',
 }
 
@@ -52,6 +53,9 @@ def calculate_resources(boq, convert_legacy=False):
             subtotal += amount
         _set(boq, total_field, subtotal)
         total += subtotal
+    equipment = boq.get('total_equipment_costs', 0) + boq.get('custom_total_equipment_costs', 0)
+    _set(boq, 'total_equipment_costs', equipment)
+    _set(boq, 'custom_total_equipment_costs', equipment)
     if not math.isfinite(total):
         raise ValueError('BOQ total exceeds supported precision')
     _set(boq, 'total_cost', total)
@@ -68,6 +72,8 @@ def unit_costs(boq):
     project_mode = basis == 'Project Quantity'
     divisor = _number(boq.get('project_qty'), 'Project Quantity', positive=True) if project_mode else 1
     values = {field: _number(boq.get(field), 'BOQ category cost') / divisor for field in TABLE_TOTALS.values()}
+    equipment = _number(boq.get('total_equipment_costs') or boq.get('custom_total_equipment_costs'), 'BOQ equipment cost') / divisor
+    values['total_equipment_costs'] = values['custom_total_equipment_costs'] = equipment
     values['total_cost'] = _number(boq.get('total_cost'), 'BOQ total cost') / divisor
     values['name'] = boq.get('name')
     return values

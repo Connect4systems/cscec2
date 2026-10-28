@@ -42,6 +42,9 @@
   "section_break_kmiex",
   "contractors_table",
   "total_contractors",
+  "equipment_tab",
+  "equipment_costs",
+  "total_equipment_costs",
   "expenses_tab",
   "section_break_ykrqk",
   "expenses_table",
@@ -292,6 +295,23 @@
    "fieldname": "project_total_cost",
    "fieldtype": "Currency",
    "label": "Total Project Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "equipment_tab",
+   "fieldtype": "Tab Break",
+   "label": "Equipment"
+  },
+  {
+   "fieldname": "equipment_costs",
+   "fieldtype": "Table",
+   "label": "Equipment Costs",
+   "options": "BOQ Equipment Cost"
+  },
+  {
+   "fieldname": "total_equipment_costs",
+   "fieldtype": "Currency",
+   "label": "Total Equipment Costs",
    "read_only": 1
   }
  ],

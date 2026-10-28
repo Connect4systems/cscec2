@@ -16,7 +16,10 @@
   "section_break_rsoe5",
   "contractors_table",
   "section_break_3ectj",
-  "expenses_table"
+  "expenses_table",
+  "equipment_section",
+  "equipment_costs",
+  "total_equipment_costs"
  ],
  "fields": [
   {
@@ -73,6 +76,23 @@
    "label": "Template Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "equipment_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment Costs"
+  },
+  {
+   "fieldname": "equipment_costs",
+   "fieldtype": "Table",
+   "label": "Equipment Costs",
+   "options": "BOQ Equipment Cost"
+  },
+  {
+   "fieldname": "total_equipment_costs",
+   "fieldtype": "Currency",
+   "label": "Total Equipment Costs",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,

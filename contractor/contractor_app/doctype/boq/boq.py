@@ -79,7 +79,7 @@ def set_boq_template(boq_template):
 
 	temp = frappe.get_doc("Template BOQ", boq_template)
 
-	for table in ["material_costs", "labor_costs", "contractors_table", "expenses_table"]:
+	for table in ["material_costs", "labor_costs", "contractors_table", "expenses_table", "equipment_costs"]:
 		if temp.get(table):
 
 			tables[table] = []

@@ -2,13 +2,15 @@ frappe.provide('contractor');
 if (!contractor.boq_resource_handlers_loaded) {
 contractor.boq_resource_handlers_loaded = true;
 const resource_totals = {material_costs: 'total_material_costs', labor_costs: 'total_labor_costs',
-    contractors_table: 'total_contractors', expenses_table: 'total_expenses', custom_equipment: 'custom_total_equipment_costs'};
+    contractors_table: 'total_contractors', expenses_table: 'total_expenses',
+    equipment_costs: 'total_equipment_costs', custom_equipment: 'custom_total_equipment_costs'};
 const registered = new Set();
 contractor.recalculate_boq_resources = function (frm) {
     if (!['BOQ', 'Template BOQ'].includes(frm.doctype) || frm.doc.docstatus) return;
     const project_basis = frm.doctype === 'BOQ' && frm.doc.quantity_basis === 'Project Quantity';
     const project_qty = flt(frm.doc.project_qty);
     let total = 0;
+    let equipment_total = 0;
     for (const [table, total_field] of Object.entries(resource_totals)) {
         let subtotal = 0;
         for (const row of frm.doc[table] || []) {
@@ -22,7 +24,12 @@ contractor.recalculate_boq_resources = function (frm) {
         }
         if (frm.fields_dict[table]) frm.refresh_field(table);
         total += subtotal;
+        if (['equipment_costs', 'custom_equipment'].includes(table)) equipment_total += subtotal;
     }
+    for (const field of ['total_equipment_costs', 'custom_total_equipment_costs']) {
+        if (frm.fields_dict[field]) { frm.doc[field] = equipment_total; frm.refresh_field(field); }
+    }
+    show_equipment_tables(frm);
     if (frm.doctype === 'BOQ') {
         frm.doc.total_cost = total;
         frm.doc.unit_cost = project_basis ? (project_qty > 0 ? total / project_qty : 0) : total;
@@ -55,7 +62,17 @@ function register(doctype) {
     for (const table of Object.keys(resource_totals)) handlers[table + '_add'] = resource_added;
     frappe.ui.form.on(doctype, handlers);
 }
-for (const type of ['Material costs', 'Labor costs', 'Contractors table', 'Expenses Table']) register(type);
+for (const type of ['Material costs', 'Labor costs', 'Contractors table', 'Expenses Table', 'BOQ Equipment Cost']) register(type);
+function show_equipment_tables(frm) {
+    const has_current = (frm.doc.equipment_costs || []).length > 0;
+    const has_existing = (frm.doc.custom_equipment || []).length > 0;
+    if (frm.fields_dict.equipment_costs) frm.toggle_display('equipment_costs', has_current || !has_existing);
+    if (frm.fields_dict.custom_equipment) {
+        frm.toggle_display('custom_equipment', has_existing);
+        frm.set_df_property('custom_equipment', 'label', has_current ? __('Additional Equipment Costs') : __('Equipment Costs'));
+    }
+    if (frm.fields_dict.custom_total_equipment_costs) frm.set_df_property('custom_total_equipment_costs', 'hidden', 1);
+}
 contractor.setup_boq_resources = function (frm) {
     if (!['BOQ', 'Template BOQ'].includes(frm.doctype)) return;
     const project_basis = frm.doctype === 'BOQ' && frm.doc.quantity_basis === 'Project Quantity';
@@ -69,6 +86,7 @@ contractor.setup_boq_resources = function (frm) {
             control.grid.update_docfield_property('per_unit_qty', 'hidden', project_basis ? 0 : 1);
         }
     }
+    show_equipment_tables(frm);
     if (frm.doctype === 'BOQ') frm.set_df_property('total_cost', 'label',
         project_basis ? __('Total Project Cost') : __('Historical BOQ Unit Cost'));
 };

@@ -72,3 +72,30 @@ class BOQProjectQuantityTest(unittest.TestCase):
             doc = self.boq()
             doc.material_costs[0][field] = -1
             with self.assertRaises(ValueError): calculate_resources(doc)
+
+
+    def test_equipment_table_totals_flow_to_budget_without_duplicate_legacy_alias(self):
+        from contractor.project_budget_rules import build_budget
+        doc = self.boq()
+        doc.equipment_costs = [Row(per_unit_qty=0.25, cost=40)]
+        calculate_resources(doc)
+        calculate_resources(doc)
+        self.assertEqual(doc.equipment_costs[0].qty,25)
+        self.assertEqual(doc.total_equipment_costs,1000)
+        self.assertEqual(doc.total_cost,3300)
+        self.assertEqual(doc.unit_cost,33)
+        clauses = [dict(name='g',is_group=1,series_number='1',clause_title='Group'),
+            dict(name='d',series_number='1_1',clause_title='Detail',qty=150)]
+        _, totals = build_budget(clauses,{'d':unit_costs(doc)})
+        self.assertEqual(totals['total_equipment'],1500)
+        self.assertEqual(totals['total_project_budget'],4950)
+
+    def test_new_and_existing_equipment_rows_are_each_counted_once(self):
+        doc = self.boq()
+        doc.equipment_costs = [Row(per_unit_qty=0.25,cost=40)]
+        doc.custom_equipment = [Row(per_unit_qty=0.5,cost=10)]
+        calculate_resources(doc)
+        calculate_resources(doc)
+        self.assertEqual(doc.total_equipment_costs,1500)
+        self.assertEqual(unit_costs(doc)['total_equipment_costs'],15)
+        self.assertEqual(doc.total_cost,3800)

@@ -9,7 +9,7 @@ CATEGORIES = {
     'labour': 'total_labor_costs',
     'subcontractor': 'total_contractors',
     'other_expenses': 'total_expenses',
-    'equipment': 'custom_total_equipment_costs',
+    'equipment': 'total_equipment_costs',
 }
 BUDGET_FIELDS = tuple(name + '_budget' for name in CATEGORIES) + ('total_cost',)
 UNIT_FIELDS = tuple('unit_' + name + '_cost' for name in CATEGORIES) + ('unit_cost',)
@@ -49,7 +49,8 @@ def build_budget(clauses, boqs, precision=2):
             boq = boqs.get(source.get('name'))
             if not boq:
                 raise ValueError('Every detail clause requires its submitted BOQ')
-            components = {name: number(boq.get(field), f'BOQ {name} cost') for name, field in CATEGORIES.items()}
+            components = {name: number(boq.get(field) if name != 'equipment' else (boq.get(field) or boq.get('custom_total_equipment_costs')),
+                f'BOQ {name} cost') for name, field in CATEGORIES.items()}
             unit_cost = number(boq.get('total_cost'), 'BOQ total unit cost')
             if not amounts_match(sum(components.values(), Decimal(0)), unit_cost, max(precision, 6)):
                 raise ValueError('BOQ category costs do not reconcile with its total unit cost')

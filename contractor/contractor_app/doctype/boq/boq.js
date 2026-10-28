@@ -30,7 +30,7 @@ frappe.ui.form.on('BOQ', {
 	},
 	onload: function(frm){
         if (!frm.doc.docstatus && frm.doc.quantity_basis !== 'Project Quantity') {
-            for (const table of ['material_costs', 'labor_costs', 'contractors_table', 'expenses_table', 'custom_equipment']) {
+            for (const table of ['material_costs', 'labor_costs', 'contractors_table', 'expenses_table', 'equipment_costs', 'custom_equipment']) {
                 for (const row of frm.doc[table] || []) row.per_unit_qty = flt(row.qty);
             }
             frm.doc.quantity_basis = 'Project Quantity';
@@ -52,6 +52,8 @@ frappe.ui.form.on('BOQ', {
 						frm.clear_table("labor_costs");
 						frm.clear_table("contractors_table");
 						frm.clear_table("expenses_table");
+                        frm.clear_table("equipment_costs");
+                        if (frm.fields_dict.custom_equipment) frm.clear_table("custom_equipment");
 						let keys = Object.keys(r.message);
 
 						for (const table of keys){

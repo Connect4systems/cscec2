@@ -1,8 +1,11 @@
-# Copyright (c) 2024, Jenan Alfahham and contributors
-# For license information, please see license.txt
-
-# import frappe
+import frappe
 from frappe.model.document import Document
 
+
 class TemplateBOQ(Document):
-	pass
+    def validate(self):
+        from contractor.boq_quantities import calculate_resources
+        try:
+            calculate_resources(self)
+        except ValueError as exc:
+            frappe.throw(str(exc))
