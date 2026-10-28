@@ -13,3 +13,4 @@ contractor.patches.repair_project_name_flow
 contractor.patches.project_name_data_fields
 contractor.patches.repair_document_connections
 contractor.patches.clause_progress_and_standard_purchasing
+contractor.patches.cleanup_unused_legacy_definitions

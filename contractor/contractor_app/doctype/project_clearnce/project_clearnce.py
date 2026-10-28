@@ -1,4 +1,4 @@
-from contractor.contractor_app.doctype.clearence.clearence import Clearence
+from contractor.legacy.customer_clearance import Clearence
 from contractor.project_clearances import validate_clearance, submit_clearance, cancel_clearance, lock_project
 
 
