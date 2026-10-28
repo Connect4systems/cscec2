@@ -16,7 +16,8 @@ class CRClausesTest(unittest.TestCase):
         self.frappe.get_doc = MagicMock()
         document = types.ModuleType('frappe.model.document')
         document.Document = object
-        tender = types.ModuleType('contractor.contractor_app.doctype.tender_analysis.tender_analysis')
+        tender = types.ModuleType('contractor.clause_excel')
+        tender.HEADERS = []
         tender.read_clause_excel = MagicMock(return_value=[])
         spec = importlib.util.spec_from_file_location('cr_under_test',
             Path(__file__).parents[1] / 'contractor/contractor_app/doctype/cr/cr.py')

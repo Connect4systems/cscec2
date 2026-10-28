@@ -11,7 +11,6 @@
   "supplier",
   "supplier_name",
   "contract_type",
-  "division",
   "column_break_wiss",
   "posting_date",
   "end_date",
@@ -107,12 +106,6 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Project Abbriviation"
-  },
-  {
-   "fieldname": "division",
-   "fieldtype": "Link",
-   "label": "Division",
-   "options": "Item"
   },
   {
    "fieldname": "column_break_iqyj",

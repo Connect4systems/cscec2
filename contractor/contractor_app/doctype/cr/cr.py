@@ -2,7 +2,7 @@ import frappe
 from frappe.model.document import Document
 
 from contractor.tender_logic import number_rows
-from contractor.contractor_app.doctype.tender_analysis.tender_analysis import read_clause_excel
+from contractor.clause_excel import HEADERS, read_clause_excel
 
 
 class CR(Document):
@@ -43,7 +43,6 @@ def download_template():
     # Same format as Tender Analysis, with CR permissions.
     import io
     from openpyxl import Workbook
-    from contractor.contractor_app.doctype.tender_analysis.tender_analysis import HEADERS
     workbook = Workbook()
     workbook.active.append(HEADERS)
     workbook.active.append(["1", "Civil Works", 1, None, None])
