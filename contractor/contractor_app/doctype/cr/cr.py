@@ -79,7 +79,7 @@ def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None, qua
     rows = project.get("project_clauses") or []
     if not rows:
         frappe.throw("The selected Project has no contract clauses")
-    from contractor.cr_clause_selection import select_project_rows, selected_quantities
+    from contractor.cr_clause_selection import select_project_rows, selected_quantities, merge_project_clauses
     if isinstance(selected_rows, str):
         selected_rows = frappe.parse_json(selected_rows)
     if isinstance(quantities, str):
@@ -89,14 +89,26 @@ def fetch_project_clauses(cr, fetch_all=1, selected_rows=None, project=None, qua
         overrides = selected_quantities(rows, quantities) if str(fetch_all).lower() not in ('1', 'true') else {}
     except ValueError as exc:
         frappe.throw(str(exc))
-    doc.set("clauses", [])
+    incoming = []
     for row in rows:
         values = {key: row.get(key) for key in (
             "is_group", "series_number", "parent_series", "clause_title", "qty", "uom", "contractual_clause")}
         if row.name in overrides:
             values["qty"] = overrides[row.name]
         values["project_clause"] = row.name
-        doc.append("clauses", values)
+        incoming.append(values)
+    existing = list(doc.get("clauses") or [])
+    try:
+        if existing:
+            number_rows(existing, doc.get("numbering_mode") or "Automatic")
+        merged = merge_project_clauses(existing, incoming)
+    except ValueError as exc:
+        frappe.throw(str(exc))
+    ordered = [doc.append("clauses", row) if isinstance(row, dict) else row for row in merged]
+    # Retain existing child documents and their names, quantities, and other edits.
+    doc.clauses[:] = ordered
+    for index, row in enumerate(doc.clauses, 1):
+        row.idx = index
     doc.numbering_mode = "From Excel"
     doc.save()
     return doc.name

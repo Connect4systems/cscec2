@@ -83,3 +83,25 @@ class CRClausesTest(unittest.TestCase):
         self.assertEqual(doc.clauses[1].qty, 2.5)
         self.assertEqual(project.project_clauses[2].qty, 5)
         self.assertEqual(doc.numbering_mode, 'From Excel')
+
+    def test_repeated_fetch_retains_existing_child_identity_and_quantity(self):
+        existing_group = Record(name='saved-group', project_clause='g', is_group=1,
+            clause_title='Civil', series_number='4')
+        existing_detail = Record(name='saved-detail', project_clause='a', is_group=0,
+            clause_title='Edited detail', series_number='4_2', parent_series='4', qty=2.5)
+        doc = Record(docstatus=0, project='PROJ-1', clauses=[existing_group, existing_detail],
+            name='CR-1', numbering_mode='From Excel', check_permission=MagicMock(), save=MagicMock())
+        project = Record(project_clauses=[
+            Record(name='g', is_group=1, series_number='4', clause_title='Civil'),
+            Record(name='a', is_group=0, series_number='4_2', parent_series='4', clause_title='A', qty=10),
+            Record(name='b', is_group=0, series_number='4_7', parent_series='4', clause_title='B', qty=5)],
+            check_permission=MagicMock())
+        self.frappe.get_doc.side_effect = [doc, project, doc, project]
+        self.service.fetch_project_clauses('CR-1')
+        self.service.fetch_project_clauses('CR-1')
+        self.assertEqual(len(doc.clauses), 3)
+        self.assertIs(doc.clauses[0], existing_group)
+        self.assertIs(doc.clauses[1], existing_detail)
+        self.assertEqual(doc.clauses[1].qty, 2.5)
+        self.assertEqual(doc.clauses[1].name, 'saved-detail')
+        self.assertEqual([row.idx for row in doc.clauses], [1, 2, 3])

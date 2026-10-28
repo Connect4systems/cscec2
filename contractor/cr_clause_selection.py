@@ -35,3 +35,54 @@ def selected_quantities(rows, quantities=None):
             raise ValueError('Selected clause quantities must be greater than zero')
         result[name] = qty
     return result
+
+
+def merge_project_clauses(existing, incoming):
+    """Keep existing row objects and insert new details under their source heading."""
+    merged = list(existing)
+    seen = {row.get('project_clause') for row in merged if row.get('project_clause')}
+    used = {str(row.get('series_number')) for row in merged}
+    source_group = None
+    target_group = None
+    for row in incoming:
+        source = row.get('project_clause')
+        if row.get('is_group'):
+            source_group = row.get('series_number')
+            target_group = next((item for item in merged if item.get('is_group')
+                and item.get('project_clause') == source), None)
+            if target_group is None:
+                row = dict(row)
+                series = str(source_group)
+                if series in used:
+                    series = str(max([int(item.get('series_number')) for item in merged
+                        if item.get('is_group')] or [0]) + 1)
+                row['series_number'] = series
+                row['parent_series'] = ''
+                merged.append(row)
+                used.add(series)
+                seen.add(source)
+                target_group = row
+            continue
+        if source in seen:
+            continue
+        if target_group is None or row.get('parent_series') != source_group:
+            raise ValueError('A selected clause is missing its source group')
+        row = dict(row)
+        parent = str(target_group.get('series_number'))
+        suffix = str(row.get('series_number')).split('_')[-1]
+        series = f'{parent}_{suffix}'
+        if series in used:
+            suffix = 1
+            while f'{parent}_{suffix}' in used:
+                suffix += 1
+            series = f'{parent}_{suffix}'
+        row['series_number'] = series
+        row['parent_series'] = parent
+        # Insert after the last existing detail of this heading, before the next heading.
+        position = next(i for i, item in enumerate(merged) if item is target_group) + 1
+        while position < len(merged) and not merged[position].get('is_group'):
+            position += 1
+        merged.insert(position, row)
+        used.add(series)
+        seen.add(source)
+    return merged

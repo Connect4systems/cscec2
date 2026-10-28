@@ -17,7 +17,9 @@ class Record:
         setattr(self, field, value)
 
     def append(self, field, row):
-        getattr(self, field).append(Record(**row))
+        child = Record(**row)
+        getattr(self, field).append(child)
+        return child
 
     def check_permission(self, permission):
         pass

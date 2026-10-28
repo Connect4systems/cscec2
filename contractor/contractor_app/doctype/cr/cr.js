@@ -78,7 +78,7 @@ async function open_cr_project_clause_picker(frm, saved) {
             {fieldname: 'details', fieldtype: 'HTML'},
             {fieldname: 'selection_count', fieldtype: 'HTML'},
             {fieldname: 'replacement_notice', fieldtype: 'HTML',
-                options: '<p class="text-muted">' + __('Inserting replaces the current CR clause table. Group headings and source series are preserved.') + '</p>'}
+                options: '<p class="text-muted">' + __('Adds clauses to the existing CR table. Previously added clauses and their quantities are kept; duplicates are skipped.') + '</p>'}
         ],
         primary_action_label: __('Insert Clauses'),
         primary_action: async () => {

@@ -43,3 +43,34 @@ class SelectedQuantitiesTest(unittest.TestCase):
                            {'missing': 3}, {'heading': 3}, []):
             with self.assertRaises(ValueError):
                 selected_quantities(rows, quantities)
+
+class MergeProjectClausesTest(unittest.TestCase):
+    def test_merge_keeps_edits_skips_duplicates_and_inserts_under_group(self):
+        from contractor.cr_clause_selection import merge_project_clauses
+        from contractor.tender_logic import number_rows
+        group = dict(project_clause='g1', is_group=1, series_number='4', clause_title='Civil')
+        existing_detail = dict(project_clause='a', series_number='4_2', parent_series='4', qty=2.5, clause_title='Edited A')
+        second_group = dict(project_clause='g2', is_group=1, series_number='8', clause_title='Electrical')
+        existing = [group, existing_detail, second_group]
+        incoming = [dict(group), dict(project_clause='a', parent_series='4', series_number='4_2', qty=10),
+            dict(project_clause='b', parent_series='4', series_number='4_7', qty=3, clause_title='B')]
+        merged = merge_project_clauses(existing, incoming)
+        self.assertEqual([row['project_clause'] for row in merged], ['g1', 'a', 'b', 'g2'])
+        self.assertIs(merged[1], existing_detail)
+        self.assertEqual(merged[1]['qty'], 2.5)
+        self.assertEqual(merged[1]['clause_title'], 'Edited A')
+        number_rows(merged, 'From Excel')
+        again = merge_project_clauses(merged, incoming)
+        self.assertEqual(again, merged)
+
+    def test_manual_rows_keep_series_when_new_source_group_collides(self):
+        from contractor.cr_clause_selection import merge_project_clauses
+        from contractor.tender_logic import number_rows
+        existing = [dict(is_group=1, series_number='1', clause_title='Manual'),
+            dict(series_number='1_1', parent_series='1', clause_title='Manual detail', qty=2)]
+        incoming = [dict(project_clause='g', is_group=1, series_number='1', clause_title='Project group'),
+            dict(project_clause='a', parent_series='1', series_number='1_1', clause_title='Project detail', qty=3)]
+        merged = merge_project_clauses(existing, incoming)
+        self.assertEqual([row['series_number'] for row in merged], ['1', '1_1', '2', '2_1'])
+        self.assertIs(merged[0], existing[0])
+        number_rows(merged, 'From Excel')
