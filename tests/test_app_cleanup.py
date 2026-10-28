@@ -36,7 +36,7 @@ class AppCleanupTest(unittest.TestCase):
         results = self.cleanup()
         self.assertTrue(all(row['removed'] for row in results))
         self.assertEqual([call.args for call in self.frappe.delete_doc.call_args_list],
-            [('DocType', 'Contract Type'), ('DocType', 'E-Language'), ('DocType', 'Edu')])
+            [('DocType', 'E-Language'), ('DocType', 'Edu')])
         self.assertTrue(all(not call.kwargs for call in self.frappe.delete_doc.call_args_list))
         self.frappe.db.sql.assert_not_called()
 

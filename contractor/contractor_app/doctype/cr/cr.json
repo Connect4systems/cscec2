@@ -83,8 +83,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Contract Type",
-   "link_filters": "[[\"Item Group\",\"parent_item_group\",\"=\",\"Contract Type\"]]",
-   "options": "Item Group",
+   "options": "Contract Type",
    "reqd": 1
   },
   {

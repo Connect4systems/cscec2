@@ -2,7 +2,7 @@
 import frappe
 
 
-RETIRED_DOCTYPES = ("Contract Type", "E-Language", "Edu")
+RETIRED_DOCTYPES = ("E-Language", "Edu")
 RETAINED_DEPENDENCIES = {
     "Contractors table": "BOQ and Template BOQ subcontract costing",
     "Group Item": "Historical Projects, Costing Notes and certificates",
