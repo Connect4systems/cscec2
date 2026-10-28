@@ -1353,6 +1353,22 @@
    "options": "Project Clause Summary",
    "read_only": 1,
    "insert_after": "project_contract_currency"
+  },
+  {
+   "doctype": "Custom Field",
+   "dt": "Project",
+   "name": "Project-custom_abbreviation",
+   "fieldname": "custom_abbreviation",
+   "fieldtype": "Data",
+   "label": "Abbreviation",
+   "insert_after": "project_name",
+   "allow_in_quick_entry": 1,
+   "in_standard_filter": 1,
+   "description": "Short project code used in CR and subcontractor document numbering.",
+   "hidden": 0,
+   "read_only": 0,
+   "reqd": 0,
+   "module": "Contractor App"
   }
  ],
  "custom_perms": [
@@ -1536,7 +1552,7 @@
    "property": "field_order",
    "property_type": "Data",
    "row_name": null,
-   "value": "[\"naming_series\", \"project_name\", \"project_type\", \"engineering_consulting_office\", \"custom_warehouse\", \"custom_column_break_gjdzd\", \"custom_location\", \"priority\", \"status\", \"is_active\", \"percent_complete_method\", \"percent_complete\", \"column_break_5\", \"date\", \"expected_start_date\", \"expected_end_date\", \"project_classification\", \"project_template\", \"department\", \"customer_details\", \"customer\", \"column_break_14\", \"sales_order\", \"custom_contract_type\", \"users_section\", \"users\", \"custom_tab_4\", \"custom_section_break_vvc4f\", \"copied_from\", \"section_break0\", \"notes\", \"section_break_18\", \"actual_start_date\", \"actual_time\", \"column_break_20\", \"actual_end_date\", \"project_details\", \"estimated_costing\", \"total_costing_amount\", \"total_expense_claim\", \"total_purchase_cost\", \"company\", \"column_break_28\", \"total_sales_amount\", \"total_billable_amount\", \"total_billed_amount\", \"total_consumed_material_cost\", \"cost_center\", \"margin\", \"gross_margin\", \"column_break_37\", \"per_gross_margin\", \"custom_contract_items\", \"group_items\", \"custom_section_break_n9xrw\", \"items\", \"project_clauses_tab\", \"project_contract\", \"tender_analysis\", \"project_offer\", \"project_contract_currency\", \"project_clause_groups\", \"project_clauses\", \"monitor_progress\", \"collect_progress\", \"holiday_list\", \"frequency\", \"from_time\", \"to_time\", \"first_email\", \"second_email\", \"daily_time_to_send\", \"day_to_send\", \"weekly_time_to_send\", \"column_break_45\", \"subject\", \"message\", \"custom_dashboard\"]"
+   "value": "[\"naming_series\", \"project_name\", \"custom_abbreviation\", \"project_type\", \"engineering_consulting_office\", \"custom_warehouse\", \"custom_column_break_gjdzd\", \"custom_location\", \"priority\", \"status\", \"is_active\", \"percent_complete_method\", \"percent_complete\", \"column_break_5\", \"date\", \"expected_start_date\", \"expected_end_date\", \"project_classification\", \"project_template\", \"department\", \"customer_details\", \"customer\", \"column_break_14\", \"sales_order\", \"custom_contract_type\", \"users_section\", \"users\", \"custom_tab_4\", \"custom_section_break_vvc4f\", \"copied_from\", \"section_break0\", \"notes\", \"section_break_18\", \"actual_start_date\", \"actual_time\", \"column_break_20\", \"actual_end_date\", \"project_details\", \"estimated_costing\", \"total_costing_amount\", \"total_expense_claim\", \"total_purchase_cost\", \"company\", \"column_break_28\", \"total_sales_amount\", \"total_billable_amount\", \"total_billed_amount\", \"total_consumed_material_cost\", \"cost_center\", \"margin\", \"gross_margin\", \"column_break_37\", \"per_gross_margin\", \"custom_contract_items\", \"group_items\", \"custom_section_break_n9xrw\", \"items\", \"project_clauses_tab\", \"project_contract\", \"tender_analysis\", \"project_offer\", \"project_contract_currency\", \"project_clause_groups\", \"project_clauses\", \"monitor_progress\", \"collect_progress\", \"holiday_list\", \"frequency\", \"from_time\", \"to_time\", \"first_email\", \"second_email\", \"daily_time_to_send\", \"day_to_send\", \"weekly_time_to_send\", \"column_break_45\", \"subject\", \"message\", \"custom_dashboard\"]"
   }
  ],
  "sync_on_migrate": 1
