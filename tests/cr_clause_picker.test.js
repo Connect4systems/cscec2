@@ -8,7 +8,8 @@ const rows = [
     {name: 'detail', is_group: 0, series_number: '4_2', parent_series: '4', clause_title: 'Concrete', qty: 10}
 ];
 function wrapper() {
-    return {html() {}, text() {}, find() { return {on() {}}; }, prop() {}};
+    return {content: '', html(value) { this.content = value; }, text(value) { this.content = value; },
+        find() { return {on() {}}; }, prop() {}};
 }
 class Dialog {
     constructor(options) {
@@ -18,12 +19,16 @@ class Dialog {
         this.values = {};
         this.visible = {};
         for (const field of options.fields) {
-            this.fields_dict[field.fieldname] = {$input: wrapper(), $wrapper: wrapper()};
+            const control = {$input: wrapper(), $wrapper: wrapper(), df: field};
+            control.toggle = show => {
+                control.df.hidden = show ? 0 : 1;
+                this.visible[field.fieldname] = !!show;
+            };
+            this.fields_dict[field.fieldname] = control;
             this.values[field.fieldname] = field.default || '';
         }
     }
     get_value(name) { return this.values[name]; }
-    toggle_display(name, visible) { this.visible[name] = !!visible; }
     show() {}
     change(name, value) {
         this.values[name] = value;
@@ -48,6 +53,13 @@ vm.runInContext(fs.readFileSync(path.join(__dirname, '../contractor/contractor_a
     assert.strictEqual(dialog.visible.details, false);
     dialog.change('clause_group', '4 - Civil');
     assert.strictEqual(dialog.visible.details, true);
+    const html = dialog.fields_dict.details.$wrapper.content;
+    assert(html.includes('<table'));
+    assert(html.includes('Concrete'));
+    assert(html.includes('cr-detail-choice'));
+    assert(html.includes('cr-detail-qty'));
+    assert(html.includes('value="10"'));
+    assert.strictEqual(typeof dialog.toggle_display, 'undefined');
     dialog.change('select_all', 1);
     assert.strictEqual(dialog.visible.details, false);
     dialog.change('select_all', 0);

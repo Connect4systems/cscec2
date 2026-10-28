@@ -63,9 +63,8 @@ async function open_cr_project_clause_picker(frm, saved) {
             {fieldname: 'fetch_all', fieldtype: 'Check', label: __('All Clauses'), default: 1,
                 onchange: () => update_visibility()},
             {fieldname: 'clause_group', fieldtype: 'Select', label: __('Group Clause'),
-                options: [''].concat(group_labels), depends_on: 'eval:!doc.fetch_all', onchange: () => render_details()},
+                options: [''].concat(group_labels), onchange: () => render_details()},
             {fieldname: 'select_all', fieldtype: 'Check', label: __('Select All Clauses in This Group'),
-                depends_on: 'eval:!doc.fetch_all',
                 onchange: () => {
                     if (!dialog) return;
                     const checked = !!dialog.get_value('select_all');
@@ -107,21 +106,21 @@ async function open_cr_project_clause_picker(frm, saved) {
     function update_visibility() {
         if (!dialog) return;
         const partial = !dialog.get_value('fetch_all');
-        for (const field of ['clause_group', 'select_all', 'selection_count']) dialog.toggle_display(field, partial);
+        for (const field of ['clause_group', 'select_all', 'selection_count']) dialog.fields_dict[field].toggle(partial);
         render_details();
     }
     function render_details() {
         if (!dialog) return;
         const group_index = group_labels.indexOf(dialog.get_value('clause_group'));
         const group = groups[group_index];
-        current_details = group ? source.clauses.filter(row => !row.is_group && row.parent_series === group.series_number) : [];
+        current_details = group ? source.clauses.filter(row => !row.is_group && String(row.parent_series) === String(group.series_number)) : [];
         const esc = value => frappe.utils.escape_html(String(value == null ? '' : value));
         const partial = !dialog.get_value('fetch_all');
         const select_group = !!group_select_all.get(dialog.get_value('clause_group'));
-        dialog.toggle_display('clause_group', partial);
-        dialog.toggle_display('select_all', partial);
-        dialog.toggle_display('selection_count', partial);
-        dialog.toggle_display('details', partial && !!group && !select_group);
+        dialog.fields_dict.clause_group.toggle(partial);
+        dialog.fields_dict.select_all.toggle(partial);
+        dialog.fields_dict.selection_count.toggle(partial);
+        dialog.fields_dict.details.toggle(partial && !!group && !select_group);
         dialog.fields_dict.select_all.$input.prop('checked', select_group);
         const html = '<div style="max-height:350px;overflow:auto"><table class="table"><thead><tr><th></th><th>' +
             __('Series') + '</th><th>' + __('Clause') + '</th><th>' + __('Qty') + '</th><th>' + __('UOM') + '</th></tr></thead><tbody>' +
