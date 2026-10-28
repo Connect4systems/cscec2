@@ -93,6 +93,9 @@ class ProjectContract(Document):
             self.created_project = create_project(self.name)["project"]
 
     def before_cancel(self):
+        if self.doctype == "Project Contract" and frappe.db.exists("Project Budget", {
+                "project_contract": self.name, "docstatus": ["!=", 2]}):
+            frappe.throw("Cancel or delete linked Project Budgets before cancelling the Project Contract")
         if self.get("created_project"):
             status = frappe.db.get_value("Project", self.created_project, "status")
             if status and status != "Cancelled":

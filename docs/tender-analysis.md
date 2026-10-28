@@ -278,3 +278,17 @@ Fetched references are checked against the selected Project on save.
 Deploy with `bench --site actual-site-name migrate`, `bench build --app contractor`,
 and `bench restart`. Verify CR manual entry, Excel preview/apply, Project fetch,
 and submission on a test site.
+
+## Project Budget and BOQ quantity basis
+
+Project Contract now provides **Create > Project Budget** after submission. The
+budget snapshots costs from its exact submitted Costing Note/BOQ references and
+uses final contract quantities. Its Total Budget and Contract Clauses Budget tabs
+show all five resource categories, including Equipment, with group summaries and
+source links. See [Project Budget](project-budget.md) for validation and deployment.
+
+New/draft BOQ resource rows calculate full Project Quantities from editable
+quantity-per-clause-unit coefficients. Costing Note and Tender Analysis normalize
+unit prices and multiply by clause quantity once. Project Budget uses those same
+normalized costs. Existing submitted BOQs retain their historical unit basis and
+are not bulk repriced during migration.

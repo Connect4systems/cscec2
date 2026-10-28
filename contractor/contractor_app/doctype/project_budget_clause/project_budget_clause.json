@@ -1,0 +1,224 @@
+{
+ "doctype": "DocType",
+ "name": "Project Budget Clause",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "istable": 1,
+ "editable_grid": 1,
+ "fields": [
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group",
+   "columns": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "series_number",
+   "fieldtype": "Data",
+   "label": "Series",
+   "columns": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "clause_title",
+   "fieldtype": "Small Text",
+   "label": "Clause",
+   "columns": 3,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Contract Quantity",
+   "columns": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_cost",
+   "fieldtype": "Currency",
+   "label": "BOQ Unit Cost",
+   "options": "currency",
+   "precision": "6",
+   "columns": 1,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Clause Budget",
+   "options": "currency",
+   "columns": 2,
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "material_budget",
+   "fieldtype": "Currency",
+   "label": "Material Budget",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_material_cost",
+   "fieldtype": "Currency",
+   "label": "Material Unit Cost",
+   "options": "currency",
+   "precision": "6",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "labour_budget",
+   "fieldtype": "Currency",
+   "label": "Labour Budget",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_labour_cost",
+   "fieldtype": "Currency",
+   "label": "Labour Unit Cost",
+   "options": "currency",
+   "precision": "6",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "subcontractor_budget",
+   "fieldtype": "Currency",
+   "label": "Subcontractor Budget",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_subcontractor_cost",
+   "fieldtype": "Currency",
+   "label": "Subcontractor Unit Cost",
+   "options": "currency",
+   "precision": "6",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_expenses_budget",
+   "fieldtype": "Currency",
+   "label": "Other Expenses Budget",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_other_expenses_cost",
+   "fieldtype": "Currency",
+   "label": "Other Expenses Unit Cost",
+   "options": "currency",
+   "precision": "6",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "equipment_budget",
+   "fieldtype": "Currency",
+   "label": "Equipment Budget",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_equipment_cost",
+   "fieldtype": "Currency",
+   "label": "Equipment Unit Cost",
+   "options": "currency",
+   "precision": "6",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "contractual_clause",
+   "fieldtype": "Link",
+   "label": "Contractual Clause",
+   "options": "Contractual Clause",
+   "read_only": 1
+  },
+  {
+   "fieldname": "costing_note",
+   "fieldtype": "Link",
+   "label": "Costing Note",
+   "options": "Costing Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "boq",
+   "fieldtype": "Link",
+   "label": "BOQ",
+   "options": "BOQ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contract_clause_row",
+   "fieldtype": "Data",
+   "label": "Contract Clause Row",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "costing_note_row",
+   "fieldtype": "Data",
+   "label": "Costing Note Row",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_row",
+   "fieldtype": "Data",
+   "label": "Tender Clause Row",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "parent_series",
+   "fieldtype": "Data",
+   "label": "Parent Series",
+   "hidden": 1,
+   "read_only": 1
+  }
+ ],
+ "field_order": [
+  "is_group",
+  "series_number",
+  "clause_title",
+  "qty",
+  "uom",
+  "unit_cost",
+  "total_cost",
+  "material_budget",
+  "unit_material_cost",
+  "labour_budget",
+  "unit_labour_cost",
+  "subcontractor_budget",
+  "unit_subcontractor_cost",
+  "other_expenses_budget",
+  "unit_other_expenses_cost",
+  "equipment_budget",
+  "unit_equipment_cost",
+  "contractual_clause",
+  "costing_note",
+  "boq",
+  "contract_clause_row",
+  "costing_note_row",
+  "source_row",
+  "parent_series"
+ ],
+ "permissions": []
+}

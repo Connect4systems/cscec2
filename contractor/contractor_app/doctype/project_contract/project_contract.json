@@ -482,6 +482,11 @@
    "link_doctype": "Project",
    "link_fieldname": "project_contract",
    "group": "Execution"
+  },
+  {
+   "link_doctype": "Project Budget",
+   "link_fieldname": "project_contract",
+   "group": "Budgets"
   }
  ],
  "modified": "2026-10-27 18:57:07.066418",

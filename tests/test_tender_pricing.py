@@ -145,5 +145,44 @@ class PricingLifecycleTest(unittest.TestCase):
         self.assertEqual(rows[1].series_number, '1_1')
 
 
+    def test_project_quantity_boq_returns_unit_cost_to_note_without_rescaling_twice(self):
+        self.note.docstatus = 0
+        self.note.check_permission = MagicMock()
+        self.note.save = MagicMock()
+        self.row.name = 'note-row'
+        self.row.qty = 100
+        self.fake.get_doc.return_value = self.note
+        boq = Row(name='BOQ-1', costing_note='CN-1', line_id='note-row', contractual_clause='CC-1',
+            tender_analysis='TA-1', quantity_basis='Project Quantity', project_qty=100,
+            total_cost=2300, total_material_costs=1000, total_labor_costs=1000, total_contractors=300)
+        self.service.update_from_boq(boq)
+        self.assertEqual(self.row.cost, 23)
+        self.note.save.assert_called_once()
+        from contractor.tender_logic import price_rows
+        self.row.default_profit_margin = 10
+        self.row['cost'] = 23
+        cost, selling = price_rows([self.row])
+        self.assertEqual(cost, 2300)
+        self.assertEqual(selling, 2530)
+
+        self.target.qty = 100
+        self.fake.get_doc.return_value = self.tender
+        self.service.apply_note(self.note)
+        self.assertEqual(self.target.rate, 25.3)
+        self.assertEqual(self.target.qty * self.target.rate, 2530)
+
+    def test_cancel_project_boq_can_clear_price_after_draft_quantity_changed(self):
+        self.note.docstatus = 0
+        self.note.check_permission = MagicMock()
+        self.note.save = MagicMock()
+        self.row.name = 'note-row'
+        self.row.qty = 200
+        self.fake.get_doc.return_value = self.note
+        boq = Row(name='BOQ-1', costing_note='CN-1', line_id='note-row', contractual_clause='CC-1',
+            tender_analysis='TA-1', quantity_basis='Project Quantity', project_qty=100, total_cost=2300)
+        self.service.update_from_boq(boq, cancel=True)
+        self.assertEqual(self.row.cost,0)
+
+
 if __name__ == '__main__':
     unittest.main()

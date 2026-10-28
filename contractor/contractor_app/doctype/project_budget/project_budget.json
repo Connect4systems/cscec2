@@ -1,0 +1,220 @@
+{
+ "doctype": "DocType",
+ "name": "Project Budget",
+ "module": "Contractor App",
+ "engine": "InnoDB",
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field",
+ "is_submittable": 1,
+ "track_changes": 1,
+ "title_field": "title",
+ "search_fields": "title,project,project_contract",
+ "field_order": [
+  "details_tab",
+  "title",
+  "project_contract",
+  "project",
+  "tender_analysis",
+  "company",
+  "currency",
+  "posting_date",
+  "status",
+  "naming_series",
+  "total_budget_tab",
+  "total_project_budget",
+  "total_material",
+  "total_labour",
+  "total_subcontractor",
+  "total_other_expenses",
+  "total_equipment",
+  "clauses_budget_tab",
+  "clauses",
+  "notes",
+  "connections_tab",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "project_contract",
+   "fieldtype": "Link",
+   "label": "Project Contract",
+   "options": "Project Contract",
+   "read_only": 1,
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1,
+   "reqd": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "tender_analysis",
+   "fieldtype": "Link",
+   "label": "Tender Analysis",
+   "options": "Tender Analysis",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Budget Date",
+   "default": "Today",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "PBG-.YYYY.-.#####",
+   "default": "PBG-.YYYY.-.#####",
+   "hidden": 1
+  },
+  {
+   "fieldname": "total_budget_tab",
+   "fieldtype": "Tab Break",
+   "label": "Total Budget"
+  },
+  {
+   "fieldname": "total_project_budget",
+   "fieldtype": "Currency",
+   "label": "Total Project Budget",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "total_material",
+   "fieldtype": "Currency",
+   "label": "Total Material",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "total_labour",
+   "fieldtype": "Currency",
+   "label": "Total Labour",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "total_subcontractor",
+   "fieldtype": "Currency",
+   "label": "Total Subcontractor",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "total_other_expenses",
+   "fieldtype": "Currency",
+   "label": "Total Other Expenses",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "total_equipment",
+   "fieldtype": "Currency",
+   "label": "Total Equipment",
+   "options": "currency",
+   "read_only": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "clauses_budget_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contract Clauses Budget"
+  },
+  {
+   "fieldname": "clauses",
+   "fieldtype": "Table",
+   "label": "Contract Clauses Budget",
+   "options": "Project Budget Clause",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "connections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Project Budget",
+   "read_only": 1,
+   "no_copy": 1,
+   "print_hide": 1
+  }
+ ],
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -9,6 +9,7 @@
  "field_order": [
   "item",
   "uom",
+  "per_unit_qty",
   "qty",
   "cost",
   "total_cost"
@@ -20,7 +21,8 @@
    "in_list_view": 1,
    "label": "Item",
    "options": "Item",
-   "reqd": 1
+   "reqd": 1,
+   "columns": 2
   },
   {
    "fieldname": "uom",
@@ -38,19 +40,30 @@
    "reqd": 1
   },
   {
-    "fieldname": "cost",
-    "fieldtype": "Currency",
-    "in_list_view": 1,
-    "label": "Cost",
-    "reqd": 1
-   },
-   {
-    "fieldname": "total_cost",
-    "fieldtype": "Currency",
-    "in_list_view": 1,
-    "label": "Total Cost",
-    "read_only": 1
-   }
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cost",
+   "reqd": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Cost",
+   "read_only": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "per_unit_qty",
+   "fieldtype": "Float",
+   "label": "Quantity per Clause Unit",
+   "default": "1",
+   "precision": "6",
+   "in_list_view": 1,
+   "columns": 1
+  }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,

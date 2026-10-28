@@ -10,30 +10,20 @@ class BOQ(Document):
 		fill_project_name(self)
 		if self.get("contractual_clause"):
 			self.clause_title = frappe.db.get_value("Contractual Clause", self.contractual_clause, "title")
-		tables = ["material_costs", "labor_costs", "contractors_table", "expenses_table", "custom_equipment"]
-
-		for table in tables:
-			total = 0
-			if not self.get(table): continue
-
-			for item in self.get(table):
-				total += item.get("cost") * item.qty
-
-			if table == "contractors_table":
-				self.total_contractors = total
-			elif table == "expenses_table":
-				self.total_expenses = total
-			elif table == "material_costs":
-				self.total_material_costs = total
-			elif table == "custom_equipment":
-				self.custom_total_equipment_costs = total
-			else:
-				self.total_labor_costs = total
-
-		if not self.get("custom_total_equipment_costs", 0):
-			self.custom_total_equipment_costs = 0
-
-		self.total_cost = self.get("total_material_costs", 0) + self.get("total_labor_costs", 0) + self.get("total_contractors", 0) + self.get("total_expenses", 0) + self.get("custom_total_equipment_costs", 0)
+		from contractor.boq_quantities import calculate_resources
+		old = self.get_doc_before_save()
+		convert_legacy = self.is_new() or self.docstatus == 0 or (old and old.docstatus == 0)
+		if self.get("tender_analysis"):
+			note = frappe.get_doc("Costing Note", self.costing_note)
+			note.check_permission("read")
+			source = next((row for row in note.costing_note_items if row.name == self.line_id), None)
+			if not source or source.is_group or source.contractual_clause != self.contractual_clause:
+				frappe.throw("BOQ clause does not match its Costing Note row")
+			self.project_qty = source.qty
+		try:
+			calculate_resources(self, convert_legacy=convert_legacy)
+		except ValueError as exc:
+			frappe.throw(str(exc))
 
 	def on_update(self):
 		if self.get("tender_analysis"):
@@ -54,8 +44,8 @@ class BOQ(Document):
 		for row in doc.costing_note_items:
 			if row.name == self.line_id:
 				row.item = self.item
-				row.cost = self.total_cost 
-				row.total_cost = self.total_cost * self.project_qty
+				row.cost = self.unit_cost
+				row.total_cost = self.project_total_cost
 				break
 
 		doc.save(ignore_permissions = True)
@@ -91,13 +81,15 @@ def set_boq_template(boq_template):
 
 	for table in ["material_costs", "labor_costs", "contractors_table", "expenses_table"]:
 		if temp.get(table):
-			
+
 			tables[table] = []
 
 			for row in temp.get(table):
 				item = frappe._dict({
 					"cost": row.get("cost", 0),
-					"qty": row.get("qty", 0), 
+					"qty": row.get("qty", 0),
+					"per_unit_qty": row.get("qty", 0),
+					"uom": row.get("uom"),
 					"item": row.item,
 					"total_cost": row.get("total_cost", 0)
 				})

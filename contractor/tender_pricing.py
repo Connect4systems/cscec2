@@ -158,6 +158,7 @@ def create_clause_boq(costing_note, row_name):
     boq.check_permission("create")
     boq.update(dict(naming_series="BOQ-.YYYY.-", tender_analysis=note.tender_analysis,
         contractual_clause=row.contractual_clause, clause_title=row.clause_title, unit=row.uom, project_qty=row.qty,
+        quantity_basis="Project Quantity",
         project=note.get("project"),
         party_type=note.party_type, party_name=note.party_name, start_date=today(),
         costing_note=note.name, line_id=row.name))
@@ -180,5 +181,11 @@ def update_from_boq(boq, cancel=False):
         "docstatus": 1, "name": ["!=", boq.name]})
     if duplicates:
         frappe.throw("Another submitted BOQ already prices this clause")
-    row.cost = 0 if cancel else boq.total_cost
+    from contractor.boq_quantities import unit_costs
+    if not cancel and str(boq.get('quantity_basis') or 'Per Unit') == 'Project Quantity' and flt(boq.project_qty) != flt(row.qty):
+        frappe.throw("BOQ Project Quantity must match its Costing Note clause quantity")
+    try:
+        row.cost = 0 if cancel else unit_costs(boq)['total_cost']
+    except ValueError as exc:
+        frappe.throw(str(exc))
     note.save()

@@ -20,6 +20,7 @@
   "clause_title",
   "tender_analysis",
   "project_qty",
+  "quantity_basis",
   "project",
   "boq_template",
   "end_date",
@@ -45,7 +46,9 @@
   "section_break_ykrqk",
   "expenses_table",
   "total_expenses",
-  "amended_from"
+  "amended_from",
+  "unit_cost",
+  "project_total_cost"
  ],
  "fields": [
   {
@@ -195,8 +198,9 @@
   {
    "fieldname": "total_cost",
    "fieldtype": "Currency",
-   "label": "Total Cost",
-   "read_only": 1
+   "label": "Total BOQ Cost",
+   "read_only": 1,
+   "description": "Full Project Quantity cost for Project Quantity BOQs; unit cost for historical Per Unit BOQs."
   },
   {
    "fieldname": "references_section",
@@ -269,6 +273,26 @@
    "label": "Clause Title",
    "read_only": 1,
    "fetch_from": "contractual_clause.title"
+  },
+  {
+   "fieldname": "quantity_basis",
+   "fieldtype": "Select",
+   "label": "Quantity Basis",
+   "options": "Per Unit\nProject Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_cost",
+   "fieldtype": "Currency",
+   "label": "Cost per Clause Unit",
+   "read_only": 1,
+   "precision": "6"
+  },
+  {
+   "fieldname": "project_total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Project Cost",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,

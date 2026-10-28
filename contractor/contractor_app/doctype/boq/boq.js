@@ -1,9 +1,12 @@
+{% include 'contractor/public/js/doctype/boq_resources.js' %}
 {% include 'contractor/public/js/doctype/project_name.js' %}
 // Copyright (c) 2024, Jenan Alfahham and contributors
 // For license information, please see license.txt
 
 frappe.ui.form.on('BOQ', {
     refresh(frm) {
+        contractor.setup_boq_resources(frm);
+        contractor.recalculate_boq_resources(frm);
         contractor.fetch_project_name(frm);
         frm.toggle_display('item', !frm.doc.tender_analysis);
         frm.toggle_display('contractual_clause', !!frm.doc.tender_analysis);
@@ -26,16 +29,23 @@ frappe.ui.form.on('BOQ', {
 		});
 	},
 	onload: function(frm){
+        if (!frm.doc.docstatus && frm.doc.quantity_basis !== 'Project Quantity') {
+            for (const table of ['material_costs', 'labor_costs', 'contractors_table', 'expenses_table', 'custom_equipment']) {
+                for (const row of frm.doc[table] || []) row.per_unit_qty = flt(row.qty);
+            }
+            frm.doc.quantity_basis = 'Project Quantity';
+            frm.dirty();
+        }
+        contractor.setup_boq_resources(frm);
+        contractor.recalculate_boq_resources(frm);
 		frm.trigger('setup_queries');
 	},
+    project_qty(frm) { contractor.recalculate_boq_resources(frm); },
 	boq_template: function(frm){
 		if ((frm.doc.item || frm.doc.contractual_clause) && frm.doc.boq_template){
 			frappe.call({
 				"method": "contractor.contractor_app.doctype.boq.boq.set_boq_template",
-				"args": {
-					"boq_template": frm.doc.boq_template,
-					"doc": frm.doc
-				},
+				"args": {"boq_template": frm.doc.boq_template},
 				callback: function(r){
 					if (r.message) {
 						frm.clear_table("material_costs");
@@ -49,7 +59,9 @@ frappe.ui.form.on('BOQ', {
 								let c = frm.add_child(table);
 								c.cost = row.cost;
 								c.item = row.item;
+								c.per_unit_qty = row.per_unit_qty == null ? row.qty : row.per_unit_qty;
 								c.qty = row.qty;
+								c.uom = row.uom;
 								c.total_cost = row.total_cost;
 
 								if (table == "material_costs") c.depreciasion_percentage = row.depreciasion_percentage;
@@ -57,10 +69,10 @@ frappe.ui.form.on('BOQ', {
 								else c.uom = row.uom
 							}
 							
-							frm.refresh_field(table)
+							frm.refresh_field(table);
 
 						}
-
+                        contractor.recalculate_boq_resources(frm);
 					}
 				}
 			})
@@ -95,105 +107,5 @@ frappe.ui.form.on('BOQ', {
 				};
 			});
 		}
-	}
-});
-
-frappe.ui.form.on('Material costs', {
-	material_costs_add: function(frm, cdt, cdn) {
-		let row = locals[cdt][cdn];
-		row.qty = 1;
-		row.depreciasion_percentage = 0;
-		row.cost = 0;
-		frm.refresh_field("material_costs")
-	},
-	qty: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	cost: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	item: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.db.get_value("Item", {"item_code": row.item}, "stock_uom", (r) => {
-			if (r) {
-				frappe.model.set_value(cdt, cdn, "uom", r.stock_uom);
-			}
-		})
-	}
-});
-
-frappe.ui.form.on('Labor costs', {
-	labor_costs_add: function(frm, cdt, cdn) {
-		let row = locals[cdt][cdn];
-		row.qty = 1;
-		row.cost = 0;
-		frm.refresh_field("labor_costs")
-	},
-	qty: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	cost: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	item: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.db.get_value("Item", {"item_code": row.item}, "stock_uom", (r) => {
-			if (r) {
-				frappe.model.set_value(cdt, cdn, "uom", r.stock_uom);
-			}
-		})
-	}
-});
-frappe.ui.form.on('Contractors table', {
-	contractors_table_add: function(frm, cdt, cdn) {
-		let row = locals[cdt][cdn];
-		row.qty = 1;
-		row.cost = 0;
-		frm.refresh_field("contractors_table")
-	},
-	qty: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	cost: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	item: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.db.get_value("Item", {"item_code": row.item}, "stock_uom", (r) => {
-			if (r) {
-				frappe.model.set_value(cdt, cdn, "uom", r.stock_uom);
-			}
-		})
-	}
-});
-
-frappe.ui.form.on('Expenses Table', {
-	expenses_table_add: function(frm, cdt, cdn) {
-		let row = locals[cdt][cdn];
-		row.qty = 1;
-		row.cost = 0;
-		frm.refresh_field("expenses_table")
-	},
-	qty: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	cost: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.model.set_value(cdt, cdn, "total_cost", row.qty * row.cost);
-	},
-	item: function(frm, cdt, cdn){
-		let row = locals[cdt][cdn];
-		frappe.db.get_value("Item", {"item_code": row.item}, "stock_uom", (r) => {
-			if (r) {
-				frappe.model.set_value(cdt, cdn, "uom", r.stock_uom);
-			}
-		})
 	}
 });

@@ -1,0 +1,48 @@
+const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
+const vm = require('vm');
+const forms = {};
+const context = vm.createContext({
+    contractor: {}, flt: value => Number(value || 0), __: text => text,
+    frappe: {provide() {}, ui: {form: {on(type, handlers) { forms[type] = handlers; }}}}
+});
+vm.runInContext(fs.readFileSync(path.join(__dirname, '../contractor/public/js/doctype/boq_resources.js'), 'utf8'), context);
+function form(type, status=0) {
+    const fields = {};
+    for (const [table, child] of [['material_costs','Material costs'],['labor_costs','Labor costs'],
+        ['contractors_table','Contractors table'],['expenses_table','Expenses Table']]) {
+        fields[table] = {df: {options: child}, grid: {docfields: [{fieldname: 'per_unit_qty'}],
+            changes: {}, update_docfield_property(field, property, value) { this.changes[field + ':' + property] = value; }}};
+    }
+    for (const field of ['total_material_costs','total_labor_costs','total_contractors','total_expenses']) fields[field] = {};
+    return {doctype: type, doc: {docstatus: status, quantity_basis: 'Project Quantity', project_qty: 100,
+        material_costs: [{qty: 2, per_unit_qty: 2, cost: 5}], labor_costs: [], contractors_table: [], expenses_table: []},
+        fields_dict: fields, refresh_field() {}, set_df_property() {}};
+}
+const boq = form('BOQ');
+context.contractor.setup_boq_resources(boq);
+context.contractor.recalculate_boq_resources(boq);
+assert.strictEqual(boq.doc.material_costs[0].qty, 200);
+assert.strictEqual(boq.doc.total_cost, 1000);
+assert.strictEqual(boq.doc.unit_cost, 10);
+context.contractor.recalculate_boq_resources(boq);
+assert.strictEqual(boq.doc.material_costs[0].qty, 200);
+boq.doc.project_qty = 150;
+context.contractor.recalculate_boq_resources(boq);
+assert.strictEqual(boq.doc.total_cost, 1500);
+assert.strictEqual(boq.fields_dict.material_costs.grid.changes['qty:read_only'], 1);
+const template = form('Template BOQ');
+context.contractor.setup_boq_resources(template);
+context.contractor.recalculate_boq_resources(template);
+assert.strictEqual(template.doc.material_costs[0].qty, 2);
+assert.strictEqual(template.doc.material_costs[0].total_cost, 10);
+assert.strictEqual(template.fields_dict.material_costs.grid.changes['qty:read_only'], 0);
+assert.strictEqual(template.fields_dict.material_costs.grid.changes['per_unit_qty:hidden'], 1);
+const historical = form('BOQ', 1);
+historical.doc.quantity_basis = 'Per Unit';
+historical.doc.total_cost = 10;
+context.contractor.recalculate_boq_resources(historical);
+assert.strictEqual(historical.doc.material_costs[0].qty, 2);
+assert.strictEqual(historical.doc.total_cost, 10);
+console.log('BOQ project quantities, template isolation and historical display checks passed');

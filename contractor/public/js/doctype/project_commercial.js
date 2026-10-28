@@ -8,6 +8,16 @@ const commercial_handlers = {
         frm.fields_dict.clauses.grid.cannot_add_rows = true;
         frm.fields_dict.clauses.grid.cannot_delete_rows = true;
         if (frm.doctype === 'Project Contract' && frm.doc.docstatus === 1) {
+            if (frappe.model.can_create('Project Budget')) {
+                frm.add_custom_button(__('Project Budget'), async () => {
+                    if (frm.is_dirty()) return frappe.msgprint(__('Save the Project Contract first'));
+                    const r = await frappe.call({method: 'contractor.project_budget.create_budget',
+                        args: {project_contract: frm.doc.name}, freeze: true});
+                    if (r.message.existing) return frappe.set_route('Form', 'Project Budget', r.message.existing);
+                    const docs = frappe.model.sync(r.message.doc);
+                    frappe.set_route('Form', 'Project Budget', docs[0].name);
+                }, __('Create'));
+            }
             if (frm.doc.created_project) {
                 frm.add_custom_button(__('Open Project'), () => frappe.set_route('Form', 'Project', frm.doc.created_project));
             } else if (frappe.model.can_create('Project')) {

@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
+  "per_unit_qty",
   "qty",
   "uom",
   "depreciasion_percentage",
@@ -46,7 +47,7 @@
    "columns": 2,
    "fieldname": "depreciasion_percentage",
    "fieldtype": "Percent",
-   "in_list_view": 1,
+   "in_list_view": 0,
    "label": "Depreciasion Percentage",
    "reqd": 1
   },
@@ -54,24 +55,35 @@
    "columns": 2,
    "fieldname": "total_expected_amount",
    "fieldtype": "Float",
-   "in_list_view": 1,
+   "in_list_view": 0,
    "label": "Total Expected Amount",
    "read_only": 1
   },
   {
-    "fieldname": "cost",
-    "fieldtype": "Currency",
-    "in_list_view": 1,
-    "label": "Cost",
-    "reqd": 1
-   },
-   {
-    "fieldname": "total_cost",
-    "fieldtype": "Currency",
-    "in_list_view": 1,
-    "label": "Total Cost",
-    "read_only": 1
-   }
+   "fieldname": "cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Cost",
+   "reqd": 1,
+   "columns": 1
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Cost",
+   "read_only": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "per_unit_qty",
+   "fieldtype": "Float",
+   "label": "Quantity per Clause Unit",
+   "default": "1",
+   "precision": "6",
+   "in_list_view": 1,
+   "columns": 1
+  }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
