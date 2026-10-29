@@ -20,13 +20,6 @@ frappe.ui.form.on('BOQ', {
 				}
 			}
 		});
-		frm.set_query("boq_template", function() {
-			return{
-				"filters": {
-					...(frm.doc.tender_analysis ? {} : {item_code: frm.doc.item}),
-				}
-			}
-		});
 	},
 	onload: function(frm){
         if (!frm.doc.docstatus && frm.doc.quantity_basis !== 'Project Quantity') {

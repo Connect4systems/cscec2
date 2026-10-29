@@ -17,7 +17,6 @@
   "party_name",
   "section_break_lae0y",
   "costing_note_items",
-  "group_items",
   "totals_section",
   "total_cost",
   "total_target_selling_price",
@@ -90,13 +89,6 @@
    "fieldtype": "Table",
    "label": "Costing Note Items",
    "options": "Costing Note Items"
-  },
-  {
-   "fieldname": "group_items",
-   "fieldtype": "Table",
-   "label": "Group Item",
-   "options": "Group Item",
-   "read_only": 1
   },
   {
    "fieldname": "totals_section",

@@ -8,7 +8,6 @@
  "engine": "InnoDB",
  "field_order": [
   "template_name",
-  "item_code",
   "section_break_afdcv",
   "material_costs",
   "section_break_ovpxe",
@@ -22,14 +21,6 @@
   "total_equipment_costs"
  ],
  "fields": [
-  {
-   "fieldname": "item_code",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Item Code",
-   "options": "Item",
-   "reqd": 1
-  },
   {
    "fieldname": "section_break_afdcv",
    "fieldtype": "Section Break"

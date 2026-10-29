@@ -63,17 +63,8 @@ class CostingNote(Document):
 
 
 	def update_prices_and_costs(self):
-		rates = {}
 		total_cost, total_amount, total_profit = 0, 0, 0
 		for row in self.costing_note_items:
-			if not row.is_group and row.series_number and row.group_item:
-				group = int(row.series_number.split('_')[0])
-
-				if not rates.get((row.group_item, group)): 
-					rates[(row.group_item, group)] = 0
-
-				rates[(row.group_item, group)] += row.target_selling_price
-			
 			row.total_cost = row.get("cost", 0) * row.qty
 			row.target_selling_price = row.get("total_cost", 0) + (row.get("total_cost", 0) * row.get("default_profit_margin", 0) / 100)
 			total_cost += row.total_cost
@@ -85,13 +76,6 @@ class CostingNote(Document):
 		self.total_profit = total_profit
 		self.profit_margin = self.total_profit / self.total_cost * 100 if self.total_cost else 0
 
-		self.group_items = []
-		for group_item, group in rates:
-			new_item = frappe._dict({
-				"group_item": group_item,
-				"rate": rates[(group_item, group)]
-			})
-			self.append("group_items", new_item)
 
 	def update_linked_doc(self):
 

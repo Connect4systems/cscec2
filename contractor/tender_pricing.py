@@ -34,7 +34,6 @@ def validate_note(note):
     note.total_target_selling_price = selling
     note.total_profit = selling - cost
     note.profit_margin = (selling-cost) / cost * 100 if cost else 0
-    note.set("group_items", [])
     sync_boq_links(note)
 
 

@@ -26,3 +26,4 @@ contractor.patches.purchasing_naming
 contractor.patches.project_budget
 contractor.patches.boq_project_quantities
 contractor.patches.boq_equipment
+contractor.patches.clause_pricing_fields

@@ -309,22 +309,22 @@ def create_clearence(source_name, target_doc=None):
 
     if doctype == "Sales Order":
 
-        c_items = frappe.db.sql(f"""
+        c_items = frappe.db.sql("""
             select ci.item_code, sum(ci.qty) as qty
             from `tabProject Clearnce` as c
             inner join `tabClearence Item` as ci on ci.parent = c.name
-            where c.docstatus = 1 and c.sales_order = '{source_name}' and ci.is_group = 0
+            where c.docstatus = 1 and c.sales_order = %s and ci.is_group = 0
             group by ci.item_code, ci.parent_group
-        """, as_dict = 1)
+        """, (source_name,), as_dict=1)
 
     elif doctype == "Project":
-        c_items = frappe.db.sql(f"""
+        c_items = frappe.db.sql("""
             select ci.item_code, sum(ci.qty) as qty
             from `tabProject Clearnce` as c
             inner join `tabClearence Item` as ci on ci.parent = c.name
-            where c.docstatus = 1 and c.project = '{source_name}' and ci.is_group = 0
+            where c.docstatus = 1 and c.project = %s and ci.is_group = 0
             group by ci.item_code, ci.parent_group
-        """, as_dict = 1)
+        """, (source_name,), as_dict=1)
 
     new_items = []
     for item in doclist.items:
@@ -404,13 +404,13 @@ def create_purchase_clearence(source_name, target_doc=None):
 
     new_items, idx = [], 1
 
-    c_items = frappe.db.sql(f"""
+    c_items = frappe.db.sql("""
         select ci.item_code, sum(ci.qty) as qty
         from `tabSubcontract Clearnce` as c
         inner join `tabPurchase Clearence Item` as ci on ci.parent = c.name
-        where c.docstatus = 1 and c.purchase_order = '{source_name}'
+        where c.docstatus = 1 and c.purchase_order = %s
         group by ci.item_code
-    """, as_dict = 1)
+    """, (source_name,), as_dict=1)
 
     new_items = []
     for item in doclist.items:

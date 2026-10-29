@@ -9,8 +9,6 @@
  "field_order": [
   "is_group",
   "series_number",
-  "parent_group",
-  "item_group",
   "clause_title",
   "uom",
   "qty",
@@ -42,23 +40,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Series",
-   "read_only": 1
-  },
-  {
-   "columns": 1,
-   "depends_on": "eval:!parent.tender_analysis",
-   "fieldname": "item_group",
-   "fieldtype": "Link",
-   "label": "Item Group",
-   "mandatory_depends_on": "eval:!parent.tender_analysis",
-   "options": "Item Group"
-  },
-  {
-   "depends_on": "eval:!parent.tender_analysis",
-   "fieldname": "parent_group",
-   "fieldtype": "Link",
-   "label": "Parent Group",
-   "options": "Item",
    "read_only": 1
   },
   {
