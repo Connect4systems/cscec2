@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-29",
+  "checks": [
+    {
+      "check": "CR All Clauses hides group field",
+      "passed": true
+    },
+    {
+      "check": "CR selected group shows detail selection table",
+      "passed": true
+    },
+    {
+      "check": "CR Select All in Group hides detail table",
+      "passed": true
+    },
+    {
+      "check": "Repeated Project fetch preserves existing CR row and quantity without duplication",
+      "passed": true,
+      "temporary_record": true
+    },
+    {
+      "check": "Temporary CR draft cleanup",
+      "passed": true,
+      "note": "The naming sequence may advance; existing records were unchanged."
+    },
+    {
+      "check": "Unsaved BOQ equipment quantity and costs",
+      "expected": {
+        "quantity": 200,
+        "equipment": 1000,
+        "total": 1000,
+        "unit": 10
+      },
+      "actual": {
+        "quantity": 200,
+        "equipment": 1000,
+        "total": 1000,
+        "unit": 10
+      },
+      "passed": true
+    },
+    {
+      "check": "Existing Project Budget category and detail reconciliation",
+      "passed": true,
+      "budget_total": 72000
+    },
+    {
+      "check": "Project Supplier/Contract selection dialog",
+      "passed": true,
+      "note": "Existing submitted contract selected; Create Clearance not pressed."
+    },
+    {
+      "check": "Project Clearnce existing invoice/deduction reconciliation",
+      "passed": true,
+      "certificate": "PCLE-2026-00016"
+    },
+    {
+      "check": "Subcontract Clearnce existing invoice/deduction reconciliation",
+      "passed": true,
+      "certificate": "SCLE-2026-00017"
+    }
+  ],
+  "additional_browser_errors": [
+    {
+      "url": "https://en.connect4systems.com/app/costing-note/COS-Note-2026-00001",
+      "error": "field item not found",
+      "stack": ""
+    }
+  ]
+}

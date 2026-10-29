@@ -1,0 +1,330 @@
+{
+  "date": "2026-10-29",
+  "method": "Authenticated read-only navigation; no saved/submitted transactions",
+  "results": [
+    {
+      "doctype": "Tender Analysis",
+      "sample_names": [
+        "TA-2026-00009",
+        "TA-2026-00001"
+      ],
+      "screenshot": "assets/tender-analysis.png",
+      "url": "https://en.connect4systems.com/app/tender-analysis/TA-2026-00009",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tContractual Clauses\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t"
+      ],
+      "visible_text": "d this · 2 days ago\nDetails\nContractual Clauses\nContracting\nConnections\nSelling Deductions Template\nBegin typing for results.\n\nselling_deductions_template\ndeductions\nDeductions\nNo.\nTitle\nAccount\nPercent\nValue\n1\ntest\nEmployee Advances - E\n10.00%\n9,680\nAdd Row\nTotal Deductions\n£ or ج.م 9,680.00\n\ntotal_deductions\nNet Payable\n£ or ج.م 87,120.00\n\nnet_payable\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou changed the values for Title from Employee Advances to test in row #1 · 2 days ago\nYou last edited this · 2 days ago\nYou changed the value of Total Deductions from 0 to £ or ج.م 9,680.00, Net Payable from £ or ج.م 96,800.00 to £ or ج.م 87,120.00 · 2 days ago\nYou added 1 row to Deductions · 2 days ago\nYou changed the value of Total Amount from 0 to £ or ج.م 96,800.00, Net Payable from 0 to £ or ج.م 96,800.00 · 2 days ago\nYou changed the values for Amount from 0 to £ or ج.م 96,800.00 in row #1, Rate from 0 to £ or ج.م 26,000.00 in row #2, Amount from 0 to £ or ج.م 52,000.00 in row #2 · 2 days ago\nYou changed the values for Contractual Clause from \"\" to CC-00010 in row #1, Contractual Clause from \"\" to CC-00011 in row #2, Contractual Clause from \"\" to CC-00012 in row #3 · 2 days ago\nYou added 3 rows to Clauses · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Costing Note",
+      "sample_names": [
+        "COS-Note-2026-00004",
+        "COS-Note-2026-00003",
+        "COS-Note-2026-00001"
+      ],
+      "screenshot": "assets/costing-note.png",
+      "url": "https://en.connect4systems.com/app/costing-note/COS-Note-2026-00004",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [],
+      "visible_text": "Tender\nCosting Note\nCOS-Note-2026-00004\nBegin typing for results.\nNo new notifications\nHelp \nA\nCOS-Note-2026-00004\nSubmitted\nCancel\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nConnections \nSources\nTender Analysis\nPricing\nBOQ\nTender Number\n1516\n\ntender_number\nProject\ntest project\n\nproject\nDate\n27-10-2026\n\ndate\nParty Type\nCustomer\n\nparty_type\nParty\ntest customer\n\nparty_name\ncosting_note_items\nCosting Note Items\nNo.\nIs Group\nSeries\nClause Title\nQTY\nTotal Cost\nDefault Profit Margin\nTarget selling price\nBOQ\n1\n1\ntest group 1\n0\n£ or ج.م 72,000.00\n0.000%\n£ or ج.م 96,800.00\n2\n1_1\ntest item 1\n2\n£ or ج.م 40,000.00\n30.000%\n£ or ج.م 52,000.00\n3\n1_2\ntest item 2\n4\n£ or ج.م 32,000.00\n40.000%\n£ or ج.م 44,800.00\nTotals\nTotal Cost\n£ or ج.م 72,000.00\n\ntotal_cost\nTotal Target Selling price\n£ or ج.م 96,800.00\n\ntotal_target_selling_price\nTotal Profit\n£ or ج.م 24,800.00\n\ntotal_profit\nProfit Margin\n34.444%\n\nprofit_margin\nTender Analysis\nTA-2026-00009\n\ntender_analysis\nCurrency\nEGP\n\ncurrency\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "BOQ",
+      "sample_names": [
+        "BOQ-2026-00004",
+        "BOQ-2026-00003",
+        "BOQ-2026-00002",
+        "BOQ-2026-00001"
+      ],
+      "screenshot": "assets/boq.png",
+      "url": "https://en.connect4systems.com/app/boq/BOQ-2026-00004",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tMaterial\n\t\t\t\t",
+        "\n\t\t\t\t\tLabour\n\t\t\t\t",
+        "\n\t\t\t\t\tContractors\n\t\t\t\t",
+        "\n\t\t\t\t\tEquipment\n\t\t\t\t",
+        "\n\t\t\t\t\tExpenses\n\t\t\t\t"
+      ],
+      "visible_text": "Tender\nBOQ\nBOQ-2026-00004\nBegin typing for results.\nNo new notifications\nHelp \nA\nBOQ-2026-00004\nSubmitted\nCancel\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nDetails\nMaterial\nLabour\nContractors\nEquipment\nExpenses\nTotal Equipment Costs\n£ or ج.م 0.00\n\ntotal_equipment_costs\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Template BOQ",
+      "sample_names": [],
+      "screenshot": "assets/template-boq.png",
+      "url": "https://en.connect4systems.com/app/template-boq/new-template-boq-qdorotdmrq",
+      "status": "opened",
+      "existing_record": false,
+      "tabs": [],
+      "visible_text": "Tender\nTemplate BOQ\nNew Template BOQ\nBegin typing for results.\nNo new notifications\nHelp \nA\nNew Template BOQ\nNot Saved\nSave\nTemplate Name\n\ntemplate_name\nItem Code\nBegin typing for results.\n\nitem_code\nmaterial_costs\nMaterial Costs\nNo.\nItem\nQuantity per Clause Unit\nQuantity per Clause Unit\nUOM\nCost\nTotal Cost\nNo Data\nAdd Row\nlabor_costs\nLabor costs\nNo.\nItem\nUOM\nQuantity per Clause Unit\nQuantity per Clause Unit\nCost\nTotal Cost\nNo Data\nAdd Row\ncontractors_table\nContractors table\nNo.\nItem\nUOM\nQuantity per Clause Unit\nQuantity per Clause Unit\nCost\nTotal Cost\nNo Data\nAdd Row\nexpenses_table\nExpenses Table\nNo.\nItem\nUOM\nQuantity per Clause Unit\nQuantity per Clause Unit\nCost\nTotal Cost\nNo Data\nAdd Row\nEquipment Costs\nequipment_costs\nEquipment Costs\nNo.\nEquipment\nUOM\nQuantity per Clause Unit\nQuantity per Clause Unit\nRate\nTotal Cost\nNo Data\nAdd Row\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Project Offer",
+      "sample_names": [
+        "POF-2026-00014",
+        "POF-2026-00007"
+      ],
+      "screenshot": "assets/project-offer.png",
+      "url": "https://en.connect4systems.com/app/project-offer/POF-2026-00014",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tClauses\n\t\t\t\t",
+        "\n\t\t\t\t\tTaxes and Totals\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tAddresses and Contact\n\t\t\t\t",
+        "\n\t\t\t\t\tTerms\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t"
+      ],
+      "visible_text": "Tender\nProject Offer\nPOF-2026-00014\nBegin typing for results.\nNo new notifications\nHelp \nA\ntest title\nSubmitted\nCreate\nCancel\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nDetails\nClauses\nTaxes and Totals\nContracting\nConnections\ndeductions\nDeductions\nNo.\nTitle\nAccount\nPercent\nValue\n1\ntest\nEmployee Advances - E\n10.00%\n9,680\nTotal Deductions\n£ or ج.م 9,680.00\n\ntotal_deductions\nNet Payable\n£ or ج.م 87,120.00\n\nnet_payable\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou submitted this document · 2 days ago\nYou changed the value of Status from Draft to Submitted · 2 days ago\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Project Contract",
+      "sample_names": [
+        "PC-2026-00015",
+        "PC-2026-00008"
+      ],
+      "screenshot": "assets/project-contract.png",
+      "url": "https://en.connect4systems.com/app/project-contract/PC-2026-00015",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tClauses\n\t\t\t\t",
+        "\n\t\t\t\t\tTaxes and Totals\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tAddresses and Contact\n\t\t\t\t",
+        "\n\t\t\t\t\tTerms\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t"
+      ],
+      "visible_text": "Tender\nProject Contract\nPC-2026-00015\nBegin typing for results.\nNo new notifications\nHelp \nA\ntest title\nSubmitted\nCreate\nOpen Project\nCancel\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nDetails\nClauses\nTaxes and Totals\nContracting\nConnections\ndeductions\nDeductions\nNo.\nTitle\nAccount\nPercent\nValue\n1\ntest\nEmployee Advances - E\n10.00%\n9,680\nTotal Deductions\n£ or ج.م 9,680.00\n\ntotal_deductions\nNet Payable\n£ or ج.م 87,120.00\n\nnet_payable\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou submitted this document · 2 days ago\nYou changed the value of Status from Draft to Submitted, Created Project from \"\" to PROJ-0001 · 2 days ago\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Project",
+      "sample_names": [
+        "PROJ-0001"
+      ],
+      "screenshot": "assets/project.png",
+      "url": "https://en.connect4systems.com/app/project/PROJ-0001",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tContract Items\n\t\t\t\t",
+        "\n\t\t\t\t\tTeamwork\n\t\t\t\t",
+        "\n\t\t\t\t\tProject Clauses\n\t\t\t\t",
+        "\n\t\t\t\t\tFinance\n\t\t\t\t"
+      ],
+      "visible_text": "00009\n\ntender_analysis\nProject Offer\nPOF-2026-00014\n\nproject_offer\nproject_clause_groups\nClause Groups and Progress\nNo.\nGroup Series\nGroup Title\nUom\nContract Qty\nCustomer Executed Qty\nCustomer Remaining Qty\nSubcontract Executed Qty\nSubcontract Remaining Qty\nCustomer Completion %\nSubcontract Completion %\n1\n1\ntest group 1\n6\n2\n4\n2\n4\n33.333%\n33.333%\nproject_clauses\nProject Clauses\nNo.\nIs Group\nSeries Number\nClause Title\nContract Qty\nUom\nCustomer Executed Qty\nCustomer Remaining Qty\nSubcontract Executed Qty\nSubcontract Remaining Qty\n1\n1\ntest group 1\n0\n0\n0\n0\n0\n2\n1_1\ntest item 1\n2\n1\n1\n1\n1\n3\n1_2\ntest item 2\n4\n1\n3\n1\n3\nMonitor Progress \nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou last edited this · yesterday\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Project Budget",
+      "sample_names": [
+        "PBG-2026-00001"
+      ],
+      "screenshot": "assets/project-budget.png",
+      "url": "https://en.connect4systems.com/app/project-budget/PBG-2026-00001",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tTotal Budget\n\t\t\t\t",
+        "\n\t\t\t\t\tContract Clauses Budget\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t"
+      ],
+      "visible_text": "ew notifications\nHelp \nA\ntest title\nSubmitted\nProject Contract\nProject\nCancel\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · yesterday\nYou created this · yesterday\nDetails\nTotal Budget\nContract Clauses Budget\nConnections\nclauses\nContract Clauses Budget\nNo.\nIs Group\nSeries\nClause\nContract Quantity\nBOQ Unit Cost\nTotal Clause Budget\n1\n1\ntest group 1\n0\n£ or ج.م 0.00\n£ or ج.م 72,000.00\n2\n1_1\ntest item 1\n2\n£ or ج.م 20,000.00\n£ or ج.م 40,000.00\n3\n1_2\ntest item 2\n4\n£ or ج.م 8,000.00\n£ or ج.م 32,000.00\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou submitted this document · yesterday\nYou changed the value of Status from Draft to Submitted · yesterday\nYou last edited this · yesterday\nYou created this · yesterday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "CR",
+      "sample_names": [
+        "CR-test-0001"
+      ],
+      "screenshot": "assets/cr.png",
+      "url": "https://en.connect4systems.com/app/cr/CR-test-0001",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tClauses\n\t\t\t\t",
+        "\n\t\t\t\t\tTaxes and Totals\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t"
+      ],
+      "visible_text": "Tender\nCR\nCR-test-0001\nBegin typing for results.\nNo new notifications\nHelp \nA\nCR-test-0001\nSubmitted\nCreate\nCancel\n Assigned To\n Attachments\nCost Code.xlsx\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · yesterday\nYou created this · yesterday\nDetails\nClauses\nTaxes and Totals\nContracting\nConnections\nTotal Deductions\n£ or ج.م 0.00\n\ntotal_deductions\nNet Payable\n£ or ج.م 0.00\n\nnet_payable\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou last edited this · yesterday\nYou created this · yesterday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Subcontractor Contract",
+      "sample_names": [
+        "SCC-test-0001"
+      ],
+      "screenshot": "assets/subcontractor-contract.png",
+      "url": "https://en.connect4systems.com/app/subcontractor-contract/SCC-test-0001",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tClauses\n\t\t\t\t",
+        "\n\t\t\t\t\tTaxes and Totals\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t"
+      ],
+      "visible_text": "Tender\nSubcontractor Contract\nSCC-test-0001\nBegin typing for results.\nNo new notifications\nHelp \nA\nSCC-test-0001\nSubmitted\nCreate\nCancel\n Assigned To\n Attachments\nCost Code.xlsx\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · yesterday\nYou created this · yesterday\nDetails\nClauses\nTaxes and Totals\nContracting\nConnections\nTotal Deductions\n£ or ج.م 0.00\n\ntotal_deductions\nNet Payable\n£ or ج.م 0.00\n\nnet_payable\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou last edited this · yesterday\nYou attached Cost Code.xlsx  · yesterday\nYou attached Cost Code.xlsx  · yesterday\nYou created this · yesterday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Project Clearnce",
+      "sample_names": [
+        "PCLE-2026-00016"
+      ],
+      "screenshot": "assets/project-clearnce.png",
+      "url": "https://en.connect4systems.com/app/project-clearnce/PCLE-2026-00016",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tClauses\n\t\t\t\t",
+        "\n\t\t\t\t\tTaxes and Totals\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tAddresses and Contact\n\t\t\t\t",
+        "\n\t\t\t\t\tTerms\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t",
+        "\n\t\t\t\t\tLegacy Items\n\t\t\t\t"
+      ],
+      "visible_text": "ed To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · 2 days ago\nYou created this · 2 days ago\nDetails\nClauses\nTaxes and Totals\nContracting\nConnections\ndeductions\nDeductions\nNo.\nTitle\nAccount\nPercent\nValue\n1\nCash\nCash - E\n10.00%\n3,720\nTotal Deductions\n£ or ج.م 3,720.00\n\ntotal_deductions\nNet Payable\n£ or ج.م 33,480.00\n\nnet_payable\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou changed the value of Status from Draft to Submitted, Invoice from \"\" to ACC-SINV-2026-00001, Deduction Entry from \"\" to ACC-JV-2026-00001 · 2 days ago\nYou last edited this · 2 days ago\nYou changed the values for Title from test to Cash in row #1, Account from Employee Advances - E to Cash - E in row #1 · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Subcontract Clearnce",
+      "sample_names": [
+        "SCLE-2026-00017"
+      ],
+      "screenshot": "assets/subcontract-clearnce.png",
+      "url": "https://en.connect4systems.com/app/subcontract-clearnce/SCLE-2026-00017",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tClauses\n\t\t\t\t",
+        "\n\t\t\t\t\tTaxes and Totals\n\t\t\t\t",
+        "\n\t\t\t\t\tContracting\n\t\t\t\t",
+        "\n\t\t\t\t\tAddresses and Contact\n\t\t\t\t",
+        "\n\t\t\t\t\tTerms\n\t\t\t\t",
+        "\n\t\t\t\t\tConnections\n\t\t\t\t",
+        "\n\t\t\t\t\tLegacy Items\n\t\t\t\t"
+      ],
+      "visible_text": " Submitted, Invoice from \"\" to ACC-PINV-2026-00001, Deduction Entry from \"\" to ACC-JV-2026-00002 · 2 days ago\nYou last edited this · 2 days ago\nYou changed the value of Net Total from 0 to £ or ج.م 31,000.00, Total from 0 to £ or ج.م 31,000.00, Grand Total from 0 to £ or ج.م 31,000.00 · 2 days ago\nYou changed the values for Amount from 0 to £ or ج.م 31,000.00 in row #1, Net Amount from 0 to £ or ج.م 31,000.00 in row #1, Base Amount from 0 to £ or ج.م 31,000.00 in row #1 · 2 days ago\nYou changed the value of Total Qty from 0 to 2 · 2 days ago\nYou changed the values for Current Qty from 0 to 1 in row #2, Current % of Remaining from 0 to 50.0% in row #2, Remaining Qty from 2 to 1 in row #2 · 2 days ago\nYou created this · 2 days ago\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Division",
+      "sample_names": [
+        "32 - Exterior Improvements",
+        "31 - Earthwork",
+        "30 - Reserved for Future Expansion",
+        "29 - Reserved for Future Expansion",
+        "28 - Electronic Safety and Security"
+      ],
+      "screenshot": "assets/division.png",
+      "url": "https://en.connect4systems.com/app/division/32%20-%20Exterior%20Improvements",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [],
+      "visible_text": "Tender\nDivision\n32 - Exterior Improvements\nBegin typing for results.\nNo new notifications\nHelp \nA\n32 - Exterior Improvements\nSave\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · yesterday\nYou created this · yesterday\nDescription\n\ndescription\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou created this · yesterday\nYou last edited this · yesterday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Cost Code",
+      "sample_names": [
+        "07.052.013.201.M",
+        "07.052.013.001.S",
+        "07.032.013.001.S",
+        "07.032.013.001.M",
+        "07.021.010.205.M"
+      ],
+      "screenshot": "assets/cost-code.png",
+      "url": "https://en.connect4systems.com/app/cost-code/07.052.013.201.M",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [],
+      "visible_text": "Tender\nCost Code\n07.052.013.201.M\nBegin typing for results.\nNo new notifications\nHelp \nA\n07.052.013.201.M\nSave\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · yesterday\nYou created this · yesterday\nDescription\n\ndes\nCost Type\nBegin typing for results.\n\ncost_type\nParent Cost Code\nBegin typing for results.\n\nparent_cost_code\nIs Group\n\nis_group\nAccount\nBegin typing for results.\n\naccount\nNote\n\nnote\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou created this · yesterday\nYou last edited this · yesterday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Contract Type",
+      "sample_names": [
+        "Service",
+        "Mech",
+        "Elec",
+        "Civil",
+        "Arch"
+      ],
+      "screenshot": "assets/contract-type.png",
+      "url": "https://en.connect4systems.com/app/contract-type/Service",
+      "status": "opened",
+      "existing_record": true,
+      "tabs": [],
+      "visible_text": "Tender\nContract Type\nService\nBegin typing for results.\nNo new notifications\nHelp \nA\nService\nSave\n Assigned To\n Attachments\n Tags\n Share\n0\n·\n0\nFOLLOW\nYou last edited this · yesterday\nYou created this · yesterday\nComments\nA\ncomment\n\n\n\n\nActivity\nNew Email\nYou created this · yesterday\nYou last edited this · yesterday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Selling Deductions Template",
+      "sample_names": [],
+      "screenshot": "assets/selling-deductions-template.png",
+      "url": "https://en.connect4systems.com/app/selling-deductions-template/new-selling-deductions-template-lmqtmeswmw",
+      "status": "opened",
+      "existing_record": false,
+      "tabs": [],
+      "visible_text": "Tender\nSelling Deductions Template\nNew Selling Deductions Template\nBegin typing for results.\nNo new notifications\nHelp \nA\nNew Selling Deductions Template\nNot Saved\nSave\nTitle\n\ntitle\nDefault\n\ndefault\ndeductions\nDeductions\nNo.\nTitle\nAccount\nPercent\nValue\n1\n0.00%\n0.000\nAdd Row\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Purchasing Deductions Template",
+      "sample_names": [],
+      "screenshot": "assets/purchasing-deductions-template.png",
+      "url": "https://en.connect4systems.com/app/purchasing-deductions-template/new-purchasing-deductions-template-dfwnekzgiw",
+      "status": "opened",
+      "existing_record": false,
+      "tabs": [],
+      "visible_text": "Tender\nPurchasing Deductions Template\nNew Purchasing Deductions Template\nBegin typing for results.\nNo new notifications\nHelp \nA\nNew Purchasing Deductions Template\nNot Saved\nSave\nTitle\n\ntitle\nDefault\n\ndefault\ndeductions\nDeductions\nNo.\nTitle\nAccount\nPercent\nValue\n1\n0.00%\n0.000\nAdd Row\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday"
+    },
+    {
+      "doctype": "Comparison",
+      "sample_names": [],
+      "screenshot": "assets/comparison.png",
+      "url": "https://en.connect4systems.com/app/comparison/new-comparison-xpkvbbzkyo",
+      "status": "opened",
+      "existing_record": false,
+      "tabs": [],
+      "visible_text": "t\n\ntest project\nPROJ-0001, test customer, Open, Medium, Yes\n\n Create a new Project\n\n Advanced Search\n\n3 results found\n\nproject\nComparison Sheet\nAttach\n\nattach_zysj\nDate\n\ndate\nAccepted Supplier\nBegin typing for results.\n\nsupplier\nSupplier Name\n\nsupplier_name\nAmount\n\namount\n\tItem\tDescription\tQty\tUOM\tCost Note\nTotal\nAdd Item Delete Selected Rows\nsupplier_comparison\nSupplier Comparison\nNo.\nSupplier\nSupplier Name\nSupplier Quotation\nAmount\nTechnical Rating\nNo Data\nAdd Row\nNotes\n\nnotes\nPurchase Order\nBegin typing for results.\n\npurchase_order\nMaterial Request\nBegin typing for results.\n\nmaterial_request\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Item Coding Request",
+      "sample_names": [],
+      "screenshot": "assets/item-coding-request.png",
+      "url": "https://en.connect4systems.com/app/item-coding-request/new-item-coding-request-tsfkibwcmy",
+      "status": "opened",
+      "existing_record": false,
+      "tabs": [
+        "\n\t\t\t\t\tDetails\n\t\t\t\t",
+        "\n\t\t\t\t\tItem Code\n\t\t\t\t"
+      ],
+      "visible_text": "Tender\nItem Coding Request\nNew Item Coding Request\nBegin typing for results.\nNo new notifications\nHelp \nA\nNew Item Coding Request\nNot Saved\nSave\nDetails\nItem Code\nProject\nBegin typing for results.\n\nproject\nDate\n\ndate\nitems\nItems\nNo.\nItem Name\nUOM\nDescription\nAttach\nItem Code\nNo Data\nAdd Row\nNaming series\nICode-.YY.-.####.\n\nnaming_series\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    },
+    {
+      "doctype": "Subcontractor Custody",
+      "sample_names": [],
+      "screenshot": "assets/subcontractor-custody.png",
+      "url": "https://en.connect4systems.com/app/subcontractor-custody/new-subcontractor-custody-vtzhspfbfy",
+      "status": "opened",
+      "existing_record": false,
+      "tabs": [],
+      "visible_text": "\nA\nNew Subcontractor Custody\nNot Saved\nSave\nSubcontractor\n\nTest Supplier\n\n Create a new Supplier\n\n Advanced Search\n\n3 results found\n\nsubcontractor\nSubcontractor Name\n\nsubcontractor_name\nType\nOut\nReturn\n\ntype\nDate\n\ndate\nProject\nBegin typing for results.\n\nproject\nNote\n\nnote\nitems\nItems\nNo.\nItem\nItem Name\nQTY\nUOM\nNo Data\nAdd Row\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\n18\n:\n51\n:\n50\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday\nOctober,\n2026\nSU\nMO\nTU\nWE\nTH\nFR\nSA\n27\n28\n29\n30\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\nToday"
+    }
+  ],
+  "browser_errors": [
+    "field item not found"
+  ]
+}

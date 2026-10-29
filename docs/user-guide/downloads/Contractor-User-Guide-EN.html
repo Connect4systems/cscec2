@@ -1,0 +1,314 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><title>Contractor App User Guide</title><style>
+@page { size: A4; margin: 16mm 15mm 18mm; }
+* { box-sizing:border-box; }
+body { margin:0; color:#21343e; font:11pt/1.7 'Segoe UI',Arial,sans-serif; }
+h1,h2 { color:#123f54; line-height:1.35; }
+h1 { font-size:23pt; margin:4mm 0 7mm; }
+h2 { font-size:16pt; }
+a { color:#12647b; text-decoration:none; }
+.cover { min-height:245mm; padding-top:35mm; break-after:page; }
+.cover h1 {font-size:36pt; max-width:160mm;}
+.brand,.eyebrow {letter-spacing:1px; color:#008684; font-size:11pt; font-weight:700;}
+.contents {break-after:page;}
+.contents li {margin:1mm 0;}
+section {break-before:page;}
+.steps {list-style:none;padding:0;}
+.steps li {display:flex; gap:4mm; margin-bottom:4mm; break-inside:avoid;}
+.step-no {min-width:11mm; color:#008684; font-weight:700;direction:ltr;}
+aside {background:#edf5f6; border-inline-start:3px solid #008684; padding:4mm; margin:5mm 0; break-inside:avoid;}
+figure {margin:0; break-before:page; break-inside:avoid; padding-top:8mm;}
+img {display:block; width:100%; max-height:233mm; object-fit:contain; object-position:top; border:1px solid #d5e0e4;}
+figcaption {font-size:9pt; margin-top:4mm;color:#526c79;}
+@media screen {body {max-width:900px;margin:auto;padding:30px;} section {margin-top:70px;} figure {margin-top:30px;}}
+</style></head><body>
+<div class="cover"><div class="brand">CONTRACTOR APP</div><h1>Contractor App User Guide</h1><h2>Step-by-step project, budget and subcontracting workflows</h2><p>en.connect4systems.com · 2026-10-29</p><aside>This guide combines application source review with authorized inspection of the live site. Screenshots are from the actual system and may show existing test data. Review covered sign-in, forms, tabs and selected dialogs/browser calculations. No invoices or financial certificates were created or submitted for this guide. A temporary CR draft was used to test fetching and deleted afterwards; its naming sequence may advance. Buttons and values can differ with your permissions and site settings. Login credentials are excluded.</aside><p>ERPNext 15 · Frappe 15 · Contractor App</p></div>
+<section class="contents"><h1>Contents</h1><ol>
+<li><a href="#chapter-1">Sign in and find your documents</a></li>
+<li><a href="#chapter-2">Prepare master data and Project Abbreviation</a></li>
+<li><a href="#chapter-3">Create a Tender Analysis and its clauses</a></li>
+<li><a href="#chapter-4">Create the Costing Note</a></li>
+<li><a href="#chapter-5">Price BOQ resources for the full Project Quantity</a></li>
+<li><a href="#chapter-6">Add equipment and reuse a Template BOQ</a></li>
+<li><a href="#chapter-7">Apply selling margins and complete tender pricing</a></li>
+<li><a href="#chapter-8">Create the Project Offer and Project Contract</a></li>
+<li><a href="#chapter-9">Set taxes, discounts and contracting deductions</a></li>
+<li><a href="#chapter-10">Create and approve the Project Budget</a></li>
+<li><a href="#chapter-11">Monitor Project quantities and progress</a></li>
+<li><a href="#chapter-12">Create a CR and enter contract clauses</a></li>
+<li><a href="#chapter-13">Fetch Project clauses repeatedly without losing rows</a></li>
+<li><a href="#chapter-14">Create the Subcontractor Contract</a></li>
+<li><a href="#chapter-15">Issue a customer Project Clearnce</a></li>
+<li><a href="#chapter-16">Issue a Subcontract Clearnce from Project</a></li>
+<li><a href="#chapter-17">Review invoices, deductions and payments</a></li>
+<li><a href="#chapter-18">Use Purchase Comparison</a></li>
+<li><a href="#chapter-19">Use Item Coding Request and Subcontractor Custody</a></li>
+<li><a href="#chapter-20">Use standard purchasing and project-based names</a></li>
+<li><a href="#chapter-21">Correct, cancel and amend documents</a></li>
+<li><a href="#chapter-22">Troubleshooting and daily checks</a></li>
+</ol></section>
+<section id="chapter-1"><div class="eyebrow">01 / 22</div><h1>Sign in and find your documents</h1><ol class="steps">
+<li><span class="step-no">1.1</span><div>Open https://en.connect4systems.com and select Login. Enter the account assigned to you, then click Login.</div></li>
+<li><span class="step-no">1.2</span><div>Open the Tender workspace. Alternatively, use the search box at the top and enter the exact document name shown in this guide.</div></li>
+<li><span class="step-no">1.3</span><div>Open a list to review existing records. Select a record to open it, or use Add/New when creating a new document.</div></li>
+<li><span class="step-no">1.4</span><div>Use the tabs to move between Details, Clauses, Taxes and Totals, Contracting and Connections where available.</div></li>
+<li><span class="step-no">1.5</span><div>Save stores a draft. Submit approves a submittable document and may trigger downstream actions. If a Workflow is configured, use its permitted approval actions.</div></li>
+</ol>
+<aside>Screenshots show the English interface. Button visibility depends on permissions, document status and the installed site version. Use the English labels to locate the corresponding Arabic interface controls.</aside>
+<figure><img src="../assets/site-access.png" alt="System screenshot: Site Access"><figcaption>System screenshot: Site Access</figcaption></figure>
+<figure><img src="../assets/desk.png" alt="System screenshot: Desk"><figcaption>System screenshot: Desk</figcaption></figure>
+</section>
+<section id="chapter-2"><div class="eyebrow">02 / 22</div><h1>Prepare master data and Project Abbreviation</h1><ol class="steps">
+<li><span class="step-no">2.1</span><div>Ask the administrator to confirm Company, company abbreviation, default currency, Customer, Suppliers, Items and UOMs before starting.</div></li>
+<li><span class="step-no">2.2</span><div>Open Contract Type and check the available values: Arch, Civil, Elec, Mech and Service. CR uses this master, rather than Item Group.</div></li>
+<li><span class="step-no">2.3</span><div>Open Division to review construction divisions. Division has Title and Description; its name comes from Title. Division is not required on CR.</div></li>
+<li><span class="step-no">2.4</span><div>Open Cost Code and review the hierarchy and Cost Type. Cost Type links to Cost Center; it is not a separate custom DocType.</div></li>
+<li><span class="step-no">2.5</span><div>Open the operational Project, enter Project Abbreviation below Project Name, and Save. The technical field is custom_abbreviation. Use a short abbreviation such as TST.</div></li>
+<li><span class="step-no">2.6</span><div>If a field or newly added tab is missing, ask the administrator to check deployment/migration and refresh the browser. Do not create another field with the same purpose.</div></li>
+</ol>
+<aside>Cost Type categories use the configured company abbreviation: Equipments, Labour, Material and Subcontractor. The workbook suffix C is not the required company abbreviation.</aside>
+<figure><img src="../assets/project.png" alt="System screenshot: Project"><figcaption>System screenshot: Project</figcaption></figure>
+<figure><img src="../assets/contract-type.png" alt="System screenshot: Contract Type"><figcaption>System screenshot: Contract Type</figcaption></figure>
+<figure><img src="../assets/cost-code.png" alt="System screenshot: Cost Code"><figcaption>System screenshot: Cost Code</figcaption></figure>
+</section>
+<section id="chapter-3"><div class="eyebrow">03 / 22</div><h1>Create a Tender Analysis and its clauses</h1><ol class="steps">
+<li><span class="step-no">3.1</span><div>Search for Tender Analysis and choose New. Enter Company, Title, Tender Number, Date, Party Type, Party Name, Currency and the desired Project name.</div></li>
+<li><span class="step-no">3.2</span><div>Open Contractual Clauses. Add a group heading with Is Group selected, then add its detail rows below it.</div></li>
+<li><span class="step-no">3.3</span><div>For each detail, enter Clause Title, a positive Qty and its UOM. Do not use a heading as a payable work item.</div></li>
+<li><span class="step-no">3.4</span><div>Choose Automatic numbering for series such as 1, 1_1 and 1_2. Save to generate the series.</div></li>
+<li><span class="step-no">3.5</span><div>To import instead, download Excel Template, enter literal values in the template, save the tender and select Upload Excel. Review the preview and choose Apply Rows.</div></li>
+<li><span class="step-no">3.6</span><div>Review the completed table, then click Create Contractual Clauses. Each row receives its own linked clause. Repeating the action creates only missing links.</div></li>
+</ol>
+<aside>Excel import replaces the tender table and is offered before creating Contractual Clauses. Imported numbering uses From Excel. Project at this stage is a name, not an existing operational Project link.</aside>
+<figure><img src="../assets/tender-analysis.png" alt="System screenshot: Tender Analysis"><figcaption>System screenshot: Tender Analysis</figcaption></figure>
+<figure><img src="../assets/tender-analysis-clauses.png" alt="System screenshot: Tender Analysis Clauses"><figcaption>System screenshot: Tender Analysis Clauses</figcaption></figure>
+</section>
+<section id="chapter-4"><div class="eyebrow">04 / 22</div><h1>Create the Costing Note</h1><ol class="steps">
+<li><span class="step-no">4.1</span><div>Save the Tender Analysis after generating all Contractual Clauses.</div></li>
+<li><span class="step-no">4.2</span><div>Select Create &gt; Costing Note. Check the source tender, currency, clauses, quantities and units.</div></li>
+<li><span class="step-no">4.3</span><div>Save the new Costing Note as a draft before creating BOQs.</div></li>
+<li><span class="step-no">4.4</span><div>Use the BOQ button on each detail row to open its matching BOQ. Group headings do not need resource pricing.</div></li>
+<li><span class="step-no">4.5</span><div>Return after submitting the BOQs and review each returned unit cost and total cost.</div></li>
+</ol>
+<aside>Source rows and quantities follow the tender. If its structure or quantities change, recreate the affected draft Costing Note. Site review reproduced “field item not found” when opening an existing Costing Note; ask the administrator to resolve this compatibility issue before relying on its complete pricing cycle.</aside>
+<figure><img src="../assets/costing-note.png" alt="System screenshot: Costing Note"><figcaption>System screenshot: Costing Note</figcaption></figure>
+</section>
+<section id="chapter-5"><div class="eyebrow">05 / 22</div><h1>Price BOQ resources for the full Project Quantity</h1><ol class="steps">
+<li><span class="step-no">5.1</span><div>Open the BOQ from its Costing Note row. Check Clause Title, UOM and Project QTY. Tender-linked Project QTY follows the source row.</div></li>
+<li><span class="step-no">5.2</span><div>In Material, select each resource Item and UOM, enter the quantity required per clause unit and its cost rate.</div></li>
+<li><span class="step-no">5.3</span><div>Repeat for Labour, Contractors and Expenses. Review the calculated Project Quantity and Total Cost of each resource.</div></li>
+<li><span class="step-no">5.4</span><div>For example, Project QTY 100 and a resource coefficient of 2 give resource quantity 200. At rate 5 the resource total is 1,000.</div></li>
+<li><span class="step-no">5.5</span><div>Review Total Project Cost and Cost per Clause Unit. Save and Submit the BOQ to return its unit cost to the correct Costing Note row.</div></li>
+</ol>
+<aside>Resource project quantity = quantity per clause unit × Project QTY. Total cost = resource project quantity × resource cost rate. Unit clause cost = total project cost ÷ Project QTY. Historical submitted BOQs may retain Per Unit basis.</aside>
+<figure><img src="../assets/boq.png" alt="System screenshot: Boq"><figcaption>System screenshot: Boq</figcaption></figure>
+</section>
+<section id="chapter-6"><div class="eyebrow">06 / 22</div><h1>Add equipment and reuse a Template BOQ</h1><ol class="steps">
+<li><span class="step-no">6.1</span><div>Open the BOQ Equipment tab, located before Expenses in the updated form.</div></li>
+<li><span class="step-no">6.2</span><div>Add an Equipment Costs row. Select the Equipment Item and UOM, then enter quantity per clause unit and the cost rate.</div></li>
+<li><span class="step-no">6.3</span><div>Review the automatically calculated Project Quantity, row Total Cost and Total Equipment Costs.</div></li>
+<li><span class="step-no">6.4</span><div>To reuse a resource breakdown, prepare Template BOQ with resource quantities per clause unit, including Equipment Costs.</div></li>
+<li><span class="step-no">6.5</span><div>On a new/draft BOQ, select BOQ Template. Review every copied resource and rate before saving; applying a template replaces the resource breakdown.</div></li>
+</ol>
+<aside>Equipment costs feed BOQ cost, Costing Note pricing and Project Budget. Older custom equipment rows are retained. If Equipment is absent on the site, the new metadata/assets need deployment; a screenshot of an older form does not prove the new tab is installed.</aside>
+<figure><img src="../assets/boq-equipment-entry.png" alt="System screenshot: Boq Equipment Entry"><figcaption>System screenshot: Boq Equipment Entry</figcaption></figure>
+<figure><img src="../assets/template-boq.png" alt="System screenshot: Template Boq"><figcaption>System screenshot: Template Boq</figcaption></figure>
+</section>
+<section id="chapter-7"><div class="eyebrow">07 / 22</div><h1>Apply selling margins and complete tender pricing</h1><ol class="steps">
+<li><span class="step-no">7.1</span><div>Return to the saved Costing Note after submitting all required BOQs.</div></li>
+<li><span class="step-no">7.2</span><div>Enter the required profit margin and review the detail selling values and group summaries.</div></li>
+<li><span class="step-no">7.3</span><div>Check that total cost equals unit cost × clause quantity, and selling amount equals total cost × (1 + margin / 100).</div></li>
+<li><span class="step-no">7.4</span><div>Save, then Submit the Costing Note. Open Tender Analysis and verify the resulting selling rates and amounts.</div></li>
+<li><span class="step-no">7.5</span><div>To reprice an applied clause, first cancel the owning Costing Note and resolve downstream dependencies. Prepare and approve revised costing through the same cycle.</div></li>
+</ol>
+<aside>One applied Costing Note owns a clause’s pricing at a time. All active Costing Notes must be submitted before creating the commercial offer/contract.</aside>
+<figure><img src="../assets/costing-note.png" alt="System screenshot: Costing Note"><figcaption>System screenshot: Costing Note</figcaption></figure>
+<figure><img src="../assets/tender-analysis-clauses.png" alt="System screenshot: Tender Analysis Clauses"><figcaption>System screenshot: Tender Analysis Clauses</figcaption></figure>
+</section>
+<section id="chapter-8"><div class="eyebrow">08 / 22</div><h1>Create the Project Offer and Project Contract</h1><ol class="steps">
+<li><span class="step-no">8.1</span><div>Save the fully priced Tender Analysis. Use Create &gt; Project Offer when issuing an offer, or Create &gt; Project Contract for the direct contract route.</div></li>
+<li><span class="step-no">8.2</span><div>Check Customer, Company, Currency, conversion rate, Project name, dates and copied clauses. Complete addresses, payment terms and other commercial terms.</div></li>
+<li><span class="step-no">8.3</span><div>Review agreed quantities and selling rates in Clauses. Complete Taxes and Totals and Contracting as described next.</div></li>
+<li><span class="step-no">8.4</span><div>Save and Submit the Project Offer. To convert it, choose Create &gt; Project Contract and review the copied commercial values.</div></li>
+<li><span class="step-no">8.5</span><div>Save and Submit Project Contract after the agreed checks and workflow approvals. The Project name is used to create/link the operational Project.</div></li>
+<li><span class="step-no">8.6</span><div>Use Open Project or Created Project to open the result. Repeating conversion opens an existing active contract instead of creating another.</div></li>
+</ol>
+<aside>The offer/contract is a commercial document and does not itself post revenue or move stock. The operational Project may require creation permissions. Project Budget is created from a submitted Project Contract.</aside>
+<figure><img src="../assets/project-offer.png" alt="System screenshot: Project Offer"><figcaption>System screenshot: Project Offer</figcaption></figure>
+<figure><img src="../assets/project-contract.png" alt="System screenshot: Project Contract"><figcaption>System screenshot: Project Contract</figcaption></figure>
+</section>
+<section id="chapter-9"><div class="eyebrow">09 / 22</div><h1>Set taxes, discounts and contracting deductions</h1><ol class="steps">
+<li><span class="step-no">9.1</span><div>Open Taxes and Totals. On customer documents choose Sales Taxes and Charges Template; on CR/subcontract documents choose Purchase Taxes and Charges Template.</div></li>
+<li><span class="step-no">9.2</span><div>Use a template belonging to the document Company. Review each tax row’s account, charge type, rate and included-in-rate setting.</div></li>
+<li><span class="step-no">9.3</span><div>If needed, choose the additional discount basis and enter the percentage or fixed discount. Check Net Total, tax totals and Grand Total.</div></li>
+<li><span class="step-no">9.4</span><div>Open Contracting. Select Selling Deductions Template for customer documents, or Purchasing Deductions Template for subcontract documents.</div></li>
+<li><span class="step-no">9.5</span><div>Review or edit each deduction Title, Account and Percent. Confirm Total Deductions and Net Payable, then Save.</div></li>
+</ol>
+<aside>Deductions use the document Grand Total; Net Payable = Grand Total − Total Deductions. Templates populate editable draft rows. Later edits do not update the source template. Actual tax amounts and fixed discounts start at zero on a new period certificate and must be entered for that period.</aside>
+<figure><img src="../assets/project-contract-taxes.png" alt="System screenshot: Project Contract Taxes"><figcaption>System screenshot: Project Contract Taxes</figcaption></figure>
+<figure><img src="../assets/project-contract-contracting.png" alt="System screenshot: Project Contract Contracting"><figcaption>System screenshot: Project Contract Contracting</figcaption></figure>
+<figure><img src="../assets/cr-taxes.png" alt="System screenshot: Cr Taxes"><figcaption>System screenshot: Cr Taxes</figcaption></figure>
+</section>
+<section id="chapter-10"><div class="eyebrow">10 / 22</div><h1>Create and approve the Project Budget</h1><ol class="steps">
+<li><span class="step-no">10.1</span><div>Open the submitted Project Contract and confirm that its operational Project exists.</div></li>
+<li><span class="step-no">10.2</span><div>Choose Create &gt; Project Budget. The system opens a new draft or the existing active budget for that contract.</div></li>
+<li><span class="step-no">10.3</span><div>Check Details: Project Contract, Project, Tender Analysis, Company, Currency and Budget Date.</div></li>
+<li><span class="step-no">10.4</span><div>Open Total Budget and review Total Project Budget, Total Material, Total Labour, Total Subcontractor, Total Other Expenses and Total Equipment.</div></li>
+<li><span class="step-no">10.5</span><div>Open Contract Clauses Budget. Review each contract quantity, BOQ unit cost and total clause budget; expand rows for category amounts and source links.</div></li>
+<li><span class="step-no">10.6</span><div>Save and Submit after review. Source costs and quantities are verified by the server. A submitted budget is a snapshot, and does not post accounting entries.</div></li>
+</ol>
+<aside>The budget is COST based. Clause budget = final contract quantity × normalized BOQ unit cost. Selling profit, taxes and deductions are excluded. Example: BOQ quantity 100 costs 2,300, unit cost 23; final contract quantity 150 produces budget 3,450, regardless of selling rate.</aside>
+<figure><img src="../assets/project-budget.png" alt="System screenshot: Project Budget"><figcaption>System screenshot: Project Budget</figcaption></figure>
+<figure><img src="../assets/project-budget-totals.png" alt="System screenshot: Project Budget Totals"><figcaption>System screenshot: Project Budget Totals</figcaption></figure>
+<figure><img src="../assets/project-budget-clauses-budget.png" alt="System screenshot: Project Budget Clauses Budget"><figcaption>System screenshot: Project Budget Clauses Budget</figcaption></figure>
+</section>
+<section id="chapter-11"><div class="eyebrow">11 / 22</div><h1>Monitor Project quantities and progress</h1><ol class="steps">
+<li><span class="step-no">11.1</span><div>Open the operational Project from its Project Contract or the Project list.</div></li>
+<li><span class="step-no">11.2</span><div>Review Project Name, Company, Customer, dates and Project Abbreviation. Save any permitted changes before using Create actions.</div></li>
+<li><span class="step-no">11.3</span><div>Open Project Clauses and review contractual, executed and remaining quantities for each detail clause.</div></li>
+<li><span class="step-no">11.4</span><div>Review Clause Groups and Progress for group summaries by UOM. Customer progress and subcontractor progress are independent measures.</div></li>
+<li><span class="step-no">11.5</span><div>Use Connections and the linked contract to review commercial values. The Project clause tables show quantities/progress and do not expose contract prices.</div></li>
+</ol>
+<aside>Only submitted, noncancelled certificates contribute to progress. Group headings are not payable quantities. Quantities with different UOMs are not added together as one physical quantity.</aside>
+<figure><img src="../assets/project-progress.png" alt="System screenshot: Project Progress"><figcaption>System screenshot: Project Progress</figcaption></figure>
+<figure><img src="../assets/project.png" alt="System screenshot: Project"><figcaption>System screenshot: Project</figcaption></figure>
+</section>
+<section id="chapter-12"><div class="eyebrow">12 / 22</div><h1>Create a CR and enter contract clauses</h1><ol class="steps">
+<li><span class="step-no">12.1</span><div>Search for CR and choose New. Select the operational Project and Supplier.</div></li>
+<li><span class="step-no">12.2</span><div>Select Contract Type: Arch, Civil, Elec, Mech or Service. Complete Posting Date, End Date, Attach CR and notes.</div></li>
+<li><span class="step-no">12.3</span><div>Check Company, Currency and conversion rate. Enter manual group/detail clauses, import the supplied Excel Template, or use Fetch from Project.</div></li>
+<li><span class="step-no">12.4</span><div>For detail clauses enter Qty, UOM and Rate. Amount is calculated; group amounts summarize their details.</div></li>
+<li><span class="step-no">12.5</span><div>Complete Taxes and Totals and Contracting, then Save. Review all clauses and attachments before the configured approval/submission process.</div></li>
+</ol>
+<aside>The Project must have Project Abbreviation for project-based naming. CR does not require Division. Keep source Project references by fetching clauses when they must count toward Project progress.</aside>
+<figure><img src="../assets/cr.png" alt="System screenshot: Cr"><figcaption>System screenshot: Cr</figcaption></figure>
+<figure><img src="../assets/cr-clauses.png" alt="System screenshot: Cr Clauses"><figcaption>System screenshot: Cr Clauses</figcaption></figure>
+</section>
+<section id="chapter-13"><div class="eyebrow">13 / 22</div><h1>Fetch Project clauses repeatedly without losing rows</h1><ol class="steps">
+<li><span class="step-no">13.1</span><div>Save the CR draft with its selected Project, then click Fetch from Project.</div></li>
+<li><span class="step-no">13.2</span><div>Leave All Clauses selected to fetch the complete Project. Group Clause and group-selection controls are hidden in this mode.</div></li>
+<li><span class="step-no">13.3</span><div>For a specific group, clear All Clauses and select Group Clause.</div></li>
+<li><span class="step-no">13.4</span><div>Select Select All Clauses in This Group to fetch the whole group. Clear it to display the clause selection table.</div></li>
+<li><span class="step-no">13.5</span><div>In the table, tick the required clauses and enter their required quantities. You can switch groups to make further selections.</div></li>
+<li><span class="step-no">13.6</span><div>Click Insert Clauses. Review the appended rows, existing edits and quantities, then Save.</div></li>
+<li><span class="step-no">13.7</span><div>Repeat Fetch from Project whenever needed. Existing rows remain; already inserted source clauses are skipped rather than duplicated.</div></li>
+</ol>
+<aside>Picker quantity changes affect the CR, not Project quantities. This additive Project fetch differs from Excel import replacement. Do not use the tender’s Excel replacement action as a way to append CR rows.</aside>
+<figure><img src="../assets/cr-picker-all.png" alt="System screenshot: Cr Picker All"><figcaption>System screenshot: Cr Picker All</figcaption></figure>
+<figure><img src="../assets/cr-picker-group.png" alt="System screenshot: Cr Picker Group"><figcaption>System screenshot: Cr Picker Group</figcaption></figure>
+<figure><img src="../assets/cr-picker-table.png" alt="System screenshot: Cr Picker Table"><figcaption>System screenshot: Cr Picker Table</figcaption></figure>
+</section>
+<section id="chapter-14"><div class="eyebrow">14 / 22</div><h1>Create the Subcontractor Contract</h1><ol class="steps">
+<li><span class="step-no">14.1</span><div>Open an approved/submitted CR and choose Create &gt; Subcontractor Contract.</div></li>
+<li><span class="step-no">14.2</span><div>Review the copied Project, Supplier/Contractor, Contract Type, dates, clauses, rates, taxes, deductions and source CR link.</div></li>
+<li><span class="step-no">14.3</span><div>Upload the signed/agreed file to Attach Contract. Complete any remaining mandatory fields.</div></li>
+<li><span class="step-no">14.4</span><div>For a direct contract instead, create Subcontractor Contract from its list, fill the header and add clauses using the same manual, Excel or Project-fetch controls.</div></li>
+<li><span class="step-no">14.5</span><div>Review Taxes and Totals and Contracting. Confirm positive agreed rates for payable detail clauses, then Save and complete approval/Submit.</div></li>
+<li><span class="step-no">14.6</span><div>After submission, use Create &gt; Subcontract Clearnce for the next period certificate. Repeated CR conversion opens its existing active contract.</div></li>
+</ol>
+<aside>Contract-backed certificates retain the agreed rates and source row identities. Manually entered/imported contract rows use contract quantity limits, but do not create Project progress rows without the original Project links.</aside>
+<figure><img src="../assets/subcontractor-contract.png" alt="System screenshot: Subcontractor Contract"><figcaption>System screenshot: Subcontractor Contract</figcaption></figure>
+<figure><img src="../assets/subcontractor-contract-clauses.png" alt="System screenshot: Subcontractor Contract Clauses"><figcaption>System screenshot: Subcontractor Contract Clauses</figcaption></figure>
+<figure><img src="../assets/subcontractor-contract-contracting.png" alt="System screenshot: Subcontractor Contract Contracting"><figcaption>System screenshot: Subcontractor Contract Contracting</figcaption></figure>
+</section>
+<section id="chapter-15"><div class="eyebrow">15 / 22</div><h1>Issue a customer Project Clearnce</h1><ol class="steps">
+<li><span class="step-no">15.1</span><div>Save the operational Project, then choose Create &gt; Project Clearnce.</div></li>
+<li><span class="step-no">15.2</span><div>Review Customer, Project Contract, currency, Posting Date and Cost Center.</div></li>
+<li><span class="step-no">15.3</span><div>Open Clauses. For each payable detail, review Total Required Qty, Previous Qty and Remaining Qty, then enter Current Qty for this period only.</div></li>
+<li><span class="step-no">15.4</span><div>Alternatively, use Current % of Remaining where appropriate. Do not enter the cumulative executed quantity as Current Qty.</div></li>
+<li><span class="step-no">15.5</span><div>Review contract rates, period amounts, taxes, period fixed charges and contracting deductions. Save the draft and obtain the required review.</div></li>
+<li><span class="step-no">15.6</span><div>Submit when ready to post. The system creates the Sales Invoice and, where applicable, the deduction Journal Entry, and updates Project progress.</div></li>
+</ol>
+<aside>Submission is an accounting action. Rates come from Project Contract and quantities cannot exceed the contractual balance. A posting failure prevents completion of the certificate submission.</aside>
+<figure><img src="../assets/project-clearnce.png" alt="System screenshot: Project Clearnce"><figcaption>System screenshot: Project Clearnce</figcaption></figure>
+<figure><img src="../assets/project-clearnce-clauses.png" alt="System screenshot: Project Clearnce Clauses"><figcaption>System screenshot: Project Clearnce Clauses</figcaption></figure>
+</section>
+<section id="chapter-16"><div class="eyebrow">16 / 22</div><h1>Issue a Subcontract Clearnce from Project</h1><ol class="steps">
+<li><span class="step-no">16.1</span><div>Save the Project and choose Create &gt; Subcontract Clearnce.</div></li>
+<li><span class="step-no">16.2</span><div>Select Supplier first. The selector contains suppliers with submitted Subcontractor Contracts for this Project.</div></li>
+<li><span class="step-no">16.3</span><div>Select the required Subcontractor Contract for that Supplier and Project, then click Create Clearance.</div></li>
+<li><span class="step-no">16.4</span><div>Review the mapped document. Current-period quantities start at zero; enter only this period’s Current Qty. The selected contract supplies the agreed rates.</div></li>
+<li><span class="step-no">16.5</span><div>Check Previous Qty, Project Previous Qty and Remaining Qty. Review taxes, period Actual charges, discounts, deductions and Cost Center.</div></li>
+<li><span class="step-no">16.6</span><div>Save and review, then Submit. Open the resulting Purchase Invoice and Deduction Entry if present, and verify updated Project progress.</div></li>
+</ol>
+<aside>The system enforces the contract’s cumulative quantity limit. For Project-linked clauses it also enforces the Project-wide subcontract limit across suppliers. Changing Supplier clears the selected contract.</aside>
+<figure><img src="../assets/project-subcontract-picker.png" alt="System screenshot: Project Subcontract Picker"><figcaption>System screenshot: Project Subcontract Picker</figcaption></figure>
+<figure><img src="../assets/subcontract-clearnce.png" alt="System screenshot: Subcontract Clearnce"><figcaption>System screenshot: Subcontract Clearnce</figcaption></figure>
+<figure><img src="../assets/subcontract-clearnce-clauses.png" alt="System screenshot: Subcontract Clearnce Clauses"><figcaption>System screenshot: Subcontract Clearnce Clauses</figcaption></figure>
+</section>
+<section id="chapter-17"><div class="eyebrow">17 / 22</div><h1>Review invoices, deductions and payments</h1><ol class="steps">
+<li><span class="step-no">17.1</span><div>On a submitted certificate, choose Open Invoice and check the party, Project, currency, net work value, tax amounts and invoice total.</div></li>
+<li><span class="step-no">17.2</span><div>The invoice contains a single non-stock service item for the certified works. The detailed work measurement remains in the certificate clauses.</div></li>
+<li><span class="step-no">17.3</span><div>If deductions exist, open Deduction Entry and check its accounts and value. It settles the deduction against the party balance without posting the same work revenue/expense again.</div></li>
+<li><span class="step-no">17.4</span><div>Example without taxes: certified works 100 and deduction 10 produce invoice 100, deduction settlement 10 and net payable 90.</div></li>
+<li><span class="step-no">17.5</span><div>Record actual collection/payment using standard ERPNext Payment Entry against the appropriate outstanding invoice.</div></li>
+<li><span class="step-no">17.6</span><div>Use General Ledger and Accounts Receivable/Accounts Payable for balance reconciliation. Verify Company, party, date range and submitted transaction status.</div></li>
+</ol>
+<aside>Company defaults, party accounts, income/expense accounts, Cost Center and rounding accounts must be configured before posting. The retained legacy Account Balances source is not a verified operational balance report.</aside>
+<figure><img src="../assets/sales-invoice-selling.png" alt="System screenshot: Sales Invoice Selling"><figcaption>System screenshot: Sales Invoice Selling</figcaption></figure>
+<figure><img src="../assets/purchase-invoice-buying.png" alt="System screenshot: Purchase Invoice Buying"><figcaption>System screenshot: Purchase Invoice Buying</figcaption></figure>
+<figure><img src="../assets/journal-entry-selling.png" alt="System screenshot: Journal Entry Selling"><figcaption>System screenshot: Journal Entry Selling</figcaption></figure>
+<figure><img src="../assets/journal-entry-buying.png" alt="System screenshot: Journal Entry Buying"><figcaption>System screenshot: Journal Entry Buying</figcaption></figure>
+</section>
+<section id="chapter-18"><div class="eyebrow">18 / 22</div><h1>Use Purchase Comparison</h1><ol class="steps">
+<li><span class="step-no">18.1</span><div>Open Comparison directly. Where the Material Request workflow is configured, an approved/submitted Purchase request exposes Create Purchase Comparison to a Purchase User.</div></li>
+<li><span class="step-no">18.2</span><div>Review Project, Material Request and the requested items. In the comparison matrix, use Add Item for additional rows if needed.</div></li>
+<li><span class="step-no">18.3</span><div>Choose Attach Supplier for each supplier being compared. Enter each supplier rate for each item and review quantity × rate and supplier totals.</div></li>
+<li><span class="step-no">18.4</span><div>Enter technical ratings, attach supplier quotations and record Accepted Supplier, Amount and Notes as required.</div></li>
+<li><span class="step-no">18.5</span><div>Save and use the configured review/submission process. Export Excel downloads a CSV file; review it in Excel.</div></li>
+</ol>
+<aside>The retained comparison feature depends on its site fields and configured Material Request workflow. Do not assume that approving Comparison automatically creates a Purchase Order.</aside>
+<figure><img src="../assets/comparison.png" alt="System screenshot: Comparison"><figcaption>System screenshot: Comparison</figcaption></figure>
+</section>
+<section id="chapter-19"><div class="eyebrow">19 / 22</div><h1>Use Item Coding Request and Subcontractor Custody</h1><ol class="steps">
+<li><span class="step-no">19.1</span><div>For coding, open Item Coding Request, choose New, select Project and Date, and add item names, UOMs, descriptions and attachments in Items.</div></li>
+<li><span class="step-no">19.2</span><div>Save and send through the configured review process. Record the resulting Item Code links when the authorized master-data user has created the Items.</div></li>
+<li><span class="step-no">19.3</span><div>For custody, open Subcontractor Custody. Select Subcontractor, Project and Date, then choose Type Out for issue or Return for return.</div></li>
+<li><span class="step-no">19.4</span><div>Enter Items, positive quantities and correct UOMs; add a note. Check the Project warehouse and destination/source custody warehouse with the stock administrator.</div></li>
+<li><span class="step-no">19.5</span><div>Save and Submit only after stock review. The current custody controller creates and submits a Material Transfer Stock Entry.</div></li>
+</ol>
+<aside>The current custody code uses Project custom_warehouse and the literal warehouse “Subcontractor - C”. Confirm this configuration before use; it is not the dynamic company-abbreviation logic used by Cost Type. Automatic Item creation is not implemented by the basic Item Coding Request controller.</aside>
+<figure><img src="../assets/item-coding-request.png" alt="System screenshot: Item Coding Request"><figcaption>System screenshot: Item Coding Request</figcaption></figure>
+<figure><img src="../assets/subcontractor-custody.png" alt="System screenshot: Subcontractor Custody"><figcaption>System screenshot: Subcontractor Custody</figcaption></figure>
+</section>
+<section id="chapter-20"><div class="eyebrow">20 / 22</div><h1>Use standard purchasing and project-based names</h1><ol class="steps">
+<li><span class="step-no">20.1</span><div>Create Opportunity, Quotation, Sales Order, Sales Invoice, Purchase Order, Purchase Invoice and Purchase Receipt through their standard ERPNext forms.</div></li>
+<li><span class="step-no">20.2</span><div>For a new Purchase Order, select the native Project field before saving and confirm the linked Project has Project Abbreviation.</div></li>
+<li><span class="step-no">20.3</span><div>Save to receive a name such as PO-TST-0001. Purchase Receipt uses PRE-TST-0001 for the same Project abbreviation.</div></li>
+<li><span class="step-no">20.4</span><div>Use standard ERPNext items, taxes, receipts and invoicing actions. There is no custom Purchase Order Type selector in this app’s current purchasing flow.</div></li>
+</ol>
+<aside>Naming is the retained Purchase Order/Purchase Receipt exception. Company abbreviation on Cost Centers and Project Abbreviation on document names are separate settings.</aside>
+<figure><img src="../assets/cost-code.png" alt="System screenshot: Cost Code"><figcaption>System screenshot: Cost Code</figcaption></figure>
+</section>
+<section id="chapter-21"><div class="eyebrow">21 / 22</div><h1>Correct, cancel and amend documents</h1><ol class="steps">
+<li><span class="step-no">21.1</span><div>Edit and Save drafts before submitting. Review the document status and linked documents in Connections.</div></li>
+<li><span class="step-no">21.2</span><div>To correct a submitted document, follow the configured Cancel/Amend permissions and resolve downstream links first.</div></li>
+<li><span class="step-no">21.3</span><div>Before cancelling a certificate, reconcile any payments or downstream documents blocking its invoice. Certificate cancellation reverses its generated deduction entry/invoice through the application flow.</div></li>
+<li><span class="step-no">21.4</span><div>Cancel/delete active certificates before cancelling their Subcontractor Contract, then resolve linked contracts before cancelling CR.</div></li>
+<li><span class="step-no">21.5</span><div>For Project Contract cancellation, resolve active budgets and other downstream links and set the related Project status as required. Do not alter source database references manually.</div></li>
+<li><span class="step-no">21.6</span><div>After permitted cancellation, verify recalculated quantities and financial balances. Create an amendment or replacement through the normal document actions.</div></li>
+</ol>
+<aside>Historical Legacy Record certificates retain their older behavior. Do not use them as examples of the new clause-based accounting cycle.</aside>
+</section>
+<section id="chapter-22"><div class="eyebrow">22 / 22</div><h1>Troubleshooting and daily checks</h1><ol class="steps">
+<li><span class="step-no">22.1</span><div>Missing Project Abbreviation: open the linked operational Project, fill the abbreviation and Save. If the field itself is missing, ask for the migration/metadata repair.</div></li>
+<li><span class="step-no">22.2</span><div>Missing creation button: Save the source, check submitted status, complete source pricing and confirm create/read permissions. A draft Costing Note blocks offer/contract creation.</div></li>
+<li><span class="step-no">22.3</span><div>No picker table: clear All Clauses, choose a group and clear Select All Clauses in This Group. Confirm that the group contains detail clauses.</div></li>
+<li><span class="step-no">22.4</span><div>No Supplier/Contract in the Project clearance dialog: confirm there is a submitted contract for that exact Project/Supplier and that your account can read it.</div></li>
+<li><span class="step-no">22.5</span><div>Budget creation blocked: check exact submitted BOQ/Costing Note links, UOM, currency and active-budget uniqueness. Do not substitute another clause with the same title.</div></li>
+<li><span class="step-no">22.6</span><div>Posting failure: ask Accounts to check party, income/expense, deduction and tax accounts, Company, Cost Center and rounding defaults. Keep the failed certificate in draft until resolved.</div></li>
+<li><span class="step-no">22.7</span><div>At day end, compare submitted certificates, invoices, deduction entries, Project progress and party outstanding balances.</div></li>
+</ol>
+</section>
+<section><h1>Site verification scope</h1><p>20 of 20 document types opened during site review. All 172 local automated tests passed. These checks do not establish end-to-end accounting posting success.  A JavaScript message observed during navigation needs separate investigation: field item not found</p><p>This guide combines application source review with authorized inspection of the live site. Screenshots are from the actual system and may show existing test data. Review covered sign-in, forms, tabs and selected dialogs/browser calculations. No invoices or financial certificates were created or submitted for this guide. A temporary CR draft was used to test fetching and deleted afterwards; its naming sequence may advance. Buttons and values can differ with your permissions and site settings. Login credentials are excluded.</p>
+<p dir="ltr">CR All Clauses hides group field — Passed</p>
+<p dir="ltr">CR selected group shows detail selection table — Passed</p>
+<p dir="ltr">CR Select All in Group hides detail table — Passed</p>
+<p dir="ltr">Repeated Project fetch preserves existing CR row and quantity without duplication — Passed</p>
+<p dir="ltr">Temporary CR draft cleanup — Passed</p>
+<p dir="ltr">Unsaved BOQ equipment quantity and costs — Passed</p>
+<p dir="ltr">Existing Project Budget category and detail reconciliation — Passed</p>
+<p dir="ltr">Project Supplier/Contract selection dialog — Passed</p>
+<p dir="ltr">Project Clearnce existing invoice/deduction reconciliation — Passed</p>
+<p dir="ltr">Subcontract Clearnce existing invoice/deduction reconciliation — Passed</p>
+</section>
+</body></html>

@@ -1,0 +1,7 @@
+{
+  "requested_url": "https://en.connect4systems.com/app",
+  "final_url": "https://en.connect4systems.com/login?redirect-to=%2Fapp#login",
+  "http_status": 200,
+  "title": "Login",
+  "body_excerpt": "Home\nLogin to Frappe\nEmail\nPassword\nShow\n\nForgot Password?\n\nLogin\n\nor\n\nLogin with Email Link"
+}

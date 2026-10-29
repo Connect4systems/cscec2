@@ -1,0 +1,314 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>دليل مستخدم تطبيق المقاولات</title><style>
+@page { size: A4; margin: 16mm 15mm 18mm; }
+* { box-sizing:border-box; }
+body { margin:0; color:#21343e; font:11pt/1.7 'Segoe UI',Arial,sans-serif; }
+h1,h2 { color:#123f54; line-height:1.35; }
+h1 { font-size:23pt; margin:4mm 0 7mm; }
+h2 { font-size:16pt; }
+a { color:#12647b; text-decoration:none; }
+.cover { min-height:245mm; padding-top:35mm; break-after:page; }
+.cover h1 {font-size:36pt; max-width:160mm;}
+.brand,.eyebrow {letter-spacing:1px; color:#008684; font-size:11pt; font-weight:700;}
+.contents {break-after:page;}
+.contents li {margin:1mm 0;}
+section {break-before:page;}
+.steps {list-style:none;padding:0;}
+.steps li {display:flex; gap:4mm; margin-bottom:4mm; break-inside:avoid;}
+.step-no {min-width:11mm; color:#008684; font-weight:700;direction:ltr;}
+aside {background:#edf5f6; border-inline-start:3px solid #008684; padding:4mm; margin:5mm 0; break-inside:avoid;}
+figure {margin:0; break-before:page; break-inside:avoid; padding-top:8mm;}
+img {display:block; width:100%; max-height:233mm; object-fit:contain; object-position:top; border:1px solid #d5e0e4;}
+figcaption {font-size:9pt; margin-top:4mm;color:#526c79;}
+@media screen {body {max-width:900px;margin:auto;padding:30px;} section {margin-top:70px;} figure {margin-top:30px;}}
+</style></head><body>
+<div class="cover"><div class="brand">CONTRACTOR APP</div><h1>دليل مستخدم تطبيق المقاولات</h1><h2>دليل عملي خطوة بخطوة — دورة المشروع والموازنة ومقاولي الباطن</h2><p>en.connect4systems.com · 2026-10-29</p><aside>أُعد هذا الدليل من ملفات التطبيق مع مراجعة شاشات الموقع بحساب مصرح به. الصور من النظام الفعلي، وقد تعرض بيانات تجريبية موجودة. شملت المراجعة تسجيل الدخول وفتح النماذج والتبويبات وتجربة النوافذ والحسابات. لم تُنشأ أو تُعتمد فواتير أو مستخلصات مالية. استُخدمت مسودة CR مؤقتة لاختبار الجلب وحُذفت بعده، وقد تقدم تسلسل التسمية. تختلف الأزرار والقيم بحسب صلاحياتك وإعدادات الموقع. لا يتضمن الدليل بيانات الدخول.</aside><p>ERPNext 15 · Frappe 15 · Contractor App</p></div>
+<section class="contents"><h1>المحتويات</h1><ol>
+<li><a href="#chapter-1">تسجيل الدخول والوصول إلى المستندات</a></li>
+<li><a href="#chapter-2">تجهيز البيانات الأساسية واختصار المشروع</a></li>
+<li><a href="#chapter-3">إنشاء تحليل المناقصة وإدخال البنود</a></li>
+<li><a href="#chapter-4">إنشاء مذكرة التسعير</a></li>
+<li><a href="#chapter-5">تسعير موارد BOQ على إجمالي كمية المشروع</a></li>
+<li><a href="#chapter-6">إضافة المعدات واستخدام قالب BOQ</a></li>
+<li><a href="#chapter-7">إضافة هامش البيع وإكمال تسعير المناقصة</a></li>
+<li><a href="#chapter-8">إنشاء عرض المشروع وعقد المشروع</a></li>
+<li><a href="#chapter-9">ضبط الضرائب والخصومات والاستقطاعات</a></li>
+<li><a href="#chapter-10">إنشاء موازنة المشروع واعتمادها</a></li>
+<li><a href="#chapter-11">متابعة كميات المشروع ونسب التنفيذ</a></li>
+<li><a href="#chapter-12">إنشاء طلب تعاقد CR وإدخال البنود</a></li>
+<li><a href="#chapter-13">جلب بنود المشروع على دفعات دون مسح الجدول</a></li>
+<li><a href="#chapter-14">إنشاء عقد مقاول الباطن</a></li>
+<li><a href="#chapter-15">إعداد مستخلص العميل</a></li>
+<li><a href="#chapter-16">إعداد مستخلص مقاول الباطن من المشروع</a></li>
+<li><a href="#chapter-17">مراجعة الفواتير والاستقطاعات والسداد</a></li>
+<li><a href="#chapter-18">استخدام مقارنة عروض الشراء</a></li>
+<li><a href="#chapter-19">استخدام طلب تكويد الأصناف وعهدة مقاول الباطن</a></li>
+<li><a href="#chapter-20">استخدام المشتريات القياسية والتسمية بحسب المشروع</a></li>
+<li><a href="#chapter-21">تصحيح المستندات وإلغاؤها وتعديلها</a></li>
+<li><a href="#chapter-22">حل المشكلات والمراجعة اليومية</a></li>
+</ol></section>
+<section id="chapter-1"><div class="eyebrow">01 / 22</div><h1>تسجيل الدخول والوصول إلى المستندات</h1><ol class="steps">
+<li><span class="step-no">1.1</span><div>افتح https://en.connect4systems.com ثم اختر Login. أدخل الحساب المخصص لك واضغط Login.</div></li>
+<li><span class="step-no">1.2</span><div>افتح مساحة العمل Tender. ويمكنك استخدام مربع البحث أعلى الصفحة وكتابة اسم المستند بالإنجليزية كما يظهر في هذا الدليل.</div></li>
+<li><span class="step-no">1.3</span><div>افتح القائمة لاستعراض السجلات، ثم اضغط سجلًا لفتحه، أو اختر Add / New لإنشاء مستند جديد.</div></li>
+<li><span class="step-no">1.4</span><div>تنقل بين تبويبات Details وClauses وTaxes and Totals وContracting وConnections بحسب المستند.</div></li>
+<li><span class="step-no">1.5</span><div>يحفظ Save المسودة. أما Submit فيعتمد المستند القابل للاعتماد وقد ينشئ مستندات لاحقة. عند وجود Workflow استخدم إجراءات الموافقة المسموحة لحسابك.</div></li>
+</ol>
+<aside>الصور من الواجهة الإنجليزية. ظهور الأزرار يعتمد على الصلاحيات وحالة المستند وإصدار الموقع. تساعدك الأسماء الإنجليزية على تحديد الحقول المقابلة عند استخدام واجهة عربية.</aside>
+<figure><img src="../assets/site-access.png" alt="صورة فعلية من النظام: Site Access"><figcaption>صورة فعلية من النظام: Site Access</figcaption></figure>
+<figure><img src="../assets/desk.png" alt="صورة فعلية من النظام: Desk"><figcaption>صورة فعلية من النظام: Desk</figcaption></figure>
+</section>
+<section id="chapter-2"><div class="eyebrow">02 / 22</div><h1>تجهيز البيانات الأساسية واختصار المشروع</h1><ol class="steps">
+<li><span class="step-no">2.1</span><div>اطلب من مسؤول النظام تأكيد الشركة واختصارها والعملة الافتراضية والعميل والموردين والأصناف ووحدات القياس قبل البدء.</div></li>
+<li><span class="step-no">2.2</span><div>افتح Contract Type وتحقق من القيم: Arch وCivil وElec وMech وService. يعتمد CR على هذا السجل بدلًا من Item Group.</div></li>
+<li><span class="step-no">2.3</span><div>افتح Division لاستعراض أقسام أعمال البناء. يحتوي على Title وDescription، ويُسمى السجل من Title. حقل Division غير مطلوب في CR.</div></li>
+<li><span class="step-no">2.4</span><div>افتح Cost Code وراجع شجرة الأكواد وCost Type. يرتبط Cost Type بمركز تكلفة Cost Center، وليس نوع مستند مخصصًا مستقلًا.</div></li>
+<li><span class="step-no">2.5</span><div>افتح سجل Project التشغيلي وأدخل Project Abbreviation أسفل Project Name ثم احفظ. الاسم التقني للحقل custom_abbreviation. استخدم اختصارًا قصيرًا مثل TST.</div></li>
+<li><span class="step-no">2.6</span><div>إذا غاب حقل أو تبويب جديد، اطلب مراجعة نشر التحديثات والترحيل ثم حدّث المتصفح. لا تنشئ حقلًا إضافيًا يؤدي الغرض نفسه.</div></li>
+</ol>
+<aside>تستخدم فئات Cost Type اختصار الشركة المضبوط في النظام: Equipments وLabour وMaterial وSubcontractor. اللاحقة C في الملف الأصلي ليست اختصارًا إلزاميًا للشركة.</aside>
+<figure><img src="../assets/project.png" alt="صورة فعلية من النظام: Project"><figcaption>صورة فعلية من النظام: Project</figcaption></figure>
+<figure><img src="../assets/contract-type.png" alt="صورة فعلية من النظام: Contract Type"><figcaption>صورة فعلية من النظام: Contract Type</figcaption></figure>
+<figure><img src="../assets/cost-code.png" alt="صورة فعلية من النظام: Cost Code"><figcaption>صورة فعلية من النظام: Cost Code</figcaption></figure>
+</section>
+<section id="chapter-3"><div class="eyebrow">03 / 22</div><h1>إنشاء تحليل المناقصة وإدخال البنود</h1><ol class="steps">
+<li><span class="step-no">3.1</span><div>ابحث عن Tender Analysis ثم اختر New. أدخل Company وTitle وTender Number وDate ونوع الطرف Party Type واسمه Party Name والعملة Currency واسم المشروع المطلوب.</div></li>
+<li><span class="step-no">3.2</span><div>افتح Contractual Clauses. أضف عنوان مجموعة مع تحديد Is Group، ثم أضف صفوف التفاصيل تحته.</div></li>
+<li><span class="step-no">3.3</span><div>أدخل لكل بند Clause Title وكمية Qty موجبة ووحدة UOM. عنوان المجموعة ليس بند أعمال مستقلًا للصرف.</div></li>
+<li><span class="step-no">3.4</span><div>اختر Automatic لإنتاج تسلسل مثل 1 ثم 1_1 ثم 1_2، واحفظ لتوليد الأرقام.</div></li>
+<li><span class="step-no">3.5</span><div>للاستيراد، نزّل Excel Template وأدخل قيمًا فعلية في القالب، واحفظ المناقصة ثم اختر Upload Excel. راجع المعاينة واضغط Apply Rows.</div></li>
+<li><span class="step-no">3.6</span><div>راجع الجدول ثم اضغط Create Contractual Clauses لربط كل صف ببند تعاقدي مستقل. تكرار الإجراء ينشئ الروابط الناقصة فقط.</div></li>
+</ol>
+<aside>استيراد Excel يستبدل جدول المناقصة ويتاح قبل إنشاء Contractual Clauses. يحتفظ وضع From Excel بأرقام الملف. حقل Project في هذه المرحلة اسم نصي، وليس رابط المشروع التشغيلي.</aside>
+<figure><img src="../assets/tender-analysis.png" alt="صورة فعلية من النظام: Tender Analysis"><figcaption>صورة فعلية من النظام: Tender Analysis</figcaption></figure>
+<figure><img src="../assets/tender-analysis-clauses.png" alt="صورة فعلية من النظام: Tender Analysis Clauses"><figcaption>صورة فعلية من النظام: Tender Analysis Clauses</figcaption></figure>
+</section>
+<section id="chapter-4"><div class="eyebrow">04 / 22</div><h1>إنشاء مذكرة التسعير</h1><ol class="steps">
+<li><span class="step-no">4.1</span><div>احفظ Tender Analysis بعد توليد جميع Contractual Clauses.</div></li>
+<li><span class="step-no">4.2</span><div>اختر Create &gt; Costing Note وراجع المناقصة المصدر والعملة والبنود والكميات والوحدات.</div></li>
+<li><span class="step-no">4.3</span><div>احفظ Costing Note كمسودة قبل إنشاء مستندات BOQ.</div></li>
+<li><span class="step-no">4.4</span><div>استخدم زر BOQ في كل صف تفصيلي لفتح تحليل موارده. عناوين المجموعات لا تحتاج إلى تسعير موارد مستقل.</div></li>
+<li><span class="step-no">4.5</span><div>عد إلى المذكرة بعد اعتماد مستندات BOQ وراجع تكلفة الوحدة والتكلفة الإجمالية لكل بند.</div></li>
+</ol>
+<aside>تتبع صفوف المصدر وكمياتها المناقصة. عند تغيير بنية البنود أو كمياتها أعد إنشاء مذكرة التسعير المسودة المتأثرة. أعادت مراجعة الموقع إظهار الخطأ field item not found عند فتح مذكرة موجودة؛ اطلب من مسؤول النظام حل مشكلة التوافق قبل الاعتماد على دورة التسعير كاملة.</aside>
+<figure><img src="../assets/costing-note.png" alt="صورة فعلية من النظام: Costing Note"><figcaption>صورة فعلية من النظام: Costing Note</figcaption></figure>
+</section>
+<section id="chapter-5"><div class="eyebrow">05 / 22</div><h1>تسعير موارد BOQ على إجمالي كمية المشروع</h1><ol class="steps">
+<li><span class="step-no">5.1</span><div>افتح BOQ من صف مذكرة التسعير. راجع Clause Title وUOM وProject QTY. تتبع كمية BOQ المرتبط بالمناقصة كمية الصف المصدر.</div></li>
+<li><span class="step-no">5.2</span><div>في Material اختر Item وUOM لكل مورد، وأدخل كمية المورد اللازمة لوحدة واحدة من بند الأعمال وسعر تكلفته.</div></li>
+<li><span class="step-no">5.3</span><div>كرر ذلك في Labour وContractors وExpenses. راجع كمية المشروع المحسوبة Project Quantity وTotal Cost لكل مورد.</div></li>
+<li><span class="step-no">5.4</span><div>مثال: إذا كانت Project QTY تساوي 100 ومعامل المورد يساوي 2، تصبح كمية المورد 200. وعند تكلفة وحدة 5 تكون تكلفته 1,000.</div></li>
+<li><span class="step-no">5.5</span><div>راجع Total Project Cost وCost per Clause Unit، ثم احفظ واعتمد BOQ لإرجاع تكلفة الوحدة إلى الصف الصحيح في Costing Note.</div></li>
+</ol>
+<aside>كمية المورد للمشروع = كمية المورد لكل وحدة بند × Project QTY. تكلفة المورد = كميته للمشروع × سعر تكلفته. تكلفة وحدة البند = إجمالي تكلفة المشروع ÷ Project QTY. قد تحتفظ مستندات BOQ القديمة المعتمدة بأساس Per Unit.</aside>
+<figure><img src="../assets/boq.png" alt="صورة فعلية من النظام: Boq"><figcaption>صورة فعلية من النظام: Boq</figcaption></figure>
+</section>
+<section id="chapter-6"><div class="eyebrow">06 / 22</div><h1>إضافة المعدات واستخدام قالب BOQ</h1><ol class="steps">
+<li><span class="step-no">6.1</span><div>افتح تبويب Equipment في BOQ، ويقع قبل Expenses في النموذج المحدّث.</div></li>
+<li><span class="step-no">6.2</span><div>أضف صفًا في Equipment Costs واختر صنف المعدة Equipment Item ووحدة UOM، ثم أدخل الكمية لكل وحدة بند وسعر التكلفة.</div></li>
+<li><span class="step-no">6.3</span><div>راجع كمية المشروع المحسوبة Project Quantity وتكلفة الصف Total Cost وإجمالي Total Equipment Costs.</div></li>
+<li><span class="step-no">6.4</span><div>لإعادة استخدام تحليل موارد، جهّز Template BOQ بكميات الموارد لكل وحدة بند، بما فيها Equipment Costs.</div></li>
+<li><span class="step-no">6.5</span><div>في BOQ جديد أو مسودة اختر BOQ Template، وراجع الموارد والأسعار المنسوخة قبل الحفظ؛ تطبيق القالب يستبدل تحليل الموارد.</div></li>
+</ol>
+<aside>تدخل تكلفة المعدات في إجمالي BOQ وتسعير Costing Note وموازنة Project Budget. تُحفظ صفوف المعدات المخصصة القديمة. إذا غاب تبويب Equipment عن الموقع، يلزم نشر تعريفاته وملفات الواجهة؛ ظهور نموذج قديم لا يثبت تثبيت التبويب الجديد.</aside>
+<figure><img src="../assets/boq-equipment-entry.png" alt="صورة فعلية من النظام: Boq Equipment Entry"><figcaption>صورة فعلية من النظام: Boq Equipment Entry</figcaption></figure>
+<figure><img src="../assets/template-boq.png" alt="صورة فعلية من النظام: Template Boq"><figcaption>صورة فعلية من النظام: Template Boq</figcaption></figure>
+</section>
+<section id="chapter-7"><div class="eyebrow">07 / 22</div><h1>إضافة هامش البيع وإكمال تسعير المناقصة</h1><ol class="steps">
+<li><span class="step-no">7.1</span><div>عد إلى Costing Note المحفوظ بعد اعتماد جميع تحليلات BOQ المطلوبة.</div></li>
+<li><span class="step-no">7.2</span><div>أدخل هامش الربح المطلوب وراجع قيم البيع للتفاصيل وملخصات المجموعات.</div></li>
+<li><span class="step-no">7.3</span><div>تحقق من أن إجمالي التكلفة = تكلفة الوحدة × كمية البند، وقيمة البيع = إجمالي التكلفة × (1 + نسبة الهامش ÷ 100).</div></li>
+<li><span class="step-no">7.4</span><div>احفظ ثم اعتمد Costing Note، وافتح Tender Analysis للتحقق من أسعار البيع والمبالغ الناتجة.</div></li>
+<li><span class="step-no">7.5</span><div>لإعادة تسعير بند مطبق، ألغِ أولًا مذكرة التسعير المالكة لأسعاره وعالج المستندات اللاحقة المرتبطة، ثم جهّز واعتمد التسعير الجديد بالدورة نفسها.</div></li>
+</ol>
+<aside>لا يملك تسعير البند أكثر من Costing Note مطبق واحد في الوقت نفسه. يجب اعتماد جميع مذكرات التسعير النشطة قبل إنشاء العرض أو العقد التجاري.</aside>
+<figure><img src="../assets/costing-note.png" alt="صورة فعلية من النظام: Costing Note"><figcaption>صورة فعلية من النظام: Costing Note</figcaption></figure>
+<figure><img src="../assets/tender-analysis-clauses.png" alt="صورة فعلية من النظام: Tender Analysis Clauses"><figcaption>صورة فعلية من النظام: Tender Analysis Clauses</figcaption></figure>
+</section>
+<section id="chapter-8"><div class="eyebrow">08 / 22</div><h1>إنشاء عرض المشروع وعقد المشروع</h1><ol class="steps">
+<li><span class="step-no">8.1</span><div>احفظ Tender Analysis بعد اكتمال التسعير. اختر Create &gt; Project Offer لإصدار عرض، أو Create &gt; Project Contract لإنشاء العقد مباشرة.</div></li>
+<li><span class="step-no">8.2</span><div>راجع العميل Customer والشركة Company والعملة Currency وسعر التحويل واسم المشروع والتواريخ والبنود المنسوخة، واستكمل العناوين وشروط الدفع والشروط التجارية.</div></li>
+<li><span class="step-no">8.3</span><div>راجع الكميات المتفق عليها وأسعار البيع في Clauses، ثم استكمل Taxes and Totals وContracting كما هو موضح في الخطوة التالية.</div></li>
+<li><span class="step-no">8.4</span><div>احفظ واعتمد Project Offer. لتحويله اختر Create &gt; Project Contract وراجع القيم التجارية المنقولة.</div></li>
+<li><span class="step-no">8.5</span><div>احفظ واعتمد Project Contract بعد المراجعة وموافقات سير العمل. يُستخدم اسم المشروع لإنشاء أو ربط سجل Project التشغيلي.</div></li>
+<li><span class="step-no">8.6</span><div>افتح النتيجة من Open Project أو Created Project. تكرار التحويل يفتح العقد النشط الموجود بدلًا من إنشاء عقد إضافي.</div></li>
+</ol>
+<aside>العرض والعقد مستندان تجاريان ولا يثبتان إيرادًا أو حركة مخزون بذاتهما. يلزم امتلاك صلاحية إنشاء المشروع التشغيلي. تُنشأ Project Budget من عقد مشروع معتمد.</aside>
+<figure><img src="../assets/project-offer.png" alt="صورة فعلية من النظام: Project Offer"><figcaption>صورة فعلية من النظام: Project Offer</figcaption></figure>
+<figure><img src="../assets/project-contract.png" alt="صورة فعلية من النظام: Project Contract"><figcaption>صورة فعلية من النظام: Project Contract</figcaption></figure>
+</section>
+<section id="chapter-9"><div class="eyebrow">09 / 22</div><h1>ضبط الضرائب والخصومات والاستقطاعات</h1><ol class="steps">
+<li><span class="step-no">9.1</span><div>افتح Taxes and Totals. اختر Sales Taxes and Charges Template لمستندات العميل، أو Purchase Taxes and Charges Template لطلب CR ومستندات مقاول الباطن.</div></li>
+<li><span class="step-no">9.2</span><div>اختر قالبًا تابعًا لشركة المستند. راجع حساب كل ضريبة ونوع احتسابها ونسبتها وما إذا كانت مشمولة في السعر.</div></li>
+<li><span class="step-no">9.3</span><div>عند الحاجة حدد أساس الخصم الإضافي وأدخل نسبته أو قيمته الثابتة، ثم راجع Net Total وإجمالي الضرائب وGrand Total.</div></li>
+<li><span class="step-no">9.4</span><div>افتح Contracting. اختر Selling Deductions Template لمستندات العميل، أو Purchasing Deductions Template لمستندات مقاول الباطن.</div></li>
+<li><span class="step-no">9.5</span><div>راجع أو عدّل Title وAccount وPercent لكل استقطاع، وتحقق من Total Deductions وNet Payable ثم احفظ.</div></li>
+</ol>
+<aside>تُحسب الاستقطاعات على Grand Total، ويكون Net Payable = Grand Total − Total Deductions. يملأ القالب صفوفًا قابلة للتعديل في المسودة، ولا تُعدّل التغييرات اللاحقة القالب المصدر. تبدأ ضرائب Actual والخصومات الثابتة بصفر في مستخلص الفترة الجديد لتحديد نصيب الفترة.</aside>
+<figure><img src="../assets/project-contract-taxes.png" alt="صورة فعلية من النظام: Project Contract Taxes"><figcaption>صورة فعلية من النظام: Project Contract Taxes</figcaption></figure>
+<figure><img src="../assets/project-contract-contracting.png" alt="صورة فعلية من النظام: Project Contract Contracting"><figcaption>صورة فعلية من النظام: Project Contract Contracting</figcaption></figure>
+<figure><img src="../assets/cr-taxes.png" alt="صورة فعلية من النظام: Cr Taxes"><figcaption>صورة فعلية من النظام: Cr Taxes</figcaption></figure>
+</section>
+<section id="chapter-10"><div class="eyebrow">10 / 22</div><h1>إنشاء موازنة المشروع واعتمادها</h1><ol class="steps">
+<li><span class="step-no">10.1</span><div>افتح Project Contract المعتمد وتأكد من وجود سجل Project التشغيلي المرتبط به.</div></li>
+<li><span class="step-no">10.2</span><div>اختر Create &gt; Project Budget. يفتح النظام مسودة جديدة أو الموازنة النشطة الموجودة لهذا العقد.</div></li>
+<li><span class="step-no">10.3</span><div>راجع بيانات Details: العقد والمشروع وتحليل المناقصة والشركة والعملة وتاريخ Budget Date.</div></li>
+<li><span class="step-no">10.4</span><div>افتح Total Budget وراجع Total Project Budget وإجمالي المواد Total Material والعمالة Total Labour ومقاولي الباطن Total Subcontractor والمصروفات الأخرى Total Other Expenses والمعدات Total Equipment.</div></li>
+<li><span class="step-no">10.5</span><div>افتح Contract Clauses Budget وراجع كمية العقد وتكلفة وحدة BOQ وموازنة كل بند، وافتح الصفوف لمراجعة توزيع التكلفة وروابط المصادر.</div></li>
+<li><span class="step-no">10.6</span><div>احفظ واعتمد بعد المراجعة. يتحقق الخادم من تكاليف المصادر وكمياتها. الموازنة المعتمدة لقطة محفوظة للتكلفة ولا تنشئ قيدًا محاسبيًا.</div></li>
+</ol>
+<aside>الموازنة مبنية على التكلفة. موازنة البند = كمية العقد النهائية × تكلفة وحدة BOQ بعد توحيد أساسها. لا تدخل أرباح البيع أو الضرائب أو الاستقطاعات. مثال: تكلفة كمية BOQ البالغة 100 هي 2,300، فتكون تكلفة الوحدة 23؛ وعند كمية عقد نهائية 150 تصبح الموازنة 3,450 بغض النظر عن سعر البيع.</aside>
+<figure><img src="../assets/project-budget.png" alt="صورة فعلية من النظام: Project Budget"><figcaption>صورة فعلية من النظام: Project Budget</figcaption></figure>
+<figure><img src="../assets/project-budget-totals.png" alt="صورة فعلية من النظام: Project Budget Totals"><figcaption>صورة فعلية من النظام: Project Budget Totals</figcaption></figure>
+<figure><img src="../assets/project-budget-clauses-budget.png" alt="صورة فعلية من النظام: Project Budget Clauses Budget"><figcaption>صورة فعلية من النظام: Project Budget Clauses Budget</figcaption></figure>
+</section>
+<section id="chapter-11"><div class="eyebrow">11 / 22</div><h1>متابعة كميات المشروع ونسب التنفيذ</h1><ol class="steps">
+<li><span class="step-no">11.1</span><div>افتح سجل Project التشغيلي من عقد المشروع أو من قائمة Project.</div></li>
+<li><span class="step-no">11.2</span><div>راجع اسم المشروع والشركة والعميل والتواريخ واختصار Project Abbreviation. احفظ التعديلات المسموحة قبل استخدام إجراءات Create.</div></li>
+<li><span class="step-no">11.3</span><div>افتح Project Clauses وراجع كمية العقد والمنفذ والمتبقي لكل بند تفصيلي.</div></li>
+<li><span class="step-no">11.4</span><div>راجع Clause Groups and Progress لملخص المجموعات حسب وحدة القياس. تنفيذ العميل وتنفيذ مقاولي الباطن مؤشرات مستقلة.</div></li>
+<li><span class="step-no">11.5</span><div>استخدم Connections ورابط العقد لمراجعة القيم التجارية؛ جداول بنود Project تعرض الكميات ونسب التنفيذ دون أسعار العقد.</div></li>
+</ol>
+<aside>تدخل المستخلصات المعتمدة غير الملغاة فقط في التنفيذ. عناوين المجموعات ليست كميات للصرف. ولا تُجمع وحدات القياس المختلفة في كمية مادية واحدة.</aside>
+<figure><img src="../assets/project-progress.png" alt="صورة فعلية من النظام: Project Progress"><figcaption>صورة فعلية من النظام: Project Progress</figcaption></figure>
+<figure><img src="../assets/project.png" alt="صورة فعلية من النظام: Project"><figcaption>صورة فعلية من النظام: Project</figcaption></figure>
+</section>
+<section id="chapter-12"><div class="eyebrow">12 / 22</div><h1>إنشاء طلب تعاقد CR وإدخال البنود</h1><ol class="steps">
+<li><span class="step-no">12.1</span><div>ابحث عن CR واختر New، ثم حدد المشروع التشغيلي Project والمورد Supplier.</div></li>
+<li><span class="step-no">12.2</span><div>اختر Contract Type من Arch أوCivil أوElec أوMech أوService. استكمل Posting Date وEnd Date وأرفق Attach CR وأدخل الملاحظات.</div></li>
+<li><span class="step-no">12.3</span><div>راجع الشركة والعملة وسعر التحويل. أدخل مجموعات البنود وتفاصيلها يدويًا، أو استورد قالب Excel الخاص بالشاشة، أو استخدم Fetch from Project.</div></li>
+<li><span class="step-no">12.4</span><div>أدخل Qty وUOM وRate للبنود التفصيلية. تُحسب Amount تلقائيًا وتلخص المجموعات مبالغ تفاصيلها.</div></li>
+<li><span class="step-no">12.5</span><div>استكمل Taxes and Totals وContracting ثم احفظ، وراجع البنود والمرفقات قبل إجراءات الموافقة والاعتماد المضبوطة على الموقع.</div></li>
+</ol>
+<aside>يجب تعبئة Project Abbreviation في المشروع لإتمام التسمية المعتمدة على المشروع. لا يتطلب CR حقل Division. استخدم جلب البنود من المشروع للاحتفاظ بمراجعها عندما يلزم إدراجها في متابعة تنفيذ المشروع.</aside>
+<figure><img src="../assets/cr.png" alt="صورة فعلية من النظام: Cr"><figcaption>صورة فعلية من النظام: Cr</figcaption></figure>
+<figure><img src="../assets/cr-clauses.png" alt="صورة فعلية من النظام: Cr Clauses"><figcaption>صورة فعلية من النظام: Cr Clauses</figcaption></figure>
+</section>
+<section id="chapter-13"><div class="eyebrow">13 / 22</div><h1>جلب بنود المشروع على دفعات دون مسح الجدول</h1><ol class="steps">
+<li><span class="step-no">13.1</span><div>احفظ مسودة CR بعد اختيار Project، ثم اضغط Fetch from Project.</div></li>
+<li><span class="step-no">13.2</span><div>اترك All Clauses محددًا لجلب جميع بنود المشروع؛ تُخفى عندها حقول اختيار المجموعة.</div></li>
+<li><span class="step-no">13.3</span><div>لاختيار مجموعة محددة أزل تحديد All Clauses ثم اختر Group Clause.</div></li>
+<li><span class="step-no">13.4</span><div>حدد Select All Clauses in This Group لجلب المجموعة كاملة، أو أزل تحديده لإظهار جدول اختيار البنود.</div></li>
+<li><span class="step-no">13.5</span><div>حدد البنود المطلوبة في الجدول وأدخل كمياتها. يمكنك الانتقال بين المجموعات لإضافة اختيارات أخرى.</div></li>
+<li><span class="step-no">13.6</span><div>اضغط Insert Clauses وراجع الصفوف المضافة والكميات والتعديلات الموجودة ثم احفظ.</div></li>
+<li><span class="step-no">13.7</span><div>كرر Fetch from Project عند الحاجة. تبقى الصفوف السابقة، ويتجاوز النظام البنود المصدرية المضافة بالفعل بدلًا من تكرارها.</div></li>
+</ol>
+<aside>تؤثر كميات نافذة الاختيار في CR دون تغيير كميات Project. جلب المشروع تراكمي ويختلف عن استيراد Excel الذي يستبدل الصفوف. لا تستخدم استيراد المناقصة بديلًا لإضافة دفعات بنود إلى CR.</aside>
+<figure><img src="../assets/cr-picker-all.png" alt="صورة فعلية من النظام: Cr Picker All"><figcaption>صورة فعلية من النظام: Cr Picker All</figcaption></figure>
+<figure><img src="../assets/cr-picker-group.png" alt="صورة فعلية من النظام: Cr Picker Group"><figcaption>صورة فعلية من النظام: Cr Picker Group</figcaption></figure>
+<figure><img src="../assets/cr-picker-table.png" alt="صورة فعلية من النظام: Cr Picker Table"><figcaption>صورة فعلية من النظام: Cr Picker Table</figcaption></figure>
+</section>
+<section id="chapter-14"><div class="eyebrow">14 / 22</div><h1>إنشاء عقد مقاول الباطن</h1><ol class="steps">
+<li><span class="step-no">14.1</span><div>افتح CR بعد الموافقة عليه واعتماده ثم اختر Create &gt; Subcontractor Contract.</div></li>
+<li><span class="step-no">14.2</span><div>راجع المشروع والمورد أو Contractor ونوع العقد والتواريخ والبنود والأسعار والضرائب والاستقطاعات ورابط CR المنقول.</div></li>
+<li><span class="step-no">14.3</span><div>ارفع ملف العقد المتفق عليه في Attach Contract واستكمل الحقول الإلزامية المتبقية.</div></li>
+<li><span class="step-no">14.4</span><div>لإنشاء عقد مباشر افتح قائمة Subcontractor Contract وأنشئ سجلًا جديدًا، وأكمل بياناته وأضف البنود بالمنطق نفسه: يدويًا أو Excel أو Fetch from Project.</div></li>
+<li><span class="step-no">14.5</span><div>راجع Taxes and Totals وContracting وتأكد من أسعار الاتفاق الموجبة للبنود التفصيلية، ثم احفظ وأكمل الموافقات وSubmit.</div></li>
+<li><span class="step-no">14.6</span><div>بعد الاعتماد استخدم Create &gt; Subcontract Clearnce لإنشاء مستخلص الفترة. تكرار التحويل من CR يفتح العقد النشط الموجود له.</div></li>
+</ol>
+<aside>تحتفظ المستخلصات المرتبطة بالعقد بأسعار الاتفاق ومراجع صفوف المصدر. تستخدم البنود اليدوية أو المستوردة حدود كميات العقد، لكنها لا تنشئ صفوف متابعة تنفيذ في Project دون روابط المشروع الأصلية.</aside>
+<figure><img src="../assets/subcontractor-contract.png" alt="صورة فعلية من النظام: Subcontractor Contract"><figcaption>صورة فعلية من النظام: Subcontractor Contract</figcaption></figure>
+<figure><img src="../assets/subcontractor-contract-clauses.png" alt="صورة فعلية من النظام: Subcontractor Contract Clauses"><figcaption>صورة فعلية من النظام: Subcontractor Contract Clauses</figcaption></figure>
+<figure><img src="../assets/subcontractor-contract-contracting.png" alt="صورة فعلية من النظام: Subcontractor Contract Contracting"><figcaption>صورة فعلية من النظام: Subcontractor Contract Contracting</figcaption></figure>
+</section>
+<section id="chapter-15"><div class="eyebrow">15 / 22</div><h1>إعداد مستخلص العميل</h1><ol class="steps">
+<li><span class="step-no">15.1</span><div>احفظ المشروع التشغيلي ثم اختر Create &gt; Project Clearnce.</div></li>
+<li><span class="step-no">15.2</span><div>راجع العميل وعقد المشروع والعملة وتاريخ Posting Date ومركز Cost Center.</div></li>
+<li><span class="step-no">15.3</span><div>افتح Clauses. راجع Total Required Qty وPrevious Qty وRemaining Qty لكل بند، ثم أدخل Current Qty للفترة الحالية فقط.</div></li>
+<li><span class="step-no">15.4</span><div>يمكن استخدام Current % of Remaining عند الحاجة. لا تضع كمية التنفيذ التراكمية في خانة Current Qty.</div></li>
+<li><span class="step-no">15.5</span><div>راجع أسعار العقد ومبالغ الفترة والضرائب والرسوم الثابتة الخاصة بالفترة والاستقطاعات، ثم احفظ المسودة واستكمل المراجعة.</div></li>
+<li><span class="step-no">15.6</span><div>اعتمد عند الاستعداد للترحيل. ينشئ النظام Sales Invoice وقيد استقطاعات Journal Entry عند وجودها، ويحدث تنفيذ المشروع.</div></li>
+</ol>
+<aside>اعتماد المستخلص إجراء محاسبي. تأتي الأسعار من Project Contract ولا يجوز تجاوز الرصيد التعاقدي للكميات. يمنع فشل الترحيل إكمال اعتماد المستخلص.</aside>
+<figure><img src="../assets/project-clearnce.png" alt="صورة فعلية من النظام: Project Clearnce"><figcaption>صورة فعلية من النظام: Project Clearnce</figcaption></figure>
+<figure><img src="../assets/project-clearnce-clauses.png" alt="صورة فعلية من النظام: Project Clearnce Clauses"><figcaption>صورة فعلية من النظام: Project Clearnce Clauses</figcaption></figure>
+</section>
+<section id="chapter-16"><div class="eyebrow">16 / 22</div><h1>إعداد مستخلص مقاول الباطن من المشروع</h1><ol class="steps">
+<li><span class="step-no">16.1</span><div>احفظ Project ثم اختر Create &gt; Subcontract Clearnce.</div></li>
+<li><span class="step-no">16.2</span><div>اختر Supplier أولًا. تعرض القائمة الموردين الذين لديهم Subcontractor Contract معتمد لهذا المشروع.</div></li>
+<li><span class="step-no">16.3</span><div>اختر عقد مقاول الباطن المطلوب لنفس المورد والمشروع، ثم اضغط Create Clearance.</div></li>
+<li><span class="step-no">16.4</span><div>راجع المستند المنقول. تبدأ كميات الفترة بصفر؛ أدخل Current Qty للفترة الحالية فقط. تأتي أسعار الاتفاق من العقد المحدد.</div></li>
+<li><span class="step-no">16.5</span><div>راجع Previous Qty وProject Previous Qty وRemaining Qty، ثم الضرائب ورسوم Actual الخاصة بالفترة والخصومات والاستقطاعات ومركز التكلفة.</div></li>
+<li><span class="step-no">16.6</span><div>احفظ وراجع ثم اعتمد. افتح Purchase Invoice الناتجة وDeduction Entry عند وجوده، وتحقق من تحديث التنفيذ في Project.</div></li>
+</ol>
+<aside>يتحقق النظام من حد الكمية التراكمية للعقد. وللبنود المرتبطة بالمشروع يطبق أيضًا الحد الإجمالي لمقاولي الباطن على مستوى المشروع عبر جميع الموردين. تغيير المورد يمسح اختيار العقد السابق.</aside>
+<figure><img src="../assets/project-subcontract-picker.png" alt="صورة فعلية من النظام: Project Subcontract Picker"><figcaption>صورة فعلية من النظام: Project Subcontract Picker</figcaption></figure>
+<figure><img src="../assets/subcontract-clearnce.png" alt="صورة فعلية من النظام: Subcontract Clearnce"><figcaption>صورة فعلية من النظام: Subcontract Clearnce</figcaption></figure>
+<figure><img src="../assets/subcontract-clearnce-clauses.png" alt="صورة فعلية من النظام: Subcontract Clearnce Clauses"><figcaption>صورة فعلية من النظام: Subcontract Clearnce Clauses</figcaption></figure>
+</section>
+<section id="chapter-17"><div class="eyebrow">17 / 22</div><h1>مراجعة الفواتير والاستقطاعات والسداد</h1><ol class="steps">
+<li><span class="step-no">17.1</span><div>من المستخلص المعتمد اضغط Open Invoice وراجع الطرف والمشروع والعملة وصافي الأعمال والضرائب وإجمالي الفاتورة.</div></li>
+<li><span class="step-no">17.2</span><div>تحتوي الفاتورة على صنف خدمي غير مخزني واحد للأعمال المعتمدة، وتبقى تفاصيل القياس في بنود المستخلص.</div></li>
+<li><span class="step-no">17.3</span><div>عند وجود استقطاعات افتح Deduction Entry وراجع الحسابات والقيمة. يسوي القيد الاستقطاع مع رصيد الطرف دون تكرار إثبات إيراد أو مصروف الأعمال.</div></li>
+<li><span class="step-no">17.4</span><div>مثال دون ضرائب: أعمال بقيمة 100 واستقطاع 10 ينتج عنها فاتورة 100 وتسوية استقطاع 10 وصافي مستحق 90.</div></li>
+<li><span class="step-no">17.5</span><div>سجل التحصيل أو الدفع الفعلي باستخدام Payment Entry القياسي في ERPNext مقابل رصيد الفاتورة المعنية.</div></li>
+<li><span class="step-no">17.6</span><div>استخدم General Ledger وتقارير Accounts Receivable وAccounts Payable لمطابقة الأرصدة، مع مراجعة الشركة والطرف والفترة وحالة الاعتماد.</div></li>
+</ol>
+<aside>يلزم ضبط إعدادات الشركة وحسابات الأطراف والإيراد أو المصروف ومركز التكلفة وحساب فروق التقريب قبل الترحيل. ملف التقرير القديم Account Balances المحتفظ به ليس تقرير أرصدة تشغيليًا متحققًا منه.</aside>
+<figure><img src="../assets/sales-invoice-selling.png" alt="صورة فعلية من النظام: Sales Invoice Selling"><figcaption>صورة فعلية من النظام: Sales Invoice Selling</figcaption></figure>
+<figure><img src="../assets/purchase-invoice-buying.png" alt="صورة فعلية من النظام: Purchase Invoice Buying"><figcaption>صورة فعلية من النظام: Purchase Invoice Buying</figcaption></figure>
+<figure><img src="../assets/journal-entry-selling.png" alt="صورة فعلية من النظام: Journal Entry Selling"><figcaption>صورة فعلية من النظام: Journal Entry Selling</figcaption></figure>
+<figure><img src="../assets/journal-entry-buying.png" alt="صورة فعلية من النظام: Journal Entry Buying"><figcaption>صورة فعلية من النظام: Journal Entry Buying</figcaption></figure>
+</section>
+<section id="chapter-18"><div class="eyebrow">18 / 22</div><h1>استخدام مقارنة عروض الشراء</h1><ol class="steps">
+<li><span class="step-no">18.1</span><div>افتح Comparison مباشرة. وعند ضبط سير عمل Material Request، يظهر Create Purchase Comparison لمستخدم Purchase User على طلب شراء معتمد وحالته Approved.</div></li>
+<li><span class="step-no">18.2</span><div>راجع Project وMaterial Request والأصناف المطلوبة، واستخدم Add Item في مصفوفة المقارنة لإضافة صفوف عند الحاجة.</div></li>
+<li><span class="step-no">18.3</span><div>اختر Attach Supplier لإضافة كل مورد، ثم أدخل سعره لكل صنف وراجع حاصل الكمية × السعر وإجماليات الموردين.</div></li>
+<li><span class="step-no">18.4</span><div>أدخل التقييم الفني وأرفق عروض الموردين وحدد Accepted Supplier وAmount وNotes بحسب الحاجة.</div></li>
+<li><span class="step-no">18.5</span><div>احفظ واتبع إجراءات المراجعة والاعتماد المضبوطة. ينزل Export Excel ملف CSV يمكن مراجعته في Excel.</div></li>
+</ol>
+<aside>تعتمد المقارنة المحتفظ بها على حقول الموقع وسير عمل Material Request المضبوط. لا تفترض أن اعتماد Comparison ينشئ أمر شراء تلقائيًا.</aside>
+<figure><img src="../assets/comparison.png" alt="صورة فعلية من النظام: Comparison"><figcaption>صورة فعلية من النظام: Comparison</figcaption></figure>
+</section>
+<section id="chapter-19"><div class="eyebrow">19 / 22</div><h1>استخدام طلب تكويد الأصناف وعهدة مقاول الباطن</h1><ol class="steps">
+<li><span class="step-no">19.1</span><div>للتكويد افتح Item Coding Request واختر New وحدد Project وDate، ثم أضف أسماء الأصناف ووحداتها وأوصافها ومرفقاتها في Items.</div></li>
+<li><span class="step-no">19.2</span><div>احفظ واتبع المراجعة المضبوطة. سجل روابط Item Code الناتجة بعد إنشاء الأصناف بواسطة المسؤول المخول عن البيانات الأساسية.</div></li>
+<li><span class="step-no">19.3</span><div>للعهدة افتح Subcontractor Custody وحدد المقاول والمشروع والتاريخ، ثم اختر Type = Out للصرف أو Return للإرجاع.</div></li>
+<li><span class="step-no">19.4</span><div>أدخل الأصناف والكميات الموجبة ووحدات القياس الصحيحة والملاحظات، وراجع مخزن المشروع ومخزن عهدة المقاول مع مسؤول المخزون.</div></li>
+<li><span class="step-no">19.5</span><div>احفظ واعتمد بعد مراجعة المخزون؛ ينشئ متحكم العهدة الحالي Stock Entry من نوع Material Transfer ويعتمده.</div></li>
+</ol>
+<aside>يستخدم كود العهدة الحالي custom_warehouse في المشروع واسم المخزن الحرفي Subcontractor - C. تحقق من الإعداد قبل الاستخدام؛ فهو لا يتبع منطق اختصار الشركة المتغير المستخدم في Cost Type. لا ينفذ المتحكم الأساسي لطلب التكويد إنشاء الأصناف تلقائيًا.</aside>
+<figure><img src="../assets/item-coding-request.png" alt="صورة فعلية من النظام: Item Coding Request"><figcaption>صورة فعلية من النظام: Item Coding Request</figcaption></figure>
+<figure><img src="../assets/subcontractor-custody.png" alt="صورة فعلية من النظام: Subcontractor Custody"><figcaption>صورة فعلية من النظام: Subcontractor Custody</figcaption></figure>
+</section>
+<section id="chapter-20"><div class="eyebrow">20 / 22</div><h1>استخدام المشتريات القياسية والتسمية بحسب المشروع</h1><ol class="steps">
+<li><span class="step-no">20.1</span><div>أنشئ Opportunity وQuotation وSales Order وSales Invoice وPurchase Order وPurchase Invoice وPurchase Receipt من نماذج ERPNext القياسية.</div></li>
+<li><span class="step-no">20.2</span><div>في أمر شراء جديد اختر حقل Project القياسي قبل الحفظ، وتأكد من تعبئة Project Abbreviation في المشروع المرتبط.</div></li>
+<li><span class="step-no">20.3</span><div>احفظ ليكون الاسم مثل PO-TST-0001. ويستخدم Purchase Receipt اسمًا مثل PRE-TST-0001 للاختصار نفسه.</div></li>
+<li><span class="step-no">20.4</span><div>استخدم أصناف ERPNext وضرائبه وإجراءات الاستلام والفوترة القياسية. لا يوجد محدد Purchase Order Type مخصص في دورة المشتريات الحالية للتطبيق.</div></li>
+</ol>
+<aside>التسمية هي الاستثناء المحتفظ به لأمر الشراء وإيصال الاستلام. اختصار الشركة في مراكز التكلفة واختصار المشروع في أسماء المستندات إعدادان مختلفان.</aside>
+<figure><img src="../assets/cost-code.png" alt="صورة فعلية من النظام: Cost Code"><figcaption>صورة فعلية من النظام: Cost Code</figcaption></figure>
+</section>
+<section id="chapter-21"><div class="eyebrow">21 / 22</div><h1>تصحيح المستندات وإلغاؤها وتعديلها</h1><ol class="steps">
+<li><span class="step-no">21.1</span><div>عدّل المسودات واحفظها قبل الاعتماد، وراجع حالة المستند وروابطه من Connections.</div></li>
+<li><span class="step-no">21.2</span><div>لتصحيح مستند معتمد اتبع صلاحيات Cancel وAmend المضبوطة، وعالج المستندات اللاحقة المرتبطة أولًا.</div></li>
+<li><span class="step-no">21.3</span><div>قبل إلغاء مستخلص عالج المدفوعات أو الروابط التي تمنع إلغاء فاتورته. يعكس إلغاء المستخلص قيد استقطاعاته وفاتورته من خلال دورة التطبيق.</div></li>
+<li><span class="step-no">21.4</span><div>ألغِ أو احذف المستخلصات النشطة قبل إلغاء عقد مقاول الباطن، ثم عالج العقود المرتبطة قبل إلغاء CR.</div></li>
+<li><span class="step-no">21.5</span><div>لإلغاء Project Contract عالج الموازنات النشطة والروابط اللاحقة وحالة المشروع المرتبط وفق المتطلبات. لا تعدّل مراجع قاعدة البيانات يدويًا.</div></li>
+<li><span class="step-no">21.6</span><div>بعد الإلغاء المسموح راجع الكميات المعاد احتسابها والأرصدة المالية، ثم أنشئ تعديلًا أو بديلًا من الإجراءات المعتادة.</div></li>
+</ol>
+<aside>تحتفظ المستخلصات التاريخية الموسومة Legacy Record بسلوكها السابق. لا تستخدمها نموذجًا للدورة الجديدة القائمة على البنود.</aside>
+</section>
+<section id="chapter-22"><div class="eyebrow">22 / 22</div><h1>حل المشكلات والمراجعة اليومية</h1><ol class="steps">
+<li><span class="step-no">22.1</span><div>رسالة نقص Project Abbreviation: افتح المشروع التشغيلي المرتبط وأدخل الاختصار واحفظ. إذا غاب الحقل نفسه، اطلب تنفيذ الترحيل أو إصلاح تعريفه.</div></li>
+<li><span class="step-no">22.2</span><div>غياب زر الإنشاء: احفظ المصدر وراجع حالة الاعتماد واكتمال التسعير وصلاحيات القراءة والإنشاء. وجود Costing Note مسودة يمنع إنشاء العرض أو العقد.</div></li>
+<li><span class="step-no">22.3</span><div>غياب جدول الاختيار: أزل All Clauses واختر مجموعة وأزل Select All Clauses in This Group، وتأكد أن المجموعة تحتوي على بنود تفاصيل.</div></li>
+<li><span class="step-no">22.4</span><div>غياب المورد أو العقد من نافذة المستخلص: تحقق من وجود عقد معتمد لنفس المشروع والمورد ومن صلاحية قراءة حسابك له.</div></li>
+<li><span class="step-no">22.5</span><div>توقف إنشاء الموازنة: راجع روابط BOQ وCosting Note المعتمدة ووحدة القياس والعملة وعدم وجود موازنة نشطة أخرى. لا تستبدل بندًا بآخر له العنوان نفسه.</div></li>
+<li><span class="step-no">22.6</span><div>فشل الترحيل: اطلب من الحسابات مراجعة حساب الطرف والإيراد أو المصروف والاستقطاعات والضرائب والشركة ومركز التكلفة والتقريب. اترك المستخلص مسودة حتى حل السبب.</div></li>
+<li><span class="step-no">22.7</span><div>طابق في نهاية اليوم المستخلصات المعتمدة وفواتيرها وقيود الاستقطاع وتنفيذ المشروع والأرصدة المستحقة للأطراف.</div></li>
+</ol>
+</section>
+<section><h1>نطاق التحقق من الموقع</h1><p>تم فتح 20 من 20 نوع مستند خلال مراجعة الموقع. نجحت الاختبارات المحلية البالغ عددها 172. لا تمثل هذه النتائج اختبار ترحيل محاسبي كامل من البداية للنهاية.  لوحظ تنبيه JavaScript أثناء التنقل يحتاج إلى تتبع مستقل: field item not found</p><p>أُعد هذا الدليل من ملفات التطبيق مع مراجعة شاشات الموقع بحساب مصرح به. الصور من النظام الفعلي، وقد تعرض بيانات تجريبية موجودة. شملت المراجعة تسجيل الدخول وفتح النماذج والتبويبات وتجربة النوافذ والحسابات. لم تُنشأ أو تُعتمد فواتير أو مستخلصات مالية. استُخدمت مسودة CR مؤقتة لاختبار الجلب وحُذفت بعده، وقد تقدم تسلسل التسمية. تختلف الأزرار والقيم بحسب صلاحياتك وإعدادات الموقع. لا يتضمن الدليل بيانات الدخول.</p>
+<p dir="ltr">CR All Clauses hides group field — ناجح</p>
+<p dir="ltr">CR selected group shows detail selection table — ناجح</p>
+<p dir="ltr">CR Select All in Group hides detail table — ناجح</p>
+<p dir="ltr">Repeated Project fetch preserves existing CR row and quantity without duplication — ناجح</p>
+<p dir="ltr">Temporary CR draft cleanup — ناجح</p>
+<p dir="ltr">Unsaved BOQ equipment quantity and costs — ناجح</p>
+<p dir="ltr">Existing Project Budget category and detail reconciliation — ناجح</p>
+<p dir="ltr">Project Supplier/Contract selection dialog — ناجح</p>
+<p dir="ltr">Project Clearnce existing invoice/deduction reconciliation — ناجح</p>
+<p dir="ltr">Subcontract Clearnce existing invoice/deduction reconciliation — ناجح</p>
+</section>
+</body></html>
